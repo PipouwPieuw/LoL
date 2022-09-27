@@ -5,10 +5,14 @@ func _ready():
 
 func _physics_process(_delta):
 	if Input.is_action_just_pressed('ui_up'):
-		get_tree().call_group('map', 'update_position', 'up')
+		get_tree().call_group('controller', 'check_move', 'up')
 	if Input.is_action_just_pressed('ui_down'):
-		get_tree().call_group('map', 'update_position', 'down')
+		get_tree().call_group('controller', 'check_move', 'down')
 	if Input.is_action_just_pressed('ui_right'):
-		get_tree().call_group('map', 'update_position', 'right')
+		get_tree().call_group('controller', 'check_move', 'right')
 	if Input.is_action_just_pressed('ui_left'):
-		get_tree().call_group('map', 'update_position', 'left')
+		get_tree().call_group('controller', 'check_move', 'left')
+	if Input.is_action_just_pressed('ui_turn_right'):
+		get_tree().call_group('controller', 'change_direction', 'right')
+	if Input.is_action_just_pressed('ui_turn_left'):
+		get_tree().call_group('controller', 'change_direction', 'left')

@@ -923,7 +923,7 @@
             "wallFront": true,
             "wallRight": false,
             "wallBack": true,
-            "wallLeft": true,
+            "wallLeft": false,
         }
     },
     {
@@ -934,7 +934,7 @@
             "wallFront": true,
             "wallRight": true,
             "wallBack": false,
-            "wallLeft": true,
+            "wallLeft": false,
         }
     },
     {
