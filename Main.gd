@@ -8,15 +8,16 @@ var currentCell = -1
 func _ready():
 	data = load_level()
 	currentCell = data.start_index
+	draw_map()
 	send_walls_status()
 	
 
 func load_level():
 	var file = File.new()
-	file.open("res://test_grid.json", File.READ)
-	var data = parse_json(file.get_as_text())
+	file.open('res://test_grid.json', File.READ)
+	var fileContent = parse_json(file.get_as_text())
 	file.close()
-	return data
+	return fileContent
 
 func send_walls_status():
 	var wallsStatus = {
@@ -25,3 +26,6 @@ func send_walls_status():
 		'wallRight': data.grid[currentCell].attr.wallRight
 	}
 	get_tree().call_group('viewport', 'update_walls', wallsStatus)
+
+func draw_map():
+	get_tree().call_group('map', 'draw_map', data)
