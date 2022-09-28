@@ -11,8 +11,15 @@
 [ext_resource path="res://assets/sprites/layout/gladstone/wall_left_dist2.png" type="Texture" id=9]
 [ext_resource path="res://assets/sprites/layout/gladstone/wall_right_dist2.png" type="Texture" id=10]
 
-[node name="Viewport" type="Node2D"]
+[node name="Viewport" type="Control"]
+show_behind_parent = true
+margin_right = 176.0
+margin_bottom = 120.0
+rect_clip_content = true
 script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="bg" type="ColorRect" parent="."]
 margin_right = 176.0
@@ -25,6 +32,18 @@ __meta__ = {
 [node name="WallFrontUU" type="Sprite" parent="."]
 visible = false
 position = Vector2( 64, 27 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="WallFrontUUL" type="Sprite" parent="."]
+visible = false
+position = Vector2( 16, 27 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="WallFrontUUR" type="Sprite" parent="."]
+visible = false
+position = Vector2( 112, 27 )
 texture = ExtResource( 5 )
 centered = false
 
@@ -46,6 +65,18 @@ position = Vector2( 48, 20 )
 texture = ExtResource( 6 )
 centered = false
 
+[node name="WallFrontUL" type="Sprite" parent="."]
+visible = false
+position = Vector2( -32, 20 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="WallFrontUR" type="Sprite" parent="."]
+visible = false
+position = Vector2( 128, 20 )
+texture = ExtResource( 6 )
+centered = false
+
 [node name="WallLeftU" type="Sprite" parent="."]
 visible = false
 position = Vector2( 24, 8 )
@@ -56,6 +87,18 @@ centered = false
 visible = false
 position = Vector2( 128, 8 )
 texture = ExtResource( 7 )
+centered = false
+
+[node name="WallFrontL" type="Sprite" parent="."]
+visible = false
+position = Vector2( -104, 8 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="WallFrontR" type="Sprite" parent="."]
+visible = false
+position = Vector2( 152, 8 )
+texture = ExtResource( 1 )
 centered = false
 
 [node name="WallFront" type="Sprite" parent="."]

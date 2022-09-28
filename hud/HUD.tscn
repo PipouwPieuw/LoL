@@ -11,6 +11,8 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="Viewport" parent="." instance=ExtResource( 2 )]
-position = Vector2( 112, 0 )
+show_behind_parent = false
+margin_left = 112.0
+margin_right = 288.0
 
 [node name="Inputs" parent="." instance=ExtResource( 3 )]

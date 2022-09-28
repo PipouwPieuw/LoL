@@ -1,12 +1,18 @@
 extends Node2D
 
-var currentData = {}
-var currentCell = -1
-var currentCellU = -1
-var currentCellUU = -1
-var mapWidth = 0
-var mapSize = 0
-var directions = ['U', 'R', 'D', 'L']
+var currentData    = {}
+var currentCell    = -1
+var currentCellL   = -1
+var currentCellR   = -1
+var currentCellU   = -1
+var currentCellUL  = -1
+var currentCellUR  = -1
+var currentCellUU  = -1
+var currentCellUUL = -1
+var currentCellUUR = -1
+var mapWidth       = 0
+var mapSize        = 0
+var directions     = ['U', 'R', 'D', 'L']
 
 func _ready():
 	add_to_group('controller')
@@ -26,32 +32,125 @@ func load_level():
 
 func set_cells(index):
 	currentCell = index
+	# Facing UP
 	if(directions[0] == 'U'):
-		currentCellU  = index - mapWidth     if index - mapWidth     >= 0 else -1
-		currentCellUU = index - mapWidth * 2 if index - mapWidth * 2 >= 0 else -1
+		currentCellL = index - 1 if index % mapWidth > 0            else -1
+		currentCellR = index + 1 if index % mapWidth < (mapWidth-1) else -1
+		if index - mapWidth >= 0:
+			currentCellU  = index - mapWidth
+			currentCellUL = index - mapWidth - 1 if (index - 1) % mapWidth > 0            else -1
+			currentCellUR = index - mapWidth + 1 if (index + 1) % mapWidth < (mapWidth-1) else -1
+		else:
+			currentCellU  = -1
+			currentCellUL = -1
+			currentCellUR = -1
+		if index - mapWidth * 2 >= 0:
+			currentCellUU  = index - mapWidth * 2
+			currentCellUUL = index - mapWidth * 2 - 1 if (index - 1) % mapWidth >= 0           else -1
+			currentCellUUR = index - mapWidth * 2 + 1 if (index + 1) % mapWidth < (mapWidth-1) else -1
+		else:
+			currentCellUU  = -1
+			currentCellUUL = -1
+			currentCellUUR = -1
+	# Facing RIGHT
 	if(directions[0] == 'R'):
-		currentCellU  = index + 1 if index % mapWidth < (mapWidth-1) else -1
-		currentCellUU = index + 2 if index % mapWidth < (mapWidth-2) else -1
+		currentCellL = index - mapWidth if index - mapWidth >= 0      else -1
+		currentCellR = index + mapWidth if index + mapWidth < mapSize else -1
+		if index % mapWidth < (mapWidth-1):
+			currentCellU  = index + 1
+			currentCellUL = index - mapWidth + 1 if index - mapWidth >= 0      else -1
+			currentCellUR = index + mapWidth + 1 if index + mapWidth < mapSize else -1
+		else:
+			currentCellU  = -1
+			currentCellUL = -1
+			currentCellUR = -1
+		if index % mapWidth < (mapWidth-2):
+			currentCellUU  = index + 2
+			currentCellUUL = index - mapWidth + 2 if index - mapWidth >= 0      else -1
+			currentCellUUR = index + mapWidth + 2 if index + mapWidth < mapSize else -1
+		else:
+			currentCellUU  = -1
+			currentCellUUL = -1
+			currentCellUUR = -1
+	# Facing DOWN
 	if(directions[0] == 'D'):
-		currentCellU  = index + mapWidth     if index + mapWidth     < mapSize else -1
-		currentCellUU = index + mapWidth * 2 if index + mapWidth * 2 < mapSize else -1
+		currentCellL = index + 1 if index % mapWidth < (mapWidth-1) else -1
+		currentCellR = index - 1 if index % mapWidth > 0            else -1
+		if index + mapWidth < mapSize:
+			currentCellU  = index + mapWidth
+			currentCellUL = index + mapWidth + 1 if (index + 1) % mapWidth < (mapWidth-1) else -1
+			currentCellUR = index + mapWidth - 1 if (index - 1) % mapWidth > 0            else -1
+		else:
+			currentCellU  = -1
+			currentCellUL = -1
+			currentCellUR = -1
+		if index + mapWidth * 2 < mapSize:
+			currentCellUU  = index + mapWidth * 2
+			currentCellUUL = index + mapWidth * 2 + 1 if (index + 1) % mapWidth < (mapWidth-1) else -1
+			currentCellUUR = index + mapWidth * 2 - 1 if (index - 1) % mapWidth >= 0           else -1
+		else:
+			currentCellUU  = -1
+			currentCellUUL = -1
+			currentCellUUR = -1
+	# Facing LEFT
 	if(directions[0] == 'L'):
-		currentCellU  = index - 1 if index % mapWidth > 0 else -1
-		currentCellUU = index - 2 if index % mapWidth > 1 else -1
-	print("==========")
-	print(currentCell)
-	print(currentCellU)
-	print(currentCellUU)
-	
+		currentCellL = index + mapWidth if index + mapWidth >= 0      else -1
+		currentCellR = index - mapWidth if index - mapWidth < mapSize else -1
+		if index % mapWidth > 0:
+			currentCellU  = index - 1
+			currentCellUL = index + mapWidth - 1 if index + mapWidth < mapSize else -1
+			currentCellUR = index - mapWidth - 1 if index - mapWidth >= 0      else -1
+		else:
+			currentCellU = -1
+			currentCellUL = -1
+			currentCellUR = -1
+		if index % mapWidth > 1:
+			currentCellUU  = index - 2
+			currentCellUUL = index + mapWidth - 2 if index + mapWidth < mapSize else -1
+			currentCellUUR = index - mapWidth - 2 if index - mapWidth >= 0      else -1
+		else:
+			currentCellUU  = -1
+			currentCellUUL = -1
+			currentCellUUR = -1
 
 func draw_map():
 	get_tree().call_group('map', 'draw_map', currentData)
 
 func send_walls_status():
-	var cells       = [currentCell, currentCellU, currentCellUU]
-	var cellNames   = ['currentCell', 'currentCellU', 'currentCellUU']
+	var cells     = [
+		currentCell,
+		currentCellL,
+		currentCellR,
+		currentCellU,
+		currentCellUL,
+		currentCellUR,
+		currentCellUU,
+		currentCellUUL,
+		currentCellUUR
+	]
+	var cellNames = [
+		'currentCell',
+		'currentCellL',
+		'currentCellR',
+		'currentCellU',
+		'currentCellUL',
+		'currentCellUR',
+		'currentCellUU',
+		'currentCellUUL',
+		'currentCellUUR'
+	]
 	var wallsStatus = {
 		'currentCell': {
+			'wallFront': false,
+			'wallLeft': false,
+			'wallRight': false
+		},
+		'currentCellL': {
+			'wallFront': false,
+			'wallLeft': false,
+			'wallRight': false
+		},
+		'currentCellR': {
 			'wallFront': false,
 			'wallLeft': false,
 			'wallRight': false
@@ -61,7 +160,27 @@ func send_walls_status():
 			'wallLeft': false,
 			'wallRight': false
 		},
+		'currentCellUL': {
+			'wallFront': false,
+			'wallLeft': false,
+			'wallRight': false
+		},
+		'currentCellUR': {
+			'wallFront': false,
+			'wallLeft': false,
+			'wallRight': false
+		},
 		'currentCellUU': {
+			'wallFront': false,
+			'wallLeft': false,
+			'wallRight': false
+		},
+		'currentCellUUL': {
+			'wallFront': false,
+			'wallLeft': false,
+			'wallRight': false
+		},
+		'currentCellUUR': {
 			'wallFront': false,
 			'wallLeft': false,
 			'wallRight': false
