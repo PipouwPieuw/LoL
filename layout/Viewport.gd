@@ -1,20 +1,24 @@
 extends Control
 
-onready var wallFront     = $WallFront
-onready var wallLeft      = $WallLeft
-onready var wallRight     = $WallRight
-onready var wallFrontL    = $WallFrontL
-onready var wallFrontR    = $WallFrontR
-onready var wallFrontU    = $WallFrontU
-onready var wallFrontUL   = $WallFrontUL
-onready var wallFrontUR   = $WallFrontUR
-onready var wallLeftU     = $WallLeftU
-onready var wallRightU    = $WallRightU
-onready var wallFrontUU   = $WallFrontUU
-onready var wallFrontUUL  = $WallFrontUUL
-onready var wallFrontUUR  = $WallFrontUUR
-onready var wallLeftUU    = $WallLeftUU
-onready var wallRightUU   = $WallRightUU
+onready var wallFront      = $WallFront
+onready var wallLeft       = $WallLeft
+onready var wallRight      = $WallRight
+onready var wallFrontL     = $WallFrontL
+onready var wallFrontR     = $WallFrontR
+onready var wallFrontU     = $WallFrontU
+onready var wallFrontUL    = $WallFrontUL
+onready var wallFrontUR    = $WallFrontUR
+onready var wallLeftU      = $WallLeftU
+onready var wallRightU     = $WallRightU
+onready var wallFrontUU    = $WallFrontUU
+onready var wallFrontUUL   = $WallFrontUUL
+onready var wallLeftUUL    = $WallLeftUUL
+onready var wallFrontUULL  = $WallFrontUULL
+onready var wallFrontUUR   = $WallFrontUUR
+onready var wallRightUUR   = $WallRightUUR
+onready var wallFrontUURR  = $WallFrontUURR
+onready var wallLeftUU     = $WallLeftUU
+onready var wallRightUU    = $WallRightUU
 
 func _ready():
 	add_to_group("viewport")
@@ -42,5 +46,11 @@ func update_walls(data):
 	wallRightUU.visible = data.currentCellUU.wallRight
 	# Current cell + U + U + L
 	wallFrontUUL.visible = data.currentCellUUL.wallFront
+	wallLeftUUL.visible = data.currentCellUUL.wallLeft
+	# Current cell + U + U + L + L
+	wallFrontUULL.visible = data.currentCellUULL.wallFront
 	# Current cell + U + U + R
 	wallFrontUUR.visible = data.currentCellUUR.wallFront
+	wallRightUUR.visible = data.currentCellUUR.wallRight
+	# Current cell + U + U + R + R
+	wallFrontUURR.visible = data.currentCellUURR.wallFront

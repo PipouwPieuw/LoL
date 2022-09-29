@@ -1,20 +1,21 @@
 extends Node2D
 
 onready var container = $Container
-onready var player = $Player
+onready var player = $Container/Player
 
+var safeSpace = 3
 var cellSize = 5
 var currentPos = 0
 var mapWidth = 0
-var mapSize = 0
 var cells = []
 
 func _ready():
 	add_to_group("map")
+	container.position.x = -safeSpace * cellSize
+	container.position.y = -safeSpace * cellSize
 
 func draw_map(data):
 	mapWidth = int(data.width)
-	mapSize = int(data.size)
 	currentPos = int(data.start_index)
 	cells = data.grid
 	# Drawing map
