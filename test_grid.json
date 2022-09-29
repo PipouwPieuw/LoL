@@ -661,11 +661,25 @@
     },
     {
         "index": 164,
-        "type": "E"
+        "type": "C",
+        "attr":
+        {
+            "wallFront": true,
+            "wallRight": false,
+            "wallBack": false,
+            "wallLeft": true
+        }
     },
     {
         "index": 165,
-        "type": "E"
+        "type": "C",
+        "attr":
+        {
+            "wallFront": true,
+            "wallRight": true,
+            "wallBack": false,
+            "wallLeft": false
+        }
     },
     {
         "index": 166,
@@ -685,7 +699,14 @@
     },
     {
         "index": 170,
-        "type": "E"
+        "type": "C",
+        "attr":
+        {
+            "wallFront": true,
+            "wallRight": true,
+            "wallBack": false,
+            "wallLeft": true
+        }
     },
     {
         "index": 171,
@@ -765,11 +786,25 @@
     },
     {
         "index": 190,
-        "type": "E"
+        "type": "C",
+        "attr":
+        {
+            "wallFront": false,
+            "wallRight": false,
+            "wallBack": true,
+            "wallLeft": true
+        }
     },
     {
         "index": 191,
-        "type": "E"
+        "type": "C",
+        "attr":
+        {
+            "wallFront": false,
+            "wallRight": true,
+            "wallBack": false,
+            "wallLeft": false
+        }
     },
     {
         "index": 192,
@@ -781,27 +816,69 @@
     },
     {
         "index": 194,
-        "type": "E"
+        "type": "C",
+        "attr":
+        {
+            "wallFront": true,
+            "wallRight": false,
+            "wallBack": false,
+            "wallLeft": true
+        }
     },
     {
         "index": 195,
-        "type": "E"
+        "type": "C",
+        "attr":
+        {
+            "wallFront": true,
+            "wallRight": false,
+            "wallBack": true,
+            "wallLeft": false
+        }
     },
     {
         "index": 196,
-        "type": "E"
+        "type": "C",
+        "attr":
+        {
+            "wallFront": false,
+            "wallRight": false,
+            "wallBack": false,
+            "wallLeft": false
+        }
     },
     {
         "index": 197,
-        "type": "E"
+        "type": "C",
+        "attr":
+        {
+            "wallFront": true,
+            "wallRight": false,
+            "wallBack": true,
+            "wallLeft": false
+        }
     },
     {
         "index": 198,
-        "type": "E"
+        "type": "C",
+        "attr":
+        {
+            "wallFront": true,
+            "wallRight": false,
+            "wallBack": true,
+            "wallLeft": false
+        }
     },
     {
         "index": 199,
-        "type": "E"
+        "type": "C",
+        "attr":
+        {
+            "wallFront": true,
+            "wallRight": true,
+            "wallBack": true,
+            "wallLeft": false
+        }
     },
     {
         "index": 200,
@@ -873,7 +950,14 @@
     },
     {
         "index": 217,
-        "type": "E"
+        "type": "C",
+        "attr":
+        {
+            "wallFront": false,
+            "wallRight": true,
+            "wallBack": false,
+            "wallLeft": true
+        }
     },
     {
         "index": 218,
@@ -885,7 +969,14 @@
     },
     {
         "index": 220,
-        "type": "E"
+        "type": "C",
+        "attr":
+        {
+            "wallFront": false,
+            "wallRight": true,
+            "wallBack": false,
+            "wallLeft": true
+        }
     },
     {
         "index": 221,
@@ -893,7 +984,14 @@
     },
     {
         "index": 222,
-        "type": "E"
+        "type": "C",
+        "attr":
+        {
+            "wallFront": false,
+            "wallRight": true,
+            "wallBack": true,
+            "wallLeft": true
+        }
     },
     {
         "index": 223,
@@ -977,19 +1075,47 @@
     },
     {
         "index": 243,
-        "type": "E"
+        "type": "C",
+        "attr":
+        {
+            "wallFront": false,
+            "wallRight": false,
+            "wallBack": false,
+            "wallLeft": true
+        }
     },
     {
         "index": 244,
-        "type": "E"
+        "type": "C",
+        "attr":
+        {
+            "wallFront": true,
+            "wallRight": false,
+            "wallBack": true,
+            "wallLeft": false
+        }
     },
     {
         "index": 245,
-        "type": "E"
+        "type": "C",
+        "attr":
+        {
+            "wallFront": true,
+            "wallRight": false,
+            "wallBack": false,
+            "wallLeft": false
+        }
     },
     {
         "index": 246,
-        "type": "E"
+        "type": "C",
+        "attr":
+        {
+            "wallFront": false,
+            "wallRight": true,
+            "wallBack": true,
+            "wallLeft": false
+        }
     },
     {
         "index": 247,
@@ -1069,19 +1195,47 @@
     },
     {
         "index": 266,
-        "type": "E"
+        "type": "C",
+        "attr":
+        {
+            "wallFront": true,
+            "wallRight": false,
+            "wallBack": false,
+            "wallLeft": true
+        }
     },
     {
         "index": 267,
-        "type": "E"
+        "type": "C",
+        "attr":
+        {
+            "wallFront": true,
+            "wallRight": false,
+            "wallBack": false,
+            "wallLeft": false
+        }
     },
     {
         "index": 268,
-        "type": "E"
+        "type": "C",
+        "attr":
+        {
+            "wallFront": true,
+            "wallRight": false,
+            "wallBack": true,
+            "wallLeft": false
+        }
     },
     {
         "index": 269,
-        "type": "E"
+        "type": "C",
+        "attr":
+        {
+            "wallFront": false,
+            "wallRight": true,
+            "wallBack": true,
+            "wallLeft": false
+        }
     },
     {
         "index": 270,
@@ -1089,7 +1243,14 @@
     },
     {
         "index": 271,
-        "type": "E"
+        "type": "C",
+        "attr":
+        {
+            "wallFront": false,
+            "wallRight": true,
+            "wallBack": false,
+            "wallLeft": true
+        }
     },
     {
         "index": 272,
@@ -1173,11 +1334,25 @@
     },
     {
         "index": 292,
-        "type": "E"
+        "type": "C",
+        "attr":
+        {
+            "wallFront": false,
+            "wallRight": false,
+            "wallBack": true,
+            "wallLeft": true
+        }
     },
     {
         "index": 293,
-        "type": "E"
+        "type": "C",
+        "attr":
+        {
+            "wallFront": false,
+            "wallRight": true,
+            "wallBack": true,
+            "wallLeft": false
+        }
     },
     {
         "index": 294,
@@ -1193,7 +1368,14 @@
     },
     {
         "index": 297,
-        "type": "E"
+        "type": "C",
+        "attr":
+        {
+            "wallFront": false,
+            "wallRight": true,
+            "wallBack": false,
+            "wallLeft": true
+        }
     },
     {
         "index": 298,
@@ -1201,19 +1383,47 @@
     },
     {
         "index": 299,
-        "type": "E"
+        "type": "C",
+        "attr":
+        {
+            "wallFront": true,
+            "wallRight": false,
+            "wallBack": false,
+            "wallLeft": true
+        }
     },
     {
         "index": 300,
-        "type": "E"
+        "type": "C",
+        "attr":
+        {
+            "wallFront": true,
+            "wallRight": false,
+            "wallBack": true,
+            "wallLeft": false
+        }
     },
     {
         "index": 301,
-        "type": "E"
+        "type": "C",
+        "attr":
+        {
+            "wallFront": true,
+            "wallRight": false,
+            "wallBack": true,
+            "wallLeft": false
+        }
     },
     {
         "index": 302,
-        "type": "E"
+        "type": "C",
+        "attr":
+        {
+            "wallFront": true,
+            "wallRight": true,
+            "wallBack": true,
+            "wallLeft": false
+        }
     },
     {
         "index": 303,
@@ -1285,27 +1495,69 @@
     },
     {
         "index": 320,
-        "type": "E"
+        "type": "C",
+        "attr":
+        {
+            "wallFront": true,
+            "wallRight": false,
+            "wallBack": true,
+            "wallLeft": true
+        }
     },
     {
         "index": 321,
-        "type": "E"
+        "type": "C",
+        "attr":
+        {
+            "wallFront": true,
+            "wallRight": false,
+            "wallBack": true,
+            "wallLeft": false
+        }
     },
     {
         "index": 322,
-        "type": "E"
+        "type": "C",
+        "attr":
+        {
+            "wallFront": true,
+            "wallRight": false,
+            "wallBack": true,
+            "wallLeft": false
+        }
     },
     {
         "index": 323,
-        "type": "E"
+        "type": "C",
+        "attr":
+        {
+            "wallFront": false,
+            "wallRight": false,
+            "wallBack": false,
+            "wallLeft": false
+        }
     },
     {
         "index": 324,
-        "type": "E"
+        "type": "C",
+        "attr":
+        {
+            "wallFront": true,
+            "wallRight": false,
+            "wallBack": false,
+            "wallLeft": false
+        }
     },
     {
         "index": 325,
-        "type": "E"
+        "type": "C",
+        "attr":
+        {
+            "wallFront": false,
+            "wallRight": true,
+            "wallBack": false,
+            "wallLeft": false
+        }
     },
     {
         "index": 326,
@@ -1401,27 +1653,69 @@
     },
     {
         "index": 349,
-        "type": "E"
+        "type": "C",
+        "attr":
+        {
+            "wallFront": false,
+            "wallRight": false,
+            "wallBack": true,
+            "wallLeft": true
+        }
     },
     {
         "index": 350,
-        "type": "E"
+        "type": "C",
+        "attr":
+        {
+            "wallFront": false,
+            "wallRight": false,
+            "wallBack": false,
+            "wallLeft": false
+        }
     },
     {
         "index": 351,
-        "type": "E"
+        "type": "C",
+        "attr":
+        {
+            "wallFront": false,
+            "wallRight": false,
+            "wallBack": true,
+            "wallLeft": false
+        }
     },
     {
         "index": 352,
-        "type": "E"
+        "type": "C",
+        "attr":
+        {
+            "wallFront": true,
+            "wallRight": false,
+            "wallBack": true,
+            "wallLeft": false
+        }
     },
     {
         "index": 353,
-        "type": "E"
+        "type": "C",
+        "attr":
+        {
+            "wallFront": true,
+            "wallRight": false,
+            "wallBack": true,
+            "wallLeft": false
+        }
     },
     {
         "index": 354,
-        "type": "E"
+        "type": "C",
+        "attr":
+        {
+            "wallFront": true,
+            "wallRight": true,
+            "wallBack": true,
+            "wallLeft": false
+        }
     },
     {
         "index": 355,
@@ -1509,7 +1803,14 @@
     },
     {
         "index": 376,
-        "type": "E"
+        "type": "C",
+        "attr":
+        {
+            "wallFront": false,
+            "wallRight": true,
+            "wallBack": false,
+            "wallLeft": true
+        }
     },
     {
         "index": 377,
@@ -1609,15 +1910,36 @@
     },
     {
         "index": 401,
-        "type": "E"
+        "type": "C",
+        "attr":
+        {
+            "wallFront": true,
+            "wallRight": false,
+            "wallBack": false,
+            "wallLeft": true
+        }
     },
     {
         "index": 402,
-        "type": "E"
+        "type": "C",
+        "attr":
+        {
+            "wallFront": false,
+            "wallRight": false,
+            "wallBack": false,
+            "wallLeft": false
+        }
     },
     {
         "index": 403,
-        "type": "E"
+        "type": "C",
+        "attr":
+        {
+            "wallFront": true,
+            "wallRight": true,
+            "wallBack": false,
+            "wallLeft": false
+        }
     },
     {
         "index": 404,
@@ -1701,46 +2023,25 @@
     },
     {
         "index": 424,
-        "type": "C",
-        "attr":
-        {
-            "wallFront": true,
-            "wallRight": false,
-            "wallBack": false,
-            "wallLeft": true
-        }
+        "type": "E"
     },
     {
         "index": 425,
-        "type": "C",
-        "attr":
-        {
-            "wallFront": true,
-            "wallRight": false,
-            "wallBack": false,
-            "wallLeft": false
-        }
+        "type": "E"
     },
     {
         "index": 426,
-        "type": "C",
-        "attr":
-        {
-            "wallFront": true,
-            "wallRight": false,
-            "wallBack": false,
-            "wallLeft": false
-        }
+        "type": "E"
     },
     {
         "index": 427,
         "type": "C",
         "attr":
         {
-            "wallFront": true,
+            "wallFront": false,
             "wallRight": false,
-            "wallBack": false,
-            "wallLeft": false
+            "wallBack": true,
+            "wallLeft": true
         }
     },
     {
@@ -1748,7 +2049,7 @@
         "type": "C",
         "attr":
         {
-            "wallFront": true,
+            "wallFront": false,
             "wallRight": false,
             "wallBack": false,
             "wallLeft": false
@@ -1759,44 +2060,23 @@
         "type": "C",
         "attr":
         {
-            "wallFront": true,
-            "wallRight": false,
-            "wallBack": false,
+            "wallFront": false,
+            "wallRight": true,
+            "wallBack": true,
             "wallLeft": false
         }
     },
     {
         "index": 430,
-        "type": "C",
-        "attr":
-        {
-            "wallFront": true,
-            "wallRight": false,
-            "wallBack": false,
-            "wallLeft": false
-        }
+        "type": "E"
     },
     {
         "index": 431,
-        "type": "C",
-        "attr":
-        {
-            "wallFront": true,
-            "wallRight": false,
-            "wallBack": false,
-            "wallLeft": false
-        }
+        "type": "E"
     },
     {
         "index": 432,
-        "type": "C",
-        "attr":
-        {
-            "wallFront": true,
-            "wallRight": true,
-            "wallBack": false,
-            "wallLeft": false
-        }
+        "type": "E"
     },
     {
         "index": 433,
@@ -1868,47 +2148,19 @@
     },
     {
         "index": 450,
-        "type": "C",
-        "attr":
-        {
-            "wallFront": false,
-            "wallRight": false,
-            "wallBack": false,
-            "wallLeft": true
-        }
+        "type": "E"
     },
     {
         "index": 451,
-        "type": "C",
-        "attr":
-        {
-            "wallFront": false,
-            "wallRight": false,
-            "wallBack": false,
-            "wallLeft": false
-        }
+        "type": "E"
     },
     {
         "index": 452,
-        "type": "C",
-        "attr":
-        {
-            "wallFront": false,
-            "wallRight": false,
-            "wallBack": false,
-            "wallLeft": false
-        }
+        "type": "E"
     },
     {
         "index": 453,
-        "type": "C",
-        "attr":
-        {
-            "wallFront": false,
-            "wallRight": false,
-            "wallBack": false,
-            "wallLeft": false
-        }
+        "type": "E"
     },
     {
         "index": 454,
@@ -1916,54 +2168,26 @@
         "attr":
         {
             "wallFront": false,
-            "wallRight": false,
+            "wallRight": true,
             "wallBack": false,
-            "wallLeft": false
+            "wallLeft": true
         }
     },
     {
         "index": 455,
-        "type": "C",
-        "attr":
-        {
-            "wallFront": false,
-            "wallRight": false,
-            "wallBack": false,
-            "wallLeft": false
-        }
+        "type": "E"
     },
     {
         "index": 456,
-        "type": "C",
-        "attr":
-        {
-            "wallFront": false,
-            "wallRight": false,
-            "wallBack": false,
-            "wallLeft": false
-        }
+        "type": "E"
     },
     {
         "index": 457,
-        "type": "C",
-        "attr":
-        {
-            "wallFront": false,
-            "wallRight": false,
-            "wallBack": false,
-            "wallLeft": false
-        }
+        "type": "E"
     },
     {
         "index": 458,
-        "type": "C",
-        "attr":
-        {
-            "wallFront": false,
-            "wallRight": true,
-            "wallBack": false,
-            "wallLeft": false
-        }
+        "type": "E"
     },
     {
         "index": 459,
@@ -2035,47 +2259,19 @@
     },
     {
         "index": 476,
-        "type": "C",
-        "attr":
-        {
-            "wallFront": false,
-            "wallRight": false,
-            "wallBack": false,
-            "wallLeft": true
-        }
+        "type": "E"
     },
     {
         "index": 477,
-        "type": "C",
-        "attr":
-        {
-            "wallFront": false,
-            "wallRight": false,
-            "wallBack": false,
-            "wallLeft": false
-        }
+        "type": "E"
     },
     {
         "index": 478,
-        "type": "C",
-        "attr":
-        {
-            "wallFront": false,
-            "wallRight": false,
-            "wallBack": false,
-            "wallLeft": false
-        }
+        "type": "E"
     },
     {
         "index": 479,
-        "type": "C",
-        "attr":
-        {
-            "wallFront": false,
-            "wallRight": false,
-            "wallBack": false,
-            "wallLeft": false
-        }
+        "type": "E"
     },
     {
         "index": 480,
@@ -2083,54 +2279,26 @@
         "attr":
         {
             "wallFront": false,
-            "wallRight": false,
+            "wallRight": true,
             "wallBack": false,
-            "wallLeft": false
+            "wallLeft": true
         }
     },
     {
         "index": 481,
-        "type": "C",
-        "attr":
-        {
-            "wallFront": false,
-            "wallRight": false,
-            "wallBack": false,
-            "wallLeft": false
-        }
+        "type": "E"
     },
     {
         "index": 482,
-        "type": "C",
-        "attr":
-        {
-            "wallFront": false,
-            "wallRight": false,
-            "wallBack": false,
-            "wallLeft": false
-        }
+        "type": "E"
     },
     {
         "index": 483,
-        "type": "C",
-        "attr":
-        {
-            "wallFront": false,
-            "wallRight": false,
-            "wallBack": false,
-            "wallLeft": false
-        }
+        "type": "E"
     },
     {
         "index": 484,
-        "type": "C",
-        "attr":
-        {
-            "wallFront": false,
-            "wallRight": true,
-            "wallBack": false,
-            "wallLeft": false
-        }
+        "type": "E"
     },
     {
         "index": 485,
@@ -2202,47 +2370,19 @@
     },
     {
         "index": 502,
-        "type": "C",
-        "attr":
-        {
-            "wallFront": false,
-            "wallRight": false,
-            "wallBack": false,
-            "wallLeft": true
-        }
+        "type": "E"
     },
     {
         "index": 503,
-        "type": "C",
-        "attr":
-        {
-            "wallFront": false,
-            "wallRight": false,
-            "wallBack": false,
-            "wallLeft": false
-        }
+        "type": "E"
     },
     {
         "index": 504,
-        "type": "C",
-        "attr":
-        {
-            "wallFront": false,
-            "wallRight": false,
-            "wallBack": false,
-            "wallLeft": false
-        }
+        "type": "E"
     },
     {
         "index": 505,
-        "type": "C",
-        "attr":
-        {
-            "wallFront": false,
-            "wallRight": false,
-            "wallBack": false,
-            "wallLeft": false
-        }
+        "type": "E"
     },
     {
         "index": 506,
@@ -2250,54 +2390,26 @@
         "attr":
         {
             "wallFront": false,
-            "wallRight": false,
-            "wallBack": false,
-            "wallLeft": false
+            "wallRight": true,
+            "wallBack": true,
+            "wallLeft": true
         }
     },
     {
         "index": 507,
-        "type": "C",
-        "attr":
-        {
-            "wallFront": false,
-            "wallRight": false,
-            "wallBack": false,
-            "wallLeft": false
-        }
+        "type": "E"
     },
     {
         "index": 508,
-        "type": "C",
-        "attr":
-        {
-            "wallFront": false,
-            "wallRight": false,
-            "wallBack": false,
-            "wallLeft": false
-        }
+        "type": "E"
     },
     {
         "index": 509,
-        "type": "C",
-        "attr":
-        {
-            "wallFront": false,
-            "wallRight": false,
-            "wallBack": false,
-            "wallLeft": false
-        }
+        "type": "E"
     },
     {
         "index": 510,
-        "type": "C",
-        "attr":
-        {
-            "wallFront": false,
-            "wallRight": true,
-            "wallBack": false,
-            "wallLeft": false
-        }
+        "type": "E"
     },
     {
         "index": 511,
@@ -2369,102 +2481,39 @@
     },
     {
         "index": 528,
-        "type": "C",
-        "attr":
-        {
-            "wallFront": false,
-            "wallRight": false,
-            "wallBack": true,
-            "wallLeft": true
-        }
+        "type": "E"
     },
     {
         "index": 529,
-        "type": "C",
-        "attr":
-        {
-            "wallFront": false,
-            "wallRight": false,
-            "wallBack": true,
-            "wallLeft": false
-        }
+        "type": "E"
     },
     {
         "index": 530,
-        "type": "C",
-        "attr":
-        {
-            "wallFront": false,
-            "wallRight": false,
-            "wallBack": true,
-            "wallLeft": false
-        }
+        "type": "E"
     },
     {
         "index": 531,
-        "type": "C",
-        "attr":
-        {
-            "wallFront": false,
-            "wallRight": false,
-            "wallBack": true,
-            "wallLeft": false
-        }
+        "type": "E"
     },
     {
         "index": 532,
-        "type": "C",
-        "attr":
-        {
-            "wallFront": false,
-            "wallRight": false,
-            "wallBack": true,
-            "wallLeft": false
-        }
+        "type": "E"
     },
     {
         "index": 533,
-        "type": "C",
-        "attr":
-        {
-            "wallFront": false,
-            "wallRight": false,
-            "wallBack": true,
-            "wallLeft": false
-        }
+        "type": "E"
     },
     {
         "index": 534,
-        "type": "C",
-        "attr":
-        {
-            "wallFront": false,
-            "wallRight": false,
-            "wallBack": true,
-            "wallLeft": false
-        }
+        "type": "E"
     },
     {
         "index": 535,
-        "type": "C",
-        "attr":
-        {
-            "wallFront": false,
-            "wallRight": false,
-            "wallBack": true,
-            "wallLeft": false
-        }
+        "type": "E"
     },
     {
         "index": 536,
-        "type": "C",
-        "attr":
-        {
-            "wallFront": false,
-            "wallRight": true,
-            "wallBack": true,
-            "wallLeft": false
-        }
+        "type": "E"
     },
     {
         "index": 537,

@@ -12,6 +12,7 @@ var currentCellUUL  = -1
 var currentCellUULL = -1
 var currentCellUUR  = -1
 var currentCellUURR = -1
+var currentCellUUU  = -1
 var mapWidth        = 0
 var directions      = ['U', 'R', 'D', 'L']
 
@@ -44,6 +45,7 @@ func set_cells(index):
 		currentCellUULL = index - mapWidth * 2 - 2
 		currentCellUUR  = index - mapWidth * 2 + 1
 		currentCellUURR = index - mapWidth * 2 + 2
+		currentCellUUU  = index - mapWidth * 3
 	# Facing RIGHT
 	if(directions[0] == 'R'):
 		currentCellL    = index - mapWidth
@@ -56,6 +58,7 @@ func set_cells(index):
 		currentCellUULL = index - mapWidth * 2 + 2
 		currentCellUUR  = index + mapWidth + 2
 		currentCellUURR = index + mapWidth * 2 + 2
+		currentCellUUU  = index + 3
 	# Facing DOWN
 	if(directions[0] == 'D'):
 		currentCellL    = index + 1
@@ -68,6 +71,7 @@ func set_cells(index):
 		currentCellUULL = index + mapWidth * 2 + 2
 		currentCellUUR  = index + mapWidth * 2 - 1
 		currentCellUURR = index + mapWidth * 2 - 2
+		currentCellUUU  = index + mapWidth * 3
 	# Facing LEFT
 	if(directions[0] == 'L'):
 		currentCellL    = index + mapWidth
@@ -80,6 +84,7 @@ func set_cells(index):
 		currentCellUULL = index + mapWidth * 2 - 2
 		currentCellUUR  = index - mapWidth - 2
 		currentCellUURR = index - mapWidth * 2 - 2
+		currentCellUUU  = index - 3
 
 func draw_map():
 	get_tree().call_group('map', 'draw_map', currentData)
@@ -96,7 +101,8 @@ func send_walls_status():
 		currentCellUUL,
 		currentCellUULL,
 		currentCellUUR,
-		currentCellUURR
+		currentCellUURR,
+		currentCellUUU
 	]
 	var cellNames = [
 		'currentCell',
@@ -109,7 +115,8 @@ func send_walls_status():
 		'currentCellUUL',
 		'currentCellUULL',
 		'currentCellUUR',
-		'currentCellUURR'
+		'currentCellUURR',
+		'currentCellUUU'
 	]
 	var wallsStatus = {
 		'currentCell': {
@@ -163,6 +170,11 @@ func send_walls_status():
 			'wallRight': false
 		},
 		'currentCellUURR': {
+			'wallFront': false,
+			'wallLeft': false,
+			'wallRight': false
+		},
+		'currentCellUUU': {
 			'wallFront': false,
 			'wallLeft': false,
 			'wallRight': false
@@ -227,6 +239,7 @@ func check_move(moveDirection):
 		set_cells(newCell)
 		get_tree().call_group('map', 'update_position', currentCell)
 		send_walls_status()
+		get_tree().call_group('viewport', 'update_floor')
 	else:
 		# TODO : WALL BUMP ANIMATION
 		pass
@@ -239,6 +252,7 @@ func change_direction(direction):
 	set_cells(currentCell)
 	get_tree().call_group('map', 'update_direction', directions[0])
 	send_walls_status()
+	get_tree().call_group('viewport', 'update_floor')
 
 func update_data(data):
 	currentData = data
