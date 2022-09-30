@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/wallFrontBanner.png-3f88c63f695cf25f7dfc9f9a06ed6a11.stex"
+path="res://.import/wallFrontDefaultUU.png-bc6d33d6dd82e32a4823f2a80c372a2a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/layout/gladstone/wallFrontBanner.png"
-dest_files=[ "res://.import/wallFrontBanner.png-3f88c63f695cf25f7dfc9f9a06ed6a11.stex" ]
+source_file="res://assets/sprites/layout/gladstone/wallFrontDefaultUU.png"
+dest_files=[ "res://.import/wallFrontDefaultUU.png-bc6d33d6dd82e32a4823f2a80c372a2a.stex" ]
 
 [params]
 

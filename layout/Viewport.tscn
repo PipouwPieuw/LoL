@@ -1,20 +1,20 @@
 [gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://assets/sprites/layout/gladstone/WallFront.png" type="Texture" id=1]
-[ext_resource path="res://assets/sprites/layout/gladstone/WallRight.png" type="Texture" id=2]
-[ext_resource path="res://assets/sprites/layout/gladstone/WallLeft.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/layout/gladstone/WallFrontDefault.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprites/layout/gladstone/WallRightDefault.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/layout/gladstone/WallLeftDefault.png" type="Texture" id=3]
 [ext_resource path="res://layout/Viewport.gd" type="Script" id=4]
-[ext_resource path="res://assets/sprites/layout/gladstone/WallFrontUU.png" type="Texture" id=5]
-[ext_resource path="res://assets/sprites/layout/gladstone/WallFrontU.png" type="Texture" id=6]
-[ext_resource path="res://assets/sprites/layout/gladstone/WallRightU.png" type="Texture" id=7]
-[ext_resource path="res://assets/sprites/layout/gladstone/WallLeftU.png" type="Texture" id=8]
-[ext_resource path="res://assets/sprites/layout/gladstone/WallLeftUU.png" type="Texture" id=9]
-[ext_resource path="res://assets/sprites/layout/gladstone/WallRightUU.png" type="Texture" id=10]
-[ext_resource path="res://assets/sprites/layout/gladstone/WallLefttUUL.png" type="Texture" id=11]
-[ext_resource path="res://assets/sprites/layout/gladstone/WallRighttUUR.png" type="Texture" id=12]
-[ext_resource path="res://assets/sprites/layout/gladstone/WallLefttUUU.png" type="Texture" id=13]
-[ext_resource path="res://assets/sprites/layout/gladstone/WallRighttUUU.png" type="Texture" id=14]
-[ext_resource path="res://assets/sprites/layout/gladstone/Floor.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprites/layout/gladstone/WallFrontDefaultUU.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/layout/gladstone/WallFrontDefaultU.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/layout/gladstone/WallRightDefaultU.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/layout/gladstone/WallLeftDefaultU.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/layout/gladstone/WallLeftDefaultUU.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/layout/gladstone/WallRightDefaultUU.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/layout/gladstone/WallLeftDefaultUUL.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/layout/gladstone/WallRightDefaultUUR.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/layout/gladstone/WallLeftDefaultUUU.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprites/layout/gladstone/WallRightDefaultUUU.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprites/layout/gladstone/floor.png" type="Texture" id=15]
 [ext_resource path="res://assets/sprites/layout/gladstone/Ceiling.png" type="Texture" id=16]
 
 [node name="Viewport" type="Control"]
@@ -44,122 +44,124 @@ position = Vector2( 0, 64 )
 texture = ExtResource( 15 )
 centered = false
 
-[node name="WallLeftUUU" type="Sprite" parent="."]
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="WallLeftUUU" type="Sprite" parent="Walls"]
 visible = false
 position = Vector2( 64, 28 )
 texture = ExtResource( 13 )
 centered = false
 
-[node name="WallRightUUU" type="Sprite" parent="."]
+[node name="WallRightUUU" type="Sprite" parent="Walls"]
 visible = false
 position = Vector2( 104, 28 )
 texture = ExtResource( 14 )
 centered = false
 
-[node name="WallFrontUULL" type="Sprite" parent="."]
+[node name="WallFrontUULL" type="Sprite" parent="Walls"]
 visible = false
 position = Vector2( -8, 46 )
 texture = ExtResource( 5 )
 
-[node name="WallLeftUUL" type="Sprite" parent="."]
+[node name="WallLeftUUL" type="Sprite" parent="Walls"]
 visible = false
 position = Vector2( 8, 47 )
 texture = ExtResource( 11 )
 
-[node name="WallFrontUUL" type="Sprite" parent="."]
+[node name="WallFrontUUL" type="Sprite" parent="Walls"]
 visible = false
 position = Vector2( 16, 27 )
 texture = ExtResource( 5 )
 centered = false
 
-[node name="WallFrontUU" type="Sprite" parent="."]
+[node name="WallFrontUU" type="Sprite" parent="Walls"]
 visible = false
 position = Vector2( 64, 27 )
 texture = ExtResource( 5 )
 centered = false
 
-[node name="WallFrontUUR" type="Sprite" parent="."]
+[node name="WallFrontUUR" type="Sprite" parent="Walls"]
 visible = false
 position = Vector2( 112, 27 )
 texture = ExtResource( 5 )
 centered = false
 
-[node name="WallRightUUR" type="Sprite" parent="."]
+[node name="WallRightUUR" type="Sprite" parent="Walls"]
 visible = false
 position = Vector2( 168, 47 )
 texture = ExtResource( 12 )
 
-[node name="WallFrontUURR" type="Sprite" parent="."]
+[node name="WallFrontUURR" type="Sprite" parent="Walls"]
 visible = false
 position = Vector2( 184, 46 )
 texture = ExtResource( 5 )
 
-[node name="WallLeftUU" type="Sprite" parent="."]
+[node name="WallLeftUU" type="Sprite" parent="Walls"]
 visible = false
 position = Vector2( 48, 20 )
 texture = ExtResource( 9 )
 centered = false
 
-[node name="WallRightUU" type="Sprite" parent="."]
+[node name="WallRightUU" type="Sprite" parent="Walls"]
 visible = false
 position = Vector2( 112, 20 )
 texture = ExtResource( 10 )
 centered = false
 
-[node name="WallFrontU" type="Sprite" parent="."]
+[node name="WallFrontU" type="Sprite" parent="Walls"]
 visible = false
 position = Vector2( 48, 20 )
 texture = ExtResource( 6 )
 centered = false
 
-[node name="WallFrontUL" type="Sprite" parent="."]
+[node name="WallFrontUL" type="Sprite" parent="Walls"]
 visible = false
 position = Vector2( -32, 20 )
 texture = ExtResource( 6 )
 centered = false
 
-[node name="WallFrontUR" type="Sprite" parent="."]
+[node name="WallFrontUR" type="Sprite" parent="Walls"]
 visible = false
 position = Vector2( 128, 20 )
 texture = ExtResource( 6 )
 centered = false
 
-[node name="WallLeftU" type="Sprite" parent="."]
+[node name="WallLeftU" type="Sprite" parent="Walls"]
 visible = false
 position = Vector2( 24, 8 )
 texture = ExtResource( 8 )
 centered = false
 
-[node name="WallRightU" type="Sprite" parent="."]
+[node name="WallRightU" type="Sprite" parent="Walls"]
 visible = false
 position = Vector2( 128, 8 )
 texture = ExtResource( 7 )
 centered = false
 
-[node name="WallFrontL" type="Sprite" parent="."]
+[node name="WallFrontL" type="Sprite" parent="Walls"]
 visible = false
 position = Vector2( -104, 8 )
 texture = ExtResource( 1 )
 centered = false
 
-[node name="WallFrontR" type="Sprite" parent="."]
+[node name="WallFrontR" type="Sprite" parent="Walls"]
 visible = false
 position = Vector2( 152, 8 )
 texture = ExtResource( 1 )
 centered = false
 
-[node name="WallFront" type="Sprite" parent="."]
+[node name="WallFront" type="Sprite" parent="Walls"]
 visible = false
 position = Vector2( 24, 8 )
 texture = ExtResource( 1 )
 centered = false
 
-[node name="WallLeft" type="Sprite" parent="."]
+[node name="WallLeft" type="Sprite" parent="Walls"]
 visible = false
 texture = ExtResource( 3 )
 centered = false
 
-[node name="WallRight" type="Sprite" parent="."]
+[node name="WallRight" type="Sprite" parent="Walls"]
 visible = false
 position = Vector2( 152, 0 )
 texture = ExtResource( 2 )

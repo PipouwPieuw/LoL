@@ -20,6 +20,7 @@ func _ready():
 	add_to_group('controller')
 	currentData = load_level()
 	mapWidth = int(currentData.width)
+	get_tree().call_group('viewport', 'update_layout', currentData.layout)
 	set_cells(int(currentData.start_index))
 	draw_map()
 	send_walls_status()
@@ -90,7 +91,7 @@ func draw_map():
 	get_tree().call_group('map', 'draw_map', currentData)
 
 func send_walls_status():
-	var cells     = [
+	var cells = [
 		currentCell,
 		currentCellL,
 		currentCellR,
@@ -118,89 +119,41 @@ func send_walls_status():
 		'currentCellUURR',
 		'currentCellUUU'
 	]
-	var wallsStatus = {
-		'currentCell': {
-			'wallFront': false,
-			'wallLeft': false,
-			'wallRight': false
-		},
-		'currentCellL': {
-			'wallFront': false,
-			'wallLeft': false,
-			'wallRight': false
-		},
-		'currentCellR': {
-			'wallFront': false,
-			'wallLeft': false,
-			'wallRight': false
-		},
-		'currentCellU': {
-			'wallFront': false,
-			'wallLeft': false,
-			'wallRight': false
-		},
-		'currentCellUL': {
-			'wallFront': false,
-			'wallLeft': false,
-			'wallRight': false
-		},
-		'currentCellUR': {
-			'wallFront': false,
-			'wallLeft': false,
-			'wallRight': false
-		},
-		'currentCellUU': {
-			'wallFront': false,
-			'wallLeft': false,
-			'wallRight': false
-		},
-		'currentCellUUL': {
-			'wallFront': false,
-			'wallLeft': false,
-			'wallRight': false
-		},
-		'currentCellUULL': {
-			'wallFront': false,
-			'wallLeft': false,
-			'wallRight': false
-		},
-		'currentCellUUR': {
-			'wallFront': false,
-			'wallLeft': false,
-			'wallRight': false
-		},
-		'currentCellUURR': {
-			'wallFront': false,
-			'wallLeft': false,
-			'wallRight': false
-		},
-		'currentCellUUU': {
-			'wallFront': false,
-			'wallLeft': false,
-			'wallRight': false
-		}
-	}
+	var wallsStatus = {}
 	var i = 0
 	for cellIndex in cells:
 		var cell = currentData.grid[cellIndex]
 		var cellName = cellNames[i]
+		wallsStatus[cellName] = {}
 		if cell.type == 'C':
 			if(directions[0] == 'U'):
 				wallsStatus[cellName].wallFront = cell.attr.wallFront
 				wallsStatus[cellName].wallLeft  = cell.attr.wallLeft
 				wallsStatus[cellName].wallRight = cell.attr.wallRight
+				wallsStatus[cellName].wallFrontType = cell.attr.wallFrontType
+				wallsStatus[cellName].wallLeftType = cell.attr.wallLeftType
+				wallsStatus[cellName].wallRightType = cell.attr.wallRightType
 			if(directions[0] == 'R'):
 				wallsStatus[cellName].wallFront = cell.attr.wallRight
 				wallsStatus[cellName].wallLeft  = cell.attr.wallFront
 				wallsStatus[cellName].wallRight = cell.attr.wallBack
+				wallsStatus[cellName].wallFrontType = cell.attr.wallRightType
+				wallsStatus[cellName].wallLeftType = cell.attr.wallFrontType
+				wallsStatus[cellName].wallRightType = cell.attr.wallBackType
 			if(directions[0] == 'D'):
 				wallsStatus[cellName].wallFront = cell.attr.wallBack
 				wallsStatus[cellName].wallLeft  = cell.attr.wallRight
 				wallsStatus[cellName].wallRight = cell.attr.wallLeft
+				wallsStatus[cellName].wallFrontType = cell.attr.wallBackType
+				wallsStatus[cellName].wallLeftType = cell.attr.wallRightType
+				wallsStatus[cellName].wallRightType = cell.attr.wallLeftType
 			if(directions[0] == 'L'):
 				wallsStatus[cellName].wallFront = cell.attr.wallLeft
 				wallsStatus[cellName].wallLeft  = cell.attr.wallBack
 				wallsStatus[cellName].wallRight = cell.attr.wallFront
+				wallsStatus[cellName].wallFrontType = cell.attr.wallLeftType
+				wallsStatus[cellName].wallLeftType = cell.attr.wallBackType
+				wallsStatus[cellName].wallRightType = cell.attr.wallFrontType
 		else:
 			wallsStatus[cellName].wallFront = false
 			wallsStatus[cellName].wallLeft  = false

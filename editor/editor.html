@@ -1,0 +1,480 @@
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="content_left">
+			<ul id="grid"></ul>
+			<div id="actionButtons">
+				<div>
+					<span id="hideCellID" class="button"><span>Show</span> cell IDs</span>
+				</div>
+				<div id="dataLink">
+					<span class="button">Get current screen data</span>
+				</div>
+			</div>
+		</div>
+		<div id="content_right">
+			<ul id="paletteList">
+				<li data-cell="C">Cell</li>
+				<li data-cell="E">Empty</li>
+			</ul>
+			<select id="set_map_layout">
+				<option value="gladstone">gladstone</option>
+			</select>
+			<form id="jsonFile" name="jsonFile" enctype="multipart/form-data" method="post">
+				<fieldset>
+			    	<h2>Json File</h2>
+			     	<input type='file' id='fileinput'>
+			     	<input type='button' id='btnLoad' value='Load' onclick='loadFile();'>
+			  	</fieldset>
+			</form>
+			<div id="cellPropertiesModal">
+				<p id="cellId"></p>
+				<div id="cellWalls">
+					<div class="wallItem front">
+						<p>Wall Front</p>
+						<select data-dir="wallFront">
+							<option value="default">Default</option>
+						</select>
+					</div>
+					<div class="wallItem right">
+						<p>Wall Right</p>
+						<select data-dir="wallRight">
+							<option value="default">Default</option>
+						</select>
+					</div>
+					<div class="wallItem back">
+						<p>Wall Back</p>
+						<select data-dir="wallBack">
+							<option value="default">Default</option>
+						</select>
+					</div>
+					<div class="wallItem left">
+						<p>Wall Left</p>
+						<select data-dir="wallLeft">
+							<option value="default">Default</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<style type="text/css">
+	body {
+		user-select: none;
+		font-size: 20px;
+		margin: 0;
+		padding: 0;
+	}
+	* {
+		box-sizing: border-box;
+	}
+	ul {
+		padding: 0;
+		margin: 0;
+	}
+	#wrapper {
+		display: flex;
+		max-width: 1920px;
+	}
+	#content_left {
+		flex: 0 0 862px;
+	}
+	#content_right {
+		flex: 0 0 calc(100% - 862px);
+		padding-left: 30px;
+		padding-top: 30px;		
+	}
+	#grid {
+		margin: 0;
+		padding: 0;
+	}
+	#grid li {
+		display: flex;
+	}
+	#grid li span {
+		flex: 0 0 32px;
+		height: 32px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 10px;
+		color: white;
+		border-left: 1px solid lightgrey;
+		border-top: 1px solid lightgrey;
+	}
+	#grid li span:last-child {
+		border-right: 1px solid lightgrey;
+	}
+	#grid li:last-child span {
+		border-bottom: 1px solid lightgrey;
+	}
+	#grid:not(.show_id) li span {
+		font-size: 0;
+	}
+	/* Empty */
+	#grid li span.E {
+		background-color: white;
+		color: black;
+	}
+	/* Cell */
+	#grid li span.C {
+		background-color: black;
+		cursor: pointer;
+	}
+	#grid li span.C.active {
+		border: 2px solid red;
+	}
+	/* Safe space */
+	#grid li span.X {
+		background-color: grey;
+		pointer-events: none;
+		font-size: 0;
+	}
+	/* EDITOR */
+	#grid.editMode li span:hover {
+		cursor: pointer;
+		-webkit-box-shadow:inset 0px 0px 0px 1px #f00;
+	    -moz-box-shadow:inset 0px 0px 0px 1px #f00;
+	    box-shadow:inset 0px 0px 0px 1px #f00;
+	}
+	#grid li span:not(.C)[data-editHover='C'] {
+		background-color: black;
+	}
+	#grid li span:not(.E)[data-editHover='E'] {
+		background-color: white;
+	}
+
+	/* Action buttons */
+	#actionButtons,
+	#paletteList {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	#actionButtons > div {		
+		margin-top: 20px;
+	}
+	#actionButtons > div:not(:last-child),
+	#paletteList li:not(:last-child) {		
+		margin-right: 15px;
+	}
+	#actionButtons .button,
+	#paletteList li {
+		display: block;
+		text-transform: uppercase;
+		color: #000;
+		border: 2px solid #000;
+		padding:  8px 15px;
+		font-weight: 700;
+		font-family: monospace;
+		font-size: 16px;
+		cursor: pointer;
+		transition: all .2s ease;
+		text-decoration: none;
+	}
+	#actionButtons .button:hover,
+	#paletteList li:hover,
+	#paletteList li.active {
+		color: #fff;
+		background: #000;
+	}
+
+	/* Right content */
+	#paletteList {
+		list-style: none;
+	}
+	#paletteList li {
+		cursor: pointer;
+	}
+
+	/* Cell properties modal */
+	#cellPropertiesModal:not(.active) {
+		display: none;
+	}
+
+</style>
+<script type="text/javascript">
+
+	// Base variables
+	// GRID
+	const TILE_SIZE = 32
+	const GRID_W = 20
+	const GRID_H = 20
+	const SAFE_MARGIN = 3
+	// Blank grid
+	//var grid = "";
+	var grid = {
+		width: GRID_W + SAFE_MARGIN * 2,
+		height: GRID_H + SAFE_MARGIN * 2,
+		start_index: 506,
+		layout: 'gladstone',
+		grid: []
+	}
+
+	/* EDITOR VARS */
+	var editorCellType = "";
+	var editorCellIndex = 0;
+	var mousePressed = false;
+
+	/* WALL TYPES VARS*/
+	var currentLayout = "";
+	var wallTypes = {
+		'gladstone': [
+			'Default',
+			'Banner1'
+		]
+	};
+	var wallTypesDatas = [];
+
+	$(document).ready(function(){
+	    process();
+	    initializeWallsData();
+	});
+
+	function process() {
+		var tempGrid = "";
+		for(i=0; i<GRID_H; i++) {
+			if(i == 0)
+				tempGrid += "X".repeat((GRID_W + SAFE_MARGIN * 2) * SAFE_MARGIN );
+			tempGrid += "X".repeat(SAFE_MARGIN);
+			tempGrid += "E".repeat(GRID_W);
+			tempGrid += "X".repeat(SAFE_MARGIN);
+			if(i == GRID_H-1)
+				tempGrid += "X".repeat((GRID_W + SAFE_MARGIN * 2) * SAFE_MARGIN);
+		}		
+		for(i=0; i<tempGrid.length; i++) {
+			grid.grid[i] = {};
+			grid.grid[i].index = i;
+			grid.grid[i].type = tempGrid[i];
+			if(grid.grid[i].type != 'X') {
+				wallTypesDatas[i] = {
+					"wallFront": "Default",
+					"wallRight": "Default",
+					"wallBack": "Default",
+					"wallLeft": "Default"
+				}
+			}
+		}
+	    renderGrid();
+	}
+
+	function setWallTypes() {
+		for(i=0; i<grid.grid.length; i++) {
+			if(grid.grid[i].type == 'C') {
+				wallTypesDatas[i] = {
+					"wallFront": grid.grid[i].attr["wallFrontType"],
+					"wallRight": grid.grid[i].attr["wallRightType"],
+					"wallBack": grid.grid[i].attr["wallBackType"],
+					"wallLeft": grid.grid[i].attr["wallLeftType"]
+				}
+			}
+		}
+		console.log(grid.grid[401].attr);
+		console.log(wallTypesDatas[401]);
+	}
+
+	function renderGrid() {		
+	    var output = '';
+	    for(var i=0;i<grid.grid.length;i++) {
+		    if(i % (GRID_W + SAFE_MARGIN * 2) == 0)
+		    	output += '<li>';
+		    output += '<span class="' + grid.grid[i].type + '" data-id="' + i + '">' + i + '</span>';
+		   	if((i+1) % (GRID_W + SAFE_MARGIN * 2) == 0)
+		   		output += '</li>';
+		}
+		$('#grid').empty();
+		$('#grid').append(output);
+	}
+
+	function generateJson() {
+		// Set wall attributes for each cell
+		for(i=0; i<grid.grid.length; i++) {
+			if(grid.grid[i].type == 'C') {
+				grid.grid[i].attr = {};
+				// Wall display
+				grid.grid[i].attr.wallFront = grid.grid[i - (GRID_W + SAFE_MARGIN * 2)].type == 'C' ? false : true;
+				grid.grid[i].attr.wallRight = grid.grid[i + 1].type == 'C'                          ? false : true;
+				grid.grid[i].attr.wallBack  = grid.grid[i + (GRID_W + SAFE_MARGIN * 2)].type == 'C' ? false : true;
+				grid.grid[i].attr.wallLeft  = grid.grid[i - 1].type == 'C'                          ? false : true;
+				// Wall types				
+				grid.grid[i].attr.wallFrontType = wallTypesDatas[i]["wallFront"] == 'Default' ? "" : wallTypesDatas[i]["wallFront"];
+				grid.grid[i].attr.wallRightType = wallTypesDatas[i]["wallRight"] == 'Default' ? "" : wallTypesDatas[i]["wallRight"];
+				grid.grid[i].attr.wallBackType  = wallTypesDatas[i]["wallBack"]  == 'Default' ? "" : wallTypesDatas[i]["wallBack"];
+				grid.grid[i].attr.wallLeftType  = wallTypesDatas[i]["wallLeft"]  == 'Default' ? "" : wallTypesDatas[i]["wallLeft"];
+			}
+		}
+		// Write file
+		var json = JSON.stringify(grid);
+    	// $('#dataLink').empty().append('<a class="button" target="_blank" href="' + makeTextFile(json) + '">Get current screen data</a>');
+    	window.open(makeTextFile(json), '_blank');
+	}
+
+    function makeTextFile(text) {
+    	var textFile = null;
+	    var data = new Blob([text], {type: 'text/plain'});
+	    // If we are replacing a previously generated file we need to
+	    // manually revoke the object URL to avoid memory leaks.
+	    if (textFile !== null) {
+	      window.URL.revokeObjectURL(textFile);
+	    }
+	    textFile = window.URL.createObjectURL(data);
+	    // returns a URL you can use as a href
+	    return textFile;
+	};
+
+	function setCharAt(str, index, chr) {
+	    if(index > str.length-1) return str;
+	    return str.substring(0,index) + chr + str.substring(index+1);
+	}
+
+	/* Action buttons */
+	$('#hideCellID').click(function() {
+		if($(this).hasClass('active')) {
+			$(this).removeClass('active');
+			$(this).find('span').text('Show');
+			$('#grid').removeClass('show_id');
+		}
+		else {
+			$(this).addClass('active');
+			$(this).find('span').text('Hide');
+			$('#grid').addClass('show_id');
+		}
+	});
+
+	$('#dataLink > span').click(function() {
+		generateJson();
+	});
+
+	/* Editor */
+	// Selecting cell type
+	$('#paletteList li').click(function() {		
+		$('#grid li span.active').removeClass('active');
+		$('#cellPropertiesModal').removeClass('active');
+		if($(this).hasClass('active')) {
+			$(this).removeClass('active');
+			$('#grid').removeClass('editMode');
+		}
+		else {
+			if($('#paletteList li.active').length)
+				$('#paletteList li.active').removeClass('active');
+			else
+				$('#grid').addClass('editMode');
+			$(this).addClass('active');
+			editorCellType = $(this).attr('data-cell') + '';
+		}
+	});
+	// Applying cell type on grid
+	function applyCellType(cellId) {
+		var replacementTile = editorCellType;
+		// Replace tile
+		grid.grid[+cellId].type = replacementTile;
+		$('#grid li span[data-id="' + cellId + '"]').removeClass().addClass(replacementTile);
+	}
+
+	$('#grid').on('mousedown', 'li span', function() {
+		if($('#grid').hasClass('editMode')) {
+			applyCellType($(this).attr('data-id'));
+			mousePressed = true;
+		}
+		else if($(this).hasClass('C')) {
+			openCellProperties($(this));
+		}
+	})
+	.mouseup(function() {
+	    mousePressed = false;
+	});
+	$('#grid').on('mouseover', 'li span', function() {
+		if($('#grid').hasClass('editMode')) {
+			$(this).attr('data-editHover', editorCellType);
+			if(mousePressed) {
+				applyCellType($(this).attr('data-id'));
+			}
+		}
+	})	
+	.on('mouseleave', 'li span', function() {
+	    $('#grid li span[data-editHover]').removeAttr('data-editHover');
+	});
+
+	// Initialize walls data
+	function initializeWallsData() {
+		var currentLayout = $('#set_map_layout').val();
+		var currentLayoutWalls = wallTypes[currentLayout];
+		$('#cellWalls .wallItem').each(function() {
+			var selectList = $(this).find('select');
+			selectList.empty();
+			for(var i=0;i<currentLayoutWalls.length;i++)
+				selectList.append('<option value="' + currentLayoutWalls[i] + '">' + currentLayoutWalls[i] + '</option>');
+		});
+	}
+
+	// Cell properties modal
+	function openCellProperties(cell) {
+		$('#cellPropertiesModal').addClass('active');
+		$('#grid li span.active').removeClass('active');
+		var cellIndex = +cell.attr('data-id');
+		// Set cell id
+		$('#cellId').text('EDIT CELL ' + cellIndex);
+		// Display wall type selects
+		$('.wallItem').show();
+		if(grid.grid[cellIndex - (GRID_W + SAFE_MARGIN * 2)].type == 'C')
+			$('.wallItem.front').hide();
+		if(grid.grid[cellIndex + 1].type == 'C')
+			$('.wallItem.right').hide();
+		if(grid.grid[cellIndex + (GRID_W + SAFE_MARGIN * 2)].type == 'C')
+			$('.wallItem.back').hide();
+		if(grid.grid[cellIndex - 1].type == 'C')
+			$('.wallItem.left').hide();
+		// Set current cell wall types
+		$('.wallItem select').each(function() {
+			var wallDir = $(this).attr('data-dir');
+			$(this).val(wallTypesDatas[cellIndex][wallDir]);
+		});
+		cell.addClass('active');
+	}
+
+	$('.wallItem select').change(function() {
+		var type = $(this).val();
+		var activeCell = $('#grid li span.active').attr('data-id');
+		var wallDir = $(this).attr('data-dir');
+		wallTypesDatas[activeCell][wallDir] = type;
+	});
+
+	// Loading file
+	function loadFile() {
+		var input, file, fr;
+
+		if (typeof window.FileReader !== 'function') {
+		  	alert("The file API isn't supported on this browser yet.");
+		  	return;
+		}
+
+		input = document.getElementById('fileinput');
+		if (!input) {
+		  	alert("Um, couldn't find the fileinput element.");
+		}
+		else if (!input.files) {
+		  	alert("This browser doesn't seem to support the `files` property of file inputs.");
+		}
+		else if (!input.files[0]) {
+		  	alert("Please select a file before clicking 'Load'");
+		}
+		else {
+		  	file = input.files[0];
+		  	fr = new FileReader();
+		  	fr.onload = loadGrid;
+		  	fr.readAsText(file);
+		}
+
+		function loadGrid(e) {
+		  	let lines = e.target.result;
+		  	var newArr = JSON.parse(lines);
+		  	grid = newArr;
+		  	setWallTypes();
+		  	renderGrid();
+		}
+	}
+</script>

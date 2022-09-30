@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Ceiling.png-cad9a722c9e839dfc78b2bfe89993786.stex"
+path="res://.import/ceiling.png-148741240785762c61aac9120f6f328b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/layout/gladstone/Ceiling.png"
-dest_files=[ "res://.import/Ceiling.png-cad9a722c9e839dfc78b2bfe89993786.stex" ]
+source_file="res://assets/sprites/layout/gladstone/ceiling.png"
+dest_files=[ "res://.import/ceiling.png-148741240785762c61aac9120f6f328b.stex" ]
 
 [params]
 

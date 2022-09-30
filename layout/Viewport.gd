@@ -2,34 +2,86 @@ extends Control
 
 onready var ceilingSprite = $Ceiling
 onready var floorSprite   = $Floor
-onready var wallFront     = $WallFront
-onready var wallLeft      = $WallLeft
-onready var wallRight     = $WallRight
-onready var wallFrontL    = $WallFrontL
-onready var wallFrontR    = $WallFrontR
-onready var wallFrontU    = $WallFrontU
-onready var wallFrontUL   = $WallFrontUL
-onready var wallFrontUR   = $WallFrontUR
-onready var wallLeftU     = $WallLeftU
-onready var wallRightU    = $WallRightU
-onready var wallFrontUU   = $WallFrontUU
-onready var wallFrontUUL  = $WallFrontUUL
-onready var wallLeftUUL   = $WallLeftUUL
-onready var wallFrontUULL = $WallFrontUULL
-onready var wallFrontUUR  = $WallFrontUUR
-onready var wallRightUUR  = $WallRightUUR
-onready var wallFrontUURR = $WallFrontUURR
-onready var wallLeftUU    = $WallLeftUU
-onready var wallRightUU   = $WallRightUU
-onready var wallLeftUUU   = $WallLeftUUU
-onready var wallRightUUU  = $WallRightUUU
+onready var wallFront     = $Walls/WallFront
+onready var wallLeft      = $Walls/WallLeft
+onready var wallRight     = $Walls/WallRight
+onready var wallFrontL    = $Walls/WallFrontL
+onready var wallFrontR    = $Walls/WallFrontR
+onready var wallFrontU    = $Walls/WallFrontU
+onready var wallFrontUL   = $Walls/WallFrontUL
+onready var wallFrontUR   = $Walls/WallFrontUR
+onready var wallLeftU     = $Walls/WallLeftU
+onready var wallRightU    = $Walls/WallRightU
+onready var wallFrontUU   = $Walls/WallFrontUU
+onready var wallFrontUUL  = $Walls/WallFrontUUL
+onready var wallLeftUUL   = $Walls/WallLeftUUL
+onready var wallFrontUULL = $Walls/WallFrontUULL
+onready var wallFrontUUR  = $Walls/WallFrontUUR
+onready var wallRightUUR  = $Walls/WallRightUUR
+onready var wallFrontUURR = $Walls/WallFrontUURR
+onready var wallLeftUU    = $Walls/WallLeftUU
+onready var wallRightUU   = $Walls/WallRightUU
+onready var wallLeftUUU   = $Walls/WallLeftUUU
+onready var wallRightUUU  = $Walls/WallRightUUU
+
+onready var walls = $Walls
+
+var sprites = {}
+var spriteBasePath = 'res://assets/sprites/layout'
+var spritePath = ''
+var currentLayout = ''
+#var wallNodes = {}
 
 func _ready():
 	add_to_group("viewport")
+#	get_walls()
 
+# Get all wall nodes
+#func get_walls():
+#	for wall in walls.get_children():
+#		wallNodes[wall.get_name()] = wall
+
+# Set new layout for sprites
+func update_layout(newLayout):
+	currentLayout = newLayout
+	spritePath = spriteBasePath + '/' + currentLayout + '/'
+	preload_sprites()
+	ceilingSprite.texture = sprites['ceiling']
+	floorSprite.texture = sprites['floor']
+
+# Load all sprites from current layout in dictionary for later use
+func preload_sprites():
+	var dir = Directory.new()
+	dir.open(spritePath)
+	dir.list_dir_begin()
+	while true:
+		var file_name = dir.get_next()
+		if file_name == "":
+			#break the while loop when get_next() returns ""
+			break
+		elif file_name.ends_with('.png'):
+			var spriteKey = file_name.replace(".png", "")
+			sprites[spriteKey] = load(spritePath + "/" + file_name)
+	dir.list_dir_end()
+
+# Update wall visibility and sprite
 func update_walls(data):
+#	for wall in wallNodes.keys():
+#		var wallName = wall
+#		var wallDir = wallName
+#		var wallOffset = ''
+#		if wallName.find('_') != -1:
+#			var nameSplit = wallName.split("_")
+#			wallDir = nameSplit[0]
+#			if wallDir != 'wallFront':
+#				wallOffset = nameSplit[1]
+#		var walllVisibility = data['currentCell' + wallOffset][wallDir]
+#		wallNodes[wall].visible = walllVisibility
+#		if walllVisibility:
+#			wallNodes[wall].texture = sprites[wallDir + data['currentCell' + wallOffset][wallDir + 'Type'] + wallOffset]
 	# Current cell
 	wallFront.visible = data.currentCell.wallFront
+	wallFront.texture = sprites['wallFront' + data.currentCell.wallFrontType]
 	wallLeft.visible  = data.currentCell.wallLeft
 	wallRight.visible = data.currentCell.wallRight
 	# Current cell + L
