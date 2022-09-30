@@ -1,5 +1,6 @@
 extends Control
 
+onready var ceilingSprite = $Ceiling
 onready var floorSprite   = $Floor
 onready var wallFront     = $WallFront
 onready var wallLeft      = $WallLeft
@@ -61,5 +62,6 @@ func update_walls(data):
 	wallLeftUUU.visible  = data.currentCellUUU.wallLeft
 	wallRightUUU.visible = data.currentCellUUU.wallRight
 
-func update_floor():
-	floorSprite.flip_h = !floorSprite.flip_h
+func update_ceiling_floor():
+	floorSprite.flip_h   = !floorSprite.flip_h
+	ceilingSprite.flip_h = !ceilingSprite.flip_h

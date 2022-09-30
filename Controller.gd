@@ -239,7 +239,7 @@ func check_move(moveDirection):
 		set_cells(newCell)
 		get_tree().call_group('map', 'update_position', currentCell)
 		send_walls_status()
-		get_tree().call_group('viewport', 'update_floor')
+		get_tree().call_group('viewport', 'update_ceiling_floor')
 	else:
 		# TODO : WALL BUMP ANIMATION
 		pass
@@ -252,7 +252,7 @@ func change_direction(direction):
 	set_cells(currentCell)
 	get_tree().call_group('map', 'update_direction', directions[0])
 	send_walls_status()
-	get_tree().call_group('viewport', 'update_floor')
+	get_tree().call_group('viewport', 'update_ceiling_floor')
 
 func update_data(data):
 	currentData = data
