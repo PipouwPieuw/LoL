@@ -225,7 +225,10 @@
 	var wallTypes = {
 		'gladstone': [
 			'Default',
-			'Banner1'
+			'Arch',
+			'Banner1',
+			'Window1',
+			'Window2',
 		]
 	};
 	var wallTypesDatas = [];
@@ -301,10 +304,10 @@
 				grid.grid[i].attr.wallBack  = grid.grid[i + (GRID_W + SAFE_MARGIN * 2)].type == 'C' ? false : true;
 				grid.grid[i].attr.wallLeft  = grid.grid[i - 1].type == 'C'                          ? false : true;
 				// Wall types				
-				grid.grid[i].attr.wallFrontType = wallTypesDatas[i]["wallFront"] == 'Default' ? "" : wallTypesDatas[i]["wallFront"];
-				grid.grid[i].attr.wallRightType = wallTypesDatas[i]["wallRight"] == 'Default' ? "" : wallTypesDatas[i]["wallRight"];
-				grid.grid[i].attr.wallBackType  = wallTypesDatas[i]["wallBack"]  == 'Default' ? "" : wallTypesDatas[i]["wallBack"];
-				grid.grid[i].attr.wallLeftType  = wallTypesDatas[i]["wallLeft"]  == 'Default' ? "" : wallTypesDatas[i]["wallLeft"];
+				grid.grid[i].attr.wallFrontType = wallTypesDatas[i]["wallFront"];
+				grid.grid[i].attr.wallRightType = wallTypesDatas[i]["wallRight"];
+				grid.grid[i].attr.wallBackType  = wallTypesDatas[i]["wallBack"];
+				grid.grid[i].attr.wallLeftType  = wallTypesDatas[i]["wallLeft"];
 			}
 		}
 		// Write file
