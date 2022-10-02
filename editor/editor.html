@@ -210,7 +210,7 @@
 	var grid = {
 		width: GRID_W + SAFE_MARGIN * 2,
 		height: GRID_H + SAFE_MARGIN * 2,
-		start_index: 506,
+		start_index: 454,
 		layout: 'gladstone',
 		grid: []
 	}
@@ -278,6 +278,12 @@
 				'hasInteraction': true,
 				'interactionZones': []
 			},
+			'Swords': {
+				'name': 'Swords',
+				'isDoor': false,
+				'hasInteraction': true,
+				'interactionZones': []
+			},
 			'Gate': {
 				'name': 'Gate',
 				'isDoor': true,
@@ -330,6 +336,15 @@
 					"wallLeft": grid.grid[i].attr["wallLeftType"]
 				}
 			}
+		}
+	}
+
+	function setCellWallTypes(cell) {
+		wallTypesDatas[cell] = {
+			"wallFront": typeof grid.grid[cell].attr["wallFrontType"] !== "undefined" ? grid.grid[cell].attr["wallFrontType"] : wallTypes[currentLayout]["Default"],
+			"wallRight": typeof grid.grid[cell].attr["wallRightType"] !== "undefined" ? grid.grid[cell].attr["wallRightType"] : wallTypes[currentLayout]["Default"],
+			"wallBack":  typeof grid.grid[cell].attr["wallBackType"]  !== "undefined" ? grid.grid[cell].attr["wallBackType"]  : wallTypes[currentLayout]["Default"],
+			"wallLeft":  typeof grid.grid[cell].attr["wallLeftType"]  !== "undefined" ? grid.grid[cell].attr["wallLeftType"]  : wallTypes[currentLayout]["Default"]
 		}
 	}
 
@@ -477,6 +492,7 @@
 		$('#cellPropertiesModal').addClass('active');
 		$('#grid li span.active').removeClass('active');
 		var cellIndex = +cell.attr('data-id');
+		setCellWallTypes(cellIndex);
 		// Set cell id
 		$('#cellId').text('EDIT CELL ' + cellIndex);
 		// Display wall type selects

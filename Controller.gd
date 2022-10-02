@@ -23,7 +23,7 @@ func _ready():
 	get_tree().call_group('viewport', 'update_layout', currentData.layout)
 	set_cells(int(currentData.start_index))
 	draw_map()
-	send_walls_status()
+	send_walls_status('up')
 	
 func load_level():
 	var file = File.new()
@@ -90,7 +90,7 @@ func set_cells(index):
 func draw_map():
 	get_tree().call_group('map', 'draw_map', currentData)
 
-func send_walls_status():
+func send_walls_status(moveDirection):
 	var cells = [
 		currentCell,
 		currentCellL,
@@ -171,7 +171,7 @@ func send_walls_status():
 			wallsStatus[cellName].wallLeft  = false
 			wallsStatus[cellName].wallRight = false
 		i += 1
-	get_tree().call_group('viewport', 'update_walls', wallsStatus)
+	get_tree().call_group('viewport', 'startMove', moveDirection, wallsStatus)
 
 func check_move(moveDirection):
 	var newCell = int(currentCell)
@@ -203,20 +203,20 @@ func check_move(moveDirection):
 	if(currentData.grid[newCell].type == 'C'):
 		set_cells(newCell)
 		get_tree().call_group('map', 'update_position', currentCell)
-		send_walls_status()
+		send_walls_status(moveDirection)
 		get_tree().call_group('viewport', 'update_ceiling_floor')
 	else:
 		# TODO : WALL BUMP ANIMATION
 		pass
 
 func change_direction(direction):
-	if direction == 'right':
+	if direction == 'turnright':
 		directions.push_back (directions.pop_front())
-	elif direction == 'left':
+	elif direction == 'turnleft':
 		directions.push_front(directions.pop_back())	
 	set_cells(currentCell)
 	get_tree().call_group('map', 'update_direction', directions[0])
-	send_walls_status()
+	send_walls_status(direction)
 	get_tree().call_group('viewport', 'update_ceiling_floor')
 
 func update_data(data):

@@ -13,6 +13,6 @@ func _physics_process(_delta):
 	if Input.is_action_just_pressed('ui_left'):
 		get_tree().call_group('controller', 'check_move', 'left')
 	if Input.is_action_just_pressed('ui_turn_right'):
-		get_tree().call_group('controller', 'change_direction', 'right')
+		get_tree().call_group('controller', 'change_direction', 'turnright')
 	if Input.is_action_just_pressed('ui_turn_left'):
-		get_tree().call_group('controller', 'change_direction', 'left')
+		get_tree().call_group('controller', 'change_direction', 'turnleft')

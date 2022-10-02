@@ -1,22 +1,81 @@
 extends Control
 
-onready var ceilingSprite = $Ceiling
-onready var floorSprite   = $Floor
-onready var walls = $Walls
+onready var textures = $Textures
+onready var ceilingSprite = $Textures/Ceiling
+onready var floorSprite   = $Textures/Floor
+onready var viewFront = $Textures/Front
+onready var viewSide = $Textures/Side
+onready var walls = $Textures/Front/Walls
+onready var wallsSide = $Textures/Side/Walls
 
 var sprites = {}
 var spriteBasePath = 'res://assets/sprites/layout'
 var spritePath = ''
 var currentLayout = ''
 var wallNodes = {}
+var wallNodesSide = {}
+var moveDirection = ''
+var data = {}
 
 func _ready():
 	add_to_group("viewport")
-	get_walls()
+	wallNodes = get_walls(walls)
+	wallNodesSide = get_walls(wallsSide)
+	
+func _physics_process(_delta):
+	if moveDirection == 'up':
+		textures.rect_scale.x += .1
+		textures.rect_scale.y += .1
+		if textures.rect_scale.x >= 1.6:
+			end_move_up_down()
+			update_walls(wallNodes)
+	elif moveDirection == 'down':
+		if textures.rect_scale.x == 1:
+			update_walls(wallNodes)
+			textures.rect_scale.x = 1.6
+			textures.rect_scale.y = 1.6
+		textures.rect_scale.x -= .1
+		textures.rect_scale.y -= .1
+		if textures.rect_scale.x <= 1:
+			end_move_up_down()
+	elif moveDirection == 'right':
+		if viewFront.rect_position.x == 0:
+			update_walls(wallNodesSide)
+			viewSide.rect_position.x = 128
+		viewFront.rect_position.x -= 22
+		viewSide.rect_position.x -= 22
+		if viewSide.rect_position.x <= 0:
+			update_walls(wallNodes)
+			end_move_left_right()
+	elif moveDirection == 'left':
+		if viewFront.rect_position.x == 0:
+			update_walls(wallNodesSide)
+			viewSide.rect_position.x = -80
+		viewFront.rect_position.x += 1
+		viewSide.rect_position.x += 1
+		if viewSide.rect_position.x >= 0:
+			update_walls(wallNodes)
+			end_move_left_right()
+
+
+func end_move_up_down():
+	moveDirection = ''
+	textures.rect_scale.x = 1
+	textures.rect_scale.y = 1
+
+func end_move_left_right():
+	moveDirection = ''
+	viewFront.rect_position.x = 0
+	viewSide.rect_position.x = -176
+
+func startMove(dir, moveData):
+	data = moveData
+	moveDirection = dir
 
 # Get all wall nodes
-func get_walls():
-	for wall in walls.get_children():
+func get_walls(wallObject):
+	var result = {}
+	for wall in wallObject.get_children():
 		# Process string
 		var wallName = wall.get_name().replace('tU', 't_U').replace('tL', 't_L').replace('tR', 't_R')
 		wallName[0] = 'w'
@@ -35,12 +94,13 @@ func get_walls():
 				wallOffsetSprite = wallOffsetSprite.replace('UUR', 'UUS').replace('UUL', 'UUS')
 					
 		# Save wall data in object
-		wallNodes[wall.get_name()] = {}
-		wallNodes[wall.get_name()].sprite = wall
-		wallNodes[wall.get_name()].dirCell = wallDirCell
-		wallNodes[wall.get_name()].dirSprite = wallDirSprite
-		wallNodes[wall.get_name()].offsetCell = wallOffsetCell
-		wallNodes[wall.get_name()].offsetSprite = wallOffsetSprite
+		result[wall.get_name()] = {}
+		result[wall.get_name()].sprite = wall
+		result[wall.get_name()].dirCell = wallDirCell
+		result[wall.get_name()].dirSprite = wallDirSprite
+		result[wall.get_name()].offsetCell = wallOffsetCell
+		result[wall.get_name()].offsetSprite = wallOffsetSprite
+	return result;
 
 # Set new layout for sprites
 func update_layout(newLayout):
@@ -65,10 +125,9 @@ func preload_sprites():
 	dir.list_dir_end()
 
 # Update wall visibility and sprite
-func update_walls(data):
-	for wallName in wallNodes.keys():
-		print(wallName)
-		var wall = wallNodes[wallName]
+func update_walls(wallObject):
+	for wallName in wallObject.keys():
+		var wall = wallObject[wallName]
 		# Set wall sprite
 		var walllVisibility = data['currentCell' + wall.offsetCell][wall.dirCell]
 		wall.sprite.visible = walllVisibility
