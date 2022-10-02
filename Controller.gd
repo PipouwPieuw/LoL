@@ -130,30 +130,42 @@ func send_walls_status():
 				wallsStatus[cellName].wallFront = cell.attr.wallFront
 				wallsStatus[cellName].wallLeft  = cell.attr.wallLeft
 				wallsStatus[cellName].wallRight = cell.attr.wallRight
-				wallsStatus[cellName].wallFrontType = cell.attr.wallFrontType
-				wallsStatus[cellName].wallLeftType = cell.attr.wallLeftType
-				wallsStatus[cellName].wallRightType = cell.attr.wallRightType
+				if cell.attr.wallFront:
+					wallsStatus[cellName].wallFrontType = cell.attr.wallFrontType.name
+				if cell.attr.wallLeft:
+					wallsStatus[cellName].wallLeftType = cell.attr.wallLeftType.name
+				if cell.attr.wallRight:
+					wallsStatus[cellName].wallRightType = cell.attr.wallRightType.name
 			if(directions[0] == 'R'):
 				wallsStatus[cellName].wallFront = cell.attr.wallRight
 				wallsStatus[cellName].wallLeft  = cell.attr.wallFront
 				wallsStatus[cellName].wallRight = cell.attr.wallBack
-				wallsStatus[cellName].wallFrontType = cell.attr.wallRightType
-				wallsStatus[cellName].wallLeftType = cell.attr.wallFrontType
-				wallsStatus[cellName].wallRightType = cell.attr.wallBackType
+				if cell.attr.wallRight:
+					wallsStatus[cellName].wallFrontType = cell.attr.wallRightType.name
+				if cell.attr.wallFront:
+					wallsStatus[cellName].wallLeftType = cell.attr.wallFrontType.name
+				if cell.attr.wallBack:
+					wallsStatus[cellName].wallRightType = cell.attr.wallBackType.name
 			if(directions[0] == 'D'):
 				wallsStatus[cellName].wallFront = cell.attr.wallBack
 				wallsStatus[cellName].wallLeft  = cell.attr.wallRight
 				wallsStatus[cellName].wallRight = cell.attr.wallLeft
-				wallsStatus[cellName].wallFrontType = cell.attr.wallBackType
-				wallsStatus[cellName].wallLeftType = cell.attr.wallRightType
-				wallsStatus[cellName].wallRightType = cell.attr.wallLeftType
+				if cell.attr.wallBack:
+					wallsStatus[cellName].wallFrontType = cell.attr.wallBackType.name
+				if cell.attr.wallRight:
+					wallsStatus[cellName].wallLeftType = cell.attr.wallRightType.name
+				if cell.attr.wallLeft:
+					wallsStatus[cellName].wallRightType = cell.attr.wallLeftType.name
 			if(directions[0] == 'L'):
 				wallsStatus[cellName].wallFront = cell.attr.wallLeft
 				wallsStatus[cellName].wallLeft  = cell.attr.wallBack
 				wallsStatus[cellName].wallRight = cell.attr.wallFront
-				wallsStatus[cellName].wallFrontType = cell.attr.wallLeftType
-				wallsStatus[cellName].wallLeftType = cell.attr.wallBackType
-				wallsStatus[cellName].wallRightType = cell.attr.wallFrontType
+				if cell.attr.wallLeft:
+					wallsStatus[cellName].wallFrontType = cell.attr.wallLeftType.name
+				if cell.attr.wallBack:
+					wallsStatus[cellName].wallLeftType = cell.attr.wallBackType.name
+				if cell.attr.wallFront:
+					wallsStatus[cellName].wallRightType = cell.attr.wallFrontType.name
 		else:
 			wallsStatus[cellName].wallFront = false
 			wallsStatus[cellName].wallLeft  = false

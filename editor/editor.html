@@ -223,13 +223,68 @@
 	/* WALL TYPES VARS*/
 	var currentLayout = "";
 	var wallTypes = {
-		'gladstone': [
-			'Default',
-			'Arch',
-			'Banner1',
-			'Window1',
-			'Window2',
-		]
+		'gladstone': {
+			'Default': {
+				'name': 'Default',
+				'isDoor': false,
+				'hasInteraction': false,
+				'interactionZones': []
+			},
+			'Arch': {
+				'name': 'Arch',
+				'isDoor': false,
+				'hasInteraction': false,
+				'interactionZones': []
+			},
+			'Banner1': {
+				'name': 'Banner1',
+				'isDoor': false,
+				'hasInteraction': true,
+				'interactionZones': []
+			},
+			'Window1': {
+				'name': 'Window1',
+				'isDoor': false,
+				'hasInteraction': true,
+				'interactionZones': []
+			},
+			'Window2': {
+				'name': 'Window2',
+				'isDoor': false,
+				'hasInteraction': true,
+				'interactionZones': []
+			},
+			'Window3': {
+				'name': 'Window3',
+				'isDoor': false,
+				'hasInteraction': true,
+				'interactionZones': []
+			},
+			'Window4': {
+				'name': 'Window4',
+				'isDoor': false,
+				'hasInteraction': true,
+				'interactionZones': []
+			},
+			'Window5': {
+				'name': 'Window5',
+				'isDoor': false,
+				'hasInteraction': true,
+				'interactionZones': []
+			},
+			'Sculpture': {
+				'name': 'Sculpture',
+				'isDoor': false,
+				'hasInteraction': true,
+				'interactionZones': []
+			},
+			'Gate': {
+				'name': 'Gate',
+				'isDoor': true,
+				'hasInteraction': true,
+				'interactionZones': []
+			},
+		}
 	};
 	var wallTypesDatas = [];
 
@@ -276,8 +331,6 @@
 				}
 			}
 		}
-		console.log(grid.grid[401].attr);
-		console.log(wallTypesDatas[401]);
 	}
 
 	function renderGrid() {		
@@ -303,11 +356,15 @@
 				grid.grid[i].attr.wallRight = grid.grid[i + 1].type == 'C'                          ? false : true;
 				grid.grid[i].attr.wallBack  = grid.grid[i + (GRID_W + SAFE_MARGIN * 2)].type == 'C' ? false : true;
 				grid.grid[i].attr.wallLeft  = grid.grid[i - 1].type == 'C'                          ? false : true;
-				// Wall types				
-				grid.grid[i].attr.wallFrontType = wallTypesDatas[i]["wallFront"];
-				grid.grid[i].attr.wallRightType = wallTypesDatas[i]["wallRight"];
-				grid.grid[i].attr.wallBackType  = wallTypesDatas[i]["wallBack"];
-				grid.grid[i].attr.wallLeftType  = wallTypesDatas[i]["wallLeft"];
+				// Wall types
+				if(grid.grid[i].attr.wallFront)
+					grid.grid[i].attr.wallFrontType = wallTypesDatas[i]["wallFront"];
+				if(grid.grid[i].attr.wallRight)
+					grid.grid[i].attr.wallRightType = wallTypesDatas[i]["wallRight"];
+				if(grid.grid[i].attr.wallBack)
+					grid.grid[i].attr.wallBackType  = wallTypesDatas[i]["wallBack"];
+				if(grid.grid[i].attr.wallLeft)
+					grid.grid[i].attr.wallLeftType  = wallTypesDatas[i]["wallLeft"];
 			}
 		}
 		// Write file
@@ -404,13 +461,14 @@
 
 	// Initialize walls data
 	function initializeWallsData() {
-		var currentLayout = $('#set_map_layout').val();
+		currentLayout = $('#set_map_layout').val();
 		var currentLayoutWalls = wallTypes[currentLayout];
 		$('#cellWalls .wallItem').each(function() {
 			var selectList = $(this).find('select');
 			selectList.empty();
-			for(var i=0;i<currentLayoutWalls.length;i++)
-				selectList.append('<option value="' + currentLayoutWalls[i] + '">' + currentLayoutWalls[i] + '</option>');
+			for (const [key, value] of Object.entries(currentLayoutWalls)) {
+				selectList.append('<option value="' + key + '">' + key + '</option>');
+			}
 		});
 	}
 
@@ -432,9 +490,9 @@
 		if(grid.grid[cellIndex - 1].type == 'C')
 			$('.wallItem.left').hide();
 		// Set current cell wall types
-		$('.wallItem select').each(function() {
+		$('.wallItem select:visible').each(function() {
 			var wallDir = $(this).attr('data-dir');
-			$(this).val(wallTypesDatas[cellIndex][wallDir]);
+			$(this).val(wallTypesDatas[cellIndex][wallDir].name);
 		});
 		cell.addClass('active');
 	}
@@ -443,7 +501,7 @@
 		var type = $(this).val();
 		var activeCell = $('#grid li span.active').attr('data-id');
 		var wallDir = $(this).attr('data-dir');
-		wallTypesDatas[activeCell][wallDir] = type;
+		wallTypesDatas[activeCell][wallDir] = wallTypes[currentLayout][type];
 	});
 
 	// Loading file
