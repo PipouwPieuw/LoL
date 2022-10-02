@@ -171,7 +171,7 @@ func send_walls_status(moveDirection):
 			wallsStatus[cellName].wallLeft  = false
 			wallsStatus[cellName].wallRight = false
 		i += 1
-	get_tree().call_group('viewport', 'startMove', moveDirection, wallsStatus)
+	get_tree().call_group('viewport', 'start_move', moveDirection, wallsStatus)
 
 func check_move(moveDirection):
 	var newCell = int(currentCell)

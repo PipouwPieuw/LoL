@@ -22,14 +22,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="bg" type="ColorRect" parent="."]
-margin_right = 176.0
-margin_bottom = 120.0
-color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Textures" type="Control" parent="."]
 margin_right = 176.0
 margin_bottom = 120.0
@@ -37,15 +29,6 @@ rect_pivot_offset = Vector2( 88, 44 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Ceiling" type="Sprite" parent="Textures"]
-texture = ExtResource( 16 )
-centered = false
-
-[node name="Floor" type="Sprite" parent="Textures"]
-position = Vector2( 0, 64 )
-texture = ExtResource( 15 )
-centered = false
 
 [node name="Front" type="Control" parent="Textures"]
 margin_right = 176.0
@@ -55,8 +38,24 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="bg" type="ColorRect" parent="Textures/Front"]
+margin_right = 176.0
+margin_bottom = 120.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ceiling" type="Sprite" parent="Textures/Front"]
+texture = ExtResource( 16 )
+centered = false
+
+[node name="Floor" type="Sprite" parent="Textures/Front"]
+position = Vector2( 0, 64 )
+texture = ExtResource( 15 )
+centered = false
+
 [node name="Walls" type="Node2D" parent="Textures/Front"]
-z_index = 1
 
 [node name="WallLeftUUU" type="Sprite" parent="Textures/Front/Walls"]
 visible = false
@@ -188,8 +187,29 @@ flip_h = true
 margin_left = -176.0
 margin_bottom = 120.0
 rect_clip_content = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bg" type="ColorRect" parent="Textures/Side"]
+margin_right = 176.0
+margin_bottom = 120.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ceiling" type="Sprite" parent="Textures/Side"]
+texture = ExtResource( 16 )
+centered = false
+
+[node name="Floor" type="Sprite" parent="Textures/Side"]
+position = Vector2( 0, 64 )
+texture = ExtResource( 15 )
+centered = false
 
 [node name="Walls" type="Node2D" parent="Textures/Side"]
+z_index = 2
 
 [node name="WallLeftUUU" type="Sprite" parent="Textures/Side/Walls"]
 visible = false

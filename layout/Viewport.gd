@@ -1,8 +1,10 @@
 extends Control
 
 onready var textures = $Textures
-onready var ceilingSprite = $Textures/Ceiling
-onready var floorSprite   = $Textures/Floor
+onready var ceilingSprite = $Textures/Front/Ceiling
+onready var floorSprite   = $Textures/Front/Floor
+onready var ceilingSpriteSide = $Textures/Side/Ceiling
+onready var floorSpriteSide   = $Textures/Side/Floor
 onready var viewFront = $Textures/Front
 onready var viewSide = $Textures/Side
 onready var walls = $Textures/Front/Walls
@@ -23,6 +25,7 @@ func _ready():
 	wallNodesSide = get_walls(wallsSide)
 	
 func _physics_process(_delta):
+	# Move animations
 	if moveDirection == 'up':
 		textures.rect_scale.x += .1
 		textures.rect_scale.y += .1
@@ -50,13 +53,16 @@ func _physics_process(_delta):
 	elif moveDirection == 'left':
 		if viewFront.rect_position.x == 0:
 			update_walls(wallNodesSide)
-			viewSide.rect_position.x = -80
-		viewFront.rect_position.x += 1
-		viewSide.rect_position.x += 1
+			viewSide.rect_position.x = -128
+		viewFront.rect_position.x += 22
+		viewSide.rect_position.x += 22
 		if viewSide.rect_position.x >= 0:
 			update_walls(wallNodes)
 			end_move_left_right()
-
+	elif moveDirection == 'turnright':
+		move_animation_turn(-1)
+	elif moveDirection == 'turnleft':
+		move_animation_turn(1)
 
 func end_move_up_down():
 	moveDirection = ''
@@ -68,7 +74,26 @@ func end_move_left_right():
 	viewFront.rect_position.x = 0
 	viewSide.rect_position.x = -176
 
-func startMove(dir, moveData):
+func move_animation_turn(mode):
+	if viewFront.rect_position.x == 0:
+		update_walls(wallNodesSide)
+		viewSide.rect_position.x = -176 * mode
+		viewSide.rect_pivot_offset.x = 176 if mode == 1 else 0
+		viewSide.rect_scale.x = 1.9
+		viewFront.rect_pivot_offset.x = 0 if mode == 1 else 176
+	viewSide.rect_scale.x -= .15
+	viewFront.rect_position.x += 29 * mode
+	viewSide.rect_position.x += 29 * mode
+	viewFront.rect_scale.x += .15
+	if viewSide.rect_scale.x <= 1:
+		update_walls(wallNodes)
+		moveDirection = ''
+		viewFront.rect_scale.x = 1
+		viewSide.rect_scale.x = 1
+		viewFront.rect_position.x = 0
+		viewSide.rect_position.x = -176
+
+func start_move(dir, moveData):
 	data = moveData
 	moveDirection = dir
 
