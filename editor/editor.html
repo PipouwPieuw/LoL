@@ -32,7 +32,19 @@
 			  	</fieldset>
 			</form>
 			<div id="cellPropertiesModal">
-				<p id="cellId"></p>
+				<p id="cellId"></p>				
+				<div id="cellDoor">
+					<div class="doorItem">
+						<input type="checkbox" id="cellIsDoor" name="cellIsDoor"/>
+						<label for="cellIsDoor">Set door on cell</label>
+					</div>
+					<div class="doorItem" id="setDoorType">
+						<p>Set door type</p>
+						<select>
+							<option value="default">Default</option>
+						</select>
+					</div>
+				</div>
 				<div id="cellWalls">
 					<div class="wallItem front">
 						<p>Wall Front</p>
@@ -126,7 +138,12 @@
 		background-color: black;
 		cursor: pointer;
 	}
-	#grid li span.C.active {
+	#grid li span.D {
+		background-color: darkgrey;
+		cursor: pointer;
+	}
+	#grid li span.C.active,
+	#grid li span.D.active {
 		border: 2px solid red;
 	}
 	/* Safe space */
@@ -293,12 +310,40 @@
 			'Gate': {
 				'name': 'Gate',
 				'isDoor': true,
+				'toggleMode': 'moveTo',
+				'hasInteraction': true,
+				'interactionZones': []
+			},
+			'Door1': {
+				'name': 'Gate',
+				'isDoor': true,
+				'toggleMode': 'action',
+				'isOpened': false,
 				'hasInteraction': true,
 				'interactionZones': []
 			},
 		}
 	};
-	var wallTypesDatas = [];
+	var doorTypes = {
+		'gladstone': {
+			'Door1': {
+				'name': 'Door1',
+				'toggleModes': ['action'],
+				'hasButton': true,
+				'buttonZone': [],
+				'isOpened': false,
+				'autoStateReset': false
+			},
+			'Gate': {
+				'name': 'Gate',
+				'toggleModes': ['moveTo'],
+				'isOpened': false,
+				'hasInteraction': true,
+				'autoStateReset': true
+			},
+		}
+	}
+	var cellsData = [];
 
 	$(document).ready(function(){
 	    process();
@@ -321,7 +366,7 @@
 			grid.grid[i].index = i;
 			grid.grid[i].type = tempGrid[i];
 			if(grid.grid[i].type != 'X') {
-				wallTypesDatas[i] = {
+				cellsData[i] = {
 					"wallFront": "Default",
 					"wallRight": "Default",
 					"wallBack": "Default",
@@ -335,7 +380,7 @@
 	function setWallTypes() {
 		for(i=0; i<grid.grid.length; i++) {
 			if(grid.grid[i].type == 'C') {
-				wallTypesDatas[i] = {
+				cellsData[i] = {
 					"wallFront": grid.grid[i].attr["wallFrontType"],
 					"wallRight": grid.grid[i].attr["wallRightType"],
 					"wallBack": grid.grid[i].attr["wallBackType"],
@@ -346,7 +391,7 @@
 	}
 
 	function setCellWallTypes(cell) {
-		wallTypesDatas[cell] = {
+		cellsData[cell] = {
 			"wallFront": typeof grid.grid[cell].attr["wallFrontType"] !== "undefined" ? grid.grid[cell].attr["wallFrontType"] : wallTypes[currentLayout]["Default"],
 			"wallRight": typeof grid.grid[cell].attr["wallRightType"] !== "undefined" ? grid.grid[cell].attr["wallRightType"] : wallTypes[currentLayout]["Default"],
 			"wallBack":  typeof grid.grid[cell].attr["wallBackType"]  !== "undefined" ? grid.grid[cell].attr["wallBackType"]  : wallTypes[currentLayout]["Default"],
@@ -379,13 +424,13 @@
 				grid.grid[i].attr.wallLeft  = grid.grid[i - 1].type == 'C'                          ? false : true;
 				// Wall types
 				if(grid.grid[i].attr.wallFront)
-					grid.grid[i].attr.wallFrontType = wallTypesDatas[i]["wallFront"];
+					grid.grid[i].attr.wallFrontType = cellsData[i]["wallFront"];
 				if(grid.grid[i].attr.wallRight)
-					grid.grid[i].attr.wallRightType = wallTypesDatas[i]["wallRight"];
+					grid.grid[i].attr.wallRightType = cellsData[i]["wallRight"];
 				if(grid.grid[i].attr.wallBack)
-					grid.grid[i].attr.wallBackType  = wallTypesDatas[i]["wallBack"];
+					grid.grid[i].attr.wallBackType  = cellsData[i]["wallBack"];
 				if(grid.grid[i].attr.wallLeft)
-					grid.grid[i].attr.wallLeftType  = wallTypesDatas[i]["wallLeft"];
+					grid.grid[i].attr.wallLeftType  = cellsData[i]["wallLeft"];
 			}
 		}
 		// Write file
@@ -461,7 +506,7 @@
 			applyCellType($(this).attr('data-id'));
 			mousePressed = true;
 		}
-		else if($(this).hasClass('C')) {
+		else if(!$(this).is('.E, .X')) {
 			openCellProperties($(this));
 		}
 	})
@@ -484,13 +529,19 @@
 	function initializeWallsData() {
 		currentLayout = $('#set_map_layout').val();
 		var currentLayoutWalls = wallTypes[currentLayout];
+		// Walls type selects
 		$('#cellWalls .wallItem').each(function() {
 			var selectList = $(this).find('select');
 			selectList.empty();
-			for (const [key, value] of Object.entries(currentLayoutWalls)) {
+			for (const [key, value] of Object.entries(currentLayoutWalls))
 				selectList.append('<option value="' + key + '">' + key + '</option>');
-			}
 		});
+		// Door type select
+		var doorSelectList = $('#setDoorType select');
+		doorSelectList.empty();
+		var currentLayoutDoors = doorTypes[currentLayout];
+		for (const [key, value] of Object.entries(currentLayoutDoors))
+			doorSelectList.append('<option value="' + key + '">' + key + '</option>');
 	}
 
 	// Cell properties modal
@@ -501,20 +552,33 @@
 		setCellWallTypes(cellIndex);
 		// Set cell id
 		$('#cellId').text('EDIT CELL ' + cellIndex);
+		// Door
+		var isDoor = grid.grid[cellIndex].type == 'D';
+		$('#cellIsDoor').prop('checked', isDoor);
+		$('#setDoorType').toggle(isDoor);
+		if(grid.grid[cellIndex].attr.wallFront && grid.grid[cellIndex].attr.wallBack || grid.grid[cellIndex].attr.wallRight && grid.grid[cellIndex].attr.wallLeft)
+			$('#cellDoor').show();
+		else
+			$('#cellDoor').hide();
 		// Display wall type selects
-		$('.wallItem').show();
-		if(grid.grid[cellIndex - (GRID_W + SAFE_MARGIN * 2)].type == 'C')
-			$('.wallItem.front').hide();
-		if(grid.grid[cellIndex + 1].type == 'C')
-			$('.wallItem.right').hide();
-		if(grid.grid[cellIndex + (GRID_W + SAFE_MARGIN * 2)].type == 'C')
-			$('.wallItem.back').hide();
-		if(grid.grid[cellIndex - 1].type == 'C')
-			$('.wallItem.left').hide();
+		if(isDoor)
+			$('#cellWalls').hide();
+		else {
+			$('#cellWalls').show();
+			$('.wallItem').show();
+			if(grid.grid[cellIndex - (GRID_W + SAFE_MARGIN * 2)].type == 'C')
+				$('.wallItem.front').hide();
+			if(grid.grid[cellIndex + 1].type == 'C')
+				$('.wallItem.right').hide();
+			if(grid.grid[cellIndex + (GRID_W + SAFE_MARGIN * 2)].type == 'C')
+				$('.wallItem.back').hide();
+			if(grid.grid[cellIndex - 1].type == 'C')
+				$('.wallItem.left').hide();
+		}
 		// Set current cell wall types
 		$('.wallItem select:visible').each(function() {
 			var wallDir = $(this).attr('data-dir');
-			$(this).val(wallTypesDatas[cellIndex][wallDir].name);
+			$(this).val(cellsData[cellIndex][wallDir].name);
 		});
 		cell.addClass('active');
 	}
@@ -523,7 +587,20 @@
 		var type = $(this).val();
 		var activeCell = $('#grid li span.active').attr('data-id');
 		var wallDir = $(this).attr('data-dir');
-		wallTypesDatas[activeCell][wallDir] = wallTypes[currentLayout][type];
+		cellsData[activeCell][wallDir] = wallTypes[currentLayout][type];
+	});
+
+	$('#cellIsDoor').change(function() {
+		var isDoor = $(this).is(':checked') ? true : false;
+		var replacementTile = isDoor ? 'D' : 'C';
+		var activeCell = $('#grid li span.active');
+		var activeCellId = activeCell.attr('data-id');
+		// Replace tile
+		grid.grid[+activeCellId].type = replacementTile;
+		$('#grid li span[data-id="' + activeCellId + '"]').removeClass().addClass(replacementTile);		
+		activeCell.addClass('active');
+		$('#setDoorType').toggle(isDoor);
+		$('#cellWalls').toggle(!isDoor);
 	});
 
 	// Loading file
