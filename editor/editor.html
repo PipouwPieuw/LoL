@@ -243,82 +243,68 @@
 		'gladstone': {
 			'Default': {
 				'name': 'Default',
-				'isDoor': false,
 				'hasInteraction': false,
-				'interactionZones': []
 			},
 			'Arch': {
 				'name': 'Arch',
-				'isDoor': false,
 				'hasInteraction': false,
-				'interactionZones': []
 			},
 			'Banner1': {
 				'name': 'Banner1',
-				'isDoor': false,
 				'hasInteraction': true,
 				'interactionZones': []
 			},
 			'Banner2': {
 				'name': 'Banner2',
-				'isDoor': false,
 				'hasInteraction': true,
 				'interactionZones': []
 			},
 			'Window1': {
 				'name': 'Window1',
-				'isDoor': false,
 				'hasInteraction': true,
 				'interactionZones': []
 			},
 			'Window2': {
 				'name': 'Window2',
-				'isDoor': false,
 				'hasInteraction': true,
 				'interactionZones': []
 			},
 			'Window3': {
 				'name': 'Window3',
-				'isDoor': false,
 				'hasInteraction': true,
 				'interactionZones': []
 			},
 			'Window4': {
 				'name': 'Window4',
-				'isDoor': false,
 				'hasInteraction': true,
 				'interactionZones': []
 			},
 			'Window5': {
 				'name': 'Window5',
-				'isDoor': false,
 				'hasInteraction': true,
 				'interactionZones': []
 			},
 			'Sculpture': {
 				'name': 'Sculpture',
-				'isDoor': false,
 				'hasInteraction': true,
 				'interactionZones': []
 			},
 			'Swords': {
 				'name': 'Swords',
-				'isDoor': false,
 				'hasInteraction': true,
 				'interactionZones': []
 			},
+			'DoorSide': {
+				'name': 'DoorSide',
+				'hasInteraction': false,
+			},
 			'Gate': {
 				'name': 'Gate',
-				'isDoor': true,
-				'toggleMode': 'moveTo',
 				'hasInteraction': true,
 				'interactionZones': []
 			},
 			'Door1': {
 				'name': 'Gate',
-				'isDoor': true,
-				'toggleMode': 'action',
-				'isOpened': false,
 				'hasInteraction': true,
 				'interactionZones': []
 			},
@@ -373,6 +359,7 @@
 					"wallLeft": "Default"
 				}
 			}
+			grid.grid[i].wallAttr = cellsData[i];
 		}
 	    renderGrid();
 	}
@@ -381,23 +368,23 @@
 		for(i=0; i<grid.grid.length; i++) {
 			if(grid.grid[i].type == 'C') {
 				cellsData[i] = {
-					"wallFront": grid.grid[i].attr["wallFrontType"],
-					"wallRight": grid.grid[i].attr["wallRightType"],
-					"wallBack": grid.grid[i].attr["wallBackType"],
-					"wallLeft": grid.grid[i].attr["wallLeftType"]
+					"wallFront": grid.grid[i].wallAttr["wallFrontType"],
+					"wallRight": grid.grid[i].wallAttr["wallRightType"],
+					"wallBack": grid.grid[i].wallAttr["wallBackType"],
+					"wallLeft": grid.grid[i].wallAttr["wallLeftType"]
 				}
 			}
 		}
 	}
 
-	function setCellWallTypes(cell) {
+	/*function setCellWallTypes(cell) {
 		cellsData[cell] = {
 			"wallFront": typeof grid.grid[cell].attr["wallFrontType"] !== "undefined" ? grid.grid[cell].attr["wallFrontType"] : wallTypes[currentLayout]["Default"],
 			"wallRight": typeof grid.grid[cell].attr["wallRightType"] !== "undefined" ? grid.grid[cell].attr["wallRightType"] : wallTypes[currentLayout]["Default"],
 			"wallBack":  typeof grid.grid[cell].attr["wallBackType"]  !== "undefined" ? grid.grid[cell].attr["wallBackType"]  : wallTypes[currentLayout]["Default"],
 			"wallLeft":  typeof grid.grid[cell].attr["wallLeftType"]  !== "undefined" ? grid.grid[cell].attr["wallLeftType"]  : wallTypes[currentLayout]["Default"]
 		}
-	}
+	}*/
 
 	function renderGrid() {		
 	    var output = '';
@@ -413,24 +400,26 @@
 	}
 
 	function generateJson() {
+		var cellsCheck = ['C', 'D'];
 		// Set wall attributes for each cell
 		for(i=0; i<grid.grid.length; i++) {
-			if(grid.grid[i].type == 'C') {
-				grid.grid[i].attr = {};
+			if(cellsCheck.indexOf(grid.grid[i].type) > -1) {
+				grid.grid[i].wallAttr = {};
 				// Wall display
-				grid.grid[i].attr.wallFront = grid.grid[i - (GRID_W + SAFE_MARGIN * 2)].type == 'C' ? false : true;
-				grid.grid[i].attr.wallRight = grid.grid[i + 1].type == 'C'                          ? false : true;
-				grid.grid[i].attr.wallBack  = grid.grid[i + (GRID_W + SAFE_MARGIN * 2)].type == 'C' ? false : true;
-				grid.grid[i].attr.wallLeft  = grid.grid[i - 1].type == 'C'                          ? false : true;
+				grid.grid[i].wallAttr.wallFront = cellsCheck.indexOf(grid.grid[i - (GRID_W + SAFE_MARGIN * 2)].type) > -1 ? false : true;
+				grid.grid[i].wallAttr.wallRight = cellsCheck.indexOf(grid.grid[i + 1].type) > -1                          ? false : true;
+				grid.grid[i].wallAttr.wallBack  = cellsCheck.indexOf(grid.grid[i + (GRID_W + SAFE_MARGIN * 2)].type) > -1 ? false : true;
+				grid.grid[i].wallAttr.wallLeft  = cellsCheck.indexOf(grid.grid[i - 1].type) > -1                          ? false : true;
 				// Wall types
-				if(grid.grid[i].attr.wallFront)
-					grid.grid[i].attr.wallFrontType = cellsData[i]["wallFront"];
-				if(grid.grid[i].attr.wallRight)
-					grid.grid[i].attr.wallRightType = cellsData[i]["wallRight"];
-				if(grid.grid[i].attr.wallBack)
-					grid.grid[i].attr.wallBackType  = cellsData[i]["wallBack"];
-				if(grid.grid[i].attr.wallLeft)
-					grid.grid[i].attr.wallLeftType  = cellsData[i]["wallLeft"];
+				var wallDoorSide = wallTypes[currentLayout]['DoorSide'];
+				if(grid.grid[i].wallAttr.wallFront)
+					grid.grid[i].wallAttr.wallFrontType = grid.grid[i].type == 'D' ? wallDoorSide : cellsData[i]["wallFront"];
+				if(grid.grid[i].wallAttr.wallRight)
+					grid.grid[i].wallAttr.wallRightType = grid.grid[i].type == 'D' ? wallDoorSide : cellsData[i]["wallRight"];
+				if(grid.grid[i].wallAttr.wallBack)
+					grid.grid[i].wallAttr.wallBackType  = grid.grid[i].type == 'D' ? wallDoorSide : cellsData[i]["wallBack"];
+				if(grid.grid[i].wallAttr.wallLeft)
+					grid.grid[i].wallAttr.wallLeftType  = grid.grid[i].type == 'D' ? wallDoorSide : cellsData[i]["wallLeft"];
 			}
 		}
 		// Write file
@@ -534,7 +523,8 @@
 			var selectList = $(this).find('select');
 			selectList.empty();
 			for (const [key, value] of Object.entries(currentLayoutWalls))
-				selectList.append('<option value="' + key + '">' + key + '</option>');
+				if(key != 'DoorSide')
+					selectList.append('<option value="' + key + '">' + key + '</option>');
 		});
 		// Door type select
 		var doorSelectList = $('#setDoorType select');
@@ -549,14 +539,14 @@
 		$('#cellPropertiesModal').addClass('active');
 		$('#grid li span.active').removeClass('active');
 		var cellIndex = +cell.attr('data-id');
-		setCellWallTypes(cellIndex);
+		// setCellWallTypes(cellIndex);
 		// Set cell id
 		$('#cellId').text('EDIT CELL ' + cellIndex);
 		// Door
 		var isDoor = grid.grid[cellIndex].type == 'D';
 		$('#cellIsDoor').prop('checked', isDoor);
 		$('#setDoorType').toggle(isDoor);
-		if(grid.grid[cellIndex].attr.wallFront && grid.grid[cellIndex].attr.wallBack || grid.grid[cellIndex].attr.wallRight && grid.grid[cellIndex].attr.wallLeft)
+		if(grid.grid[cellIndex].wallAttr.wallFront && grid.grid[cellIndex].wallAttr.wallBack || grid.grid[cellIndex].wallAttr.wallRight && grid.grid[cellIndex].wallAttr.wallLeft)
 			$('#cellDoor').show();
 		else
 			$('#cellDoor').hide();
@@ -597,10 +587,17 @@
 		var activeCellId = activeCell.attr('data-id');
 		// Replace tile
 		grid.grid[+activeCellId].type = replacementTile;
+		grid.grid[+activeCellId].doorAttr = doorTypes[currentLayout][$('#setDoorType select').val()];
 		$('#grid li span[data-id="' + activeCellId + '"]').removeClass().addClass(replacementTile);		
 		activeCell.addClass('active');
 		$('#setDoorType').toggle(isDoor);
 		$('#cellWalls').toggle(!isDoor);
+	});
+
+	$('#setDoorType').change(function() {
+		var type = $(this).val();
+		var activeCell = $('#grid li span.active').attr('data-id');
+		grid.grid[+activeCellId].wallAttr.doorAttr = doorTypes[currentLayout][type];
 	});
 
 	// Loading file
