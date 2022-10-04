@@ -125,8 +125,8 @@ func send_walls_status(moveDirection):
 		var cell = currentData.grid[cellIndex]
 		var cellName = cellNames[i]
 		wallsStatus[cellName] = {}
-		if cell.type == 'C':
-			if(directions[0] == 'U'):
+		if cell.walkable:
+			if directions[0] == 'U':
 				wallsStatus[cellName].wallFront = cell.wallAttr.wallFront
 				wallsStatus[cellName].wallLeft  = cell.wallAttr.wallLeft
 				wallsStatus[cellName].wallRight = cell.wallAttr.wallRight
@@ -136,7 +136,7 @@ func send_walls_status(moveDirection):
 					wallsStatus[cellName].wallLeftType = cell.wallAttr.wallLeftType.name
 				if cell.wallAttr.wallRight:
 					wallsStatus[cellName].wallRightType = cell.wallAttr.wallRightType.name
-			if(directions[0] == 'R'):
+			if directions[0] == 'R':
 				wallsStatus[cellName].wallFront = cell.wallAttr.wallRight
 				wallsStatus[cellName].wallLeft  = cell.wallAttr.wallFront
 				wallsStatus[cellName].wallRight = cell.wallAttr.wallBack
@@ -146,7 +146,7 @@ func send_walls_status(moveDirection):
 					wallsStatus[cellName].wallLeftType = cell.wallAttr.wallFrontType.name
 				if cell.wallAttr.wallBack:
 					wallsStatus[cellName].wallRightType = cell.wallAttr.wallBackType.name
-			if(directions[0] == 'D'):
+			if directions[0] == 'D':
 				wallsStatus[cellName].wallFront = cell.wallAttr.wallBack
 				wallsStatus[cellName].wallLeft  = cell.wallAttr.wallRight
 				wallsStatus[cellName].wallRight = cell.wallAttr.wallLeft
@@ -156,7 +156,7 @@ func send_walls_status(moveDirection):
 					wallsStatus[cellName].wallLeftType = cell.wallAttr.wallRightType.name
 				if cell.wallAttr.wallLeft:
 					wallsStatus[cellName].wallRightType = cell.wallAttr.wallLeftType.name
-			if(directions[0] == 'L'):
+			if directions[0] == 'L':
 				wallsStatus[cellName].wallFront = cell.wallAttr.wallLeft
 				wallsStatus[cellName].wallLeft  = cell.wallAttr.wallBack
 				wallsStatus[cellName].wallRight = cell.wallAttr.wallFront
@@ -200,7 +200,9 @@ func check_move(moveDirection):
 	or moveDirection == 'down' and currentDir == 'R'
 	or moveDirection == 'right' and currentDir == 'D'):
 		newCell -= 1
-	if currentData.grid[newCell].type == 'C':
+	var target = currentData.grid[newCell]
+	# Check if target cell is walkable or is opened door
+	if target.type == 'C' or (target.type == 'D' and target.doorAttr.isOpened):
 		set_cells(newCell)
 		get_tree().call_group('map', 'update_position', currentCell)
 		send_walls_status(moveDirection)

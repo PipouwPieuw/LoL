@@ -6,663 +6,828 @@
     "grid": [
     {
         "index": 0,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 1,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 2,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 3,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 4,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 5,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 6,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 7,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 8,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 9,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 10,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 11,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 12,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 13,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 14,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 15,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 16,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 17,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 18,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 19,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 20,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 21,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 22,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 23,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 24,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 25,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 26,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 27,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 28,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 29,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 30,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 31,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 32,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 33,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 34,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 35,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 36,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 37,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 38,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 39,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 40,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 41,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 42,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 43,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 44,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 45,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 46,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 47,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 48,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 49,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 50,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 51,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 52,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 53,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 54,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 55,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 56,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 57,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 58,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 59,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 60,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 61,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 62,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 63,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 64,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 65,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 66,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 67,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 68,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 69,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 70,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 71,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 72,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 73,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 74,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 75,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 76,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 77,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 78,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 79,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 80,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 81,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 82,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 83,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 84,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 85,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 86,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 87,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 88,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 89,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 90,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 91,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 92,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 93,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 94,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 95,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 96,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 97,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 98,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 99,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 100,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 101,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 102,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 103,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 104,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 105,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 106,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 107,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 108,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 109,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 110,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 111,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 112,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 113,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 114,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 115,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 116,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 117,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 118,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 119,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 120,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 121,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 122,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 123,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 124,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 125,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 126,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 127,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 128,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 129,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 130,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 131,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 132,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 133,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 134,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 135,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 136,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 137,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 138,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 139,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 140,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 141,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 142,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 143,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 144,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 145,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 146,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 147,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 148,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 149,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 150,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 151,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 152,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 153,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 154,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 155,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 156,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 157,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 158,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 159,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 160,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 161,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 162,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 163,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 164,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": true,
@@ -688,6 +853,7 @@
     {
         "index": 165,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": true,
@@ -712,23 +878,28 @@
     },
     {
         "index": 166,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 167,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 168,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 169,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 170,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": true,
@@ -760,83 +931,103 @@
     },
     {
         "index": 171,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 172,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 173,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 174,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 175,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 176,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 177,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 178,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 179,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 180,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 181,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 182,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 183,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 184,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 185,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 186,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 187,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 188,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 189,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 190,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": false,
@@ -862,6 +1053,7 @@
     {
         "index": 191,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": false,
@@ -879,15 +1071,18 @@
     },
     {
         "index": 192,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 193,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 194,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": true,
@@ -913,6 +1108,7 @@
     {
         "index": 195,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": true,
@@ -938,6 +1134,7 @@
     {
         "index": 196,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": false,
@@ -949,6 +1146,7 @@
     {
         "index": 197,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": true,
@@ -974,6 +1172,7 @@
     {
         "index": 198,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": true,
@@ -999,6 +1198,7 @@
     {
         "index": 199,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": true,
@@ -1030,75 +1230,93 @@
     },
     {
         "index": 200,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 201,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 202,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 203,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 204,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 205,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 206,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 207,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 208,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 209,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 210,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 211,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 212,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 213,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 214,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 215,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 216,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 217,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": false,
@@ -1123,15 +1341,18 @@
     },
     {
         "index": 218,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 219,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 220,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": false,
@@ -1156,11 +1377,13 @@
     },
     {
         "index": 221,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 222,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": false,
@@ -1192,87 +1415,108 @@
     },
     {
         "index": 223,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 224,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 225,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 226,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 227,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 228,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 229,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 230,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 231,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 232,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 233,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 234,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 235,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 236,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 237,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 238,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 239,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 240,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 241,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 242,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 243,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": false,
@@ -1291,6 +1535,7 @@
     {
         "index": 244,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": true,
@@ -1316,6 +1561,7 @@
     {
         "index": 245,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": true,
@@ -1334,6 +1580,7 @@
     {
         "index": 246,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": false,
@@ -1358,83 +1605,103 @@
     },
     {
         "index": 247,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 248,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 249,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 250,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 251,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 252,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 253,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 254,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 255,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 256,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 257,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 258,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 259,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 260,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 261,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 262,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 263,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 264,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 265,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 266,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": true,
@@ -1460,6 +1727,7 @@
     {
         "index": 267,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": true,
@@ -1478,6 +1746,7 @@
     {
         "index": 268,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": true,
@@ -1503,6 +1772,7 @@
     {
         "index": 269,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": false,
@@ -1527,11 +1797,13 @@
     },
     {
         "index": 270,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 271,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": false,
@@ -1556,87 +1828,108 @@
     },
     {
         "index": 272,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 273,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 274,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 275,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 276,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 277,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 278,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 279,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 280,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 281,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 282,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 283,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 284,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 285,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 286,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 287,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 288,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 289,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 290,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 291,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 292,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": false,
@@ -1662,6 +1955,7 @@
     {
         "index": 293,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": false,
@@ -1686,19 +1980,23 @@
     },
     {
         "index": 294,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 295,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 296,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 297,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": false,
@@ -1723,11 +2021,13 @@
     },
     {
         "index": 298,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 299,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": true,
@@ -1753,6 +2053,7 @@
     {
         "index": 300,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": true,
@@ -1778,6 +2079,7 @@
     {
         "index": 301,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": true,
@@ -1803,6 +2105,7 @@
     {
         "index": 302,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": true,
@@ -1834,75 +2137,93 @@
     },
     {
         "index": 303,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 304,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 305,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 306,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 307,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 308,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 309,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 310,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 311,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 312,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 313,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 314,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 315,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 316,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 317,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 318,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 319,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 320,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": true,
@@ -1935,6 +2256,7 @@
     {
         "index": 321,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": true,
@@ -1960,6 +2282,7 @@
     {
         "index": 322,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": true,
@@ -1985,6 +2308,7 @@
     {
         "index": 323,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": false,
@@ -1996,6 +2320,7 @@
     {
         "index": 324,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": true,
@@ -2014,6 +2339,7 @@
     {
         "index": 325,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": false,
@@ -2031,99 +2357,123 @@
     },
     {
         "index": 326,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 327,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 328,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 329,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 330,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 331,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 332,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 333,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 334,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 335,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 336,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 337,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 338,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 339,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 340,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 341,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 342,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 343,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 344,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 345,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 346,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 347,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 348,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 349,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": false,
@@ -2149,17 +2499,32 @@
     {
         "index": 350,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": false,
             "wallRight": false,
-            "wallBack": false,
-            "wallLeft": false
+            "wallBack": true,
+            "wallLeft": false,
+            "wallBackType":
+            {
+                "name": "Door1Opened",
+                "isDoor": true,
+                "linkedDoor": 376,
+                "linkedDoorSide": 402,
+                "doorAttr": {
+                    "name": "Door1",
+                    "toggleZones": [],
+                    "isOpened": true,
+                    "autoStateReset": false
+                },
+            }
         }
     },
     {
         "index": 351,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": false,
@@ -2178,6 +2543,7 @@
     {
         "index": 352,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": true,
@@ -2203,6 +2569,7 @@
     {
         "index": 353,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": true,
@@ -2228,6 +2595,7 @@
     {
         "index": 354,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": true,
@@ -2259,91 +2627,113 @@
     },
     {
         "index": 355,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 356,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 357,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 358,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 359,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 360,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 361,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 362,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 363,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 364,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 365,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 366,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 367,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 368,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 369,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 370,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 371,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 372,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 373,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 374,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 375,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 376,
-        "type": "C",
+        "type": "D",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": false,
@@ -2361,115 +2751,134 @@
                 "hasInteraction": false
             }
         },
-        "doorAttr":
-        {
-            "name": "Door1",
-            "toggleModes": ["action"],
-            "hasButton": true,
-            "buttonZone": [],
-            "isOpened": false,
-            "autoStateReset": false
+        "doorAttr": {
+            "isOpened": true
         }
     },
     {
         "index": 377,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 378,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 379,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 380,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 381,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 382,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 383,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 384,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 385,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 386,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 387,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 388,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 389,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 390,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 391,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 392,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 393,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 394,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 395,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 396,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 397,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 398,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 399,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 400,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 401,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": true,
@@ -2495,17 +2904,32 @@
     {
         "index": 402,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
-            "wallFront": false,
+            "wallFront": true,
             "wallRight": false,
             "wallBack": false,
-            "wallLeft": false
+            "wallLeft": false,
+            "wallFrontType":
+            {
+                "name": "Door1Opened",
+                "isDoor": true,
+                "linkedDoor": 376,
+                "linkedDoorSide": 350,
+                "doorAttr": {
+                    "name": "Door1",
+                    "toggleZones": [],
+                    "isOpened": true,
+                    "autoStateReset": false
+                },
+            }
         }
     },
     {
         "index": 403,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": true,
@@ -2530,99 +2954,123 @@
     },
     {
         "index": 404,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 405,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 406,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 407,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 408,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 409,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 410,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 411,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 412,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 413,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 414,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 415,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 416,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 417,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 418,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 419,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 420,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 421,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 422,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 423,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 424,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 425,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 426,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 427,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": false,
@@ -2648,6 +3096,7 @@
     {
         "index": 428,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": false,
@@ -2659,6 +3108,7 @@
     {
         "index": 429,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": false,
@@ -2683,103 +3133,128 @@
     },
     {
         "index": 430,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 431,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 432,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 433,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 434,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 435,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 436,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 437,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 438,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 439,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 440,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 441,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 442,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 443,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 444,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 445,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 446,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 447,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 448,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 449,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 450,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 451,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 452,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 453,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 454,
         "type": "C",
+        "walkable": true,
         "wallAttr":
         {
             "wallFront": false,
@@ -2811,107 +3286,133 @@
     },
     {
         "index": 455,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 456,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 457,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 458,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 459,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 460,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 461,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 462,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 463,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 464,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 465,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 466,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 467,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 468,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 469,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 470,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 471,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 472,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 473,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 474,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 475,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 476,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 477,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 478,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 479,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 480,
         "type": "E",
+        "walkable": false,
         "wallAttr":
         {
             "wallFront": false,
@@ -2936,107 +3437,133 @@
     },
     {
         "index": 481,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 482,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 483,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 484,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 485,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 486,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 487,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 488,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 489,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 490,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 491,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 492,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 493,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 494,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 495,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 496,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 497,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 498,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 499,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 500,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 501,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 502,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 503,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 504,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 505,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 506,
         "type": "E",
+        "walkable": false,
         "wallAttr":
         {
             "wallFront": false,
@@ -3068,678 +3595,847 @@
     },
     {
         "index": 507,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 508,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 509,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 510,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 511,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 512,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 513,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 514,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 515,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 516,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 517,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 518,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 519,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 520,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 521,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 522,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 523,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 524,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 525,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 526,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 527,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 528,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 529,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 530,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 531,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 532,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 533,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 534,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 535,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 536,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 537,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 538,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 539,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 540,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 541,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 542,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 543,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 544,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 545,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 546,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 547,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 548,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 549,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 550,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 551,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 552,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 553,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 554,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 555,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 556,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 557,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 558,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 559,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 560,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 561,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 562,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 563,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 564,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 565,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 566,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 567,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 568,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 569,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 570,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 571,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 572,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 573,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 574,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 575,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 576,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 577,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 578,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 579,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 580,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 581,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 582,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 583,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 584,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 585,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 586,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 587,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 588,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 589,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 590,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 591,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 592,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 593,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 594,
-        "type": "E"
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 595,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 596,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 597,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 598,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 599,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 600,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 601,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 602,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 603,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 604,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 605,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 606,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 607,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 608,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 609,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 610,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 611,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 612,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 613,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 614,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 615,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 616,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 617,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 618,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 619,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 620,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 621,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 622,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 623,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 624,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 625,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 626,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 627,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 628,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 629,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 630,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 631,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 632,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 633,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 634,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 635,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 636,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 637,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 638,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 639,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 640,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 641,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 642,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 643,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 644,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 645,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 646,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 647,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 648,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 649,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 650,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 651,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 652,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 653,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 654,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 655,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 656,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 657,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 658,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 659,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 660,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 661,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 662,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 663,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 664,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 665,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 666,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 667,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 668,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 669,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 670,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 671,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 672,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 673,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 674,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     },
     {
         "index": 675,
-        "type": "X"
+        "type": "X",
+        "walkable": false
     }]
 }
