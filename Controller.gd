@@ -127,45 +127,45 @@ func send_walls_status(moveDirection):
 		wallsStatus[cellName] = {}
 		if cell.type == 'C':
 			if(directions[0] == 'U'):
-				wallsStatus[cellName].wallFront = cell.attr.wallFront
-				wallsStatus[cellName].wallLeft  = cell.attr.wallLeft
-				wallsStatus[cellName].wallRight = cell.attr.wallRight
-				if cell.attr.wallFront:
-					wallsStatus[cellName].wallFrontType = cell.attr.wallFrontType.name
-				if cell.attr.wallLeft:
-					wallsStatus[cellName].wallLeftType = cell.attr.wallLeftType.name
-				if cell.attr.wallRight:
-					wallsStatus[cellName].wallRightType = cell.attr.wallRightType.name
+				wallsStatus[cellName].wallFront = cell.wallAttr.wallFront
+				wallsStatus[cellName].wallLeft  = cell.wallAttr.wallLeft
+				wallsStatus[cellName].wallRight = cell.wallAttr.wallRight
+				if cell.wallAttr.wallFront:
+					wallsStatus[cellName].wallFrontType = cell.wallAttr.wallFrontType.name
+				if cell.wallAttr.wallLeft:
+					wallsStatus[cellName].wallLeftType = cell.wallAttr.wallLeftType.name
+				if cell.wallAttr.wallRight:
+					wallsStatus[cellName].wallRightType = cell.wallAttr.wallRightType.name
 			if(directions[0] == 'R'):
-				wallsStatus[cellName].wallFront = cell.attr.wallRight
-				wallsStatus[cellName].wallLeft  = cell.attr.wallFront
-				wallsStatus[cellName].wallRight = cell.attr.wallBack
-				if cell.attr.wallRight:
-					wallsStatus[cellName].wallFrontType = cell.attr.wallRightType.name
-				if cell.attr.wallFront:
-					wallsStatus[cellName].wallLeftType = cell.attr.wallFrontType.name
-				if cell.attr.wallBack:
-					wallsStatus[cellName].wallRightType = cell.attr.wallBackType.name
+				wallsStatus[cellName].wallFront = cell.wallAttr.wallRight
+				wallsStatus[cellName].wallLeft  = cell.wallAttr.wallFront
+				wallsStatus[cellName].wallRight = cell.wallAttr.wallBack
+				if cell.wallAttr.wallRight:
+					wallsStatus[cellName].wallFrontType = cell.wallAttr.wallRightType.name
+				if cell.wallAttr.wallFront:
+					wallsStatus[cellName].wallLeftType = cell.wallAttr.wallFrontType.name
+				if cell.wallAttr.wallBack:
+					wallsStatus[cellName].wallRightType = cell.wallAttr.wallBackType.name
 			if(directions[0] == 'D'):
-				wallsStatus[cellName].wallFront = cell.attr.wallBack
-				wallsStatus[cellName].wallLeft  = cell.attr.wallRight
-				wallsStatus[cellName].wallRight = cell.attr.wallLeft
-				if cell.attr.wallBack:
-					wallsStatus[cellName].wallFrontType = cell.attr.wallBackType.name
-				if cell.attr.wallRight:
-					wallsStatus[cellName].wallLeftType = cell.attr.wallRightType.name
-				if cell.attr.wallLeft:
-					wallsStatus[cellName].wallRightType = cell.attr.wallLeftType.name
+				wallsStatus[cellName].wallFront = cell.wallAttr.wallBack
+				wallsStatus[cellName].wallLeft  = cell.wallAttr.wallRight
+				wallsStatus[cellName].wallRight = cell.wallAttr.wallLeft
+				if cell.wallAttr.wallBack:
+					wallsStatus[cellName].wallFrontType = cell.wallAttr.wallBackType.name
+				if cell.wallAttr.wallRight:
+					wallsStatus[cellName].wallLeftType = cell.wallAttr.wallRightType.name
+				if cell.wallAttr.wallLeft:
+					wallsStatus[cellName].wallRightType = cell.wallAttr.wallLeftType.name
 			if(directions[0] == 'L'):
-				wallsStatus[cellName].wallFront = cell.attr.wallLeft
-				wallsStatus[cellName].wallLeft  = cell.attr.wallBack
-				wallsStatus[cellName].wallRight = cell.attr.wallFront
-				if cell.attr.wallLeft:
-					wallsStatus[cellName].wallFrontType = cell.attr.wallLeftType.name
-				if cell.attr.wallBack:
-					wallsStatus[cellName].wallLeftType = cell.attr.wallBackType.name
-				if cell.attr.wallFront:
-					wallsStatus[cellName].wallRightType = cell.attr.wallFrontType.name
+				wallsStatus[cellName].wallFront = cell.wallAttr.wallLeft
+				wallsStatus[cellName].wallLeft  = cell.wallAttr.wallBack
+				wallsStatus[cellName].wallRight = cell.wallAttr.wallFront
+				if cell.wallAttr.wallLeft:
+					wallsStatus[cellName].wallFrontType = cell.wallAttr.wallLeftType.name
+				if cell.wallAttr.wallBack:
+					wallsStatus[cellName].wallLeftType = cell.wallAttr.wallBackType.name
+				if cell.wallAttr.wallFront:
+					wallsStatus[cellName].wallRightType = cell.wallAttr.wallFrontType.name
 		else:
 			wallsStatus[cellName].wallFront = false
 			wallsStatus[cellName].wallLeft  = false
@@ -200,14 +200,15 @@ func check_move(moveDirection):
 	or moveDirection == 'down' and currentDir == 'R'
 	or moveDirection == 'right' and currentDir == 'D'):
 		newCell -= 1
-	if(currentData.grid[newCell].type == 'C'):
+	if currentData.grid[newCell].type == 'C':
 		set_cells(newCell)
 		get_tree().call_group('map', 'update_position', currentCell)
 		send_walls_status(moveDirection)
 		get_tree().call_group('viewport', 'update_ceiling_floor')
 	else:
-		# TODO : WALL BUMP ANIMATION
-		pass
+		# Bump animation if moving forward to obstacle
+		if moveDirection == 'up':
+			get_tree().call_group('viewport', 'bump_forward')
 
 func change_direction(direction):
 	if direction == 'turnright':

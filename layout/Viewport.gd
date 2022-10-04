@@ -17,6 +17,7 @@ var currentLayout = ''
 var wallNodes = {}
 var wallNodesSide = {}
 var moveDirection = ''
+var bumpAnimation = false
 var data = {}
 
 func _ready():
@@ -26,43 +27,52 @@ func _ready():
 	
 func _physics_process(_delta):
 	# Move animations
-	if moveDirection == 'up':
+	if moveDirection != '':
+		if moveDirection == 'up':
+			textures.rect_scale.x += .1
+			textures.rect_scale.y += .1
+			if textures.rect_scale.x >= 1.6:
+				end_move_up_down()
+				update_walls(wallNodes)
+		elif moveDirection == 'down':
+			if textures.rect_scale.x == 1:
+				update_walls(wallNodes)
+				textures.rect_scale.x = 1.6
+				textures.rect_scale.y = 1.6
+			textures.rect_scale.x -= .1
+			textures.rect_scale.y -= .1
+			if textures.rect_scale.x <= 1:
+				end_move_up_down()
+		elif moveDirection == 'right':
+			if viewFront.rect_position.x == 0:
+				update_walls(wallNodesSide)
+				viewSide.rect_position.x = 128
+			viewFront.rect_position.x -= 22
+			viewSide.rect_position.x -= 22
+			if viewSide.rect_position.x <= 0:
+				update_walls(wallNodes)
+				end_move_left_right()
+		elif moveDirection == 'left':
+			if viewFront.rect_position.x == 0:
+				update_walls(wallNodesSide)
+				viewSide.rect_position.x = -128
+			viewFront.rect_position.x += 22
+			viewSide.rect_position.x += 22
+			if viewSide.rect_position.x >= 0:
+				update_walls(wallNodes)
+				end_move_left_right()
+		elif moveDirection == 'turnright':
+			move_animation_turn(-1)
+		elif moveDirection == 'turnleft':
+			move_animation_turn(1)
+	# Wall bump animation
+	elif bumpAnimation:
 		textures.rect_scale.x += .1
 		textures.rect_scale.y += .1
-		if textures.rect_scale.x >= 1.6:
-			end_move_up_down()
-			update_walls(wallNodes)
-	elif moveDirection == 'down':
-		if textures.rect_scale.x == 1:
-			update_walls(wallNodes)
-			textures.rect_scale.x = 1.6
-			textures.rect_scale.y = 1.6
-		textures.rect_scale.x -= .1
-		textures.rect_scale.y -= .1
-		if textures.rect_scale.x <= 1:
-			end_move_up_down()
-	elif moveDirection == 'right':
-		if viewFront.rect_position.x == 0:
-			update_walls(wallNodesSide)
-			viewSide.rect_position.x = 128
-		viewFront.rect_position.x -= 22
-		viewSide.rect_position.x -= 22
-		if viewSide.rect_position.x <= 0:
-			update_walls(wallNodes)
-			end_move_left_right()
-	elif moveDirection == 'left':
-		if viewFront.rect_position.x == 0:
-			update_walls(wallNodesSide)
-			viewSide.rect_position.x = -128
-		viewFront.rect_position.x += 22
-		viewSide.rect_position.x += 22
-		if viewSide.rect_position.x >= 0:
-			update_walls(wallNodes)
-			end_move_left_right()
-	elif moveDirection == 'turnright':
-		move_animation_turn(-1)
-	elif moveDirection == 'turnleft':
-		move_animation_turn(1)
+		if textures.rect_scale.x >= 1.4:
+			bumpAnimation = false
+			textures.rect_scale.x = 1
+			textures.rect_scale.y = 1
 
 func end_move_up_down():
 	moveDirection = ''
@@ -165,3 +175,6 @@ func update_walls(wallObject):
 func update_ceiling_floor():
 	floorSprite.flip_h   = !floorSprite.flip_h
 	ceilingSprite.flip_h = !ceilingSprite.flip_h
+
+func bump_forward():
+	bumpAnimation = true

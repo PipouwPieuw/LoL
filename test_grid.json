@@ -2343,7 +2343,7 @@
     },
     {
         "index": 376,
-        "type": "D",
+        "type": "C",
         "wallAttr":
         {
             "wallFront": false,
@@ -2352,12 +2352,12 @@
             "wallLeft": true,
             "wallRightType":
             {
-                "name": "DoorSide",
+                "name": "Default",
                 "hasInteraction": false
             },
             "wallLeftType":
             {
-                "name": "DoorSide",
+                "name": "Default",
                 "hasInteraction": false
             }
         },
