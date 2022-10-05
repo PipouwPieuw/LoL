@@ -111,30 +111,32 @@ func start_move(dir, moveData):
 func get_walls(wallObject):
 	var result = {}
 	for wall in wallObject.get_children():
+		wall.hframes = 15
+		
 		# Process string
 		var wallName = wall.get_name().replace('tU', 't_U').replace('tL', 't_L').replace('tR', 't_R')
 		wallName[0] = 'w'
 		var wallDirCell = wallName
-		var wallDirSprite =  wallName.split("_")[0].replace('Left', 'Side').replace('Right', 'Side')
+#		var wallDirSprite =  wallName.split("_")[0].replace('Left', 'Side').replace('Right', 'Side')
 		var wallOffsetCell = ''
-		var wallOffsetSprite = ''
+#		var wallOffsetSprite = ''
 		if wallName.find('_') != -1:
 			var nameSplit = wallName.split("_")
 			wallDirCell = nameSplit[0]
 			wallOffsetCell = nameSplit[1]
-			wallOffsetSprite = wallOffsetCell
-			if wallDirCell == 'wallFront':
-				wallOffsetSprite = wallOffsetSprite.replace('R', '').replace('L', '')
-			if wallDirSprite == 'wallSide':
-				wallOffsetSprite = wallOffsetSprite.replace('UUR', 'UUS').replace('UUL', 'UUS')
+#			wallOffsetSprite = wallOffsetCell
+#			if wallDirCell == 'wallFront':
+#				wallOffsetSprite = wallOffsetSprite.replace('R', '').replace('L', '')
+#			if wallDirSprite == 'wallSide':
+#				wallOffsetSprite = wallOffsetSprite.replace('UUR', 'UUS').replace('UUL', 'UUS')
 					
 		# Save wall data in object
 		result[wall.get_name()] = {}
 		result[wall.get_name()].sprite = wall
 		result[wall.get_name()].dirCell = wallDirCell
-		result[wall.get_name()].dirSprite = wallDirSprite
+#		result[wall.get_name()].dirSprite = wallDirSprite
 		result[wall.get_name()].offsetCell = wallOffsetCell
-		result[wall.get_name()].offsetSprite = wallOffsetSprite
+#		result[wall.get_name()].offsetSprite = wallOffsetSprite
 	return result;
 
 # Set new layout for sprites
@@ -164,13 +166,12 @@ func update_walls(wallObject):
 	for wallName in wallObject.keys():
 		var wall = wallObject[wallName]
 		# Set wall sprite
-		var walllVisibility = data['currentCell' + wall.offsetCell][wall.dirCell]
-		wall.sprite.visible = walllVisibility
-		if walllVisibility:
-			if wall.offsetSprite == 'UUU':
-				wall.sprite.texture = sprites['wallSideDefaultUUU']
-			else:
-				wall.sprite.texture = sprites[wall.dirSprite + data['currentCell' + wall.offsetCell][wall.dirCell + 'Type'] + wall.offsetSprite]
+		var spriteIndex = data['currentCell' + wall.offsetCell][wall.dirCell + 'SpriteIndex']
+		if spriteIndex == -1:
+			wall.sprite.visible = false
+		else:
+			wall.sprite.visible = true
+			wall.sprite.frame = spriteIndex
 
 func update_ceiling_floor():
 	floorSprite.flip_h   = !floorSprite.flip_h

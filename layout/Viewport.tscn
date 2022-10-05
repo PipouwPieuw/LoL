@@ -1,16 +1,16 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://assets/sprites/layout/gladstone/WallFrontDefault.png" type="Texture" id=1]
-[ext_resource path="res://assets/sprites/layout/gladstone/wallSideDefault.png" type="Texture" id=2]
-[ext_resource path="res://assets/sprites/layout/gladstone/wallSideDefaultU.png" type="Texture" id=3]
 [ext_resource path="res://layout/Viewport.gd" type="Script" id=4]
-[ext_resource path="res://assets/sprites/layout/gladstone/WallFrontDefaultUU.png" type="Texture" id=5]
-[ext_resource path="res://assets/sprites/layout/gladstone/WallFrontDefaultU.png" type="Texture" id=6]
-[ext_resource path="res://assets/sprites/layout/gladstone/wallSideDefaultUU.png" type="Texture" id=7]
-[ext_resource path="res://assets/sprites/layout/gladstone/wallSideDefaultUUS.png" type="Texture" id=8]
-[ext_resource path="res://assets/sprites/layout/gladstone/wallSideDefaultUUU.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/layout/gladstone/wallFront.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/layout/gladstone/wallFrontU.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/layout/gladstone/wallSideUU.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/layout/gladstone/wallSideU.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprites/layout/gladstone/wallSide.png" type="Texture" id=14]
 [ext_resource path="res://assets/sprites/layout/gladstone/floor.png" type="Texture" id=15]
 [ext_resource path="res://assets/sprites/layout/gladstone/Ceiling.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprites/layout/gladstone/wallSideUUU.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprites/layout/gladstone/wallSideUUS.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprites/layout/gladstone/wallFrontUU.png" type="Texture" id=19]
 
 [node name="Viewport" type="Control"]
 show_behind_parent = true
@@ -60,128 +60,148 @@ centered = false
 [node name="WallLeftUUU" type="Sprite" parent="Textures/Front/Walls"]
 visible = false
 position = Vector2( 64, 28 )
-texture = ExtResource( 9 )
+texture = ExtResource( 17 )
 centered = false
+hframes = 14
 
 [node name="WallRightUUU" type="Sprite" parent="Textures/Front/Walls"]
 visible = false
 position = Vector2( 104, 28 )
-texture = ExtResource( 9 )
+texture = ExtResource( 17 )
 centered = false
 flip_h = true
+hframes = 14
 
 [node name="WallFrontUULL" type="Sprite" parent="Textures/Front/Walls"]
 visible = false
 position = Vector2( -8, 46 )
-texture = ExtResource( 5 )
+texture = ExtResource( 19 )
+hframes = 14
 
 [node name="WallLeftUUL" type="Sprite" parent="Textures/Front/Walls"]
 visible = false
 position = Vector2( 8, 47 )
-texture = ExtResource( 8 )
+texture = ExtResource( 18 )
+hframes = 14
 
 [node name="WallFrontUUL" type="Sprite" parent="Textures/Front/Walls"]
 visible = false
 position = Vector2( 16, 27 )
-texture = ExtResource( 5 )
+texture = ExtResource( 19 )
 centered = false
+hframes = 14
 
 [node name="WallFrontUU" type="Sprite" parent="Textures/Front/Walls"]
 visible = false
 position = Vector2( 64, 27 )
-texture = ExtResource( 5 )
+texture = ExtResource( 19 )
 centered = false
+hframes = 14
 
 [node name="WallFrontUUR" type="Sprite" parent="Textures/Front/Walls"]
 visible = false
 position = Vector2( 112, 27 )
-texture = ExtResource( 5 )
+texture = ExtResource( 19 )
 centered = false
+hframes = 14
 
 [node name="WallRightUUR" type="Sprite" parent="Textures/Front/Walls"]
 visible = false
 position = Vector2( 168, 47 )
-texture = ExtResource( 8 )
+texture = ExtResource( 18 )
 flip_h = true
+hframes = 14
 
 [node name="WallFrontUURR" type="Sprite" parent="Textures/Front/Walls"]
 visible = false
 position = Vector2( 184, 46 )
-texture = ExtResource( 5 )
+texture = ExtResource( 19 )
+hframes = 14
 
 [node name="WallLeftUU" type="Sprite" parent="Textures/Front/Walls"]
 visible = false
 position = Vector2( 48, 20 )
-texture = ExtResource( 7 )
+texture = ExtResource( 12 )
 centered = false
+hframes = 14
 
 [node name="WallRightUU" type="Sprite" parent="Textures/Front/Walls"]
 visible = false
 position = Vector2( 112, 20 )
-texture = ExtResource( 7 )
+texture = ExtResource( 12 )
 centered = false
 flip_h = true
+hframes = 14
 
 [node name="WallFrontU" type="Sprite" parent="Textures/Front/Walls"]
 visible = false
 position = Vector2( 48, 20 )
-texture = ExtResource( 6 )
+texture = ExtResource( 11 )
 centered = false
+hframes = 14
 
 [node name="WallFrontUL" type="Sprite" parent="Textures/Front/Walls"]
 visible = false
 position = Vector2( -32, 20 )
-texture = ExtResource( 6 )
+texture = ExtResource( 11 )
 centered = false
+hframes = 14
 
 [node name="WallFrontUR" type="Sprite" parent="Textures/Front/Walls"]
 visible = false
 position = Vector2( 128, 20 )
-texture = ExtResource( 6 )
+texture = ExtResource( 11 )
 centered = false
+hframes = 14
 
 [node name="WallLeftU" type="Sprite" parent="Textures/Front/Walls"]
 visible = false
 position = Vector2( 24, 8 )
-texture = ExtResource( 3 )
+texture = ExtResource( 13 )
 centered = false
+hframes = 14
 
 [node name="WallRightU" type="Sprite" parent="Textures/Front/Walls"]
 visible = false
 position = Vector2( 128, 8 )
-texture = ExtResource( 3 )
+texture = ExtResource( 13 )
 centered = false
 flip_h = true
+hframes = 14
 
 [node name="WallFrontL" type="Sprite" parent="Textures/Front/Walls"]
 visible = false
 position = Vector2( -104, 8 )
-texture = ExtResource( 1 )
+texture = ExtResource( 10 )
 centered = false
+hframes = 14
 
 [node name="WallFrontR" type="Sprite" parent="Textures/Front/Walls"]
 visible = false
 position = Vector2( 152, 8 )
-texture = ExtResource( 1 )
+texture = ExtResource( 10 )
 centered = false
+hframes = 14
 
 [node name="WallFront" type="Sprite" parent="Textures/Front/Walls"]
 visible = false
 position = Vector2( 24, 8 )
-texture = ExtResource( 1 )
+texture = ExtResource( 10 )
 centered = false
 
 [node name="WallLeft" type="Sprite" parent="Textures/Front/Walls"]
 visible = false
-texture = ExtResource( 2 )
+texture = ExtResource( 14 )
 centered = false
+hframes = 14
 
 [node name="WallRight" type="Sprite" parent="Textures/Front/Walls"]
 visible = false
 position = Vector2( 152, 0 )
-texture = ExtResource( 2 )
+texture = ExtResource( 14 )
 centered = false
 flip_h = true
+hframes = 14
 
 [node name="Side" type="Control" parent="Textures"]
 margin_left = -176.0
@@ -209,130 +229,150 @@ texture = ExtResource( 15 )
 centered = false
 
 [node name="Walls" type="Node2D" parent="Textures/Side"]
-z_index = 2
 
 [node name="WallLeftUUU" type="Sprite" parent="Textures/Side/Walls"]
 visible = false
 position = Vector2( 64, 28 )
-texture = ExtResource( 9 )
+texture = ExtResource( 17 )
 centered = false
+hframes = 14
 
 [node name="WallRightUUU" type="Sprite" parent="Textures/Side/Walls"]
 visible = false
 position = Vector2( 104, 28 )
-texture = ExtResource( 9 )
+texture = ExtResource( 17 )
 centered = false
 flip_h = true
+hframes = 14
 
 [node name="WallFrontUULL" type="Sprite" parent="Textures/Side/Walls"]
 visible = false
 position = Vector2( -8, 46 )
-texture = ExtResource( 5 )
+texture = ExtResource( 19 )
+hframes = 14
 
 [node name="WallLeftUUL" type="Sprite" parent="Textures/Side/Walls"]
 visible = false
 position = Vector2( 8, 47 )
-texture = ExtResource( 8 )
+texture = ExtResource( 18 )
+hframes = 14
 
 [node name="WallFrontUUL" type="Sprite" parent="Textures/Side/Walls"]
 visible = false
 position = Vector2( 16, 27 )
-texture = ExtResource( 5 )
+texture = ExtResource( 19 )
 centered = false
+hframes = 14
 
 [node name="WallFrontUU" type="Sprite" parent="Textures/Side/Walls"]
 visible = false
 position = Vector2( 64, 27 )
-texture = ExtResource( 5 )
+texture = ExtResource( 19 )
 centered = false
+hframes = 14
 
 [node name="WallFrontUUR" type="Sprite" parent="Textures/Side/Walls"]
 visible = false
 position = Vector2( 112, 27 )
-texture = ExtResource( 5 )
+texture = ExtResource( 19 )
 centered = false
+hframes = 14
 
 [node name="WallRightUUR" type="Sprite" parent="Textures/Side/Walls"]
 visible = false
 position = Vector2( 168, 47 )
-texture = ExtResource( 8 )
+texture = ExtResource( 18 )
 flip_h = true
+hframes = 14
 
 [node name="WallFrontUURR" type="Sprite" parent="Textures/Side/Walls"]
 visible = false
 position = Vector2( 184, 46 )
-texture = ExtResource( 5 )
+texture = ExtResource( 19 )
+hframes = 14
 
 [node name="WallLeftUU" type="Sprite" parent="Textures/Side/Walls"]
 visible = false
 position = Vector2( 48, 20 )
-texture = ExtResource( 7 )
+texture = ExtResource( 12 )
 centered = false
+hframes = 14
 
 [node name="WallRightUU" type="Sprite" parent="Textures/Side/Walls"]
 visible = false
 position = Vector2( 112, 20 )
-texture = ExtResource( 7 )
+texture = ExtResource( 12 )
 centered = false
 flip_h = true
+hframes = 14
 
 [node name="WallFrontU" type="Sprite" parent="Textures/Side/Walls"]
 visible = false
 position = Vector2( 48, 20 )
-texture = ExtResource( 6 )
+texture = ExtResource( 11 )
 centered = false
+hframes = 14
 
 [node name="WallFrontUL" type="Sprite" parent="Textures/Side/Walls"]
 visible = false
 position = Vector2( -32, 20 )
-texture = ExtResource( 6 )
+texture = ExtResource( 11 )
 centered = false
+hframes = 14
 
 [node name="WallFrontUR" type="Sprite" parent="Textures/Side/Walls"]
 visible = false
 position = Vector2( 128, 20 )
-texture = ExtResource( 6 )
+texture = ExtResource( 11 )
 centered = false
+hframes = 14
 
 [node name="WallLeftU" type="Sprite" parent="Textures/Side/Walls"]
 visible = false
 position = Vector2( 24, 8 )
-texture = ExtResource( 3 )
+texture = ExtResource( 13 )
 centered = false
+hframes = 14
 
 [node name="WallRightU" type="Sprite" parent="Textures/Side/Walls"]
 visible = false
 position = Vector2( 128, 8 )
-texture = ExtResource( 3 )
+texture = ExtResource( 13 )
 centered = false
 flip_h = true
+hframes = 14
 
 [node name="WallFrontL" type="Sprite" parent="Textures/Side/Walls"]
 visible = false
 position = Vector2( -104, 8 )
-texture = ExtResource( 1 )
+texture = ExtResource( 10 )
 centered = false
+hframes = 14
 
 [node name="WallFrontR" type="Sprite" parent="Textures/Side/Walls"]
 visible = false
 position = Vector2( 152, 8 )
-texture = ExtResource( 1 )
+texture = ExtResource( 10 )
 centered = false
+hframes = 14
 
 [node name="WallFront" type="Sprite" parent="Textures/Side/Walls"]
 visible = false
 position = Vector2( 24, 8 )
-texture = ExtResource( 1 )
+texture = ExtResource( 10 )
 centered = false
+hframes = 14
 
 [node name="WallLeft" type="Sprite" parent="Textures/Side/Walls"]
 visible = false
-texture = ExtResource( 2 )
+texture = ExtResource( 14 )
 centered = false
+hframes = 14
 
 [node name="WallRight" type="Sprite" parent="Textures/Side/Walls"]
 visible = false
 position = Vector2( 152, 0 )
-texture = ExtResource( 2 )
+texture = ExtResource( 14 )
 centered = false
 flip_h = true
+hframes = 14

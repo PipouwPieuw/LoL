@@ -127,49 +127,25 @@ func send_walls_status(moveDirection):
 		wallsStatus[cellName] = {}
 		if cell.walkable:
 			if directions[0] == 'U':
-				wallsStatus[cellName].wallFront = cell.wallAttr.wallFront
-				wallsStatus[cellName].wallLeft  = cell.wallAttr.wallLeft
-				wallsStatus[cellName].wallRight = cell.wallAttr.wallRight
-				if cell.wallAttr.wallFront:
-					wallsStatus[cellName].wallFrontType = cell.wallAttr.wallFrontType.name
-				if cell.wallAttr.wallLeft:
-					wallsStatus[cellName].wallLeftType = cell.wallAttr.wallLeftType.name
-				if cell.wallAttr.wallRight:
-					wallsStatus[cellName].wallRightType = cell.wallAttr.wallRightType.name
+				wallsStatus[cellName].wallFrontSpriteIndex = cell.wallAttr.wallFront.spriteIndex
+				wallsStatus[cellName].wallLeftSpriteIndex = cell.wallAttr.wallLeft.spriteIndex
+				wallsStatus[cellName].wallRightSpriteIndex = cell.wallAttr.wallRight.spriteIndex
 			if directions[0] == 'R':
-				wallsStatus[cellName].wallFront = cell.wallAttr.wallRight
-				wallsStatus[cellName].wallLeft  = cell.wallAttr.wallFront
-				wallsStatus[cellName].wallRight = cell.wallAttr.wallBack
-				if cell.wallAttr.wallRight:
-					wallsStatus[cellName].wallFrontType = cell.wallAttr.wallRightType.name
-				if cell.wallAttr.wallFront:
-					wallsStatus[cellName].wallLeftType = cell.wallAttr.wallFrontType.name
-				if cell.wallAttr.wallBack:
-					wallsStatus[cellName].wallRightType = cell.wallAttr.wallBackType.name
+				wallsStatus[cellName].wallFrontSpriteIndex = cell.wallAttr.wallRight.spriteIndex
+				wallsStatus[cellName].wallLeftSpriteIndex = cell.wallAttr.wallFront.spriteIndex
+				wallsStatus[cellName].wallRightSpriteIndex = cell.wallAttr.wallBack.spriteIndex
 			if directions[0] == 'D':
-				wallsStatus[cellName].wallFront = cell.wallAttr.wallBack
-				wallsStatus[cellName].wallLeft  = cell.wallAttr.wallRight
-				wallsStatus[cellName].wallRight = cell.wallAttr.wallLeft
-				if cell.wallAttr.wallBack:
-					wallsStatus[cellName].wallFrontType = cell.wallAttr.wallBackType.name
-				if cell.wallAttr.wallRight:
-					wallsStatus[cellName].wallLeftType = cell.wallAttr.wallRightType.name
-				if cell.wallAttr.wallLeft:
-					wallsStatus[cellName].wallRightType = cell.wallAttr.wallLeftType.name
+				wallsStatus[cellName].wallFrontSpriteIndex = cell.wallAttr.wallBack.spriteIndex
+				wallsStatus[cellName].wallLeftSpriteIndex = cell.wallAttr.wallRight.spriteIndex
+				wallsStatus[cellName].wallRightSpriteIndex = cell.wallAttr.wallLeft.spriteIndex
 			if directions[0] == 'L':
-				wallsStatus[cellName].wallFront = cell.wallAttr.wallLeft
-				wallsStatus[cellName].wallLeft  = cell.wallAttr.wallBack
-				wallsStatus[cellName].wallRight = cell.wallAttr.wallFront
-				if cell.wallAttr.wallLeft:
-					wallsStatus[cellName].wallFrontType = cell.wallAttr.wallLeftType.name
-				if cell.wallAttr.wallBack:
-					wallsStatus[cellName].wallLeftType = cell.wallAttr.wallBackType.name
-				if cell.wallAttr.wallFront:
-					wallsStatus[cellName].wallRightType = cell.wallAttr.wallFrontType.name
+				wallsStatus[cellName].wallFrontSpriteIndex = cell.wallAttr.wallLeft.spriteIndex
+				wallsStatus[cellName].wallLeftSpriteIndex = cell.wallAttr.wallBack.spriteIndex
+				wallsStatus[cellName].wallRightSpriteIndex = cell.wallAttr.wallFront.spriteIndex
 		else:
-			wallsStatus[cellName].wallFront = false
-			wallsStatus[cellName].wallLeft  = false
-			wallsStatus[cellName].wallRight = false
+			wallsStatus[cellName].wallFrontSpriteIndex = -1
+			wallsStatus[cellName].wallLeftSpriteIndex = -1
+			wallsStatus[cellName].wallRightSpriteIndex = -1
 		i += 1
 	get_tree().call_group('viewport', 'start_move', moveDirection, wallsStatus)
 

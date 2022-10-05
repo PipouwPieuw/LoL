@@ -826,13 +826,55 @@
     },
     {
         "index": 164,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": true,
+            "wallRight": false,
+            "wallBack": false,
+            "wallLeft": true,
+            "wallFrontType":
+            {
+                "name": "Window4",
+                "isDoor": false,
+                "hasInteraction": true,
+                "interactionZones": []
+            },
+            "wallLeftType":
+            {
+                "name": "Arch",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 165,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": true,
+            "wallRight": true,
+            "wallBack": false,
+            "wallLeft": false,
+            "wallFrontType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            },
+            "wallRightType":
+            {
+                "name": "Arch",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 166,
@@ -856,8 +898,36 @@
     },
     {
         "index": 170,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": true,
+            "wallRight": true,
+            "wallBack": false,
+            "wallLeft": true,
+            "wallFrontType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            },
+            "wallRightType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            },
+            "wallLeftType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 171,
@@ -956,13 +1026,48 @@
     },
     {
         "index": 190,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": false,
+            "wallRight": false,
+            "wallBack": true,
+            "wallLeft": true,
+            "wallBackType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            },
+            "wallLeftType":
+            {
+                "name": "Window1",
+                "isDoor": false,
+                "hasInteraction": true,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 191,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": false,
+            "wallRight": true,
+            "wallBack": false,
+            "wallLeft": false,
+            "wallRightType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 192,
@@ -976,33 +1081,152 @@
     },
     {
         "index": 194,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": true,
+            "wallRight": false,
+            "wallBack": false,
+            "wallLeft": true,
+            "wallFrontType":
+            {
+                "name": "Window3",
+                "isDoor": false,
+                "hasInteraction": true,
+                "interactionZones": []
+            },
+            "wallLeftType":
+            {
+                "name": "Arch",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 195,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": true,
+            "wallRight": false,
+            "wallBack": true,
+            "wallLeft": false,
+            "wallFrontType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            },
+            "wallBackType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 196,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": false,
+            "wallRight": false,
+            "wallBack": false,
+            "wallLeft": false
+        }
     },
     {
         "index": 197,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": true,
+            "wallRight": false,
+            "wallBack": true,
+            "wallLeft": false,
+            "wallFrontType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            },
+            "wallBackType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 198,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": true,
+            "wallRight": false,
+            "wallBack": true,
+            "wallLeft": false,
+            "wallFrontType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            },
+            "wallBackType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 199,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": true,
+            "wallRight": true,
+            "wallBack": true,
+            "wallLeft": false,
+            "wallFrontType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            },
+            "wallRightType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            },
+            "wallBackType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 200,
@@ -1091,8 +1315,29 @@
     },
     {
         "index": 217,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": false,
+            "wallRight": true,
+            "wallBack": false,
+            "wallLeft": true,
+            "wallRightType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            },
+            "wallLeftType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 218,
@@ -1106,8 +1351,29 @@
     },
     {
         "index": 220,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": false,
+            "wallRight": true,
+            "wallBack": false,
+            "wallLeft": true,
+            "wallRightType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            },
+            "wallLeftType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 221,
@@ -1116,8 +1382,36 @@
     },
     {
         "index": 222,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": false,
+            "wallRight": true,
+            "wallBack": true,
+            "wallLeft": true,
+            "wallRightType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            },
+            "wallBackType":
+            {
+                "name": "Arch",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            },
+            "wallLeftType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 223,
@@ -1221,23 +1515,93 @@
     },
     {
         "index": 243,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": false,
+            "wallRight": false,
+            "wallBack": false,
+            "wallLeft": true,
+            "wallLeftType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 244,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": true,
+            "wallRight": false,
+            "wallBack": true,
+            "wallLeft": false,
+            "wallFrontType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            },
+            "wallBackType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 245,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": true,
+            "wallRight": false,
+            "wallBack": false,
+            "wallLeft": false,
+            "wallFrontType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 246,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": false,
+            "wallRight": true,
+            "wallBack": true,
+            "wallLeft": false,
+            "wallRightType":
+            {
+                "name": "Window2",
+                "isDoor": false,
+                "hasInteraction": true,
+                "interactionZones": []
+            },
+            "wallBackType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 247,
@@ -1336,23 +1700,100 @@
     },
     {
         "index": 266,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": true,
+            "wallRight": false,
+            "wallBack": false,
+            "wallLeft": true,
+            "wallFrontType":
+            {
+                "name": "Window4",
+                "isDoor": false,
+                "hasInteraction": true,
+                "interactionZones": []
+            },
+            "wallLeftType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 267,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": true,
+            "wallRight": false,
+            "wallBack": false,
+            "wallLeft": false,
+            "wallFrontType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 268,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": true,
+            "wallRight": false,
+            "wallBack": true,
+            "wallLeft": false,
+            "wallFrontType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            },
+            "wallBackType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 269,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": false,
+            "wallRight": true,
+            "wallBack": true,
+            "wallLeft": false,
+            "wallRightType":
+            {
+                "name": "Arch",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            },
+            "wallBackType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 270,
@@ -1361,8 +1802,29 @@
     },
     {
         "index": 271,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": false,
+            "wallRight": true,
+            "wallBack": false,
+            "wallLeft": true,
+            "wallRightType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            },
+            "wallLeftType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 272,
@@ -1466,13 +1928,55 @@
     },
     {
         "index": 292,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": false,
+            "wallRight": false,
+            "wallBack": true,
+            "wallLeft": true,
+            "wallBackType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            },
+            "wallLeftType":
+            {
+                "name": "Window3",
+                "isDoor": false,
+                "hasInteraction": true,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 293,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": false,
+            "wallRight": true,
+            "wallBack": true,
+            "wallLeft": false,
+            "wallRightType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            },
+            "wallBackType":
+            {
+                "name": "Window5",
+                "isDoor": false,
+                "hasInteraction": true,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 294,
@@ -1491,8 +1995,29 @@
     },
     {
         "index": 297,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": false,
+            "wallRight": true,
+            "wallBack": false,
+            "wallLeft": true,
+            "wallRightType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            },
+            "wallLeftType":
+            {
+                "name": "Arch",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 298,
@@ -1501,23 +2026,114 @@
     },
     {
         "index": 299,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": true,
+            "wallRight": false,
+            "wallBack": false,
+            "wallLeft": true,
+            "wallFrontType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            },
+            "wallLeftType":
+            {
+                "name": "Swords",
+                "isDoor": false,
+                "hasInteraction": true,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 300,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": true,
+            "wallRight": false,
+            "wallBack": true,
+            "wallLeft": false,
+            "wallFrontType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            },
+            "wallBackType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 301,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": true,
+            "wallRight": false,
+            "wallBack": true,
+            "wallLeft": false,
+            "wallFrontType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            },
+            "wallBackType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 302,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": true,
+            "wallRight": true,
+            "wallBack": true,
+            "wallLeft": false,
+            "wallFrontType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            },
+            "wallRightType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            },
+            "wallBackType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 303,
@@ -1606,33 +2222,138 @@
     },
     {
         "index": 320,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": true,
+            "wallRight": false,
+            "wallBack": true,
+            "wallLeft": true,
+            "wallFrontType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            },
+            "wallBackType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            },
+            "wallLeftType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 321,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": true,
+            "wallRight": false,
+            "wallBack": true,
+            "wallLeft": false,
+            "wallFrontType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            },
+            "wallBackType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 322,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": true,
+            "wallRight": false,
+            "wallBack": true,
+            "wallLeft": false,
+            "wallFrontType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            },
+            "wallBackType":
+            {
+                "name": "Arch",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 323,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": false,
+            "wallRight": false,
+            "wallBack": false,
+            "wallLeft": false
+        }
     },
     {
         "index": 324,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": true,
+            "wallRight": false,
+            "wallBack": false,
+            "wallLeft": false,
+            "wallFrontType":
+            {
+                "name": "Swords",
+                "isDoor": false,
+                "hasInteraction": true,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 325,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": false,
+            "wallRight": true,
+            "wallBack": false,
+            "wallLeft": false,
+            "wallRightType":
+            {
+                "name": "Banner2",
+                "isDoor": false,
+                "hasInteraction": true,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 326,
@@ -1751,33 +2472,158 @@
     },
     {
         "index": 349,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": false,
+            "wallRight": false,
+            "wallBack": true,
+            "wallLeft": true,
+            "wallBackType":
+            {
+                "name": "Arch",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            },
+            "wallLeftType":
+            {
+                "name": "Sculpture",
+                "isDoor": false,
+                "hasInteraction": true,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 350,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": false,
+            "wallRight": false,
+            "wallBack": true,
+            "wallLeft": false,
+            "wallBackType":
+            {
+                "name": "Door1Opened",
+                "isDoor": true,
+                "linkedDoor": 376,
+                "linkedDoorSide": 402,
+                "doorAttr": {
+                    "name": "Door1",
+                    "toggleZones": [],
+                    "isOpened": true,
+                    "autoStateReset": false
+                },
+            }
+        }
     },
     {
         "index": 351,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": false,
+            "wallRight": false,
+            "wallBack": true,
+            "wallLeft": false,
+            "wallBackType":
+            {
+                "name": "Arch",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 352,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": true,
+            "wallRight": false,
+            "wallBack": true,
+            "wallLeft": false,
+            "wallFrontType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            },
+            "wallBackType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 353,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": true,
+            "wallRight": false,
+            "wallBack": true,
+            "wallLeft": false,
+            "wallFrontType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            },
+            "wallBackType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 354,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": true,
+            "wallRight": true,
+            "wallBack": true,
+            "wallLeft": false,
+            "wallFrontType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            },
+            "wallRightType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            },
+            "wallBackType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 355,
@@ -1890,17 +2736,19 @@
         "walkable": true,
         "wallAttr":
         {
-            "wallFront": {
-            	"spriteIndex": -1,
+            "wallFront": false,
+            "wallRight": true,
+            "wallBack": false,
+            "wallLeft": true,
+            "wallRightType":
+            {
+                "name": "Default",
+                "hasInteraction": false
             },
-            "wallRight": {
-            	"spriteIndex": 0,
-            },
-            "wallBack": {
-            	"spriteIndex": -1,
-            },
-            "wallLeft": {
-            	"spriteIndex": 0,
+            "wallLeftType":
+            {
+                "name": "Default",
+                "hasInteraction": false
             }
         },
         "doorAttr": {
@@ -2033,17 +2881,23 @@
         "walkable": true,
         "wallAttr":
         {
-            "wallFront": {
-            	"spriteIndex": 1,
+            "wallFront": true,
+            "wallRight": false,
+            "wallBack": false,
+            "wallLeft": true,
+            "wallFrontType":
+            {
+                "name": "Banner1",
+                "isDoor": false,
+                "hasInteraction": true,
+                "interactionZones": []
             },
-            "wallRight": {
-            	"spriteIndex": -1,
-            },
-            "wallBack": {
-            	"spriteIndex": -1,
-            },
-            "wallLeft": {
-            	"spriteIndex": 0,
+            "wallLeftType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
             }
         }
     },
@@ -2053,17 +2907,22 @@
         "walkable": true,
         "wallAttr":
         {
-            "wallFront": {
-            	"spriteIndex": 14,
-            },
-            "wallRight": {
-            	"spriteIndex": -1,
-            },
-            "wallBack": {
-            	"spriteIndex": -1,
-            },
-            "wallLeft": {
-            	"spriteIndex": -1,
+            "wallFront": true,
+            "wallRight": false,
+            "wallBack": false,
+            "wallLeft": false,
+            "wallFrontType":
+            {
+                "name": "Door1Opened",
+                "isDoor": true,
+                "linkedDoor": 376,
+                "linkedDoorSide": 350,
+                "doorAttr": {
+                    "name": "Door1",
+                    "toggleZones": [],
+                    "isOpened": true,
+                    "autoStateReset": false
+                },
             }
         }
     },
@@ -2073,17 +2932,23 @@
         "walkable": true,
         "wallAttr":
         {
-            "wallFront": {
-            	"spriteIndex": 2,
+            "wallFront": true,
+            "wallRight": true,
+            "wallBack": false,
+            "wallLeft": false,
+            "wallFrontType":
+            {
+                "name": "Banner1",
+                "isDoor": false,
+                "hasInteraction": true,
+                "interactionZones": []
             },
-            "wallRight": {
-            	"spriteIndex": 0,
-            },
-            "wallBack": {
-            	"spriteIndex": -1,
-            },
-            "wallLeft": {
-            	"spriteIndex": -1,
+            "wallRightType":
+            {
+                "name": "Window2",
+                "isDoor": false,
+                "hasInteraction": true,
+                "interactionZones": []
             }
         }
     },
@@ -2208,17 +3073,23 @@
         "walkable": true,
         "wallAttr":
         {
-            "wallFront": {
-            	"spriteIndex": -1,
+            "wallFront": false,
+            "wallRight": false,
+            "wallBack": true,
+            "wallLeft": true,
+            "wallBackType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
             },
-            "wallRight": {
-            	"spriteIndex": -1,
-            },
-            "wallBack": {
-            	"spriteIndex": -1,
-            },
-            "wallLeft": {
-            	"spriteIndex": 6,
+            "wallLeftType":
+            {
+                "name": "Window1",
+                "isDoor": false,
+                "hasInteraction": true,
+                "interactionZones": []
             }
         }
     },
@@ -2228,18 +3099,10 @@
         "walkable": true,
         "wallAttr":
         {
-            "wallFront": {
-            	"spriteIndex": -1,
-            },
-            "wallRight": {
-            	"spriteIndex": -1,
-            },
-            "wallBack": {
-            	"spriteIndex": -1,
-            },
-            "wallLeft": {
-            	"spriteIndex": -1,
-            }
+            "wallFront": false,
+            "wallRight": false,
+            "wallBack": false,
+            "wallLeft": false
         }
     },
     {
@@ -2248,17 +3111,23 @@
         "walkable": true,
         "wallAttr":
         {
-            "wallFront": {
-            	"spriteIndex": -1,
+            "wallFront": false,
+            "wallRight": true,
+            "wallBack": true,
+            "wallLeft": false,
+            "wallRightType":
+            {
+                "name": "Arch",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
             },
-            "wallRight": {
-            	"spriteIndex": 5,
-            },
-            "wallBack": {
-            	"spriteIndex": -1,
-            },
-            "wallLeft": {
-            	"spriteIndex": -1,
+            "wallBackType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
             }
         }
     },
@@ -2379,23 +3248,8 @@
     },
     {
         "index": 453,
-        "type": "C",
-        "walkable": true,
-        "wallAttr":
-        {
-            "wallFront": {
-            	"spriteIndex": -1,
-            },
-            "wallRight": {
-            	"spriteIndex": -1,
-            },
-            "wallBack": {
-            	"spriteIndex": 8,
-            },
-            "wallLeft": {
-            	"spriteIndex": 0,
-            }
-        }
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 454,
@@ -2403,39 +3257,37 @@
         "walkable": true,
         "wallAttr":
         {
-            "wallFront": {
-            	"spriteIndex": -1,
+            "wallFront": false,
+            "wallRight": true,
+            "wallBack": true,
+            "wallLeft": true,
+            "wallRightType":
+            {
+                "name": "Arch",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
             },
-            "wallRight": {
-            	"spriteIndex": -1,
+            "wallBackType":
+            {
+                "name": "Gate",
+                "isDoor": true,
+                "hasInteraction": true,
+                "interactionZones": []
             },
-            "wallBack": {
-            	"spriteIndex": 0,
-            },
-            "wallLeft": {
-            	"spriteIndex": -1,
+            "wallLeftType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
             }
         }
     },
     {
         "index": 455,
-        "type": "C",
-        "walkable": true,
-        "wallAttr":
-        {
-            "wallFront": {
-            	"spriteIndex": -1,
-            },
-            "wallRight": {
-            	"spriteIndex": 0,
-            },
-            "wallBack": {
-            	"spriteIndex": 12,
-            },
-            "wallLeft": {
-            	"spriteIndex": -1,
-            }
-        }
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 456,
@@ -2560,7 +3412,28 @@
     {
         "index": 480,
         "type": "E",
-        "walkable": false
+        "walkable": false,
+        "wallAttr":
+        {
+            "wallFront": false,
+            "wallRight": true,
+            "wallBack": false,
+            "wallLeft": true,
+            "wallRightType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            },
+            "wallLeftType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 481,
@@ -2690,7 +3563,35 @@
     {
         "index": 506,
         "type": "E",
-        "walkable": false
+        "walkable": false,
+        "wallAttr":
+        {
+            "wallFront": false,
+            "wallRight": true,
+            "wallBack": true,
+            "wallLeft": true,
+            "wallRightType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            },
+            "wallBackType":
+            {
+                "name": "Gate",
+                "isDoor": true,
+                "hasInteraction": true,
+                "interactionZones": []
+            },
+            "wallLeftType":
+            {
+                "name": "Default",
+                "isDoor": false,
+                "hasInteraction": false,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 507,
