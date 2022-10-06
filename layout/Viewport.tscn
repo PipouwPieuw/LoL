@@ -13,13 +13,13 @@
 [ext_resource path="res://assets/sprites/layout/gladstone/wallFrontUU.png" type="Texture" id=19]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8, 8 )
 
 [node name="Viewport" type="Control"]
 show_behind_parent = true
 margin_right = 176.0
 margin_bottom = 120.0
 rect_clip_content = true
+mouse_filter = 2
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -29,6 +29,7 @@ __meta__ = {
 margin_right = 176.0
 margin_bottom = 120.0
 rect_pivot_offset = Vector2( 88, 44 )
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -37,6 +38,7 @@ __meta__ = {
 margin_right = 176.0
 margin_bottom = 120.0
 rect_clip_content = true
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -44,6 +46,7 @@ __meta__ = {
 [node name="bg" type="ColorRect" parent="Textures/Front"]
 margin_right = 176.0
 margin_bottom = 120.0
+mouse_filter = 2
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -187,6 +190,7 @@ centered = false
 hframes = 14
 
 [node name="WallFront" type="Sprite" parent="Textures/Front/Walls"]
+visible = false
 position = Vector2( 24, 8 )
 texture = ExtResource( 10 )
 centered = false
@@ -214,6 +218,7 @@ hframes = 14
 margin_left = -176.0
 margin_bottom = 120.0
 rect_clip_content = true
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -221,6 +226,7 @@ __meta__ = {
 [node name="bg" type="ColorRect" parent="Textures/Side"]
 margin_right = 176.0
 margin_bottom = 120.0
+mouse_filter = 2
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false

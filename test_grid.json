@@ -3,7 +3,7 @@
     "height": 26,
     "start_index": 454,
     "layout": "gladstone",
-    "spriteSheetFrames": 15,
+    "spriteSheetFrames": 30,
     "grid": [
     {
         "index": 0,
@@ -1909,7 +1909,12 @@
             }
         },
         "doorAttr": {
-            "isOpened": true
+            "isOpened": true,
+            "animationIndex": [14, 15],
+            "connectedCellFront": 402,
+            "connectedCellRight": -1,
+            "connectedCellBack": -1,
+            "connectedCellRight": -1,
         }
     },
     {

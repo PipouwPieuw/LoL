@@ -20,6 +20,7 @@ var wallNodesSide = {}
 var moveDirection = ''
 var bumpAnimation = false
 var data = {}
+var interationsData = {}
 
 func _ready():
 	add_to_group("viewport")
@@ -106,6 +107,10 @@ func start_move(dir, moveData):
 	data = moveData
 	moveDirection = dir
 
+func update_viewport(newData):
+	data = newData
+	update_walls(wallNodes)
+
 # Get all wall nodes
 func get_walls(wallObject):
 	var result = {}
@@ -174,6 +179,8 @@ func update_walls(wallObject):
 					zoneArea.position.y = triggerPos[1] + triggerPos[3] / 2
 					zoneShape.shape.extents.x = triggerPos[2] / 2
 					zoneShape.shape.extents.y = triggerPos[3] / 2
+					if zone.triggerType == 'click':
+						zoneArea.connect("input_event", self, "sendInteraction", [zone.effect, zone.targetCell])
 			else:
 				zoneArea.visible = false
 
@@ -183,3 +190,7 @@ func update_ceiling_floor():
 
 func bump_forward():
 	bumpAnimation = true
+
+func sendInteraction(_viewport, event, _shape_idx, effect, targetCell):
+	if event is InputEventMouseButton  and event.button_index == BUTTON_LEFT and event.pressed:
+		get_tree().call_group('controller', effect, targetCell)

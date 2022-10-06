@@ -90,7 +90,7 @@ func set_cells(index):
 func draw_map():
 	get_tree().call_group('map', 'draw_map', currentData)
 
-func send_walls_status(moveDirection):
+func send_walls_status(moveDirection, staticMode = false):
 	var cells = [
 		currentCell,
 		currentCellL,
@@ -157,7 +157,10 @@ func send_walls_status(moveDirection):
 		wallsStatus['currentCell'].InteractionZones = currentData.grid[currentCell].wallAttr.wallBack.interactionZones				
 	elif directions[0] == 'L':
 		wallsStatus['currentCell'].InteractionZones = currentData.grid[currentCell].wallAttr.wallLeft.interactionZones
-	get_tree().call_group('viewport', 'start_move', moveDirection, wallsStatus)
+	if !staticMode:
+		get_tree().call_group('viewport', 'start_move', moveDirection, wallsStatus)
+	else:
+		get_tree().call_group('viewport', 'update_viewport', wallsStatus)
 
 func check_move(moveDirection):
 	var newCell = int(currentCell)
@@ -210,3 +213,12 @@ func change_direction(direction):
 
 func update_data(data):
 	currentData = data
+
+func toggleDoor(doorIndex):
+	var doorCell = currentData.grid[doorIndex]
+	var doorFrames = doorCell.doorAttr.animationIndex
+	doorCell.doorAttr.isOpened = !currentData.grid[doorIndex].doorAttr.isOpened
+	doorCell.walkable = !currentData.grid[doorIndex].walkable
+	currentData.grid[doorCell.doorAttr.connectedCellFront].wallAttr.wallFront.spriteIndex = doorFrames.back()
+	set_cells(currentCell)
+	send_walls_status(directions[0], true)
