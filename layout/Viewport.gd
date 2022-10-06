@@ -14,6 +14,7 @@ var sprites = {}
 var spriteBasePath = 'res://assets/sprites/layout'
 var spritePath = ''
 var currentLayout = ''
+var spriteSheetFrames = 0
 var wallNodes = {}
 var wallNodesSide = {}
 var moveDirection = ''
@@ -22,9 +23,7 @@ var data = {}
 
 func _ready():
 	add_to_group("viewport")
-	wallNodes = get_walls(walls)
-	wallNodesSide = get_walls(wallsSide)
-	
+
 func _physics_process(_delta):
 	# Move animations
 	if moveDirection != '':
@@ -111,38 +110,30 @@ func start_move(dir, moveData):
 func get_walls(wallObject):
 	var result = {}
 	for wall in wallObject.get_children():
-		wall.hframes = 15
-		
+		wall.hframes = spriteSheetFrames
 		# Process string
 		var wallName = wall.get_name().replace('tU', 't_U').replace('tL', 't_L').replace('tR', 't_R')
 		wallName[0] = 'w'
 		var wallDirCell = wallName
-#		var wallDirSprite =  wallName.split("_")[0].replace('Left', 'Side').replace('Right', 'Side')
 		var wallOffsetCell = ''
-#		var wallOffsetSprite = ''
 		if wallName.find('_') != -1:
 			var nameSplit = wallName.split("_")
 			wallDirCell = nameSplit[0]
 			wallOffsetCell = nameSplit[1]
-#			wallOffsetSprite = wallOffsetCell
-#			if wallDirCell == 'wallFront':
-#				wallOffsetSprite = wallOffsetSprite.replace('R', '').replace('L', '')
-#			if wallDirSprite == 'wallSide':
-#				wallOffsetSprite = wallOffsetSprite.replace('UUR', 'UUS').replace('UUL', 'UUS')
-					
 		# Save wall data in object
 		result[wall.get_name()] = {}
 		result[wall.get_name()].sprite = wall
 		result[wall.get_name()].dirCell = wallDirCell
-#		result[wall.get_name()].dirSprite = wallDirSprite
 		result[wall.get_name()].offsetCell = wallOffsetCell
-#		result[wall.get_name()].offsetSprite = wallOffsetSprite
 	return result;
 
 # Set new layout for sprites
-func update_layout(newLayout):
+func update_layout(newLayout, framesAmount):
 	currentLayout = newLayout
 	spritePath = spriteBasePath + '/' + currentLayout + '/'
+	spriteSheetFrames = framesAmount	
+	wallNodes = get_walls(walls)
+	wallNodesSide = get_walls(wallsSide)
 	preload_sprites()
 	ceilingSprite.texture = sprites['Ceiling']
 	floorSprite.texture = sprites['Floor']
@@ -172,6 +163,19 @@ func update_walls(wallObject):
 		else:
 			wall.sprite.visible = true
 			wall.sprite.frame = spriteIndex
+			# Create interaction zones
+			var zoneArea = walls.get_node("WallFront/InteractionZone")
+			var zoneShape = zoneArea.get_node("InteractionShape")
+			if wallName == 'WallFront' && !data['currentCell'].InteractionZones.empty():
+				zoneArea.visible = true
+				for zone in data['currentCell'].InteractionZones:
+					var triggerPos = zone.triggerPos
+					zoneArea.position.x = triggerPos[0] + triggerPos[2] / 2
+					zoneArea.position.y = triggerPos[1] + triggerPos[3] / 2
+					zoneShape.shape.extents.x = triggerPos[2] / 2
+					zoneShape.shape.extents.y = triggerPos[3] / 2
+			else:
+				zoneArea.visible = false
 
 func update_ceiling_floor():
 	floorSprite.flip_h   = !floorSprite.flip_h

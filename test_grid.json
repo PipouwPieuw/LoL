@@ -3,6 +3,7 @@
     "height": 26,
     "start_index": 454,
     "layout": "gladstone",
+    "spriteSheetFrames": 15,
     "grid": [
     {
         "index": 0,
@@ -1892,15 +1893,19 @@
         {
             "wallFront": {
             	"spriteIndex": -1,
+                "interactionZones": []
             },
             "wallRight": {
             	"spriteIndex": 0,
+                "interactionZones": []
             },
             "wallBack": {
             	"spriteIndex": -1,
+                "interactionZones": []
             },
             "wallLeft": {
             	"spriteIndex": 0,
+                "interactionZones": []
             }
         },
         "doorAttr": {
@@ -2035,15 +2040,19 @@
         {
             "wallFront": {
             	"spriteIndex": 1,
+                "interactionZones": []
             },
             "wallRight": {
             	"spriteIndex": -1,
+                "interactionZones": []
             },
             "wallBack": {
             	"spriteIndex": -1,
+                "interactionZones": []
             },
             "wallLeft": {
             	"spriteIndex": 0,
+                "interactionZones": []
             }
         }
     },
@@ -2055,15 +2064,26 @@
         {
             "wallFront": {
             	"spriteIndex": 14,
+                "interactionZones": [
+                    {
+                        "triggerPos": [99, 41, 11, 13],
+                        "triggerType": "click",
+                        "effect": "toggleDoor",
+                        "targetCell": 376
+                    }
+                ]
             },
             "wallRight": {
             	"spriteIndex": -1,
+                "interactionZones": []
             },
             "wallBack": {
             	"spriteIndex": -1,
+                "interactionZones": []
             },
             "wallLeft": {
             	"spriteIndex": -1,
+                "interactionZones": []
             }
         }
     },
@@ -2075,15 +2095,19 @@
         {
             "wallFront": {
             	"spriteIndex": 2,
+                "interactionZones": []
             },
             "wallRight": {
             	"spriteIndex": 0,
+                "interactionZones": []
             },
             "wallBack": {
             	"spriteIndex": -1,
+                "interactionZones": []
             },
             "wallLeft": {
             	"spriteIndex": -1,
+                "interactionZones": []
             }
         }
     },
@@ -2210,15 +2234,19 @@
         {
             "wallFront": {
             	"spriteIndex": -1,
+                "interactionZones": []
             },
             "wallRight": {
             	"spriteIndex": -1,
+                "interactionZones": []
             },
             "wallBack": {
             	"spriteIndex": -1,
+                "interactionZones": []
             },
             "wallLeft": {
             	"spriteIndex": 6,
+                "interactionZones": []
             }
         }
     },
@@ -2230,15 +2258,19 @@
         {
             "wallFront": {
             	"spriteIndex": -1,
+                "interactionZones": []
             },
             "wallRight": {
             	"spriteIndex": -1,
+                "interactionZones": []
             },
             "wallBack": {
             	"spriteIndex": -1,
+                "interactionZones": []
             },
             "wallLeft": {
             	"spriteIndex": -1,
+                "interactionZones": []
             }
         }
     },
@@ -2250,15 +2282,19 @@
         {
             "wallFront": {
             	"spriteIndex": -1,
+                "interactionZones": []
             },
             "wallRight": {
             	"spriteIndex": 5,
+                "interactionZones": []
             },
             "wallBack": {
             	"spriteIndex": -1,
+                "interactionZones": []
             },
             "wallLeft": {
             	"spriteIndex": -1,
+                "interactionZones": []
             }
         }
     },
@@ -2385,15 +2421,19 @@
         {
             "wallFront": {
             	"spriteIndex": -1,
+                "interactionZones": []
             },
             "wallRight": {
             	"spriteIndex": -1,
+                "interactionZones": []
             },
             "wallBack": {
             	"spriteIndex": 8,
+                "interactionZones": []
             },
             "wallLeft": {
             	"spriteIndex": 0,
+                "interactionZones": []
             }
         }
     },
@@ -2405,15 +2445,19 @@
         {
             "wallFront": {
             	"spriteIndex": -1,
+                "interactionZones": []
             },
             "wallRight": {
             	"spriteIndex": -1,
+                "interactionZones": []
             },
             "wallBack": {
             	"spriteIndex": 0,
+                "interactionZones": []
             },
             "wallLeft": {
             	"spriteIndex": -1,
+                "interactionZones": []
             }
         }
     },
@@ -2425,15 +2469,19 @@
         {
             "wallFront": {
             	"spriteIndex": -1,
+                "interactionZones": []
             },
             "wallRight": {
             	"spriteIndex": 0,
+                "interactionZones": []
             },
             "wallBack": {
             	"spriteIndex": 12,
+                "interactionZones": []
             },
             "wallLeft": {
             	"spriteIndex": -1,
+                "interactionZones": []
             }
         }
     },

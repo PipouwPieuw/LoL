@@ -20,7 +20,7 @@ func _ready():
 	add_to_group('controller')
 	currentData = load_level()
 	mapWidth = int(currentData.width)
-	get_tree().call_group('viewport', 'update_layout', currentData.layout)
+	get_tree().call_group('viewport', 'update_layout', currentData.layout, currentData.spriteSheetFrames)
 	set_cells(int(currentData.start_index))
 	draw_map()
 	send_walls_status('up')
@@ -121,6 +121,7 @@ func send_walls_status(moveDirection):
 	]
 	var wallsStatus = {}
 	var i = 0
+	# Wall sprites
 	for cellIndex in cells:
 		var cell = currentData.grid[cellIndex]
 		var cellName = cellNames[i]
@@ -130,15 +131,15 @@ func send_walls_status(moveDirection):
 				wallsStatus[cellName].wallFrontSpriteIndex = cell.wallAttr.wallFront.spriteIndex
 				wallsStatus[cellName].wallLeftSpriteIndex = cell.wallAttr.wallLeft.spriteIndex
 				wallsStatus[cellName].wallRightSpriteIndex = cell.wallAttr.wallRight.spriteIndex
-			if directions[0] == 'R':
+			elif directions[0] == 'R':
 				wallsStatus[cellName].wallFrontSpriteIndex = cell.wallAttr.wallRight.spriteIndex
 				wallsStatus[cellName].wallLeftSpriteIndex = cell.wallAttr.wallFront.spriteIndex
 				wallsStatus[cellName].wallRightSpriteIndex = cell.wallAttr.wallBack.spriteIndex
-			if directions[0] == 'D':
+			elif directions[0] == 'D':
 				wallsStatus[cellName].wallFrontSpriteIndex = cell.wallAttr.wallBack.spriteIndex
 				wallsStatus[cellName].wallLeftSpriteIndex = cell.wallAttr.wallRight.spriteIndex
 				wallsStatus[cellName].wallRightSpriteIndex = cell.wallAttr.wallLeft.spriteIndex
-			if directions[0] == 'L':
+			elif directions[0] == 'L':
 				wallsStatus[cellName].wallFrontSpriteIndex = cell.wallAttr.wallLeft.spriteIndex
 				wallsStatus[cellName].wallLeftSpriteIndex = cell.wallAttr.wallBack.spriteIndex
 				wallsStatus[cellName].wallRightSpriteIndex = cell.wallAttr.wallFront.spriteIndex
@@ -147,6 +148,15 @@ func send_walls_status(moveDirection):
 			wallsStatus[cellName].wallLeftSpriteIndex = -1
 			wallsStatus[cellName].wallRightSpriteIndex = -1
 		i += 1
+	# Front wall interaction zones
+	if directions[0] == 'U':
+		wallsStatus['currentCell'].InteractionZones = currentData.grid[currentCell].wallAttr.wallFront.interactionZones
+	elif directions[0] == 'R':
+		wallsStatus['currentCell'].InteractionZones = currentData.grid[currentCell].wallAttr.wallRight.interactionZones				
+	elif directions[0] == 'D':
+		wallsStatus['currentCell'].InteractionZones = currentData.grid[currentCell].wallAttr.wallBack.interactionZones				
+	elif directions[0] == 'L':
+		wallsStatus['currentCell'].InteractionZones = currentData.grid[currentCell].wallAttr.wallLeft.interactionZones
 	get_tree().call_group('viewport', 'start_move', moveDirection, wallsStatus)
 
 func check_move(moveDirection):
