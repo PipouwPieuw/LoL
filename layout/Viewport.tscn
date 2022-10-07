@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://layout/Viewport.gd" type="Script" id=4]
 [ext_resource path="res://assets/sprites/layout/gladstone/wallFront.png" type="Texture" id=10]
@@ -11,8 +11,6 @@
 [ext_resource path="res://assets/sprites/layout/gladstone/wallSideUUU.png" type="Texture" id=17]
 [ext_resource path="res://assets/sprites/layout/gladstone/wallSideUUS.png" type="Texture" id=18]
 [ext_resource path="res://assets/sprites/layout/gladstone/wallFrontUU.png" type="Texture" id=19]
-
-[sub_resource type="RectangleShape2D" id=1]
 
 [node name="Viewport" type="Control"]
 show_behind_parent = true
@@ -195,10 +193,7 @@ position = Vector2( 24, 8 )
 texture = ExtResource( 10 )
 centered = false
 
-[node name="InteractionZone" type="Area2D" parent="Textures/Front/Walls/WallFront"]
-
-[node name="InteractionShape" type="CollisionShape2D" parent="Textures/Front/Walls/WallFront/InteractionZone"]
-shape = SubResource( 1 )
+[node name="InteractionZones" type="Node2D" parent="Textures/Front/Walls/WallFront"]
 
 [node name="WallLeft" type="Sprite" parent="Textures/Front/Walls"]
 visible = false

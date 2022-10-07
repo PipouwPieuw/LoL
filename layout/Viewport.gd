@@ -9,6 +9,7 @@ onready var viewFront = $Textures/Front
 onready var viewSide = $Textures/Side
 onready var walls = $Textures/Front/Walls
 onready var wallsSide = $Textures/Side/Walls
+onready var zonesContainer = $Textures/Front/Walls/WallFront/InteractionZones
 
 var sprites = {}
 var spriteBasePath = 'res://assets/sprites/layout'
@@ -169,20 +170,27 @@ func update_walls(wallObject):
 			wall.sprite.visible = true
 			wall.sprite.frame = spriteIndex
 			# Create interaction zones
-			var zoneArea = walls.get_node("WallFront/InteractionZone")
-			var zoneShape = zoneArea.get_node("InteractionShape")
-			if wallName == 'WallFront' && !data['currentCell'].InteractionZones.empty():
-				zoneArea.visible = true
-				for zone in data['currentCell'].InteractionZones:
-					var triggerPos = zone.triggerPos
-					zoneArea.position.x = triggerPos[0] + triggerPos[2] / 2
-					zoneArea.position.y = triggerPos[1] + triggerPos[3] / 2
-					zoneShape.shape.extents.x = triggerPos[2] / 2
-					zoneShape.shape.extents.y = triggerPos[3] / 2
-					if zone.triggerType == 'click':
-						zoneArea.connect("input_event", self, "sendInteraction", [zone.effect, zone.targetCell])
-			else:
-				zoneArea.visible = false
+			if wallName == 'WallFront':
+				for zone in zonesContainer.get_children():
+					zonesContainer.remove_child(zone)
+					zone.queue_free()
+				if !data['currentCell'].InteractionZones.empty():
+					zonesContainer.visible = true
+					for zone in data['currentCell'].InteractionZones:
+						var zoneArea = Area2D.new()
+						var zoneShape = CollisionShape2D.new()
+						var triggerPos = zone.triggerPos
+						zoneArea.position.x = triggerPos[0] + triggerPos[2] / 2
+						zoneArea.position.y = triggerPos[1] + triggerPos[3] / 2
+						zoneShape.shape = RectangleShape2D.new()
+						zoneShape.shape.extents.x = triggerPos[2] / 2
+						zoneShape.shape.extents.y = triggerPos[3] / 2
+						if zone.triggerType == 'click':
+							zoneArea.connect("input_event", self, "sendInteraction", [zone.effect, zone.targetCell])
+						zoneArea.add_child(zoneShape)
+						zonesContainer.add_child(zoneArea)
+				else:
+					zonesContainer.visible = false
 
 func update_ceiling_floor():
 	floorSprite.flip_h   = !floorSprite.flip_h

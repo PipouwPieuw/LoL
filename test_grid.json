@@ -1910,7 +1910,8 @@
         },
         "doorAttr": {
             "isOpened": true,
-            "animationIndex": [14, 15],
+            "closeAnimation": [15, 16, 17, 18],
+            "openAnimation": [17, 16, 15, 14],
             "connectedCellFront": 402,
             "connectedCellRight": -1,
             "connectedCellBack": -1,

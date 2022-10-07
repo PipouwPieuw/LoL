@@ -15,6 +15,8 @@ var currentCellUURR = -1
 var currentCellUUU  = -1
 var mapWidth        = 0
 var directions      = ['U', 'R', 'D', 'L']
+# Doors
+var animatedDoors   = []
 
 func _ready():
 	add_to_group('controller')
@@ -191,7 +193,7 @@ func check_move(moveDirection):
 		newCell -= 1
 	var target = currentData.grid[newCell]
 	# Check if target cell is walkable or is opened door
-	if target.type == 'C' or (target.type == 'D' and target.doorAttr.isOpened):
+	if target.walkable:
 		set_cells(newCell)
 		get_tree().call_group('map', 'update_position', currentCell)
 		send_walls_status(moveDirection)
@@ -215,10 +217,23 @@ func update_data(data):
 	currentData = data
 
 func toggleDoor(doorIndex):
+	if animatedDoors.has(doorIndex):
+		return
+	animatedDoors.append(doorIndex)
 	var doorCell = currentData.grid[doorIndex]
-	var doorFrames = doorCell.doorAttr.animationIndex
-	doorCell.doorAttr.isOpened = !currentData.grid[doorIndex].doorAttr.isOpened
-	doorCell.walkable = !currentData.grid[doorIndex].walkable
-	currentData.grid[doorCell.doorAttr.connectedCellFront].wallAttr.wallFront.spriteIndex = doorFrames.back()
-	set_cells(currentCell)
-	send_walls_status(directions[0], true)
+	var doorFramesOpen = doorCell.doorAttr.openAnimation.duplicate(true)
+	var doorFramesClose = doorCell.doorAttr.closeAnimation.duplicate(true)
+	var frames = doorFramesClose.duplicate(true) if doorCell.doorAttr.isOpened else doorFramesOpen.duplicate(true)
+	frames.invert()
+	doorCell.doorAttr.isOpened = !doorCell.doorAttr.isOpened
+	if !doorCell.doorAttr.isOpened:
+		doorCell.walkable = false
+	while frames.size() > 0:
+		var frame = frames.pop_back()
+		yield(get_tree().create_timer(.3), "timeout")
+		currentData.grid[doorCell.doorAttr.connectedCellFront].wallAttr.wallFront.spriteIndex = frame
+		set_cells(currentCell)
+		send_walls_status(directions[0], true)
+	if doorCell.doorAttr.isOpened:
+		doorCell.walkable = true
+	animatedDoors.remove(animatedDoors.find(doorIndex))
