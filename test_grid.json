@@ -1896,7 +1896,7 @@
                 "interactionZones": []
             },
             "wallRight": {
-            	"spriteIndex": 0,
+            	"spriteIndex": 19,
                 "interactionZones": []
             },
             "wallBack": {
@@ -1904,7 +1904,7 @@
                 "interactionZones": []
             },
             "wallLeft": {
-            	"spriteIndex": 0,
+            	"spriteIndex": 19,
                 "interactionZones": []
             }
         },
