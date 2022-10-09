@@ -237,3 +237,6 @@ func toggleDoor(doorIndex):
 	if doorCell.doorAttr.isOpened:
 		doorCell.walkable = true
 	animatedDoors.remove(animatedDoors.find(doorIndex))
+
+func displayText(text):
+	get_tree().call_group('hud', 'displayText', text)

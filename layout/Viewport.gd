@@ -205,7 +205,10 @@ func update_walls(wallObject):
 						var triggerPos = zone.triggerPos
 						zoneArea.triggerType = zone.triggerType
 						zoneArea.effect = zone.effect
-						zoneArea.targetCell = zone.targetCell
+						if zone.effect == 'toggleDoor':
+							zoneArea.targetCell = zone.targetCell
+						elif zone.effect == 'displayText':
+							zoneArea.text = zone.text
 						zoneArea.position.x = triggerPos[0] + triggerPos[2] / 2
 						zoneArea.position.y = triggerPos[1] + triggerPos[3] / 2
 						zoneShape.shape.extents.x = triggerPos[2] / 2
@@ -224,9 +227,9 @@ func update_ceiling_floor():
 func bump_forward():
 	bumpAnimation = true
 
-func sendInteraction(_viewport, event, _shape_idx, effect, targetCell):
+func sendInteraction(_viewport, event, _shape_idx, effect, arg):
 	if event is InputEventMouseButton  and event.button_index == BUTTON_LEFT and event.pressed:
-		get_tree().call_group('controller', effect, targetCell)
+		get_tree().call_group('controller', effect, arg)
 
 func animateWall(wall, framesData):
 	var frames = framesData[0]

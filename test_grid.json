@@ -1,7 +1,7 @@
 {
     "width": 26,
     "height": 26,
-    "start_index": 480,
+    "start_index": 506,
     "layout": "gladstone",
     "spriteSheetFrames": 30,
     "grid": [
@@ -2809,7 +2809,14 @@
             },
             "wallBack": {
                 "spriteIndex": 8,
-                "interactionZones": []
+                "interactionZones": [
+                    {
+                        "triggerPos": [51,28, 26, 22],
+                        "triggerType": "click",
+                        "effect": "displayText",
+                        "text": "La soleil brille, brille, brille"
+                    }
+                ]
             },
             "wallLeft": {
                 "spriteIndex": 0,
@@ -2857,7 +2864,14 @@
             },
             "wallBack": {
                 "spriteIndex": 12,
-                "interactionZones": []
+                "interactionZones": [
+                    {
+                        "triggerPos": [51,28, 26, 22],
+                        "triggerType": "click",
+                        "effect": "displayText",
+                        "text": "Ceci est une fenêtre"
+                    }
+                ]
             },
             "wallLeft": {
                 "spriteIndex": -1,
