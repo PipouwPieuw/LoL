@@ -23,6 +23,7 @@ var moveDirection = ''
 var bumpAnimation = false
 var data = {}
 var interationsData = {}
+var wallAnimation = false
 
 func _ready():
 	add_to_group("viewport")
@@ -118,8 +119,11 @@ func get_walls(wallObject):
 	var result = {}
 	for wall in wallObject.get_children():
 		wall.hframes = spriteSheetFrames
+		# Set walls sprites
+		var wallName = wall.get_name()
+		wall.texture = sprites[wallName]
 		# Process string
-		var wallName = wall.get_name().replace('tU', 't_U').replace('tL', 't_L').replace('tR', 't_R')
+		wallName = wallName.replace('tU', 't_U').replace('tL', 't_L').replace('tR', 't_R')
 		wallName[0] = 'w'
 		var wallDirCell = wallName
 		var wallOffsetCell = ''
@@ -138,12 +142,16 @@ func get_walls(wallObject):
 func update_layout(newLayout, framesAmount):
 	currentLayout = newLayout
 	spritePath = spriteBasePath + '/' + currentLayout + '/'
-	spriteSheetFrames = framesAmount	
+	spriteSheetFrames = framesAmount
+	preload_sprites()
 	wallNodes = get_walls(walls)
 	wallNodesSide = get_walls(wallsSide)
-	preload_sprites()
 	ceilingSprite.texture = sprites['Ceiling']
 	floorSprite.texture = sprites['Floor']
+	ceilingSpriteSide.texture = sprites['Ceiling']
+	floorSpriteSide.texture = sprites['Floor']
+	ceilingSpriteSide.flip_h = true
+	floorSpriteSide.flip_h = true
 
 # Load all sprites from current layout in dictionary for later use
 func preload_sprites():
@@ -161,22 +169,34 @@ func preload_sprites():
 
 # Update wall visibility and sprite
 func update_walls(wallObject):
+	wallAnimation = false
+	yield(get_tree(),"idle_frame")
 	for wallName in wallObject.keys():
 		var wall = wallObject[wallName]
+		# Delete previous interaction zones
+		if wallName == 'WallFront':
+			for zone in zonesContainer.get_children():
+				zone.disconnect_signal()
+				yield(get_tree(),"idle_frame")
+				zonesContainer.remove_child(zone)
+				zone.queue_free()
 		# Set wall sprite
 		var spriteIndex = data['currentCell' + wall.offsetCell][wall.dirCell + 'SpriteIndex']
-		if spriteIndex == -1:
+		# Animations
+		if typeof(spriteIndex) == TYPE_ARRAY:
+			wall.sprite.visible = true
+			wall.sprite.frame = spriteIndex[0][0]
+			wallAnimation = true
+			animateWall(wall, spriteIndex)
+		# No wall
+		elif spriteIndex == -1:
 			wall.sprite.visible = false
+		# Wall texture
 		else:
 			wall.sprite.visible = true
 			wall.sprite.frame = spriteIndex
 			# Create interaction zones
 			if wallName == 'WallFront':
-				for zone in zonesContainer.get_children():
-					zone.disconnect_signal()
-					yield(get_tree(),"idle_frame")
-					zonesContainer.remove_child(zone)
-					zone.queue_free()
 				if !data['currentCell'].InteractionZones.empty():
 					zonesContainer.visible = true
 					for zone in data['currentCell'].InteractionZones:
@@ -198,6 +218,8 @@ func update_walls(wallObject):
 func update_ceiling_floor():
 	floorSprite.flip_h   = !floorSprite.flip_h
 	ceilingSprite.flip_h = !ceilingSprite.flip_h
+	floorSpriteSide.flip_h   = !floorSpriteSide.flip_h
+	ceilingSpriteSide.flip_h = !ceilingSpriteSide.flip_h
 
 func bump_forward():
 	bumpAnimation = true
@@ -205,3 +227,16 @@ func bump_forward():
 func sendInteraction(_viewport, event, _shape_idx, effect, targetCell):
 	if event is InputEventMouseButton  and event.button_index == BUTTON_LEFT and event.pressed:
 		get_tree().call_group('controller', effect, targetCell)
+
+func animateWall(wall, framesData):
+	var frames = framesData[0]
+	var speed = framesData[1]
+	var i = 0
+	while wallAnimation:
+		i += 1
+		if i == speed * 2:
+			var frame = frames.pop_front()
+			frames.append(frame)
+			wall.sprite.frame = frame
+			i = 0
+		yield(get_tree(),"idle_frame")
