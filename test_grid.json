@@ -2814,7 +2814,7 @@
                         "triggerPos": [51,28, 26, 22],
                         "triggerType": "click",
                         "effect": "displayText",
-                        "text": "La soleil brille, brille, brille"
+                        "text": "The sun is shining, shining, shining"
                     }
                 ]
             },
@@ -2869,7 +2869,7 @@
                         "triggerPos": [51,28, 26, 22],
                         "triggerType": "click",
                         "effect": "displayText",
-                        "text": "Ceci est une fenêtre"
+                        "text": "This is a window"
                     }
                 ]
             },

@@ -15,19 +15,20 @@ centered = false
 
 [node name="Viewport" parent="." instance=ExtResource( 2 )]
 show_behind_parent = false
-margin_left = 106.0
-margin_right = 282.0
+margin_left = 112.0
+margin_right = 288.0
 
 [node name="Inputs" parent="." instance=ExtResource( 3 )]
 
 [node name="DialogBox" type="Label" parent="."]
-margin_left = 86.0
-margin_top = 122.0
-margin_right = 316.0
-margin_bottom = 140.0
+margin_left = 88.0
+margin_top = 123.0
+margin_right = 313.0
+margin_bottom = 141.0
 rect_clip_content = true
 custom_fonts/font = ExtResource( 4 )
-text = "Oui bonjour ceci est un texte "
+custom_constants/line_spacing = 1
+text = "But soft, what evil through yonder forest shows?"
 autowrap = true
 clip_text = true
 max_lines_visible = 2
