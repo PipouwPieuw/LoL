@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/sprites/hud/inventorySlot.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprites/items/items.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[node name="InventoryItem" type="Area2D"]
+
+[node name="ItemBg" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="ItemSprite" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 2 )
+centered = false
+hframes = 4
+
+[node name="ItemShape" type="CollisionShape2D" parent="."]
+position = Vector2( 10, 10 )
+shape = SubResource( 1 )
