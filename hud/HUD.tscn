@@ -41,3 +41,4 @@ __meta__ = {
 position = Vector2( 106, 180 )
 
 [node name="Cursor" parent="." instance=ExtResource( 7 )]
+position = Vector2( 294, 31 )
