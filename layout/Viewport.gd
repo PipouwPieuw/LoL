@@ -84,6 +84,8 @@ func end_move_up_down():
 
 func end_move_left_right():
 	moveDirection = ''
+	yield(get_tree(),"idle_frame")
+	yield(get_tree(),"idle_frame")
 	viewFront.rect_position.x = 0
 	viewSide.rect_position.x = -176
 
@@ -196,27 +198,27 @@ func update_walls(wallObject):
 			wall.sprite.visible = true
 			wall.sprite.frame = spriteIndex
 			# Create interaction zones
-			if wallName == 'WallFront':
-				if !data['currentCell'].InteractionZones.empty():
-					zonesContainer.visible = true
-					for zone in data['currentCell'].InteractionZones:
-						var zoneArea = triggerZone.instance()
-						var zoneShape = zoneArea.find_node('zoneShape')
-						var triggerPos = zone.triggerPos
-						zoneArea.triggerType = zone.triggerType
-						zoneArea.effect = zone.effect
-						if zone.effect == 'toggleDoor':
-							zoneArea.targetCell = zone.targetCell
-						elif zone.effect == 'displayText':
-							zoneArea.text = zone.text
-						zoneArea.position.x = triggerPos[0] + triggerPos[2] / 2
-						zoneArea.position.y = triggerPos[1] + triggerPos[3] / 2
-						zoneShape.shape.extents.x = triggerPos[2] / 2
-						zoneShape.shape.extents.y = triggerPos[3] / 2
-						zoneArea.attachedNode = self
-						zonesContainer.add_child(zoneArea)
-				else:
-					zonesContainer.visible = false
+		if wallName == 'WallFront':
+			if !data['currentCell'].InteractionZones.empty():
+				zonesContainer.visible = true
+				for zone in data['currentCell'].InteractionZones:
+					var zoneArea = triggerZone.instance()
+					var zoneShape = zoneArea.find_node('zoneShape')
+					var triggerPos = zone.triggerPos
+					zoneArea.triggerType = zone.triggerType
+					zoneArea.effect = zone.effect
+					if zone.effect == 'toggleDoor':
+						zoneArea.targetCell = zone.targetCell
+					elif zone.effect == 'displayText':
+						zoneArea.text = zone.text
+					zoneArea.position.x = triggerPos[0] + triggerPos[2] / 2
+					zoneArea.position.y = triggerPos[1] + triggerPos[3] / 2
+					zoneShape.shape.extents.x = triggerPos[2] / 2
+					zoneShape.shape.extents.y = triggerPos[3] / 2
+					zoneArea.attachedNode = self
+					zonesContainer.add_child(zoneArea)
+			else:
+				zonesContainer.visible = false
 
 func update_ceiling_floor():
 	floorSprite.flip_h   = !floorSprite.flip_h

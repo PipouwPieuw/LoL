@@ -7,3 +7,5 @@ func _ready():
 
 func displayText(text):
 	dialogBox.text = text
+	yield(get_tree().create_timer(3), "timeout")
+	dialogBox.text = ''

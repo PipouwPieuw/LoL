@@ -2458,8 +2458,15 @@
                 "interactionZones": []
             },
             "wallBack": {
-                "spriteIndex": [[20, 21], 3],
-                "interactionZones": []
+                "spriteIndex": [[20, 21], 4],
+                "interactionZones": [
+                    {
+                        "triggerPos": [15,44, 98, 56],
+                        "triggerType": "click",
+                        "effect": "displayText",
+                        "text": "This, my good sir, is obviously a fountain."
+                    }
+                ]
             },
             "wallLeft": {
             	"spriteIndex": -1,
@@ -2617,8 +2624,15 @@
                 "interactionZones": []
             },
             "wallRight": {
-                "spriteIndex": [[20, 21], 3],
-                "interactionZones": []
+                "spriteIndex": [[20, 21], 4],
+                "interactionZones": [
+                    {
+                        "triggerPos": [15,44, 98, 56],
+                        "triggerType": "click",
+                        "effect": "displayText",
+                        "text": "This, my good sir, is obviously a fountain."
+                    }
+                ]
             },
             "wallBack": {
                 "spriteIndex": -1,
@@ -2633,7 +2647,7 @@
     {
         "index": 480,
         "type": "C",
-        "walkable": true,
+        "walkable": false,
         "wallAttr":
         {
             "wallFront": {
@@ -2673,8 +2687,15 @@
                 "interactionZones": []
             },
             "wallLeft": {
-                "spriteIndex": [[20, 21], 3],
-                "interactionZones": []
+                "spriteIndex": [[20, 21], 4],
+                "interactionZones": [
+                    {
+                        "triggerPos": [15,44, 98, 56],
+                        "triggerType": "click",
+                        "effect": "displayText",
+                        "text": "This, my good sir, is obviously a fountain."
+                    }
+                ]
             }
         }
     },
@@ -2832,7 +2853,14 @@
         {
             "wallFront": {
                 "spriteIndex": [[20, 21], 4],
-                "interactionZones": []
+                "interactionZones": [
+                    {
+                        "triggerPos": [15,44, 98, 56],
+                        "triggerType": "click",
+                        "effect": "displayText",
+                        "text": "This, my good sir, is obviously a fountain."
+                    }
+                ]
             },
             "wallRight": {
                 "spriteIndex": -1,
