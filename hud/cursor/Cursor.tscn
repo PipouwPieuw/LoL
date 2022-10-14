@@ -28,6 +28,7 @@ animations = [ {
 } ]
 
 [node name="Cursor" type="AnimatedSprite"]
+visible = false
 z_index = 99
 frames = SubResource( 5 )
 centered = false

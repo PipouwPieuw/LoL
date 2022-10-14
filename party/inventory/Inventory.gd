@@ -3,6 +3,8 @@ extends Node2D
 const SLOTS_AMOUNT = 9
 const SLOTS_SIZE = 20
 
+onready var slotsContainer = $SlotsContainer
+
 var inventory = []
 var slotScene = preload("res://party/inventory/InventoryItem.tscn")
 var activeSlots
@@ -10,6 +12,7 @@ var grabbedItem = -1
 var _err
 
 func _ready():
+	add_to_group('inventory')
 	inventory = load_inventory().slots
 	build_inventory()
 	update_inventory()
@@ -27,10 +30,10 @@ func build_inventory():
 		slotInstance.find_node('ItemBg').flip_h = slot % 2 == 0
 		slotInstance.position.x = SLOTS_SIZE * slot + slot + 1
 		_err = slotInstance.connect("input_event", self, "slot_clicked", [slotInstance, slot])
-		add_child(slotInstance)
-	activeSlots = get_children()
+		slotsContainer.add_child(slotInstance)
+	activeSlots = slotsContainer.get_children()
 
-func update_inventory():
+func update_inventory(inverSlots = false):
 	var i = 0
 	for slot in activeSlots:
 		var itemId = inventory[i]
@@ -39,30 +42,37 @@ func update_inventory():
 			slot.find_node('ItemSprite').visible = true
 		else:
 			slot.find_node('ItemSprite').visible = false
+		if inverSlots:
+			var slotBg = slot.find_node('ItemBg')
+			slotBg.flip_h = !slotBg.flip_h
 		i += 1
 
 func slot_clicked(_target, event, _shape, slot, index):
 	if event is InputEventMouseButton  and event.button_index == BUTTON_LEFT and event.pressed:
-		if grabbedItem > -1:
-			if inventory[index] > -1:
-				pass
-			else:
-				inventory[index] = grabbedItem
-				slot.find_node('ItemSprite').frame = grabbedItem
-				slot.find_node('ItemSprite').visible = true
-				grabbedItem = -1
-				get_tree().call_group('cursor', 'hide_sprite')
+		var tempGrabbedItem = grabbedItem
+		var tempSlotItem = inventory[index]
+		# Set slot item
+		inventory[index] = tempGrabbedItem
+		# Set grabbed item
+		grabbedItem = tempSlotItem
+		# Set slot sprite visibility
+		if inventory[index] > -1:
+			slot.find_node('ItemSprite').frame = tempGrabbedItem
+			slot.find_node('ItemSprite').visible = true
 		else:
-			if inventory[index] > -1:
-				grabbedItem = inventory[index]
-				inventory[index] = -1
-				slot.find_node('ItemSprite').visible = false
-				get_tree().call_group('cursor', 'show_sprite', grabbedItem)
-			else:
-				pass
+			slot.find_node('ItemSprite').visible = false
+		# set cursor sprite visibility
+		if grabbedItem > -1:
+			get_tree().call_group('cursor', 'show_sprite', grabbedItem)
+		else:
+			grabbedItem = -1
+			get_tree().call_group('cursor', 'hide_sprite')
 
-func grab_item():
-	pass
-
-func put_item():
-	pass
+func browseInventory(direction, mode):
+	var steps = 1 if mode == 'step' else SLOTS_AMOUNT
+	for step in steps:
+		if direction == 'Left':
+			inventory.push_front(inventory.pop_back())
+		else:
+			inventory.push_back(inventory.pop_front())
+	update_inventory(true)

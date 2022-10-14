@@ -11,7 +11,7 @@ func _ready():
 
 func _process(_delta):
 	if displaySprite:
-		global_position = Vector2(get_global_mouse_position().x - SPRITE_SIZE / 2, get_global_mouse_position().y - SPRITE_SIZE / 2)
+		global_position = Vector2(get_global_mouse_position().x - SPRITE_SIZE / 2.0, get_global_mouse_position().y - SPRITE_SIZE / 2.0)
 
 func show_sprite(index):
 	frame = index
