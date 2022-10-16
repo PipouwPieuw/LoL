@@ -1,0 +1,33 @@
+{
+	"items": [		
+		{
+			"id": 0,
+			"name": "Salve",
+			"type": "medicine",
+			"hpHeal": 10,
+			"mpHeal": 0,
+			"poisonHeal": false
+		},
+		{
+			"id": 1,
+			"name": "Aloe",
+			"type": "medicine",
+			"hpHeal": 1,
+			"mpHeal": 0,
+			"poisonHeal": false
+		},
+		{
+			"id": 2,
+			"name": "Ginseng",
+			"type": "medicine",
+			"hpHeal": 1,
+			"mpHeal": 0,
+			"poisonHeal": true
+		},
+		{
+			"id": 3,
+			"name": "Library key",
+			"type": "key",
+		}
+	]
+}

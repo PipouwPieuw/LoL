@@ -1909,7 +1909,7 @@
             }
         },
         "doorAttr": {
-            "isOpened": true,
+            "isOpened": false,
             "closeAnimation": [15, 16, 17, 18],
             "openAnimation": [17, 16, 15, 14],
             "connectedCellFront": 402,
@@ -2100,8 +2100,18 @@
         "wallAttr":
         {
             "wallFront": {
-            	"spriteIndex": 2,
-                "interactionZones": []
+            	"spriteIndex": 22,
+                "interactionZones": [
+                    {
+                        "triggerPos": [51, 37, 23, 26],
+                        "triggerType": "keyhole",
+                        "effect": "openDoor",
+                        "active": true,
+                        "targetCell": 376,
+                        "text": "An ornate lock.",
+                        "invalidText": "The key doesn't fit."
+                    }
+                ]
             },
             "wallRight": {
             	"spriteIndex": 0,

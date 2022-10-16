@@ -6,6 +6,7 @@ const SLOTS_SIZE = 20
 onready var slotsContainer = $SlotsContainer
 
 var inventory = []
+var items = []
 var slotScene = preload("res://party/inventory/InventoryItem.tscn")
 var activeSlots
 var grabbedItem = -1
@@ -14,12 +15,21 @@ var _err
 func _ready():
 	add_to_group('inventory')
 	inventory = load_inventory().slots
+	items = load_items().items
+	print(items)
 	build_inventory()
 	update_inventory()
 	
 func load_inventory():
 	var file = File.new()
 	file.open('res://inventory.json', File.READ)
+	var fileContent = parse_json(file.get_as_text())
+	file.close()
+	return fileContent
+	
+func load_items():
+	var file = File.new()
+	file.open('res://items.json', File.READ)
 	var fileContent = parse_json(file.get_as_text())
 	file.close()
 	return fileContent
@@ -63,7 +73,9 @@ func slot_clicked(_target, event, _shape, slot, index):
 			slot.find_node('ItemSprite').visible = false
 		# set cursor sprite visibility
 		if grabbedItem > -1:
+			var text = items[index].name + ' taken.'
 			get_tree().call_group('cursor', 'show_sprite', grabbedItem)
+			get_tree().call_group('hud', 'displayText', text)
 		else:
 			grabbedItem = -1
 			get_tree().call_group('cursor', 'hide_sprite')
