@@ -10,6 +10,6 @@ func _ready():
 
 func arrow_clicked(_target, event, _shape):
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
-		get_tree().call_group('inventory', 'browseInventory', direction, 'step')
+		get_tree().call_group('inventory', 'browse_inventory', direction, 'step')
 	if event is InputEventMouseButton  and event.button_index == BUTTON_RIGHT and event.pressed:
-		get_tree().call_group('inventory', 'browseInventory', direction, 'line')
+		get_tree().call_group('inventory', 'browse_inventory', direction, 'line')

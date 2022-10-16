@@ -2069,7 +2069,7 @@
         "wallAttr":
         {
             "wallFront": {
-            	"spriteIndex": 14,
+            	"spriteIndex": 18,
                 "interactionZones": [
                     {
                         "triggerPos": [99, 44, 11, 13],
@@ -2104,9 +2104,10 @@
                 "interactionZones": [
                     {
                         "triggerPos": [51, 37, 23, 26],
-                        "triggerType": "keyhole",
-                        "effect": "openDoor",
+                        "triggerType": "click",
+                        "effect": "keyhole",
                         "active": true,
+                        "acceptedItems": [3],
                         "targetCell": 376,
                         "text": "An ornate lock.",
                         "invalidText": "The key doesn't fit."

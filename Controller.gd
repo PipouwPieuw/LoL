@@ -240,3 +240,31 @@ func toggleDoor(doorIndex):
 
 func displayText(text):
 	get_tree().call_group('hud', 'displayText', text)
+
+func keyhole(args):
+	var activeItem = get_tree().get_nodes_in_group('inventory')[0].grabbedItem
+	# No active item
+	if activeItem == -1:
+		var text = args[0]
+		get_tree().call_group('hud', 'displayText', text)
+	else:
+		var acceptedItems = args[3]
+		# Incorrect item
+		if acceptedItems.find(activeItem) == -1:
+			var invalidText = args[1]
+			get_tree().call_group('hud', 'displayText', invalidText)
+		# Correct item
+		else:
+			# Open door
+			get_tree().call_group('inventory', 'discard_active_item')
+			var targetCell = currentData.grid[args[2]]
+			var frames = targetCell.doorAttr.openAnimation.duplicate(true)
+			frames.invert()
+			targetCell.doorAttr.isOpened = true
+			while frames.size() > 0:
+				var frame = frames.pop_back()
+				yield(get_tree().create_timer(.3), "timeout")
+				currentData.grid[targetCell.doorAttr.connectedCellFront].wallAttr.wallFront.spriteIndex = frame
+				set_cells(currentCell)
+				send_walls_status(directions[0], true)
+			targetCell.walkable = true

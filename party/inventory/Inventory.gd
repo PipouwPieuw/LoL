@@ -16,7 +16,6 @@ func _ready():
 	add_to_group('inventory')
 	inventory = load_inventory().slots
 	items = load_items().items
-	print(items)
 	build_inventory()
 	update_inventory()
 	
@@ -77,10 +76,9 @@ func slot_clicked(_target, event, _shape, slot, index):
 			get_tree().call_group('cursor', 'show_sprite', grabbedItem)
 			get_tree().call_group('hud', 'displayText', text)
 		else:
-			grabbedItem = -1
-			get_tree().call_group('cursor', 'hide_sprite')
+			discard_active_item()
 
-func browseInventory(direction, mode):
+func browse_inventory(direction, mode):
 	var steps = 1 if mode == 'step' else SLOTS_AMOUNT
 	for step in steps:
 		if direction == 'Left':
@@ -88,3 +86,7 @@ func browseInventory(direction, mode):
 		else:
 			inventory.push_back(inventory.pop_front())
 	update_inventory(true)
+
+func discard_active_item():
+	grabbedItem = -1
+	get_tree().call_group('cursor', 'hide_sprite')
