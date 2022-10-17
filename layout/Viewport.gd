@@ -74,8 +74,8 @@ func _physics_process(_delta):
 		textures.rect_scale.y += .1
 		if textures.rect_scale.x >= 1.4:
 			bumpAnimation = false
-			textures.rect_scale.x = 1
 			textures.rect_scale.y = 1
+			textures.rect_scale.x = 1
 
 func end_move_up_down():
 	moveDirection = ''
@@ -233,9 +233,8 @@ func update_ceiling_floor():
 func bump_forward():
 	bumpAnimation = true
 
-func sendInteraction(_viewport, event, _shape_idx, effect, args):
-	if event is InputEventMouseButton  and event.button_index == BUTTON_LEFT and event.pressed:
-		get_tree().call_group('controller', effect, args)
+func sendInteraction(effect, args):
+	get_tree().call_group('controller', effect, args)
 
 func animateWall(wall, framesData):
 	var frames = framesData[0]

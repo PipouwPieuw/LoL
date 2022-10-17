@@ -1888,7 +1888,7 @@
     {
         "index": 376,
         "type": "D",
-        "walkable": true,
+        "walkable": false,
         "wallAttr":
         {
             "wallFront": {
@@ -2109,7 +2109,7 @@
                         "active": true,
                         "acceptedItems": [3],
                         "targetCell": 376,
-                        "text": "An ornate lock.",
+                        "text": ["An ornate lock."],
                         "invalidText": "The key doesn't fit."
                     }
                 ]
@@ -2475,7 +2475,7 @@
                         "triggerPos": [15,44, 98, 56],
                         "triggerType": "click",
                         "effect": "displayText",
-                        "text": "This, my good sir, is obviously a fountain."
+                        "text": ["This, my good sir, is obviously a fountain."]
                     }
                 ]
             },
@@ -2641,7 +2641,7 @@
                         "triggerPos": [15,44, 98, 56],
                         "triggerType": "click",
                         "effect": "displayText",
-                        "text": "This, my good sir, is obviously a fountain."
+                        "text": ["This, my good sir, is obviously a fountain."]
                     }
                 ]
             },
@@ -2704,7 +2704,7 @@
                         "triggerPos": [15,44, 98, 56],
                         "triggerType": "click",
                         "effect": "displayText",
-                        "text": "This, my good sir, is obviously a fountain."
+                        "text": ["This, my good sir, is obviously a fountain."]
                     }
                 ]
             }
@@ -2846,7 +2846,7 @@
                         "triggerPos": [51,28, 26, 22],
                         "triggerType": "click",
                         "effect": "displayText",
-                        "text": "The sun is shining, shining, shining"
+                        "text": ["The sun is shining, shining, shining"]
                     }
                 ]
             },
@@ -2869,7 +2869,7 @@
                         "triggerPos": [15,44, 98, 56],
                         "triggerType": "click",
                         "effect": "displayText",
-                        "text": "This, my good sir, is obviously a fountain."
+                        "text": ["This, my good sir, is obviously a fountain.", "As I previously said, this device is called a fountain."]
                     }
                 ]
             },
@@ -2908,7 +2908,7 @@
                         "triggerPos": [51,28, 26, 22],
                         "triggerType": "click",
                         "effect": "displayText",
-                        "text": "This is a window"
+                        "text": ["This is a window"]
                     }
                 ]
             },

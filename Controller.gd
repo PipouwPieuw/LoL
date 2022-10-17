@@ -128,7 +128,7 @@ func send_walls_status(moveDirection, staticMode = false):
 		var cell = currentData.grid[cellIndex]
 		var cellName = cellNames[i]
 		wallsStatus[cellName] = {}
-		if cell.walkable:
+		if !['E', 'X'].find(cell.type) > -1:
 			if directions[0] == 'U':
 				wallsStatus[cellName].wallFrontSpriteIndex = cell.wallAttr.wallFront.spriteIndex
 				wallsStatus[cellName].wallLeftSpriteIndex = cell.wallAttr.wallLeft.spriteIndex
@@ -216,7 +216,7 @@ func change_direction(direction):
 func update_data(data):
 	currentData = data
 
-func toggleDoor(doorIndex):
+func toggleDoor(doorIndex, triggerZone):
 	if animatedDoors.has(doorIndex):
 		return
 	animatedDoors.append(doorIndex)
@@ -238,15 +238,17 @@ func toggleDoor(doorIndex):
 		doorCell.walkable = true
 	animatedDoors.remove(animatedDoors.find(doorIndex))
 
-func displayText(text):
+func displayText(text, triggerZone):
 	get_tree().call_group('hud', 'displayText', text)
+	triggerZone.updateText()
 
-func keyhole(args):
+func keyhole(args, triggerZone):
 	var activeItem = get_tree().get_nodes_in_group('inventory')[0].grabbedItem
 	# No active item
 	if activeItem == -1:
 		var text = args[0]
 		get_tree().call_group('hud', 'displayText', text)
+		triggerZone.updateText()
 	else:
 		var acceptedItems = args[3]
 		# Incorrect item
