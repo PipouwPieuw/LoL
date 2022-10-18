@@ -176,12 +176,6 @@ func update_walls(wallObject):
 	yield(get_tree(),"idle_frame")
 	for wallName in wallObject.keys():
 		var wall = wallObject[wallName]
-		# Delete previous interaction zones
-#		if wallName == 'WallFront':
-#			for zone in zonesContainer.get_children():
-#				yield(get_tree(),"idle_frame")
-#				zonesContainer.remove_child(zone)
-#				zone.queue_free()
 		# Set wall sprite
 		var spriteIndex = data['currentCell' + wall.offsetCell][wall.dirCell + 'SpriteIndex']
 		# Animations
@@ -200,27 +194,24 @@ func update_walls(wallObject):
 			# Create interaction zones
 		if wallName == 'WallFront' and !data['currentCell'].InteractionZones.empty():
 			hasInteractionZones = true
+	
+	# Delete previous interaction zones
+	for zone in zonesContainer.get_children():
+#		yield(get_tree(),"idle_frame")
+		zonesContainer.remove_child(zone)
+		zone.queue_free()
+	# Create new interaction zones
 	if hasInteractionZones:
 		zonesContainer.visible = true
 		for zone in data['currentCell'].InteractionZones:
 			var zoneArea = triggerZone.instance()
 			var zoneShape = zoneArea.find_node('zoneShape')
 			var triggerPos = zone.triggerPos
-			zoneArea.triggerType = zone.triggerType
-			zoneArea.effect = zone.effect
-			if ['toggleDoor', 'keyhole'].find(zone.effect) > -1:
-				zoneArea.targetCell = zone.targetCell
-			if ['displayText', 'keyhole'].find(zone.effect) > -1:
-				zoneArea.text = zone.text
-			if ['keyhole'].find(zone.effect) > -1:
-				zoneArea.invalidText = zone.invalidText
-			if ['keyhole'].find(zone.effect) > -1:
-				zoneArea.acceptedItems = zone.acceptedItems
+			zoneArea.zoneData = zone
 			zoneArea.position.x = triggerPos[0] + triggerPos[2] / 2
 			zoneArea.position.y = triggerPos[1] + triggerPos[3] / 2
 			zoneShape.shape.extents.x = triggerPos[2] / 2
 			zoneShape.shape.extents.y = triggerPos[3] / 2
-			zoneArea.attachedNode = self
 			zonesContainer.add_child(zoneArea)
 	else:
 		zonesContainer.visible = false

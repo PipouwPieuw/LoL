@@ -121,7 +121,7 @@ func send_walls_status(moveDirection, staticMode = false):
 		'currentCellUURR',
 		'currentCellUUU'
 	]
-	var wallsStatus = {}
+	var wallsStatus = {"cellIndex": currentCell}
 	var i = 0
 	# Wall sprites
 	for cellIndex in cells:
@@ -246,27 +246,31 @@ func keyhole(args, triggerZone):
 	var activeItem = get_tree().get_nodes_in_group('inventory')[0].get_active_item()
 	# No active item
 	if activeItem.id == -1:
-		var text = args[0]
-		get_tree().call_group('hud', 'displayText', text)
+		get_tree().call_group('hud', 'displayText', args.text[0])
 		triggerZone.updateText()
+	elif args.unlocked:
+		get_tree().call_group('hud', 'displayText', args.unlockedText)
 	else:
-		var acceptedItems = args[3]
 		# Incorrect item
-		if acceptedItems.find(activeItem.id) == -1:
-			var invalidText = args[1]
-			get_tree().call_group('hud', 'displayText', invalidText)
+		if args.acceptedItems.find(activeItem.id) == -1:
+			get_tree().call_group('hud', 'displayText', args.invalidText)
 		# Correct item
 		else:
-			# Open door
+			# Activate trigger
 			get_tree().call_group('inventory', 'discard_active_item')
-			var targetCell = currentData.grid[args[2]]
-			var frames = targetCell.doorAttr.openAnimation.duplicate(true)
-			frames.invert()
-			targetCell.doorAttr.isOpened = true
-			while frames.size() > 0:
-				var frame = frames.pop_back()
-				yield(get_tree().create_timer(.3), "timeout")
-				currentData.grid[targetCell.doorAttr.connectedCellFront].wallAttr.wallFront.spriteIndex = frame
-				set_cells(currentCell)
-				send_walls_status(directions[0], true)
-			targetCell.walkable = true
+			triggerZone.zoneData.unlocked = true
+			# Update door
+			var targetCell = currentData.grid[args.targetCell]
+			targetCell.doorAttr.triggersActivated += 1
+			# Open door if all triggers have been activated
+			if targetCell.doorAttr.triggersActivated == targetCell.doorAttr.triggersAmount:
+				var frames = targetCell.doorAttr.openAnimation.duplicate(true)
+				frames.invert()
+				targetCell.doorAttr.isOpened = true
+				while frames.size() > 0:
+					var frame = frames.pop_back()
+					yield(get_tree().create_timer(.3), "timeout")
+					currentData.grid[targetCell.doorAttr.connectedCellFront].wallAttr.wallFront.spriteIndex = frame
+					set_cells(currentCell)
+					send_walls_status(directions[0], true)
+				targetCell.walkable = true

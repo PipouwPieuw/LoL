@@ -4,6 +4,8 @@ func _ready():
 	pass
 
 func _physics_process(_delta):
+	if Input.is_action_just_pressed('ui_cancel'):
+		get_tree().quit()
 	if Input.is_action_just_pressed('ui_up'):
 		get_tree().call_group('controller', 'check_move', 'up')
 	if Input.is_action_just_pressed('ui_down'):

@@ -1915,7 +1915,9 @@
             "connectedCellFront": 402,
             "connectedCellRight": -1,
             "connectedCellBack": -1,
-            "connectedCellRight": -1
+            "connectedCellRight": -1,
+            "triggersAmount": 2,
+            "triggersActivated": 0
         }
     },
     {
@@ -2045,8 +2047,21 @@
         "wallAttr":
         {
             "wallFront": {
-            	"spriteIndex": 1,
-                "interactionZones": []
+                "spriteIndex": 22,
+                "interactionZones": [
+                    {
+                        "attachedWall": "wallFront",
+                        "triggerPos": [51, 37, 23, 26],
+                        "triggerType": "click",
+                        "effect": "keyhole",
+                        "unlocked": false,
+                        "acceptedItems": [3],
+                        "targetCell": 376,
+                        "text": ["An ornate lock..."],
+                        "invalidText": "It does not fit.",
+                        "unlockedText": "It is already unlocked."
+                    }
+                ]
             },
             "wallRight": {
             	"spriteIndex": -1,
@@ -2057,7 +2072,7 @@
                 "interactionZones": []
             },
             "wallLeft": {
-            	"spriteIndex": 0,
+            	"spriteIndex": 1,
                 "interactionZones": []
             }
         }
@@ -2072,6 +2087,7 @@
             	"spriteIndex": 18,
                 "interactionZones": [
                     {
+                        "attachedWall": "wallFront",
                         "triggerPos": [99, 44, 11, 13],
                         "triggerType": "click",
                         "effect": "toggleDoor",
@@ -2103,14 +2119,16 @@
             	"spriteIndex": 22,
                 "interactionZones": [
                     {
+                        "attachedWall": "wallFront",
                         "triggerPos": [51, 37, 23, 26],
                         "triggerType": "click",
                         "effect": "keyhole",
-                        "active": true,
+                        "unlocked": false,
                         "acceptedItems": [3],
                         "targetCell": 376,
                         "text": ["An ornate lock..."],
-                        "invalidText": "It does not fit."
+                        "invalidText": "It does not fit.",
+                        "unlockedText": "It is already unlocked."
                     }
                 ]
             },
@@ -2472,6 +2490,7 @@
                 "spriteIndex": [[20, 21], 4],
                 "interactionZones": [
                     {
+                        "attachedWall": "wallBack",
                         "triggerPos": [15,44, 98, 56],
                         "triggerType": "click",
                         "effect": "displayText",
@@ -2638,6 +2657,7 @@
                 "spriteIndex": [[20, 21], 4],
                 "interactionZones": [
                     {
+                        "attachedWall": "wallRight",
                         "triggerPos": [15,44, 98, 56],
                         "triggerType": "click",
                         "effect": "displayText",
@@ -2701,6 +2721,7 @@
                 "spriteIndex": [[20, 21], 4],
                 "interactionZones": [
                     {
+                        "attachedWall": "wallLeft",
                         "triggerPos": [15,44, 98, 56],
                         "triggerType": "click",
                         "effect": "displayText",
@@ -2843,6 +2864,7 @@
                 "spriteIndex": 8,
                 "interactionZones": [
                     {
+                        "attachedWall": "wallBack",
                         "triggerPos": [51,28, 26, 22],
                         "triggerType": "click",
                         "effect": "displayText",
@@ -2866,6 +2888,7 @@
                 "spriteIndex": [[20, 21], 4],
                 "interactionZones": [
                     {
+                        "attachedWall": "wallFront",
                         "triggerPos": [15,44, 98, 56],
                         "triggerType": "click",
                         "effect": "displayText",
@@ -2905,6 +2928,7 @@
                 "spriteIndex": 12,
                 "interactionZones": [
                     {
+                        "attachedWall": "wallBack",
                         "triggerPos": [51,28, 26, 22],
                         "triggerType": "click",
                         "effect": "displayText",
