@@ -216,7 +216,7 @@ func change_direction(direction):
 func update_data(data):
 	currentData = data
 
-func toggleDoor(doorIndex, triggerZone):
+func toggleDoor(doorIndex, _triggerZone):
 	if animatedDoors.has(doorIndex):
 		return
 	animatedDoors.append(doorIndex)
@@ -243,16 +243,16 @@ func displayText(text, triggerZone):
 	triggerZone.updateText()
 
 func keyhole(args, triggerZone):
-	var activeItem = get_tree().get_nodes_in_group('inventory')[0].grabbedItem
+	var activeItem = get_tree().get_nodes_in_group('inventory')[0].get_active_item()
 	# No active item
-	if activeItem == -1:
+	if activeItem.id == -1:
 		var text = args[0]
 		get_tree().call_group('hud', 'displayText', text)
 		triggerZone.updateText()
 	else:
 		var acceptedItems = args[3]
 		# Incorrect item
-		if acceptedItems.find(activeItem) == -1:
+		if acceptedItems.find(activeItem.id) == -1:
 			var invalidText = args[1]
 			get_tree().call_group('hud', 'displayText', invalidText)
 		# Correct item

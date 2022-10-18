@@ -2109,8 +2109,8 @@
                         "active": true,
                         "acceptedItems": [3],
                         "targetCell": 376,
-                        "text": ["An ornate lock."],
-                        "invalidText": "The key doesn't fit."
+                        "text": ["An ornate lock..."],
+                        "invalidText": "It does not fit."
                     }
                 ]
             },

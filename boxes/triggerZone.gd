@@ -28,5 +28,5 @@ func sendInteraction(_viewport, event, _shape_idx):
 func updateText():
 	text.push_back(text.pop_front())
 
-func disconnect_signal():
-		disconnect("input_event", attachedNode, "sendInteraction")
+#func disconnect_signal():
+#		disconnect("input_event", attachedNode, "sendInteraction")

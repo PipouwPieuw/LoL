@@ -72,7 +72,7 @@ func slot_clicked(_target, event, _shape, slot, index):
 			slot.find_node('ItemSprite').visible = false
 		# set cursor sprite visibility
 		if grabbedItem > -1:
-			var text = items[index].name + ' taken.'
+			var text = items[grabbedItem].name + ' taken.'
 			get_tree().call_group('cursor', 'show_sprite', grabbedItem)
 			get_tree().call_group('hud', 'displayText', text)
 		else:
@@ -90,3 +90,11 @@ func browse_inventory(direction, mode):
 func discard_active_item():
 	grabbedItem = -1
 	get_tree().call_group('cursor', 'hide_sprite')
+
+func get_active_item():
+	if grabbedItem == -1:
+		return {
+			"id": -1
+		}
+	else:
+		return items[grabbedItem]
