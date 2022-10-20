@@ -20,19 +20,19 @@ var animatedDoors   = []
 
 func _ready():
 	add_to_group('controller')
-	currentData = load_level()
-	mapWidth = int(currentData.width)
-	get_tree().call_group('viewport', 'update_layout', currentData.layout, currentData.spriteSheetFrames)
-	set_cells(int(currentData.start_index))
-	draw_map()
-	send_walls_status('up')
+	load_level()
 	
 func load_level():
 	var file = File.new()
 	file.open('res://test_grid.json', File.READ)
-	var fileContent = parse_json(file.get_as_text())
+	currentData = parse_json(file.get_as_text())
 	file.close()
-	return fileContent
+	mapWidth = int(currentData.width)
+	get_tree().call_group('viewport', 'update_layout', currentData.layout, currentData.spriteSheetFrames)
+	get_tree().call_group('audiostream', 'play_music', currentData.music)
+	set_cells(int(currentData.start_index))
+	draw_map()
+	send_walls_status('up')
 
 func set_cells(index):
 	currentCell = index

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/gladstone.ogg-f14cf73d36ef86a76c2eee7755f5f1a8.oggstr"
+
+[deps]
+
+source_file="res://assets/musics/gladstone.ogg"
+dest_files=[ "res://.import/gladstone.ogg-f14cf73d36ef86a76c2eee7755f5f1a8.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

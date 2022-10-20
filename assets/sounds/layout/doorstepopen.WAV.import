@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/doorstepopen.WAV-f1356b9c13a4a15a6a62019908fc3eb6.sample"
+path="res://.import/doorstepopen.wav-00a3438d12dc90e762dc8cd89b2ea56c.sample"
 
 [deps]
 
-source_file="res://assets/sounds/layout/doorstepopen.WAV"
-dest_files=[ "res://.import/doorstepopen.WAV-f1356b9c13a4a15a6a62019908fc3eb6.sample" ]
+source_file="res://assets/sounds/layout/doorstepopen.wav"
+dest_files=[ "res://.import/doorstepopen.wav-00a3438d12dc90e762dc8cd89b2ea56c.sample" ]
 
 [params]
 

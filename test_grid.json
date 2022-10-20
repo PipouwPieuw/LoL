@@ -4,6 +4,7 @@
     "start_index": 506,
     "layout": "gladstone",
     "spriteSheetFrames": 30,
+    "music": "gladstone",
     "grid": [
     {
         "index": 0,

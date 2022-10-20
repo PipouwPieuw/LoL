@@ -161,12 +161,12 @@ func preload_sprites():
 	dir.open(spritePath)
 	dir.list_dir_begin()
 	while true:
-		var file_name = dir.get_next()
-		if file_name == "":
+		var fileName = dir.get_next()
+		if fileName == "":
 			break
-		elif file_name.ends_with('.png'):
-			var spriteKey = file_name.replace(".png", "")
-			sprites[spriteKey] = load(spritePath + "/" + file_name)
+		elif fileName.ends_with('.png'):
+			var spriteKey = fileName.replace(".png", "")
+			sprites[spriteKey] = load(spritePath + "/" + fileName)
 	dir.list_dir_end()
 
 # Update wall visibility and sprite
