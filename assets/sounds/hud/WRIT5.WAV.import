@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/WRIT5.WAV-790a37550c2ddf0c60006400384f35ad.sample"
+
+[deps]
+
+source_file="res://assets/sounds/hud/WRIT5.WAV"
+dest_files=[ "res://.import/WRIT5.WAV-790a37550c2ddf0c60006400384f35ad.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

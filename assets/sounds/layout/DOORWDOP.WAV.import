@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/DOORWDOP.WAV-05c6bd4b2d1522f436f65973f72bed42.sample"
+
+[deps]
+
+source_file="res://assets/sounds/layout/DOORWDOP.WAV"
+dest_files=[ "res://.import/DOORWDOP.WAV-05c6bd4b2d1522f436f65973f72bed42.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

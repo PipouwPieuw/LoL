@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/PLATEOFF.WAV-6fbd9e4751eac76ccc6e1b0c8bd91c1f.sample"
+
+[deps]
+
+source_file="res://assets/sounds/layout/PLATEOFF.WAV"
+dest_files=[ "res://.import/PLATEOFF.WAV-6fbd9e4751eac76ccc6e1b0c8bd91c1f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

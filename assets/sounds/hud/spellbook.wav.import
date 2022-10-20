@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/spellbook.wav-2b2dff9e340292a92103b6abe361cab1.sample"
+
+[deps]
+
+source_file="res://assets/sounds/hud/spellbook.wav"
+dest_files=[ "res://.import/spellbook.wav-2b2dff9e340292a92103b6abe361cab1.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

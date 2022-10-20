@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/KEYOPEN.WAV-50b99e1dd29f0d52de64ee5dc3222be2.sample"
+
+[deps]
+
+source_file="res://assets/sounds/layout/KEYOPEN.WAV"
+dest_files=[ "res://.import/KEYOPEN.WAV-50b99e1dd29f0d52de64ee5dc3222be2.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

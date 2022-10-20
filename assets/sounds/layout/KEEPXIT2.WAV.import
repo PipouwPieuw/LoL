@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/KEEPXIT2.WAV-845029da4d20d2443f0cde029b06494c.sample"
+
+[deps]
+
+source_file="res://assets/sounds/layout/KEEPXIT2.WAV"
+dest_files=[ "res://.import/KEEPXIT2.WAV-845029da4d20d2443f0cde029b06494c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
