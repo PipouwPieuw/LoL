@@ -219,24 +219,25 @@ func update_data(data):
 func toggleDoor(doorIndex, _triggerZone):
 	if animatedDoors.has(doorIndex):
 		return
-	animatedDoors.append(doorIndex)
+#	animatedDoors.append(doorIndex)
 	var doorCell = currentData.grid[doorIndex]
 	var doorFramesOpen = doorCell.doorAttr.openAnimation.duplicate(true)
 	var doorFramesClose = doorCell.doorAttr.closeAnimation.duplicate(true)
 	var frames = doorFramesClose.duplicate(true) if doorCell.doorAttr.isOpened else doorFramesOpen.duplicate(true)
-	frames.invert()
-	doorCell.doorAttr.isOpened = !doorCell.doorAttr.isOpened
-	if !doorCell.doorAttr.isOpened:
-		doorCell.walkable = false
-	while frames.size() > 0:
-		var frame = frames.pop_back()
-		yield(get_tree().create_timer(.3), "timeout")
-		currentData.grid[doorCell.doorAttr.connectedCellFront].wallAttr.wallFront.spriteIndex = frame
-		set_cells(currentCell)
-		send_walls_status(directions[0], true)
-	if doorCell.doorAttr.isOpened:
-		doorCell.walkable = true
-	animatedDoors.remove(animatedDoors.find(doorIndex))
+	open_close_door(doorCell, frames)
+#	frames.invert()
+#	doorCell.doorAttr.isOpened = !doorCell.doorAttr.isOpened
+#	if !doorCell.doorAttr.isOpened:
+#		doorCell.walkable = false
+#	while frames.size() > 0:
+#		var frame = frames.pop_back()
+#		yield(get_tree().create_timer(.3), "timeout")
+#		currentData.grid[doorCell.doorAttr.connectedCellFront].wallAttr.wallFront.spriteIndex = frame
+#		set_cells(currentCell)
+#		send_walls_status(directions[0], true)
+#	if doorCell.doorAttr.isOpened:
+#		doorCell.walkable = true
+#	animatedDoors.remove(animatedDoors.find(doorIndex))
 
 func displayText(text, triggerZone):
 	get_tree().call_group('hud', 'displayText', text)
@@ -253,10 +254,12 @@ func keyhole(args, triggerZone):
 	else:
 		# Incorrect item
 		if args.acceptedItems.find(activeItem.id) == -1:
+			get_tree().call_group('audiostream', 'play_sound', 'layout', 'keylockfail')
 			get_tree().call_group('hud', 'displayText', args.invalidText)
 		# Correct item
 		else:
 			# Activate trigger
+			get_tree().call_group('audiostream', 'play_sound', 'layout', 'keylocksuccess')
 			get_tree().call_group('inventory', 'discard_active_item')
 			triggerZone.zoneData.unlocked = true
 			# Update door
@@ -265,12 +268,28 @@ func keyhole(args, triggerZone):
 			# Open door if all triggers have been activated
 			if targetCell.doorAttr.triggersActivated == targetCell.doorAttr.triggersAmount:
 				var frames = targetCell.doorAttr.openAnimation.duplicate(true)
-				frames.invert()
-				targetCell.doorAttr.isOpened = true
-				while frames.size() > 0:
-					var frame = frames.pop_back()
-					yield(get_tree().create_timer(.3), "timeout")
-					currentData.grid[targetCell.doorAttr.connectedCellFront].wallAttr.wallFront.spriteIndex = frame
-					set_cells(currentCell)
-					send_walls_status(directions[0], true)
-				targetCell.walkable = true
+				open_close_door(targetCell, frames)
+
+func open_close_door(cell, frames):
+	animatedDoors.append(cell.index)
+	frames.invert()
+	cell.doorAttr.isOpened = !cell.doorAttr.isOpened
+	var animSound
+	if cell.doorAttr.isOpened:
+		animSound = 'doorstepopen'
+	else:
+		cell.walkable = false
+		animSound = 'doorstepclose'
+	while frames.size() > 0:
+		var frame = frames.pop_back()
+		yield(get_tree().create_timer(.3), "timeout")
+		if frames.size() == 0 and !cell.doorAttr.isOpened:
+			get_tree().call_group('audiostream', 'play_sound', 'layout', 'doorstepcloseend')
+		else:
+			get_tree().call_group('audiostream', 'play_sound', 'layout', animSound)
+		currentData.grid[cell.doorAttr.connectedCellFront].wallAttr.wallFront.spriteIndex = frame
+		set_cells(currentCell)
+		send_walls_status(directions[0], true)
+	if cell.doorAttr.isOpened:
+		cell.walkable = true
+	animatedDoors.remove(animatedDoors.find(cell.index))

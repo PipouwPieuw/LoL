@@ -4,6 +4,7 @@ const SLOTS_AMOUNT = 9
 const SLOTS_SIZE = 20
 
 onready var slotsContainer = $SlotsContainer
+onready var grabItemSound = $GrabItemSound
 
 var inventory = []
 var items = []
@@ -75,6 +76,8 @@ func slot_clicked(_target, event, _shape, slot, index):
 			var text = items[grabbedItem].name + ' taken.'
 			get_tree().call_group('cursor', 'show_sprite', grabbedItem)
 			get_tree().call_group('hud', 'displayText', text)
+			grabItemSound.stop()
+			grabItemSound.play()
 		else:
 			discard_active_item()
 

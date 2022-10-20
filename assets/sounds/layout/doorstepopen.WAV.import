@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/doorstepopen.WAV-f1356b9c13a4a15a6a62019908fc3eb6.sample"
+
+[deps]
+
+source_file="res://assets/sounds/layout/doorstepopen.WAV"
+dest_files=[ "res://.import/doorstepopen.WAV-f1356b9c13a4a15a6a62019908fc3eb6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

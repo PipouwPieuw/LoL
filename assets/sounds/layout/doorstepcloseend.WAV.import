@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/doorstepcloseend.WAV-01616f496474010f515aabb6eaef1828.sample"
+
+[deps]
+
+source_file="res://assets/sounds/layout/doorstepcloseend.WAV"
+dest_files=[ "res://.import/doorstepcloseend.WAV-01616f496474010f515aabb6eaef1828.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
