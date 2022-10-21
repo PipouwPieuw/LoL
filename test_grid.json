@@ -1911,12 +1911,12 @@
         },
         "doorAttr": {
             "isOpened": false,
-            "closeAnimation": [15, 16, 17, 18],
-            "openAnimation": [17, 16, 15, 14],
-            "connectedCellFront": 402,
+            "closeAnimation": [24, 25, 26, 27],
+            "openAnimation": [26, 25, 24, 23],
+            "connectedCellFront": -1,
             "connectedCellRight": -1,
-            "connectedCellBack": -1,
-            "connectedCellRight": -1,
+            "connectedCellBack": 402,
+            "connectedCellLeft": -1,
             "triggersAmount": 2,
             "triggersActivated": 0
         }
@@ -2085,16 +2085,8 @@
         "wallAttr":
         {
             "wallFront": {
-            	"spriteIndex": 18,
-                "interactionZones": [
-                    {
-                        "attachedWall": "wallFront",
-                        "triggerPos": [99, 44, 11, 13],
-                        "triggerType": "click",
-                        "effect": "toggleDoor",
-                        "targetCell": 376
-                    }
-                ]
+            	"spriteIndex": 27,
+                "interactionZones": []
             },
             "wallRight": {
             	"spriteIndex": -1,
@@ -2321,8 +2313,16 @@
                 "interactionZones": []
             },
             "wallRight": {
-            	"spriteIndex": 5,
-                "interactionZones": []
+            	"spriteIndex": 18,
+                "interactionZones": [
+                    {
+                        "attachedWall": "wallFront",
+                        "triggerPos": [99, 44, 11, 13],
+                        "triggerType": "click",
+                        "effect": "toggleDoor",
+                        "targetCell": 430
+                    }
+                ]
             },
             "wallBack": {
             	"spriteIndex": -1,
@@ -2336,8 +2336,38 @@
     },
     {
         "index": 430,
-        "type": "E",
-        "walkable": false
+        "type": "D",
+        "walkable": false,
+        "wallAttr":
+        {
+            "wallFront": {
+                "spriteIndex": 19,
+                "interactionZones": []
+            },
+            "wallRight": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallBack": {
+                "spriteIndex": 19,
+                "interactionZones": []
+            },
+            "wallLeft": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            }
+        },
+        "doorAttr": {
+            "isOpened": false,
+            "closeAnimation": [15, 16, 17, 18],
+            "openAnimation": [17, 16, 15, 14],
+            "connectedCellFront": -1,
+            "connectedCellRight": -1,
+            "connectedCellBack": -1,
+            "connectedCellLeft": 429,
+            "triggersAmount": 0,
+            "triggersActivated": 0
+        }
     },
     {
         "index": 431,

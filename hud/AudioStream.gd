@@ -1,7 +1,8 @@
 extends Node2D
 
 onready var music = $Music
-onready var soundEffect = $SoundEffect
+onready var soundEffect1 = $SoundEffect1
+onready var soundEffect2 = $SoundEffect2
 
 var soundLibrary = {}
 
@@ -9,7 +10,6 @@ func _ready():
 	add_to_group('audiostream')
 	preload_sounds('hud')
 	preload_sounds('layout')
-	print(soundLibrary)
 
 func preload_sounds(folder):
 	soundLibrary[folder] = {}
@@ -28,8 +28,9 @@ func preload_sounds(folder):
 
 func play_sound(type, sound):
 	if type in soundLibrary and sound in soundLibrary[type]:
-		soundEffect.stream = soundLibrary[type][sound]
-		soundEffect.play()
+		var soundPlayer =  soundEffect1 if !soundEffect1.playing else soundEffect2
+		soundPlayer.stream = soundLibrary[type][sound]
+		soundPlayer.play()
 
 func play_music(musicName):
 	var musicFile = load('res://assets/musics/' + musicName + '.ogg')

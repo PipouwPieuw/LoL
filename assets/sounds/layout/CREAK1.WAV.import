@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/CREAK1.WAV-565b286af2279b6f86b3753de0432f13.sample"
+
+[deps]
+
+source_file="res://assets/sounds/layout/CREAK1.WAV"
+dest_files=[ "res://.import/CREAK1.WAV-565b286af2279b6f86b3753de0432f13.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

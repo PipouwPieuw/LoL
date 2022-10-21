@@ -287,7 +287,15 @@ func open_close_door(cell, frames):
 			get_tree().call_group('audiostream', 'play_sound', 'layout', 'doorstepcloseend')
 		else:
 			get_tree().call_group('audiostream', 'play_sound', 'layout', animSound)
-		currentData.grid[cell.doorAttr.connectedCellFront].wallAttr.wallFront.spriteIndex = frame
+		# Update connected cells sprites
+		if cell.doorAttr.connectedCellFront > -1:
+			currentData.grid[cell.doorAttr.connectedCellFront].wallAttr.wallBack.spriteIndex = frame
+		if cell.doorAttr.connectedCellBack > -1:
+			currentData.grid[cell.doorAttr.connectedCellBack].wallAttr.wallFront.spriteIndex = frame
+		if cell.doorAttr.connectedCellRight > -1:
+			currentData.grid[cell.doorAttr.connectedCellRight].wallAttr.wallLeft.spriteIndex = frame
+		if cell.doorAttr.connectedCellLeft > -1:
+			currentData.grid[cell.doorAttr.connectedCellLeft].wallAttr.wallRight.spriteIndex = frame
 		set_cells(currentCell)
 		send_walls_status(directions[0], true)
 	if cell.doorAttr.isOpened:
