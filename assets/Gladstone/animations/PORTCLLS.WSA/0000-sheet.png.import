@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/WallFrontU.png-e1fc53dc534e9466f4d82413d48768a2.stex"
+path="res://.import/0000-sheet.png-aa02d40325d5cd52c8aa327098a04a65.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/layout/gladstone/WallFrontU.png"
-dest_files=[ "res://.import/WallFrontU.png-e1fc53dc534e9466f4d82413d48768a2.stex" ]
+source_file="res://assets/Gladstone/animations/PORTCLLS.WSA/0000-sheet.png"
+dest_files=[ "res://.import/0000-sheet.png-aa02d40325d5cd52c8aa327098a04a65.stex" ]
 
 [params]
 

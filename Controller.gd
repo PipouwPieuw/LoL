@@ -24,7 +24,7 @@ func _ready():
 	
 func load_level():
 	var file = File.new()
-	file.open('res://test_grid.json', File.READ)
+	file.open('res://gladstone.json', File.READ)
 	currentData = parse_json(file.get_as_text())
 	file.close()
 	mapWidth = int(currentData.width)

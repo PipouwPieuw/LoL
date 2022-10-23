@@ -3,6 +3,8 @@
     "height": 26,
     "start_index": 454,
     "layout": "gladstone",
+    "spriteSheetFrames": 34,
+    "music": "gladstone",
     "grid": [
     {
         "index": 0,
@@ -826,55 +828,13 @@
     },
     {
         "index": 164,
-        "type": "C",
-        "walkable": true,
-        "wallAttr":
-        {
-            "wallFront": true,
-            "wallRight": false,
-            "wallBack": false,
-            "wallLeft": true,
-            "wallFrontType":
-            {
-                "name": "Window4",
-                "isDoor": false,
-                "hasInteraction": true,
-                "interactionZones": []
-            },
-            "wallLeftType":
-            {
-                "name": "Arch",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            }
-        }
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 165,
-        "type": "C",
-        "walkable": true,
-        "wallAttr":
-        {
-            "wallFront": true,
-            "wallRight": true,
-            "wallBack": false,
-            "wallLeft": false,
-            "wallFrontType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            },
-            "wallRightType":
-            {
-                "name": "Arch",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            }
-        }
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 166,
@@ -898,36 +858,8 @@
     },
     {
         "index": 170,
-        "type": "C",
-        "walkable": true,
-        "wallAttr":
-        {
-            "wallFront": true,
-            "wallRight": true,
-            "wallBack": false,
-            "wallLeft": true,
-            "wallFrontType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            },
-            "wallRightType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            },
-            "wallLeftType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            }
-        }
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 171,
@@ -1026,48 +958,13 @@
     },
     {
         "index": 190,
-        "type": "C",
-        "walkable": true,
-        "wallAttr":
-        {
-            "wallFront": false,
-            "wallRight": false,
-            "wallBack": true,
-            "wallLeft": true,
-            "wallBackType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            },
-            "wallLeftType":
-            {
-                "name": "Window1",
-                "isDoor": false,
-                "hasInteraction": true,
-                "interactionZones": []
-            }
-        }
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 191,
-        "type": "C",
-        "walkable": true,
-        "wallAttr":
-        {
-            "wallFront": false,
-            "wallRight": true,
-            "wallBack": false,
-            "wallLeft": false,
-            "wallRightType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            }
-        }
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 192,
@@ -1081,152 +978,33 @@
     },
     {
         "index": 194,
-        "type": "C",
-        "walkable": true,
-        "wallAttr":
-        {
-            "wallFront": true,
-            "wallRight": false,
-            "wallBack": false,
-            "wallLeft": true,
-            "wallFrontType":
-            {
-                "name": "Window3",
-                "isDoor": false,
-                "hasInteraction": true,
-                "interactionZones": []
-            },
-            "wallLeftType":
-            {
-                "name": "Arch",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            }
-        }
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 195,
-        "type": "C",
-        "walkable": true,
-        "wallAttr":
-        {
-            "wallFront": true,
-            "wallRight": false,
-            "wallBack": true,
-            "wallLeft": false,
-            "wallFrontType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            },
-            "wallBackType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            }
-        }
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 196,
-        "type": "C",
-        "walkable": true,
-        "wallAttr":
-        {
-            "wallFront": false,
-            "wallRight": false,
-            "wallBack": false,
-            "wallLeft": false
-        }
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 197,
-        "type": "C",
-        "walkable": true,
-        "wallAttr":
-        {
-            "wallFront": true,
-            "wallRight": false,
-            "wallBack": true,
-            "wallLeft": false,
-            "wallFrontType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            },
-            "wallBackType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            }
-        }
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 198,
-        "type": "C",
-        "walkable": true,
-        "wallAttr":
-        {
-            "wallFront": true,
-            "wallRight": false,
-            "wallBack": true,
-            "wallLeft": false,
-            "wallFrontType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            },
-            "wallBackType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            }
-        }
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 199,
-        "type": "C",
-        "walkable": true,
-        "wallAttr":
-        {
-            "wallFront": true,
-            "wallRight": true,
-            "wallBack": true,
-            "wallLeft": false,
-            "wallFrontType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            },
-            "wallRightType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            },
-            "wallBackType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            }
-        }
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 200,
@@ -1315,29 +1093,8 @@
     },
     {
         "index": 217,
-        "type": "C",
-        "walkable": true,
-        "wallAttr":
-        {
-            "wallFront": false,
-            "wallRight": true,
-            "wallBack": false,
-            "wallLeft": true,
-            "wallRightType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            },
-            "wallLeftType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            }
-        }
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 218,
@@ -1351,29 +1108,8 @@
     },
     {
         "index": 220,
-        "type": "C",
-        "walkable": true,
-        "wallAttr":
-        {
-            "wallFront": false,
-            "wallRight": true,
-            "wallBack": false,
-            "wallLeft": true,
-            "wallRightType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            },
-            "wallLeftType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            }
-        }
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 221,
@@ -1382,36 +1118,8 @@
     },
     {
         "index": 222,
-        "type": "C",
-        "walkable": true,
-        "wallAttr":
-        {
-            "wallFront": false,
-            "wallRight": true,
-            "wallBack": true,
-            "wallLeft": true,
-            "wallRightType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            },
-            "wallBackType":
-            {
-                "name": "Arch",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            },
-            "wallLeftType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            }
-        }
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 223,
@@ -1515,48 +1223,13 @@
     },
     {
         "index": 243,
-        "type": "C",
-        "walkable": true,
-        "wallAttr":
-        {
-            "wallFront": false,
-            "wallRight": false,
-            "wallBack": false,
-            "wallLeft": true,
-            "wallLeftType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            }
-        }
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 244,
-        "type": "C",
-        "walkable": true,
-        "wallAttr":
-        {
-            "wallFront": true,
-            "wallRight": false,
-            "wallBack": true,
-            "wallLeft": false,
-            "wallFrontType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            },
-            "wallBackType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            }
-        }
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 245,
@@ -1564,44 +1237,44 @@
         "walkable": true,
         "wallAttr":
         {
-            "wallFront": true,
-            "wallRight": false,
-            "wallBack": false,
-            "wallLeft": false,
-            "wallFrontType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
+            "wallFront": {
+                "spriteIndex": 2,
+                "interactionZones": [
+                    {
+                        "attachedWall": "wallFront",
+                        "triggerPos": [12, 10, 106, 75],
+                        "triggerType": "click",
+                        "effect": "displayText",
+                        "text": ["The old tapestries glow with age.", "A few relics survive through the centuries."]
+                    }
+                ]
+            },
+            "wallRight": {
+                "spriteIndex": 0,
+                "interactionZones": []
+            },
+            "wallBack": {
+                "spriteIndex": 30,
+                "interactionZones": [
+                    {
+                        "attachedWall": "wallBack",
+                        "triggerPos": [99, 44, 11, 13],
+                        "triggerType": "click",
+                        "effect": "toggleDoor",
+                        "targetCell": 271
+                    }
+                ]
+            },
+            "wallLeft": {
+                "spriteIndex": 0,
                 "interactionZones": []
             }
         }
     },
     {
         "index": 246,
-        "type": "C",
-        "walkable": true,
-        "wallAttr":
-        {
-            "wallFront": false,
-            "wallRight": true,
-            "wallBack": true,
-            "wallLeft": false,
-            "wallRightType":
-            {
-                "name": "Window2",
-                "isDoor": false,
-                "hasInteraction": true,
-                "interactionZones": []
-            },
-            "wallBackType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            }
-        }
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 247,
@@ -1700,100 +1373,23 @@
     },
     {
         "index": 266,
-        "type": "C",
-        "walkable": true,
-        "wallAttr":
-        {
-            "wallFront": true,
-            "wallRight": false,
-            "wallBack": false,
-            "wallLeft": true,
-            "wallFrontType":
-            {
-                "name": "Window4",
-                "isDoor": false,
-                "hasInteraction": true,
-                "interactionZones": []
-            },
-            "wallLeftType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            }
-        }
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 267,
-        "type": "C",
-        "walkable": true,
-        "wallAttr":
-        {
-            "wallFront": true,
-            "wallRight": false,
-            "wallBack": false,
-            "wallLeft": false,
-            "wallFrontType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            }
-        }
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 268,
-        "type": "C",
-        "walkable": true,
-        "wallAttr":
-        {
-            "wallFront": true,
-            "wallRight": false,
-            "wallBack": true,
-            "wallLeft": false,
-            "wallFrontType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            },
-            "wallBackType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            }
-        }
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 269,
-        "type": "C",
-        "walkable": true,
-        "wallAttr":
-        {
-            "wallFront": false,
-            "wallRight": true,
-            "wallBack": true,
-            "wallLeft": false,
-            "wallRightType":
-            {
-                "name": "Arch",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            },
-            "wallBackType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            }
-        }
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 270,
@@ -1802,28 +1398,37 @@
     },
     {
         "index": 271,
-        "type": "C",
-        "walkable": true,
+        "type": "D",
+        "walkable": false,
         "wallAttr":
         {
-            "wallFront": false,
-            "wallRight": true,
-            "wallBack": false,
-            "wallLeft": true,
-            "wallRightType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
+            "wallFront": {
+                "spriteIndex": -1,
                 "interactionZones": []
             },
-            "wallLeftType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
+            "wallRight": {
+                "spriteIndex": 31,
+                "interactionZones": []
+            },
+            "wallBack": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallLeft": {
+                "spriteIndex": 31,
                 "interactionZones": []
             }
+        },
+        "doorAttr": {
+            "isOpened": false,
+            "closeAnimation": [27, 28, 29, 30],
+            "openAnimation": [29, 28, 27, 26],
+            "connectedCellFront": 245,
+            "connectedCellRight": -1,
+            "connectedCellBack": 297,
+            "connectedCellLeft": -1,
+            "triggersAmount": 0,
+            "triggersActivated": 0
         }
     },
     {
@@ -1928,55 +1533,13 @@
     },
     {
         "index": 292,
-        "type": "C",
-        "walkable": true,
-        "wallAttr":
-        {
-            "wallFront": false,
-            "wallRight": false,
-            "wallBack": true,
-            "wallLeft": true,
-            "wallBackType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            },
-            "wallLeftType":
-            {
-                "name": "Window3",
-                "isDoor": false,
-                "hasInteraction": true,
-                "interactionZones": []
-            }
-        }
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 293,
-        "type": "C",
-        "walkable": true,
-        "wallAttr":
-        {
-            "wallFront": false,
-            "wallRight": true,
-            "wallBack": true,
-            "wallLeft": false,
-            "wallRightType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            },
-            "wallBackType":
-            {
-                "name": "Window5",
-                "isDoor": false,
-                "hasInteraction": true,
-                "interactionZones": []
-            }
-        }
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 294,
@@ -1999,22 +1562,28 @@
         "walkable": true,
         "wallAttr":
         {
-            "wallFront": false,
-            "wallRight": true,
-            "wallBack": false,
-            "wallLeft": true,
-            "wallRightType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
+            "wallFront": {
+                "spriteIndex": 30,
+                "interactionZones": [
+                    {
+                        "attachedWall": "wallFront",
+                        "triggerPos": [99, 44, 11, 13],
+                        "triggerType": "click",
+                        "effect": "toggleDoor",
+                        "targetCell": 271
+                    }
+                ]
+            },
+            "wallRight": {
+                "spriteIndex": 0,
                 "interactionZones": []
             },
-            "wallLeftType":
-            {
-                "name": "Arch",
-                "isDoor": false,
-                "hasInteraction": false,
+            "wallBack": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallLeft": {
+                "spriteIndex": 5,
                 "interactionZones": []
             }
         }
@@ -2030,23 +1599,29 @@
         "walkable": true,
         "wallAttr":
         {
-            "wallFront": true,
-            "wallRight": false,
-            "wallBack": false,
-            "wallLeft": true,
-            "wallFrontType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
+            "wallFront": {
+                "spriteIndex": 0,
                 "interactionZones": []
             },
-            "wallLeftType":
-            {
-                "name": "Swords",
-                "isDoor": false,
-                "hasInteraction": true,
+            "wallRight": {
+                "spriteIndex": -1,
                 "interactionZones": []
+            },
+            "wallBack": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallLeft": {
+                "spriteIndex": 7,
+                "interactionZones": [
+                    {
+                        "attachedWall": "wallLeft",
+                        "triggerPos": [21,15, 86, 70],
+                        "triggerType": "click",
+                        "effect": "displayText",
+                        "text": ["Fine swords, impressive decorations.", "Ow! sharp too!"]
+                    }
+                ]
             }
         }
     },
@@ -2056,84 +1631,41 @@
         "walkable": true,
         "wallAttr":
         {
-            "wallFront": true,
-            "wallRight": false,
-            "wallBack": true,
-            "wallLeft": false,
-            "wallFrontType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
+            "wallFront": {
+                "spriteIndex": 17,
+                "interactionZones": [
+                    {
+                        "attachedWall": "wallFront",
+                        "triggerPos": [43,29, 44, 25],
+                        "triggerType": "click",
+                        "effect": "displayText",
+                        "text": ["Victor Glaston... Royal Armorer"]
+                    }
+                ]
+            },
+            "wallRight": {
+                "spriteIndex": 19,
                 "interactionZones": []
             },
-            "wallBackType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
+            "wallBack": {
+                "spriteIndex": 0,
+                "interactionZones": []
+            },
+            "wallLeft": {
+                "spriteIndex": -1,
                 "interactionZones": []
             }
-        }
+        },
     },
     {
         "index": 301,
-        "type": "C",
-        "walkable": true,
-        "wallAttr":
-        {
-            "wallFront": true,
-            "wallRight": false,
-            "wallBack": true,
-            "wallLeft": false,
-            "wallFrontType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            },
-            "wallBackType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            }
-        }
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 302,
-        "type": "C",
-        "walkable": true,
-        "wallAttr":
-        {
-            "wallFront": true,
-            "wallRight": true,
-            "wallBack": true,
-            "wallLeft": false,
-            "wallFrontType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            },
-            "wallRightType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            },
-            "wallBackType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            }
-        }
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 303,
@@ -2222,62 +1754,13 @@
     },
     {
         "index": 320,
-        "type": "C",
-        "walkable": true,
-        "wallAttr":
-        {
-            "wallFront": true,
-            "wallRight": false,
-            "wallBack": true,
-            "wallLeft": true,
-            "wallFrontType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            },
-            "wallBackType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            },
-            "wallLeftType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            }
-        }
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 321,
-        "type": "C",
-        "walkable": true,
-        "wallAttr":
-        {
-            "wallFront": true,
-            "wallRight": false,
-            "wallBack": true,
-            "wallLeft": false,
-            "wallFrontType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            },
-            "wallBackType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            }
-        }
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 322,
@@ -2285,25 +1768,31 @@
         "walkable": true,
         "wallAttr":
         {
-            "wallFront": true,
-            "wallRight": false,
-            "wallBack": true,
-            "wallLeft": false,
-            "wallFrontType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
+            "wallFront": {
+                "spriteIndex": 17,
+                "interactionZones": [
+                    {
+                        "attachedWall": "wallFront",
+                        "triggerPos": [43,29, 44, 25],
+                        "triggerType": "click",
+                        "effect": "displayText",
+                        "text": ["Geron Arbroath... Royal Chamberlain"]
+                    }
+                ]
+            },
+            "wallRight": {
+                "spriteIndex": -1,
                 "interactionZones": []
             },
-            "wallBackType":
-            {
-                "name": "Arch",
-                "isDoor": false,
-                "hasInteraction": false,
+            "wallBack": {
+                "spriteIndex": 5,
+                "interactionZones": []
+            },
+            "wallLeft": {
+                "spriteIndex": 19,
                 "interactionZones": []
             }
-        }
+        },
     },
     {
         "index": 323,
@@ -2311,30 +1800,55 @@
         "walkable": true,
         "wallAttr":
         {
-            "wallFront": false,
-            "wallRight": false,
-            "wallBack": false,
-            "wallLeft": false
+            "wallFront": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallRight": {
+                "spriteIndex": [[32, 33], 4],
+                "interactionZones": [
+                    {
+                        "attachedWall": "wallRight",
+                        "triggerPos": [15,44, 98, 56],
+                        "triggerType": "click",
+                        "effect": "displayText",
+                        "text": ["The hidden plumbing seems miraculous.", "This must be fed by an artesian well."]
+                    }
+                ]
+            },
+            "wallBack": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallLeft": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            }
         }
     },
     {
         "index": 324,
         "type": "C",
-        "walkable": true,
+        "walkable": false,
         "wallAttr":
         {
-            "wallFront": true,
-            "wallRight": false,
-            "wallBack": false,
-            "wallLeft": false,
-            "wallFrontType":
-            {
-                "name": "Swords",
-                "isDoor": false,
-                "hasInteraction": true,
+            "wallFront": {
+                "spriteIndex": 7,
+                "interactionZones": []
+            },
+            "wallRight": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallBack": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallLeft": {
+                "spriteIndex": -1,
                 "interactionZones": []
             }
-        }
+        },
     },
     {
         "index": 325,
@@ -2342,16 +1856,37 @@
         "walkable": true,
         "wallAttr":
         {
-            "wallFront": false,
-            "wallRight": true,
-            "wallBack": false,
-            "wallLeft": false,
-            "wallRightType":
-            {
-                "name": "Banner2",
-                "isDoor": false,
-                "hasInteraction": true,
+            "wallFront": {
+                "spriteIndex": -1,
                 "interactionZones": []
+            },
+            "wallRight": {
+                "spriteIndex": 3,
+                "interactionZones": [
+                    {
+                        "attachedWall": "wallRight",
+                        "triggerPos": [32,10, 64, 76],
+                        "triggerType": "click",
+                        "effect": "displayText",
+                        "text": ["Tapestries bring some warmth to the keep.", "Old saddlecloths make fine hangings."]
+                    }
+                ]
+            },
+            "wallBack": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallLeft": {
+                "spriteIndex": [[32, 33], 4],
+                "interactionZones": [
+                    {
+                        "attachedWall": "wallLeft",
+                        "triggerPos": [15,44, 98, 56],
+                        "triggerType": "click",
+                        "effect": "displayText",
+                        "text": ["The hidden plumbing seems miraculous.", "This must be fed by an artesian well."]
+                    }
+                ]
             }
         }
     },
@@ -2476,25 +2011,31 @@
         "walkable": true,
         "wallAttr":
         {
-            "wallFront": false,
-            "wallRight": false,
-            "wallBack": true,
-            "wallLeft": true,
-            "wallBackType":
-            {
-                "name": "Arch",
-                "isDoor": false,
-                "hasInteraction": false,
+            "wallFront": {
+                "spriteIndex": -1,
                 "interactionZones": []
             },
-            "wallLeftType":
-            {
-                "name": "Sculpture",
-                "isDoor": false,
-                "hasInteraction": true,
+            "wallRight": {
+                "spriteIndex": -1,
                 "interactionZones": []
+            },
+            "wallBack": {
+                "spriteIndex": 5,
+                "interactionZones": []
+            },
+            "wallLeft": {
+                "spriteIndex": 6,
+                "interactionZones": [
+                    {
+                        "attachedWall": "wallLeft",
+                        "triggerPos": [13,3, 102, 76],
+                        "triggerType": "click",
+                        "effect": "displayText",
+                        "text": ["The eagle is Ricchard's mascot.", "The noble bird reflects Richard's spirit."]
+                    }
+                ]
             }
-        }
+        },
     },
     {
         "index": 350,
@@ -2502,22 +2043,37 @@
         "walkable": true,
         "wallAttr":
         {
-            "wallFront": false,
-            "wallRight": false,
-            "wallBack": true,
-            "wallLeft": false,
-            "wallBackType":
-            {
-                "name": "Door1Opened",
-                "isDoor": true,
-                "linkedDoor": 376,
-                "linkedDoorSide": 402,
-                "doorAttr": {
-                    "name": "Door1",
-                    "toggleZones": [],
-                    "isOpened": true,
-                    "autoStateReset": false
-                },
+            "wallFront": {
+                "spriteIndex": [[32, 33], 4],
+                "interactionZones": [
+                    {
+                        "attachedWall": "wallFront",
+                        "triggerPos": [15,44, 98, 56],
+                        "triggerType": "click",
+                        "effect": "displayText",
+                        "text": ["The hidden plumbing seems miraculous.", "This must be fed by an artesian well."]
+                    }
+                ]
+            },
+            "wallRight": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallBack": {
+                "spriteIndex": 30,
+                "interactionZones": [
+                    {
+                        "attachedWall": "wallBack",
+                        "triggerPos": [99, 44, 11, 13],
+                        "triggerType": "click",
+                        "effect": "toggleDoor",
+                        "targetCell": 376
+                    }
+                ]
+            },
+            "wallLeft": {
+                "spriteIndex": -1,
+                "interactionZones": []
             }
         }
     },
@@ -2527,18 +2083,23 @@
         "walkable": true,
         "wallAttr":
         {
-            "wallFront": false,
-            "wallRight": false,
-            "wallBack": true,
-            "wallLeft": false,
-            "wallBackType":
-            {
-                "name": "Arch",
-                "isDoor": false,
-                "hasInteraction": false,
+            "wallFront": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallRight": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallBack": {
+                "spriteIndex": 5,
+                "interactionZones": []
+            },
+            "wallLeft": {
+                "spriteIndex": -1,
                 "interactionZones": []
             }
-        }
+        },
     },
     {
         "index": 352,
@@ -2546,84 +2107,41 @@
         "walkable": true,
         "wallAttr":
         {
-            "wallFront": true,
-            "wallRight": false,
-            "wallBack": true,
-            "wallLeft": false,
-            "wallFrontType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
+            "wallFront": {
+                "spriteIndex": 5,
                 "interactionZones": []
             },
-            "wallBackType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
+            "wallRight": {
+                "spriteIndex": 19,
+                "interactionZones": []
+            },
+            "wallBack": {
+                "spriteIndex": 17,
+                "interactionZones": [
+                    {
+                        "attachedWall": "wallBack",
+                        "triggerPos": [43,29, 44, 25],
+                        "triggerType": "click",
+                        "effect": "displayText",
+                        "text": ["Royal Herborium"]
+                    }
+                ]
+            },
+            "wallLeft": {
+                "spriteIndex": -1,
                 "interactionZones": []
             }
-        }
+        },
     },
     {
         "index": 353,
-        "type": "C",
-        "walkable": true,
-        "wallAttr":
-        {
-            "wallFront": true,
-            "wallRight": false,
-            "wallBack": true,
-            "wallLeft": false,
-            "wallFrontType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            },
-            "wallBackType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            }
-        }
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 354,
-        "type": "C",
-        "walkable": true,
-        "wallAttr":
-        {
-            "wallFront": true,
-            "wallRight": true,
-            "wallBack": true,
-            "wallLeft": false,
-            "wallFrontType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            },
-            "wallRightType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            },
-            "wallBackType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            }
-        }
+        "type": "E",
+        "walkable": false
     },
     {
         "index": 355,
@@ -2733,26 +2251,36 @@
     {
         "index": 376,
         "type": "D",
-        "walkable": true,
+        "walkable": false,
         "wallAttr":
         {
-            "wallFront": false,
-            "wallRight": true,
-            "wallBack": false,
-            "wallLeft": true,
-            "wallRightType":
-            {
-                "name": "Default",
-                "hasInteraction": false
+            "wallFront": {
+            	"spriteIndex": -1,
+                "interactionZones": []
             },
-            "wallLeftType":
-            {
-                "name": "Default",
-                "hasInteraction": false
+            "wallRight": {
+            	"spriteIndex": 31,
+                "interactionZones": []
+            },
+            "wallBack": {
+            	"spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallLeft": {
+            	"spriteIndex": 31,
+                "interactionZones": []
             }
         },
         "doorAttr": {
-            "isOpened": true
+            "isOpened": false,
+            "closeAnimation": [27, 28, 29, 30],
+            "openAnimation": [29, 28, 27, 26],
+            "connectedCellFront": 350,
+            "connectedCellRight": -1,
+            "connectedCellBack": 402,
+            "connectedCellLeft": -1,
+            "triggersAmount": 0,
+            "triggersActivated": 0
         }
     },
     {
@@ -2881,22 +2409,28 @@
         "walkable": true,
         "wallAttr":
         {
-            "wallFront": true,
-            "wallRight": false,
-            "wallBack": false,
-            "wallLeft": true,
-            "wallFrontType":
-            {
-                "name": "Banner1",
-                "isDoor": false,
-                "hasInteraction": true,
+            "wallFront": {
+                "spriteIndex": 1,
+                "interactionZones": [
+                    {
+                        "attachedWall": "wallFront",
+                        "triggerPos": [13,9, 102, 84],
+                        "triggerType": "click",
+                        "effect": "displayText",
+                        "text": ["The Gladstone Crest...", "Gold threads sparkle through the thick red yarn."]
+                    }
+                ]
+            },
+            "wallRight": {
+            	"spriteIndex": -1,
                 "interactionZones": []
             },
-            "wallLeftType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
+            "wallBack": {
+            	"spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallLeft": {
+            	"spriteIndex": 5,
                 "interactionZones": []
             }
         }
@@ -2907,22 +2441,29 @@
         "walkable": true,
         "wallAttr":
         {
-            "wallFront": true,
-            "wallRight": false,
-            "wallBack": false,
-            "wallLeft": false,
-            "wallFrontType":
-            {
-                "name": "Door1Opened",
-                "isDoor": true,
-                "linkedDoor": 376,
-                "linkedDoorSide": 350,
-                "doorAttr": {
-                    "name": "Door1",
-                    "toggleZones": [],
-                    "isOpened": true,
-                    "autoStateReset": false
-                },
+            "wallFront": {
+                "spriteIndex": 30,
+                "interactionZones": [
+                    {
+                        "attachedWall": "wallFront",
+                        "triggerPos": [99, 44, 11, 13],
+                        "triggerType": "click",
+                        "effect": "toggleDoor",
+                        "targetCell": 376
+                    }
+                ]
+            },
+            "wallRight": {
+            	"spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallBack": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallLeft": {
+            	"spriteIndex": -1,
+                "interactionZones": []
             }
         }
     },
@@ -2932,22 +2473,36 @@
         "walkable": true,
         "wallAttr":
         {
-            "wallFront": true,
-            "wallRight": true,
-            "wallBack": false,
-            "wallLeft": false,
-            "wallFrontType":
-            {
-                "name": "Banner1",
-                "isDoor": false,
-                "hasInteraction": true,
+            "wallFront": {
+            	"spriteIndex": 1,
+                "interactionZones": [
+                    {
+                        "attachedWall": "wallFront",
+                        "triggerPos": [13,9, 102, 84],
+                        "triggerType": "click",
+                        "effect": "displayText",
+                        "text": ["The Gladstone Crest...", "Gold threads sparkle through the thick red yarn."]
+                    }
+                ]
+            },
+            "wallRight": {
+            	"spriteIndex": 11,
+                "interactionZones": [
+                    {
+                        "attachedWall": "wallRight",
+                        "triggerPos": [51,28, 26, 22],
+                        "triggerType": "click",
+                        "effect": "displayText",
+                        "text": ["The kingdom looks deceptively peaceful.", "But soft, what evil through yonder forest shows?"]
+                    }
+                ]
+            },
+            "wallBack": {
+            	"spriteIndex": -1,
                 "interactionZones": []
             },
-            "wallRightType":
-            {
-                "name": "Window2",
-                "isDoor": false,
-                "hasInteraction": true,
+            "wallLeft": {
+            	"spriteIndex": -1,
                 "interactionZones": []
             }
         }
@@ -3073,23 +2628,29 @@
         "walkable": true,
         "wallAttr":
         {
-            "wallFront": false,
-            "wallRight": false,
-            "wallBack": true,
-            "wallLeft": true,
-            "wallBackType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
+            "wallFront": {
+            	"spriteIndex": -1,
                 "interactionZones": []
             },
-            "wallLeftType":
-            {
-                "name": "Window1",
-                "isDoor": false,
-                "hasInteraction": true,
+            "wallRight": {
+                "spriteIndex": -1,
                 "interactionZones": []
+            },
+            "wallBack": {
+            	"spriteIndex": 0,
+                "interactionZones": []
+            },
+            "wallLeft": {
+            	"spriteIndex": 10,
+                "interactionZones": [
+                    {
+                        "attachedWall": "wallLeft",
+                        "triggerPos": [51,28, 26, 22],
+                        "triggerType": "click",
+                        "effect": "displayText",
+                        "text": ["The forest below appears tranquil.", "Is that bird looking for a place to land?"]
+                    }
+                ]
             }
         }
     },
@@ -3099,10 +2660,22 @@
         "walkable": true,
         "wallAttr":
         {
-            "wallFront": false,
-            "wallRight": false,
-            "wallBack": false,
-            "wallLeft": false
+            "wallFront": {
+            	"spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallRight": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallBack": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallLeft": {
+            	"spriteIndex": -1,
+                "interactionZones": []
+            }
         }
     },
     {
@@ -3111,22 +2684,20 @@
         "walkable": true,
         "wallAttr":
         {
-            "wallFront": false,
-            "wallRight": true,
-            "wallBack": true,
-            "wallLeft": false,
-            "wallRightType":
-            {
-                "name": "Arch",
-                "isDoor": false,
-                "hasInteraction": false,
+            "wallFront": {
+            	"spriteIndex": -1,
                 "interactionZones": []
             },
-            "wallBackType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
+            "wallRight": {
+            	"spriteIndex": 5,
+                "interactionZones": []
+            },
+            "wallBack": {
+            	"spriteIndex": 0,
+                "interactionZones": []
+            },
+            "wallLeft": {
+                "spriteIndex": -1,
                 "interactionZones": []
             }
         }
@@ -3257,29 +2828,20 @@
         "walkable": true,
         "wallAttr":
         {
-            "wallFront": false,
-            "wallRight": true,
-            "wallBack": true,
-            "wallLeft": true,
-            "wallRightType":
-            {
-                "name": "Arch",
-                "isDoor": false,
-                "hasInteraction": false,
+            "wallFront": {
+                "spriteIndex": -1,
                 "interactionZones": []
             },
-            "wallBackType":
-            {
-                "name": "Gate",
-                "isDoor": true,
-                "hasInteraction": true,
+            "wallRight": {
+            	"spriteIndex": 5,
                 "interactionZones": []
             },
-            "wallLeftType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
+            "wallBack": {
+                "spriteIndex": 18,
+                "interactionZones": []
+            },
+            "wallLeft": {
+            	"spriteIndex": 0,
                 "interactionZones": []
             }
         }
@@ -3412,28 +2974,7 @@
     {
         "index": 480,
         "type": "E",
-        "walkable": false,
-        "wallAttr":
-        {
-            "wallFront": false,
-            "wallRight": true,
-            "wallBack": false,
-            "wallLeft": true,
-            "wallRightType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            },
-            "wallLeftType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            }
-        }
+        "walkable": false
     },
     {
         "index": 481,
@@ -3563,35 +3104,7 @@
     {
         "index": 506,
         "type": "E",
-        "walkable": false,
-        "wallAttr":
-        {
-            "wallFront": false,
-            "wallRight": true,
-            "wallBack": true,
-            "wallLeft": true,
-            "wallRightType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            },
-            "wallBackType":
-            {
-                "name": "Gate",
-                "isDoor": true,
-                "hasInteraction": true,
-                "interactionZones": []
-            },
-            "wallLeftType":
-            {
-                "name": "Default",
-                "isDoor": false,
-                "hasInteraction": false,
-                "interactionZones": []
-            }
-        }
+        "walkable": false
     },
     {
         "index": 507,
