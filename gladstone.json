@@ -828,13 +828,67 @@
     },
     {
         "index": 164,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": {
+                "spriteIndex": 13,
+                "interactionZones": [
+                    {
+                        "attachedWall": "wallFront",
+                        "triggerPos": [51, 28, 26, 22],
+                        "triggerType": "click",
+                        "effect": "displayText",
+                        "text": ["The kingdom looks deceptively peaceful.", "But soft, what evil through yonder forest shows?"]
+                    }
+                ]
+            },
+            "wallRight": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallBack": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallLeft": {
+                "spriteIndex": 5,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 165,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": {
+                "spriteIndex": 9,
+                "interactionZones": [
+                    {
+                        "attachedWall": "wallFront",
+                        "triggerPos": [18, 13, 90, 73],
+                        "triggerType": "click",
+                        "effect": "displayText",
+                        "text": ["The early Talamari were mounted warriors.", "Early spells inspired their mounts."]
+                    }
+                ]
+            },
+            "wallRight": {
+                "spriteIndex": 5,
+                "interactionZones": []
+            },
+            "wallBack": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallLeft": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 166,
@@ -858,8 +912,27 @@
     },
     {
         "index": 170,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": {
+                "spriteIndex": 0,
+                "interactionZones": []
+            },
+            "wallRight": {
+                "spriteIndex": 0,
+                "interactionZones": []
+            },
+            "wallBack": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallLeft": {
+                "spriteIndex": 5,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 171,
@@ -958,13 +1031,67 @@
     },
     {
         "index": 190,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallRight": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallBack": {
+                "spriteIndex": 0,
+                "interactionZones": []
+            },
+            "wallLeft": {
+                "spriteIndex": 10,
+                "interactionZones": [
+                    {
+                        "attachedWall": "wallLeft",
+                        "triggerPos": [51, 28, 26, 22],
+                        "triggerType": "click",
+                        "effect": "displayText",
+                        "text": ["The forest below appears tranquil.", "Is that bird looking for a place to land?"]
+                    }
+                ]
+            }
+        }
     },
     {
         "index": 191,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallRight": {
+                "spriteIndex": 0,
+                "interactionZones": []
+            },
+            "wallBack": {
+                "spriteIndex": 30,
+                "interactionZones": [
+                    {
+                        "attachedWall": "wallBack",
+                        "triggerPos": [99, 44, 11, 13],
+                        "triggerType": "click",
+                        "effect": "toggleDoor",
+                        "targetCell": 217
+                    }
+                ]
+            },
+            "wallLeft": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 192,
@@ -978,23 +1105,123 @@
     },
     {
         "index": 194,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": {
+                "spriteIndex": 12,
+                "interactionZones": [
+                    {
+                        "attachedWall": "wallFront",
+                        "triggerPos": [51, 28, 26, 22],
+                        "triggerType": "click",
+                        "effect": "displayText",
+                        "text": ["The forest below appears tranquil.", "Is that bird looking for a place to land?"]
+                    }
+                ]
+            },
+            "wallRight": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallBack": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallLeft": {
+                "spriteIndex": 0,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 195,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": {
+                "spriteIndex": 4,
+                "interactionZones": [
+                    {
+                        "attachedWall": "wallFront",
+                        "triggerPos": [30, 5, 68, 90],
+                        "triggerType": "click",
+                        "effect": "displayText",
+                        "text": ["Richard's battle banners await the call.", "They seem ready for the fight."]
+                    }
+                ]
+            },
+            "wallRight": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallBack": {
+                "spriteIndex": 4,
+                "interactionZones": [
+                    {
+                        "attachedWall": "wallBack",
+                        "triggerPos": [30, 5, 68, 90],
+                        "triggerType": "click",
+                        "effect": "displayText",
+                        "text": ["Richard's battle banners await the call.", "They seem ready for the fight."]
+                    }
+                ]
+            },
+            "wallLeft": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 196,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallRight": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallBack": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallLeft": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 197,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": {
+                "spriteIndex": 0,
+                "interactionZones": []
+            },
+            "wallRight": {
+                "spriteIndex": 20,
+                "interactionZones": []
+            },
+            "wallBack": {
+                "spriteIndex": 5,
+                "interactionZones": []
+            },
+            "wallLeft": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 198,
@@ -1093,8 +1320,38 @@
     },
     {
         "index": 217,
-        "type": "E",
-        "walkable": false
+        "type": "D",
+        "walkable": false,
+        "wallAttr":
+        {
+            "wallFront": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallRight": {
+                "spriteIndex": 31,
+                "interactionZones": []
+            },
+            "wallBack": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallLeft": {
+                "spriteIndex": 31,
+                "interactionZones": []
+            }
+        },
+        "doorAttr": {
+            "isOpened": false,
+            "closeAnimation": [27, 28, 29, 30],
+            "openAnimation": [29, 28, 27, 26],
+            "connectedCellFront": 191,
+            "connectedCellRight": -1,
+            "connectedCellBack": 243,
+            "connectedCellLeft": -1,
+            "triggersAmount": 0,
+            "triggersActivated": 0
+        }
     },
     {
         "index": 218,
@@ -1108,8 +1365,27 @@
     },
     {
         "index": 220,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallRight": {
+                "spriteIndex": 0,
+                "interactionZones": []
+            },
+            "wallBack": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallLeft": {
+                "spriteIndex": 5,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 221,
@@ -1118,8 +1394,27 @@
     },
     {
         "index": 222,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallRight": {
+                "spriteIndex": 0,
+                "interactionZones": []
+            },
+            "wallBack": {
+                "spriteIndex": 5,
+                "interactionZones": []
+            },
+            "wallLeft": {
+                "spriteIndex": 5,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 223,
@@ -1223,13 +1518,86 @@
     },
     {
         "index": 243,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": {
+                "spriteIndex": 30,
+                "interactionZones": [
+                    {
+                        "attachedWall": "wallFront",
+                        "triggerPos": [99, 44, 11, 13],
+                        "triggerType": "click",
+                        "effect": "toggleDoor",
+                        "targetCell": 217
+                    }
+                ]
+            },
+            "wallRight": {
+                "spriteIndex": 30,
+                "interactionZones": [
+                    {
+                        "attachedWall": "wallRight",
+                        "triggerPos": [99, 44, 11, 13],
+                        "triggerType": "click",
+                        "effect": "toggleDoor",
+                        "targetCell": 244
+                    }
+                ]
+            },
+            "wallBack": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallLeft": {
+                "spriteIndex": 8,
+                "interactionZones": [
+                    {
+                        "attachedWall": "wallLeft",
+                        "triggerPos": [23, 7, 82, 83],
+                        "triggerType": "click",
+                        "effect": "displayText",
+                        "text": ["Richard's great grandfather Ludwig.", "Seventy-third heir to the throne."]
+                    }
+                ]
+            }
+        }
     },
     {
         "index": 244,
-        "type": "E",
-        "walkable": false
+        "type": "D",
+        "walkable": false,
+        "wallAttr":
+        {
+            "wallFront": {
+                "spriteIndex": 31,
+                "interactionZones": []
+            },
+            "wallRight": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallBack": {
+                "spriteIndex": 31,
+                "interactionZones": []
+            },
+            "wallLeft": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            }
+        },
+        "doorAttr": {
+            "isOpened": false,
+            "closeAnimation": [27, 28, 29, 30],
+            "openAnimation": [29, 28, 27, 26],
+            "connectedCellFront": -1,
+            "connectedCellRight": 245,
+            "connectedCellBack": -1,
+            "connectedCellLeft": 243,
+            "triggersAmount": 0,
+            "triggersActivated": 0
+        }
     },
     {
         "index": 245,
@@ -1250,7 +1618,7 @@
                 ]
             },
             "wallRight": {
-                "spriteIndex": 0,
+                "spriteIndex": -1,
                 "interactionZones": []
             },
             "wallBack": {
@@ -1266,15 +1634,50 @@
                 ]
             },
             "wallLeft": {
-                "spriteIndex": 0,
-                "interactionZones": []
+                "spriteIndex": 30,
+                "interactionZones": [
+                    {
+                        "attachedWall": "wallLeft",
+                        "triggerPos": [99, 44, 11, 13],
+                        "triggerType": "click",
+                        "effect": "toggleDoor",
+                        "targetCell": 244
+                    }
+                ]
             }
         }
     },
     {
         "index": 246,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallRight": {
+                "spriteIndex": 11,
+                "interactionZones": [
+                    {
+                        "attachedWall": "wallRight",
+                        "triggerPos": [51, 28, 26, 22],
+                        "triggerType": "click",
+                        "effect": "displayText",
+                        "text": ["The forest below appears tranquil.", "Is that bird looking for a place to land?"]
+                    }
+                ]
+            },
+            "wallBack": {
+                "spriteIndex": 0,
+                "interactionZones": []
+            },
+            "wallLeft": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 247,
@@ -1373,23 +1776,147 @@
     },
     {
         "index": 266,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": {
+                "spriteIndex": 13,
+                "interactionZones": [
+                    {
+                        "attachedWall": "wallFront",
+                        "triggerPos": [51, 28, 26, 22],
+                        "triggerType": "click",
+                        "effect": "displayText",
+                        "text": ["The kingdom looks deceptively peaceful.", "But soft, what evil through yonder forest shows?"]
+                    }
+                ]
+            },
+            "wallRight": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallBack": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallLeft": {
+                "spriteIndex": 16,
+                "interactionZones": [
+                    {
+                        "attachedWall": "wallLeft",
+                        "triggerPos": [47, 43, 34, 20],
+                        "triggerType": "click",
+                        "effect": "displayText",
+                        "text": ["Text from book."]
+                    }
+                ]
+            }
+        }
     },
     {
         "index": 267,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": {
+                "spriteIndex": 16,
+                "interactionZones": [
+                    {
+                        "attachedWall": "wallFront",
+                        "triggerPos": [47, 43, 34, 20],
+                        "triggerType": "click",
+                        "effect": "displayText",
+                        "text": ["Text from book."]
+                    }
+                ]
+            },
+            "wallRight": {
+                "spriteIndex": 25,
+                "interactionZones": []
+            },
+            "wallBack": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallLeft": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 268,
-        "type": "E",
-        "walkable": false
+        "type": "D",
+        "walkable": false,
+        "wallAttr":
+        {
+            "wallFront": {
+                "spriteIndex": 31,
+                "interactionZones": []
+            },
+            "wallRight": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallBack": {
+                "spriteIndex": 31,
+                "interactionZones": []
+            },
+            "wallLeft": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            }
+        },
+        "doorAttr": {
+            "isOpened": false,
+            "closeAnimation": [22, 23, 24, 25],
+            "openAnimation": [24, 23, 22, 21],
+            "connectedCellFront": -1,
+            "connectedCellRight": 269,
+            "connectedCellBack": -1,
+            "connectedCellLeft": 267,
+            "triggersAmount": 1,
+            "triggersActivated": 0
+        }
     },
     {
         "index": 269,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallRight": {
+                "spriteIndex": 5,
+                "interactionZones": []
+            },
+            "wallBack": {
+                "spriteIndex": 15,
+                "interactionZones": [
+                    {
+                        "attachedWall": "wallBack",
+                        "triggerPos": [51, 37, 23, 26],
+                        "triggerType": "click",
+                        "effect": "keyhole",
+                        "unlocked": false,
+                        "acceptedItems": [3],
+                        "targetCell": 268,
+                        "text": ["An ornate lock..."],
+                        "invalidText": "It does not fit.",
+                        "unlockedText": "It is already unlocked."
+                    }
+                ]
+            },
+            "wallLeft": {
+                "spriteIndex": 25,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 270,
@@ -1533,13 +2060,83 @@
     },
     {
         "index": 292,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallRight": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallBack": {
+                "spriteIndex": 16,
+                "interactionZones": [
+                    {
+                        "attachedWall": "wallBack",
+                        "triggerPos": [47, 43, 34, 20],
+                        "triggerType": "click",
+                        "effect": "displayText",
+                        "text": ["Text from book."]
+                    }
+                ]
+            },
+            "wallLeft": {
+                "spriteIndex": 12,
+                "interactionZones": [
+                    {
+                        "attachedWall": "wallLeft",
+                        "triggerPos": [51, 28, 26, 22],
+                        "triggerType": "click",
+                        "effect": "displayText",
+                        "text": ["The forest below appears tranquil.", "Is that bird looking for a place to land?"]
+                    }
+                ]
+            }
+        }
     },
     {
         "index": 293,
-        "type": "E",
-        "walkable": false
+        "type": "C",
+        "walkable": true,
+        "wallAttr":
+        {
+            "wallFront": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallRight": {
+                "spriteIndex": 16,
+                "interactionZones": [
+                    {
+                        "attachedWall": "wallRight",
+                        "triggerPos": [47, 43, 34, 20],
+                        "triggerType": "click",
+                        "effect": "toggleAtlas",
+                        "text": "The magic Atlas..."
+                    }
+                ]
+            },
+            "wallBack": {
+                "spriteIndex": 14,
+                "interactionZones": [
+                    {
+                        "attachedWall": "wallBack",
+                        "triggerPos": [51, 28, 26, 22],
+                        "triggerType": "click",
+                        "effect": "displayText",
+                        "text": ["The kingdom looks deceptively peaceful.", "But soft, what evil through yonder forest shows?"]
+                    }
+                ]
+            },
+            "wallLeft": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 294,
@@ -1616,7 +2213,7 @@
                 "interactionZones": [
                     {
                         "attachedWall": "wallLeft",
-                        "triggerPos": [21,15, 86, 70],
+                        "triggerPos": [21, 15, 86, 70],
                         "triggerType": "click",
                         "effect": "displayText",
                         "text": ["Fine swords, impressive decorations.", "Ow! sharp too!"]
@@ -1636,7 +2233,7 @@
                 "interactionZones": [
                     {
                         "attachedWall": "wallFront",
-                        "triggerPos": [43,29, 44, 25],
+                        "triggerPos": [43, 29, 44, 25],
                         "triggerType": "click",
                         "effect": "displayText",
                         "text": ["Victor Glaston... Royal Armorer"]
@@ -1773,7 +2370,7 @@
                 "interactionZones": [
                     {
                         "attachedWall": "wallFront",
-                        "triggerPos": [43,29, 44, 25],
+                        "triggerPos": [43, 29, 44, 25],
                         "triggerType": "click",
                         "effect": "displayText",
                         "text": ["Geron Arbroath... Royal Chamberlain"]
@@ -1809,7 +2406,7 @@
                 "interactionZones": [
                     {
                         "attachedWall": "wallRight",
-                        "triggerPos": [15,44, 98, 56],
+                        "triggerPos": [15, 44, 98, 56],
                         "triggerType": "click",
                         "effect": "displayText",
                         "text": ["The hidden plumbing seems miraculous.", "This must be fed by an artesian well."]
@@ -1865,7 +2462,7 @@
                 "interactionZones": [
                     {
                         "attachedWall": "wallRight",
-                        "triggerPos": [32,10, 64, 76],
+                        "triggerPos": [32, 10, 64, 76],
                         "triggerType": "click",
                         "effect": "displayText",
                         "text": ["Tapestries bring some warmth to the keep.", "Old saddlecloths make fine hangings."]
@@ -1881,7 +2478,7 @@
                 "interactionZones": [
                     {
                         "attachedWall": "wallLeft",
-                        "triggerPos": [15,44, 98, 56],
+                        "triggerPos": [15, 44, 98, 56],
                         "triggerType": "click",
                         "effect": "displayText",
                         "text": ["The hidden plumbing seems miraculous.", "This must be fed by an artesian well."]
@@ -2028,7 +2625,7 @@
                 "interactionZones": [
                     {
                         "attachedWall": "wallLeft",
-                        "triggerPos": [13,3, 102, 76],
+                        "triggerPos": [13, 3, 102, 76],
                         "triggerType": "click",
                         "effect": "displayText",
                         "text": ["The eagle is Ricchard's mascot.", "The noble bird reflects Richard's spirit."]
@@ -2048,7 +2645,7 @@
                 "interactionZones": [
                     {
                         "attachedWall": "wallFront",
-                        "triggerPos": [15,44, 98, 56],
+                        "triggerPos": [15, 44, 98, 56],
                         "triggerType": "click",
                         "effect": "displayText",
                         "text": ["The hidden plumbing seems miraculous.", "This must be fed by an artesian well."]
@@ -2120,7 +2717,7 @@
                 "interactionZones": [
                     {
                         "attachedWall": "wallBack",
-                        "triggerPos": [43,29, 44, 25],
+                        "triggerPos": [43, 29, 44, 25],
                         "triggerType": "click",
                         "effect": "displayText",
                         "text": ["Royal Herborium"]
@@ -2414,7 +3011,7 @@
                 "interactionZones": [
                     {
                         "attachedWall": "wallFront",
-                        "triggerPos": [13,9, 102, 84],
+                        "triggerPos": [13, 9, 102, 84],
                         "triggerType": "click",
                         "effect": "displayText",
                         "text": ["The Gladstone Crest...", "Gold threads sparkle through the thick red yarn."]
@@ -2478,7 +3075,7 @@
                 "interactionZones": [
                     {
                         "attachedWall": "wallFront",
-                        "triggerPos": [13,9, 102, 84],
+                        "triggerPos": [13, 9, 102, 84],
                         "triggerType": "click",
                         "effect": "displayText",
                         "text": ["The Gladstone Crest...", "Gold threads sparkle through the thick red yarn."]
@@ -2490,7 +3087,7 @@
                 "interactionZones": [
                     {
                         "attachedWall": "wallRight",
-                        "triggerPos": [51,28, 26, 22],
+                        "triggerPos": [51, 28, 26, 22],
                         "triggerType": "click",
                         "effect": "displayText",
                         "text": ["The kingdom looks deceptively peaceful.", "But soft, what evil through yonder forest shows?"]
@@ -2645,7 +3242,7 @@
                 "interactionZones": [
                     {
                         "attachedWall": "wallLeft",
-                        "triggerPos": [51,28, 26, 22],
+                        "triggerPos": [51, 28, 26, 22],
                         "triggerType": "click",
                         "effect": "displayText",
                         "text": ["The forest below appears tranquil.", "Is that bird looking for a place to land?"]

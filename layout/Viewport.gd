@@ -212,7 +212,8 @@ func update_walls(wallObject):
 			zoneArea.position.y = triggerPos[1] + triggerPos[3] / 2
 			zoneShape.shape.extents.x = triggerPos[2] / 2
 			zoneShape.shape.extents.y = triggerPos[3] / 2
-			zonesContainer.add_child(zoneArea)
+			zonesContainer.add_child(zoneArea)		
+		print(zonesContainer.get_children())
 	else:
 		zonesContainer.visible = false
 
