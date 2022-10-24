@@ -2,12 +2,14 @@ extends Node2D
 
 onready var container = $Container
 onready var player = $Container/Player
+onready var legend = $Legend
 
 var safeSpace = 3
 var cellSize = 5
 var currentPos = 0
 var mapWidth = 0
 var cells = []
+var legendItemScene = preload("res://layout/LegendItem.tscn")
 
 func _ready():
 	add_to_group("map")
@@ -18,6 +20,7 @@ func draw_map(data):
 	mapWidth = int(data.width)
 	currentPos = int(data.start_index)
 	cells = data.grid
+	var specialCells = 0
 	# Drawing map
 	for cell in cells:
 		if ['C', 'D', 'S'].find(cell.type) > -1:
@@ -28,7 +31,13 @@ func draw_map(data):
 			if cell.type == 'D':
 				rect.color = Color('BEBEBE')
 			elif cell.type == 'S':
-				rect.color = Color('FF0000')
+				rect.color = Color(cell.color)
+				var legendItemInstance = legendItemScene.instance()
+				legendItemInstance.find_node('Color').color = Color(cell.color)
+				legendItemInstance.find_node('Label').text = cell.label
+				legendItemInstance.position.y = specialCells * 10
+				legend.add_child(legendItemInstance)
+				specialCells += 1
 			else:
 				rect.color = Color('000000')
 			container.add_child(rect)

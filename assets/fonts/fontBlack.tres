@@ -1,7 +1,7 @@
 [gd_resource type="BitmapFont" load_steps=3 format=2]
 
 [ext_resource path="res://addons/BitmapFontCutterPlus/cutter.gd" type="Script" id=1]
-[ext_resource path="res://assets/fonts/fontsprite.png" type="Texture" id=2]
+[ext_resource path="res://assets/fonts/fontBlack.png" type="Texture" id=2]
 
 [resource]
 textures = [ ExtResource( 2 ) ]

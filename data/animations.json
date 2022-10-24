@@ -1,0 +1,13 @@
+{
+	"gladstone": {
+		"portcullis": {
+			"frames": 12,
+			"x": 65,
+			"y": 23,
+			"width": 46,
+			"height": 66,
+			"speed": 3,
+			"loop": false
+		}
+	}
+}

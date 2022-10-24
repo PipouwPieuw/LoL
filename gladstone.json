@@ -4,6 +4,7 @@
     "start_index": 454,
     "layout": "gladstone",
     "spriteSheetFrames": 34,
+    "hasCeiling": true,
     "music": "gladstone",
     "grid": [
     {
@@ -2261,8 +2262,29 @@
     },
     {
         "index": 302,
-        "type": "E",
-        "walkable": false
+        "type": "S",
+        "walkable": false,
+        "label": "Victor's arms",
+        "color": "9796b3",
+        "wallAttr":
+        {
+            "wallFront": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallRight": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallBack": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallLeft": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 303,
@@ -2351,8 +2373,29 @@
     },
     {
         "index": 320,
-        "type": "E",
-        "walkable": false
+        "type": "S",
+        "walkable": false,
+        "label": "Geron's office",
+        "color": "fad833",
+        "wallAttr":
+        {
+            "wallFront": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallRight": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallBack": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallLeft": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 321,
@@ -2425,8 +2468,10 @@
     },
     {
         "index": 324,
-        "type": "C",
+        "type": "S",
         "walkable": false,
+        "label": "Fountain",
+        "color": "4c4bff",
         "wallAttr":
         {
             "wallFront": {
@@ -2737,8 +2782,29 @@
     },
     {
         "index": 354,
-        "type": "E",
-        "walkable": false
+        "type": "S",
+        "walkable": false,
+        "label": "Nathaniel's herbs",
+        "color": "00b000",
+        "wallAttr":
+        {
+            "wallFront": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallRight": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallBack": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallLeft": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 355,
@@ -3700,8 +3766,29 @@
     },
     {
         "index": 506,
-        "type": "E",
-        "walkable": false
+        "type": "S",
+        "walkable": false,
+        "label": "Forest",
+        "color": "30742a",
+        "wallAttr":
+        {
+            "wallFront": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallRight": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallBack": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallLeft": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 507,

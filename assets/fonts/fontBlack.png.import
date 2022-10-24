@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/0003.PNG-59837904199e855f0331e6eb280bfe07.stex"
+path="res://.import/fontBlack.png-cad34a11391ce96fdcbb298a6d61ae29.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Gladstone/animations/PORTCLLS.WSA/0003.PNG"
-dest_files=[ "res://.import/0003.PNG-59837904199e855f0331e6eb280bfe07.stex" ]
+source_file="res://assets/fonts/fontBlack.png"
+dest_files=[ "res://.import/fontBlack.png-cad34a11391ce96fdcbb298a6d61ae29.stex" ]
 
 [params]
 

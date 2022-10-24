@@ -24,6 +24,9 @@ var bumpAnimation = false
 var data = {}
 var interationsData = {}
 var wallAnimation = false
+var animationBasePath = 'res://assets/sprites/animations'
+var animationPath = ''
+var animations = {}
 
 func _ready():
 	add_to_group("viewport")
@@ -36,10 +39,10 @@ func _physics_process(_delta):
 			textures.rect_scale.y += .1
 			if textures.rect_scale.x >= 1.6:
 				end_move_up_down()
-				update_walls(wallNodes)
+				update_walls(wallNodes, true)
 		elif moveDirection == 'down':
 			if textures.rect_scale.x == 1:
-				update_walls(wallNodes)
+				update_walls(wallNodes, true)
 				textures.rect_scale.x = 1.6
 				textures.rect_scale.y = 1.6
 			textures.rect_scale.x -= .1
@@ -48,21 +51,21 @@ func _physics_process(_delta):
 				end_move_up_down()
 		elif moveDirection == 'right':
 			if viewFront.rect_position.x == 0:
-				update_walls(wallNodesSide)
+				update_walls(wallNodesSide, false)
 				viewSide.rect_position.x = 128
 			viewFront.rect_position.x -= 22
 			viewSide.rect_position.x -= 22
 			if viewSide.rect_position.x <= 0:
-				update_walls(wallNodes)
+				update_walls(wallNodes, true)
 				end_move_left_right()
 		elif moveDirection == 'left':
 			if viewFront.rect_position.x == 0:
-				update_walls(wallNodesSide)
+				update_walls(wallNodesSide, false)
 				viewSide.rect_position.x = -128
 			viewFront.rect_position.x += 22
 			viewSide.rect_position.x += 22
 			if viewSide.rect_position.x >= 0:
-				update_walls(wallNodes)
+				update_walls(wallNodes, true)
 				end_move_left_right()
 		elif moveDirection == 'turnright':
 			move_animation_turn(-1)
@@ -91,7 +94,7 @@ func end_move_left_right():
 
 func move_animation_turn(mode):
 	if viewFront.rect_position.x == 0:
-		update_walls(wallNodesSide)
+		update_walls(wallNodesSide, false)
 		viewSide.rect_position.x = -176 * mode
 		viewSide.rect_pivot_offset.x = 176 if mode == 1 else 0
 		viewSide.rect_scale.x = 1.9
@@ -101,7 +104,7 @@ func move_animation_turn(mode):
 	viewSide.rect_position.x += 29 * mode
 	viewFront.rect_scale.x += .15
 	if viewSide.rect_scale.x <= 1:
-		update_walls(wallNodes)
+		update_walls(wallNodes, true)
 		moveDirection = ''
 		viewFront.rect_scale.x = 1
 		viewSide.rect_scale.x = 1
@@ -114,7 +117,7 @@ func start_move(dir, moveData):
 
 func update_viewport(newData):
 	data = newData
-	update_walls(wallNodes)
+	update_walls(wallNodes, true)
 
 # Get all wall nodes
 func get_walls(wallObject):
@@ -143,6 +146,7 @@ func get_walls(wallObject):
 # Set new layout for sprites
 func update_layout(newLayout, framesAmount):
 	currentLayout = newLayout
+	# Sprites
 	spritePath = spriteBasePath + '/' + currentLayout + '/'
 	spriteSheetFrames = framesAmount
 	preload_sprites()
@@ -154,6 +158,9 @@ func update_layout(newLayout, framesAmount):
 	floorSpriteSide.texture = sprites['Floor']
 	ceilingSpriteSide.flip_h = true
 	floorSpriteSide.flip_h = true
+	# Animations
+	animationPath = animationBasePath + '/' + currentLayout + '/'
+	preload_animations()
 
 # Load all sprites from current layout in dictionary for later use
 func preload_sprites():
@@ -169,8 +176,34 @@ func preload_sprites():
 			sprites[spriteKey] = load(spritePath + "/" + fileName)
 	dir.list_dir_end()
 
+# Load all animations from current layout in dictionary for later use
+func preload_animations():
+	var file = File.new()
+	file.open('res://data/animations.json', File.READ)
+	var animationsData = parse_json(file.get_as_text())[currentLayout]
+	file.close()
+	for animationName in animationsData:
+		var animation = animationsData[animationName]
+		var animatedSpriteInstance = AnimatedSprite.new()
+		var spriteFramesInstance = SpriteFrames.new()
+		var spriteSize = Vector2(animation.width, animation.height)
+		var animationSpriteSheet : Texture = load(animationPath + '/' + animationName + '.png')
+		for x in range(animation.frames):
+			var frame := AtlasTexture.new()
+			frame.atlas = animationSpriteSheet
+			frame.region = Rect2(Vector2(x, 0) * spriteSize, spriteSize)
+			spriteFramesInstance.add_frame("default", frame, x)
+		spriteFramesInstance.set_animation_loop("default", animation.loop)
+		animatedSpriteInstance.frames = spriteFramesInstance
+		animatedSpriteInstance.speed_scale = animation.speed
+		animatedSpriteInstance.position = Vector2(animation.x, animation.y)
+		animatedSpriteInstance.centered = false
+		animations[animationName] = animatedSpriteInstance
+		animatedSpriteInstance.playing = true
+		add_child(animatedSpriteInstance)
+
 # Update wall visibility and sprite
-func update_walls(wallObject):
+func update_walls(wallObject, isMain):
 	wallAnimation = false
 	var hasInteractionZones = false
 	yield(get_tree(),"idle_frame")
@@ -192,7 +225,7 @@ func update_walls(wallObject):
 			wall.sprite.visible = true
 			wall.sprite.frame = spriteIndex
 			# Create interaction zones
-		if wallName == 'WallFront' and !data['currentCell'].InteractionZones.empty():
+		if wallName == 'WallFront' and !data['currentCell'].InteractionZones.empty() and isMain:
 			hasInteractionZones = true
 	
 	# Delete previous interaction zones
@@ -212,8 +245,7 @@ func update_walls(wallObject):
 			zoneArea.position.y = triggerPos[1] + triggerPos[3] / 2
 			zoneShape.shape.extents.x = triggerPos[2] / 2
 			zoneShape.shape.extents.y = triggerPos[3] / 2
-			zonesContainer.add_child(zoneArea)		
-		print(zonesContainer.get_children())
+			zonesContainer.add_child(zoneArea)
 	else:
 		zonesContainer.visible = false
 

@@ -19,3 +19,6 @@ __meta__ = {
 z_index = 1
 texture = ExtResource( 2 )
 centered = false
+
+[node name="Legend" type="Node2D" parent="."]
+position = Vector2( 80, 0 )

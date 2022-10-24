@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/0009.PNG-55a2c66897ec9aeddf39f57a2bd2cd46.stex"
+path="res://.import/portcullis.png-2bebc6eec6a8df863eb201fa3dcc75d9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Gladstone/animations/PORTCLLS.WSA/0009.PNG"
-dest_files=[ "res://.import/0009.PNG-55a2c66897ec9aeddf39f57a2bd2cd46.stex" ]
+source_file="res://assets/sprites/animations/gladstone/portcullis.png"
+dest_files=[ "res://.import/portcullis.png-2bebc6eec6a8df863eb201fa3dcc75d9.stex" ]
 
 [params]
 
