@@ -20,12 +20,17 @@ func draw_map(data):
 	cells = data.grid
 	# Drawing map
 	for cell in cells:
-		if cell.type == 'C':
+		if ['C', 'D', 'S'].find(cell.type) > -1:
 			var cellIndex = int(cell.index)
 			var rect = ColorRect.new()
 			rect.rect_size = Vector2(cellSize, cellSize)
 			rect.rect_position = calc_position(cellIndex, mapWidth)
-			rect.color = Color(0, 0, 0, 1)
+			if cell.type == 'D':
+				rect.color = Color('BEBEBE')
+			elif cell.type == 'S':
+				rect.color = Color('FF0000')
+			else:
+				rect.color = Color('000000')
 			container.add_child(rect)
 	# Set current pos
 	var start_index = currentPos
