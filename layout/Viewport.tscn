@@ -166,6 +166,8 @@ position = Vector2( 24, 5 )
 centered = false
 hframes = 30
 
+[node name="Animations" type="Node2D" parent="Textures/Front/Walls/WallFront"]
+
 [node name="InteractionZones" type="Node2D" parent="Textures/Front/Walls/WallFront"]
 
 [node name="WallLeft" type="Sprite" parent="Textures/Front/Walls"]

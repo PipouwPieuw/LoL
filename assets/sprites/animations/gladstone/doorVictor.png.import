@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/0003.PNG-7bba7b2d82feb4826658672e2d30524a.stex"
+path="res://.import/doorVictor.png-01f3d3d84d97e5da24c93ea1b7d4dfe6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Gladstone/animations/DRVICTOR.WSA/0003.PNG"
-dest_files=[ "res://.import/0003.PNG-7bba7b2d82feb4826658672e2d30524a.stex" ]
+source_file="res://assets/sprites/animations/gladstone/doorVictor.png"
+dest_files=[ "res://.import/doorVictor.png-01f3d3d84d97e5da24c93ea1b7d4dfe6.stex" ]
 
 [params]
 

@@ -1809,7 +1809,7 @@
                         "triggerPos": [47, 43, 34, 20],
                         "triggerType": "click",
                         "effect": "displayText",
-                        "text": ["Text from book."]
+                        "text": ["Tariq is the boss."]
                     }
                 ]
             }
@@ -2243,7 +2243,13 @@
             },
             "wallRight": {
                 "spriteIndex": 19,
-                "interactionZones": []
+                "interactionZones": [],
+                "onWalkTowards": [
+                    {
+                        "eventType": "play_animation",
+                        "animation": "doorVictor"
+                    }
+                ]
             },
             "wallBack": {
                 "spriteIndex": 0,

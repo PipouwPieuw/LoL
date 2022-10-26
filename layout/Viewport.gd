@@ -10,6 +10,7 @@ onready var viewSide = $Textures/Side
 onready var walls = $Textures/Front/Walls
 onready var wallsSide = $Textures/Side/Walls
 onready var zonesContainer = $Textures/Front/Walls/WallFront/InteractionZones
+onready var animationsContainer = $Textures/Front/Walls/WallFront/Animations
 onready var triggerZone = preload("res://boxes/triggerZone.tscn")
 
 var sprites = {}
@@ -200,7 +201,7 @@ func preload_animations():
 		animatedSpriteInstance.position = Vector2(animation.x, animation.y)
 		animatedSpriteInstance.centered = false
 		animatedSpriteInstance.playing = true
-		_err = animatedSpriteInstance.connect('animation_finished', self, 'animation_finished')
+		_err = animatedSpriteInstance.connect('animation_finished', self, 'animation_finished', [animatedSpriteInstance])
 		animations[animationName] = animatedSpriteInstance
 
 # Update wall visibility and sprite
@@ -276,7 +277,9 @@ func animate_wall(wall, framesData):
 		yield(get_tree(),"idle_frame")
 
 func play_animation(animation):
-	add_child(animations[animation])
+	animationsContainer.add_child(animations[animation])
 
-func animation_finished():
+func animation_finished(animation):
+	animationsContainer.remove_child(animation)
+	animation.frame = 0
 	get_tree().call_group('controller', 'process_event')

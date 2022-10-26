@@ -167,13 +167,14 @@ func send_walls_status(moveDirection, staticMode = false):
 func check_move(moveDirection):
 	var currentDir = directions[0]
 	# Check if moving to wall with special trigger
-	var dirs = ['U', 'R','D', 'L']
-	var walls = ['wallFront', 'wallRight','wallBack', 'wallLeft']
-	var targetWall = walls[dirs.find(currentDir)]
-	if currentData.grid[currentCell].wallAttr[targetWall].has('onWalkTowards'):
-		for event in currentData.grid[currentCell].wallAttr[targetWall].onWalkTowards:
-			call(event.eventType, event)
-		return
+	if moveDirection == 'up':
+		var dirs = ['U', 'R','D', 'L']
+		var walls = ['wallFront', 'wallRight','wallBack', 'wallLeft']
+		var targetWall = walls[dirs.find(currentDir)]
+		if currentData.grid[currentCell].wallAttr[targetWall].has('onWalkTowards'):
+			for event in currentData.grid[currentCell].wallAttr[targetWall].onWalkTowards:
+				call(event.eventType, event)
+			return
 	# Prepare move
 	var newCell = int(currentCell)
 	# Move North
@@ -299,7 +300,7 @@ func open_close_door(cell, frames):
 	animatedDoors.remove(animatedDoors.find(cell.index))
 
 func process_event():
-	print(1111)
+	pass
 
 func play_animation(event):
 	get_tree().call_group('viewport', 'play_animation', event.animation)

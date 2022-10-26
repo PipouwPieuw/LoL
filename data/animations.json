@@ -2,11 +2,20 @@
 	"gladstone": {
 		"portcullis": {
 			"frames": 12,
-			"x": 65,
-			"y": 23,
+			"x": 41,
+			"y": 18,
 			"width": 46,
 			"height": 66,
 			"speed": 3,
+			"loop": false
+		},
+		"doorVictor": {
+			"frames": 6,
+			"x": 40,
+			"y": 18,
+			"width": 48,
+			"height": 65,
+			"speed": 2,
 			"loop": false
 		}
 	}
