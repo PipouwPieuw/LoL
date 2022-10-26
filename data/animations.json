@@ -7,7 +7,7 @@
 			"width": 46,
 			"height": 66,
 			"speed": 3,
-			"loop": true
+			"loop": false
 		}
 	}
 }

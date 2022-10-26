@@ -27,6 +27,7 @@ var wallAnimation = false
 var animationBasePath = 'res://assets/sprites/animations'
 var animationPath = ''
 var animations = {}
+var _err
 
 func _ready():
 	add_to_group("viewport")
@@ -198,9 +199,9 @@ func preload_animations():
 		animatedSpriteInstance.speed_scale = animation.speed
 		animatedSpriteInstance.position = Vector2(animation.x, animation.y)
 		animatedSpriteInstance.centered = false
-		animations[animationName] = animatedSpriteInstance
 		animatedSpriteInstance.playing = true
-		add_child(animatedSpriteInstance)
+		_err = animatedSpriteInstance.connect('animation_finished', self, 'animation_finished')
+		animations[animationName] = animatedSpriteInstance
 
 # Update wall visibility and sprite
 func update_walls(wallObject, isMain):
@@ -216,7 +217,7 @@ func update_walls(wallObject, isMain):
 			wall.sprite.visible = true
 			wall.sprite.frame = spriteIndex[0][0]
 			wallAnimation = true
-			animateWall(wall, spriteIndex)
+			animate_wall(wall, spriteIndex)
 		# No wall
 		elif spriteIndex == -1:
 			wall.sprite.visible = false
@@ -261,7 +262,7 @@ func bump_forward():
 func sendInteraction(effect, args):
 	get_tree().call_group('controller', effect, args)
 
-func animateWall(wall, framesData):
+func animate_wall(wall, framesData):
 	var frames = framesData[0]
 	var speed = framesData[1]
 	var i = 0
@@ -273,3 +274,9 @@ func animateWall(wall, framesData):
 			wall.sprite.frame = frame
 			i = 0
 		yield(get_tree(),"idle_frame")
+
+func play_animation(animation):
+	add_child(animations[animation])
+
+func animation_finished():
+	get_tree().call_group('controller', 'process_event')

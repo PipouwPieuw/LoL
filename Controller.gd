@@ -165,8 +165,17 @@ func send_walls_status(moveDirection, staticMode = false):
 		get_tree().call_group('viewport', 'update_viewport', wallsStatus)
 
 func check_move(moveDirection):
-	var newCell = int(currentCell)
 	var currentDir = directions[0]
+	# Check if moving to wall with special trigger
+	var dirs = ['U', 'R','D', 'L']
+	var walls = ['wallFront', 'wallRight','wallBack', 'wallLeft']
+	var targetWall = walls[dirs.find(currentDir)]
+	if currentData.grid[currentCell].wallAttr[targetWall].has('onWalkTowards'):
+		for event in currentData.grid[currentCell].wallAttr[targetWall].onWalkTowards:
+			call(event.eventType, event)
+		return
+	# Prepare move
+	var newCell = int(currentCell)
 	# Move North
 	if(moveDirection == 'up' and currentDir == 'U'
 	or moveDirection == 'left' and currentDir == 'R'
@@ -225,19 +234,6 @@ func toggleDoor(doorIndex, _triggerZone):
 	var doorFramesClose = doorCell.doorAttr.closeAnimation.duplicate(true)
 	var frames = doorFramesClose.duplicate(true) if doorCell.doorAttr.isOpened else doorFramesOpen.duplicate(true)
 	open_close_door(doorCell, frames)
-#	frames.invert()
-#	doorCell.doorAttr.isOpened = !doorCell.doorAttr.isOpened
-#	if !doorCell.doorAttr.isOpened:
-#		doorCell.walkable = false
-#	while frames.size() > 0:
-#		var frame = frames.pop_back()
-#		yield(get_tree().create_timer(.3), "timeout")
-#		currentData.grid[doorCell.doorAttr.connectedCellFront].wallAttr.wallFront.spriteIndex = frame
-#		set_cells(currentCell)
-#		send_walls_status(directions[0], true)
-#	if doorCell.doorAttr.isOpened:
-#		doorCell.walkable = true
-#	animatedDoors.remove(animatedDoors.find(doorIndex))
 
 func displayText(text, triggerZone):
 	get_tree().call_group('hud', 'displayText', text)
@@ -301,3 +297,9 @@ func open_close_door(cell, frames):
 	if cell.doorAttr.isOpened:
 		cell.walkable = true
 	animatedDoors.remove(animatedDoors.find(cell.index))
+
+func process_event():
+	print(1111)
+
+func play_animation(event):
+	get_tree().call_group('viewport', 'play_animation', event.animation)

@@ -3501,7 +3501,13 @@
             },
             "wallBack": {
                 "spriteIndex": 18,
-                "interactionZones": []
+                "interactionZones": [],
+                "onWalkTowards": [
+                    {
+                        "eventType": "play_animation",
+                        "animation": "portcullis"
+                    }
+                ]
             },
             "wallLeft": {
             	"spriteIndex": 0,
@@ -3636,8 +3642,27 @@
     },
     {
         "index": 480,
-        "type": "E",
-        "walkable": false
+        "type": "D",
+        "walkable": false,
+        "wallAttr":
+        {
+            "wallFront": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallRight": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallBack": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallLeft": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 481,
