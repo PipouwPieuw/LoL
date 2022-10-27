@@ -2263,8 +2263,27 @@
     },
     {
         "index": 301,
-        "type": "E",
-        "walkable": false
+        "type": "D",
+        "walkable": false,
+        "wallAttr":
+        {
+            "wallFront": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallRight": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallBack": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallLeft": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 302,
@@ -2405,8 +2424,27 @@
     },
     {
         "index": 321,
-        "type": "E",
-        "walkable": false
+        "type": "D",
+        "walkable": false,
+        "wallAttr":
+        {
+            "wallFront": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallRight": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallBack": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallLeft": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 322,
@@ -2436,7 +2474,13 @@
             },
             "wallLeft": {
                 "spriteIndex": 19,
-                "interactionZones": []
+                "interactionZones": [],
+                "onWalkTowards": [
+                    {
+                        "eventType": "play_animation",
+                        "animation": "doorGeron"
+                    }
+                ]
             }
         },
     },
@@ -2761,7 +2805,13 @@
             },
             "wallRight": {
                 "spriteIndex": 19,
-                "interactionZones": []
+                "interactionZones": [],
+                "onWalkTowards": [
+                    {
+                        "eventType": "play_animation",
+                        "animation": "doorNathaniel"
+                    }
+                ]
             },
             "wallBack": {
                 "spriteIndex": 17,
@@ -2783,8 +2833,27 @@
     },
     {
         "index": 353,
-        "type": "E",
-        "walkable": false
+        "type": "D",
+        "walkable": false,
+        "wallAttr":
+        {
+            "wallFront": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallRight": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallBack": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallLeft": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 354,

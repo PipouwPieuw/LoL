@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/0004.PNG-1a1ad35815336057b2dd1c9bf00a537f.stex"
+path="res://.import/doorNathaniel.png-240bfbcd7d137e52468b3af54e4af97d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Gladstone/animations/DRGEREM.WSA/0004.PNG"
-dest_files=[ "res://.import/0004.PNG-1a1ad35815336057b2dd1c9bf00a537f.stex" ]
+source_file="res://assets/sprites/animations/gladstone/doorNathaniel.png"
+dest_files=[ "res://.import/doorNathaniel.png-240bfbcd7d137e52468b3af54e4af97d.stex" ]
 
 [params]
 

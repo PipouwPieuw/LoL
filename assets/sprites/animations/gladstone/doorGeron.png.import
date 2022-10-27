@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/0001.PNG-0e006b02e3f26bd85d1327acb38dd876.stex"
+path="res://.import/doorGeron.png-2edef81da62dff75f78684d84d8783c3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Gladstone/animations/DRGEREM.WSA/0001.PNG"
-dest_files=[ "res://.import/0001.PNG-0e006b02e3f26bd85d1327acb38dd876.stex" ]
+source_file="res://assets/sprites/animations/gladstone/doorGeron.png"
+dest_files=[ "res://.import/doorGeron.png-2edef81da62dff75f78684d84d8783c3.stex" ]
 
 [params]
 
