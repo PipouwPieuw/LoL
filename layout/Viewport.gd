@@ -13,7 +13,6 @@ onready var zonesContainer = $Textures/Front/Walls/WallFront/InteractionZones
 onready var animationsContainer = $Textures/Front/Walls/WallFront/Animations
 onready var triggerZone = preload("res://boxes/triggerZone.tscn")
 onready var sceneContainer = $SceneContainer
-onready var scene = preload("res://layout/Scene.tscn")
 
 var sprites = {}
 var spriteBasePath = 'res://assets/sprites/layout'
@@ -34,7 +33,6 @@ var _err
 
 func _ready():
 	add_to_group("viewport")
-	add_scene()
 
 func _physics_process(_delta):
 	# Move animations
@@ -166,6 +164,9 @@ func update_layout(newLayout, framesAmount):
 	# Animations
 	animationPath = animationBasePath + '/' + currentLayout + '/'
 	preload_animations()
+	get_tree().call_group('scenecontainer', 'load_scenes', currentLayout)
+	# TEMP
+	add_scene('victor')
 
 # Load all sprites from current layout in dictionary for later use
 func preload_sprites():
@@ -194,7 +195,7 @@ func preload_animations():
 		var spriteSize = Vector2(animation.width, animation.height)
 		var animationSpriteSheet : Texture = load(animationPath + '/' + animationName + '.png')
 		for x in range(animation.frames):
-			var frame := AtlasTexture.new()
+			var frame = AtlasTexture.new()
 			frame.atlas = animationSpriteSheet
 			frame.region = Rect2(Vector2(x, 0) * spriteSize, spriteSize)
 			spriteFramesInstance.add_frame("default", frame, x)
@@ -287,7 +288,5 @@ func animation_finished(animation):
 	animation.frame = 0
 	get_tree().call_group('controller', 'process_event')
 
-func add_scene():
-	var sceneInstance = scene.instance()
-	sceneInstance.find_node('Background').texture = load('assets/sprites/scenes/gladstone/victor.png')
-	sceneContainer.add_child(sceneInstance)
+func add_scene(sceneName):
+	get_tree().call_group('scenecontainer', 'display_scene', sceneName)
