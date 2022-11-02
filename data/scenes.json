@@ -1,0 +1,21 @@
+{
+	"gladstone": {
+		"victor": {
+			"animations": {
+				"victor": {
+					"frames": 21,
+					"x": 9,
+					"y": 32,
+					"width": 96,
+					"height": 51,
+					"speed": 3,
+					"loop": false
+				}
+			},
+			"triggerZones": {
+
+			}
+			
+		},
+	}
+}

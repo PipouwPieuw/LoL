@@ -12,6 +12,8 @@ onready var wallsSide = $Textures/Side/Walls
 onready var zonesContainer = $Textures/Front/Walls/WallFront/InteractionZones
 onready var animationsContainer = $Textures/Front/Walls/WallFront/Animations
 onready var triggerZone = preload("res://boxes/triggerZone.tscn")
+onready var sceneContainer = $SceneContainer
+onready var scene = preload("res://layout/Scene.tscn")
 
 var sprites = {}
 var spriteBasePath = 'res://assets/sprites/layout'
@@ -32,6 +34,7 @@ var _err
 
 func _ready():
 	add_to_group("viewport")
+	add_scene()
 
 func _physics_process(_delta):
 	# Move animations
@@ -283,3 +286,8 @@ func animation_finished(animation):
 	animationsContainer.remove_child(animation)
 	animation.frame = 0
 	get_tree().call_group('controller', 'process_event')
+
+func add_scene():
+	var sceneInstance = scene.instance()
+	sceneInstance.find_node('Background').texture = load('assets/sprites/scenes/gladstone/victor.png')
+	sceneContainer.add_child(sceneInstance)
