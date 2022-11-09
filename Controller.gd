@@ -217,7 +217,7 @@ func change_direction(direction):
 	if direction == 'turnright':
 		directions.push_back (directions.pop_front())
 	elif direction == 'turnleft':
-		directions.push_front(directions.pop_back())	
+		directions.push_front(directions.pop_back())
 	set_cells(currentCell)
 	get_tree().call_group('map', 'update_direction', directions[0])
 	send_walls_status(direction)
@@ -298,9 +298,6 @@ func open_close_door(cell, frames):
 	if cell.doorAttr.isOpened:
 		cell.walkable = true
 	animatedDoors.remove(animatedDoors.find(cell.index))
-
-func process_event():
-	pass
 
 func play_animation(event):
 	get_tree().call_group('viewport', 'play_animation', event.animation)

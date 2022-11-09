@@ -165,8 +165,6 @@ func update_layout(newLayout, framesAmount):
 	animationPath = animationBasePath + '/' + currentLayout + '/'
 	preload_animations()
 	get_tree().call_group('scenecontainer', 'load_scenes', currentLayout)
-	# TEMP
-	add_scene('victor')
 
 # Load all sprites from current layout in dictionary for later use
 func preload_sprites():
@@ -205,7 +203,7 @@ func preload_animations():
 		animatedSpriteInstance.position = Vector2(animation.x, animation.y)
 		animatedSpriteInstance.centered = false
 		animatedSpriteInstance.playing = true
-		_err = animatedSpriteInstance.connect('animation_finished', self, 'animation_finished', [animatedSpriteInstance])
+		_err = animatedSpriteInstance.connect('animation_finished', self, 'animation_finished', [animatedSpriteInstance, animation.onFinished])
 		animations[animationName] = animatedSpriteInstance
 
 # Update wall visibility and sprite
@@ -283,10 +281,18 @@ func animate_wall(wall, framesData):
 func play_animation(animation):
 	animationsContainer.add_child(animations[animation])
 
-func animation_finished(animation):
-	animationsContainer.remove_child(animation)
+func animation_finished(animation, onFinished):
+	yield(get_tree().create_timer(.3), "timeout")
+	get_tree().call_group('viewport', onFinished.actionType, onFinished.actionId)
 	animation.frame = 0
-	get_tree().call_group('controller', 'process_event')
+	animationsContainer.remove_child(animation)
 
 func add_scene(sceneName):
+	sceneContainer.show()
+	textures.hide()
 	get_tree().call_group('scenecontainer', 'display_scene', sceneName)
+	
+func remove_scene():
+	sceneContainer.hide()
+	textures.show()
+	get_tree().call_group('scenecontainer', 'exit_scene')

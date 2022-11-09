@@ -7,7 +7,11 @@
 			"width": 46,
 			"height": 66,
 			"speed": 3,
-			"loop": false
+			"loop": false,
+			"onFinished": {
+				"actionType": "add_scene",
+				"actionId": "victor"
+			}
 		},
 		"doorVictor": {
 			"frames": 6,
@@ -16,7 +20,11 @@
 			"width": 48,
 			"height": 65,
 			"speed": 2,
-			"loop": false
+			"loop": false,
+			"onFinished": {
+				"actionType": "add_scene",
+				"actionId": "victor"
+			}
 		},
 		"doorNathaniel": {
 			"frames": 6,
@@ -25,7 +33,11 @@
 			"width": 48,
 			"height": 65,
 			"speed": 2,
-			"loop": false
+			"loop": false,
+			"onFinished": {
+				"actionType": "add_scene",
+				"actionId": "victor"
+			}
 		},
 		"doorGeron": {
 			"frames": 6,
@@ -34,7 +46,11 @@
 			"width": 48,
 			"height": 65,
 			"speed": 2,
-			"loop": false
+			"loop": false,
+			"onFinished": {
+				"actionType": "add_scene",
+				"actionId": "victor"
+			}
 		}
 	}
 }

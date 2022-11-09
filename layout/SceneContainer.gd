@@ -3,6 +3,7 @@ extends Node2D
 var currentData = {}
 var currentLayout = ''
 var currentScene = ''
+var currentSceneInstance
 
 onready var scene = preload("res://layout/Scene.tscn")
 
@@ -24,6 +25,7 @@ func display_scene(sceneName):
 	sceneInstance.find_node('Background').texture = load('assets/sprites/scenes/' + currentLayout + '/' +  currentScene + '.png')
 	for sprite in currentData[currentScene].sprites:
 		sceneInstance.add_child(add_sprite(sprite))
+	currentSceneInstance = sceneInstance
 	add_child(sceneInstance)
 
 func add_sprite(spriteName):
@@ -35,6 +37,8 @@ func add_sprite(spriteName):
 	for animationName in sprite.animations:
 		var animation = sprite.animations[animationName]
 		var counter = 0
+		if !spriteFramesInstance.has_animation(animationName):
+			spriteFramesInstance.add_animation(animationName)
 		for x in animation.frames:
 			var frame = AtlasTexture.new()
 			frame.atlas = animationSpriteSheet
@@ -51,4 +55,4 @@ func add_sprite(spriteName):
 
 
 func exit_scene():
-	pass
+	remove_child(currentSceneInstance)
