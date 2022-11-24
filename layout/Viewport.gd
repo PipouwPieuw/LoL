@@ -288,6 +288,7 @@ func animation_finished(animation, onFinished):
 	animationsContainer.remove_child(animation)
 
 func add_scene(sceneName):
+	get_tree().call_group('inputs', 'set_move', false)
 	sceneContainer.show()
 	textures.hide()
 	get_tree().call_group('scenecontainer', 'display_scene', sceneName)
@@ -295,4 +296,4 @@ func add_scene(sceneName):
 func remove_scene():
 	sceneContainer.hide()
 	textures.show()
-	get_tree().call_group('scenecontainer', 'exit_scene')
+	get_tree().call_group('inputs', 'set_move', true)

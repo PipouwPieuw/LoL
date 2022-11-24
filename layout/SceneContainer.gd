@@ -6,6 +6,7 @@ var currentScene = ''
 var currentSceneInstance
 
 onready var scene = preload("res://layout/Scene.tscn")
+onready var sceneBox = $Scene
 
 func _ready():
 	add_to_group('scenecontainer')
@@ -26,7 +27,7 @@ func display_scene(sceneName):
 	for sprite in currentData[currentScene].sprites:
 		sceneInstance.add_child(add_sprite(sprite))
 	currentSceneInstance = sceneInstance
-	add_child(sceneInstance)
+	sceneBox.add_child(sceneInstance)
 
 func add_sprite(spriteName):
 	var sprite = currentData[currentScene].sprites[spriteName]
@@ -53,6 +54,7 @@ func add_sprite(spriteName):
 	animatedSpriteInstance.playing = true
 	return animatedSpriteInstance
 
-
-func exit_scene():
-	remove_child(currentSceneInstance)
+func exit_scene(_target, event, _shape):
+	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
+		get_tree().call_group('viewport', 'remove_scene')
+		sceneBox.remove_child(currentSceneInstance)
