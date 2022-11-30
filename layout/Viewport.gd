@@ -279,6 +279,7 @@ func animate_wall(wall, framesData):
 		yield(get_tree(),"idle_frame")
 
 func play_animation(animation):
+	get_tree().call_group('inputs', 'set_move', false)
 	animationsContainer.add_child(animations[animation])
 
 func animation_finished(animation, onFinished):

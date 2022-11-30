@@ -1212,7 +1212,13 @@
             },
             "wallRight": {
                 "spriteIndex": 20,
-                "interactionZones": []
+                "interactionZones": [],
+                "onWalkTowards": [
+                    {
+                        "eventType": "play_animation",
+                        "animation": "doorThroneroom"
+                    }
+                ]
             },
             "wallBack": {
                 "spriteIndex": 5,

@@ -51,6 +51,19 @@
 				"actionType": "add_scene",
 				"actionId": "geron"
 			}
+		},
+		"doorThroneroom": {
+			"frames": 7,
+			"x": 40,
+			"y": 19,
+			"width": 48,
+			"height": 65,
+			"speed": 2,
+			"loop": false,
+			"onFinished": {
+				"actionType": "add_scene",
+				"actionId": "geron"
+			}
 		}
 	}
 }
