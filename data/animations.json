@@ -62,7 +62,7 @@
 			"loop": false,
 			"onFinished": {
 				"actionType": "add_scene",
-				"actionId": "geron"
+				"actionId": "throneroom"
 			}
 		}
 	}

@@ -48,7 +48,7 @@ func add_sprite(spriteName):
 			counter += 1
 #		spriteFramesInstance.set_animation_loop("default", true)
 	animatedSpriteInstance.frames = spriteFramesInstance
-#	animatedSpriteInstance.speed_scale = 3
+#	animatedSpriteInstance.speed_scale = sprite.speed
 	animatedSpriteInstance.position = Vector2(sprite.x, sprite.y)
 	animatedSpriteInstance.centered = false
 	animatedSpriteInstance.playing = true
