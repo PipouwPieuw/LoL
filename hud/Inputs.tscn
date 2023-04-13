@@ -1,6 +1,31 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://hud/Inputs.gd" type="Script" id=1]
+[ext_resource path="res://hud/HUDArrow.tscn" type="PackedScene" id=2]
 
 [node name="Inputs" type="Node2D"]
 script = ExtResource( 1 )
+
+[node name="TurnLeft" parent="." instance=ExtResource( 2 )]
+position = Vector2( 10, 10 )
+direction = "TurnLeft"
+
+[node name="Forward" parent="." instance=ExtResource( 2 )]
+position = Vector2( 31, 10 )
+direction = "Up"
+
+[node name="TurnRight" parent="." instance=ExtResource( 2 )]
+position = Vector2( 53, 10 )
+direction = "TurnRight"
+
+[node name="Left" parent="." instance=ExtResource( 2 )]
+position = Vector2( 10, 28 )
+direction = "Left"
+
+[node name="Back" parent="." instance=ExtResource( 2 )]
+position = Vector2( 31, 28 )
+direction = "Down"
+
+[node name="Right" parent="." instance=ExtResource( 2 )]
+position = Vector2( 53, 28 )
+direction = "Right"

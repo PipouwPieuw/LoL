@@ -22,6 +22,7 @@ margin_left = 112.0
 margin_right = 288.0
 
 [node name="Inputs" parent="." instance=ExtResource( 3 )]
+position = Vector2( 12, 131 )
 
 [node name="DialogBox" type="Label" parent="."]
 margin_left = 88.0

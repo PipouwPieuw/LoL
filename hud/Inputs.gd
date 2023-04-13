@@ -24,3 +24,11 @@ func _physics_process(_delta):
 
 func set_move(mode):
 	canMove = mode
+
+# Move function called by move arrows
+func move(direction):
+	if canMove:
+		if 'turn' in direction:
+			get_tree().call_group('controller', 'change_direction', direction)
+		else:
+			get_tree().call_group('controller', 'check_move', direction)
