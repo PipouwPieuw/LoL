@@ -228,7 +228,6 @@ func update_walls(wallObject, isMain):
 		else:
 			wall.sprite.visible = true
 			wall.sprite.frame = spriteIndex
-			# Create interaction zones
 		if wallName == 'WallFront' and !data['currentCell'].InteractionZones.empty() and isMain:
 			hasInteractionZones = true
 	
@@ -247,8 +246,11 @@ func update_walls(wallObject, isMain):
 			zoneArea.zoneData = zone
 			zoneArea.position.x = triggerPos[0] + triggerPos[2] / 2
 			zoneArea.position.y = triggerPos[1] + triggerPos[3] / 2
-			zoneShape.shape.extents.x = triggerPos[2] / 2
-			zoneShape.shape.extents.y = triggerPos[3] / 2
+			# Build shape
+			var shape = RectangleShape2D.new()
+			shape.set_extents(Vector2(triggerPos[2] / 2, triggerPos[3] / 2))
+			zoneShape.set_shape(shape)
+			# Add trigger zone to viewport
 			zonesContainer.add_child(zoneArea)
 	else:
 		zonesContainer.visible = false

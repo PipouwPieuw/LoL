@@ -10,4 +10,10 @@ func _ready():
 
 func arrow_clicked(_target, event, _shape):
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
+		darken()
 		get_tree().call_group('inputs', 'move', direction.to_lower())
+
+func darken():
+	$Sprite.modulate = Color(.5,.5,.5);
+	yield(get_tree().create_timer(.1), "timeout")
+	$Sprite.modulate = Color(1,1,1);

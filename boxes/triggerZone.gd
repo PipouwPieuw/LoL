@@ -17,6 +17,8 @@ func sendInteraction(_viewport, event, _shape_idx):
 			args = zoneData.text[0]
 		elif zoneData.effect == 'keyhole':
 			args = zoneData
+		elif zoneData.effect == 'playAnimation':
+			args = zoneData
 		get_tree().call_group('controller', zoneData.effect, args, self)
 
 func updateText():

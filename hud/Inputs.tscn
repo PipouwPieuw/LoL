@@ -10,7 +10,7 @@ script = ExtResource( 1 )
 position = Vector2( 10, 10 )
 direction = "TurnLeft"
 
-[node name="Forward" parent="." instance=ExtResource( 2 )]
+[node name="Up" parent="." instance=ExtResource( 2 )]
 position = Vector2( 31, 10 )
 direction = "Up"
 
@@ -22,7 +22,7 @@ direction = "TurnRight"
 position = Vector2( 10, 28 )
 direction = "Left"
 
-[node name="Back" parent="." instance=ExtResource( 2 )]
+[node name="Down" parent="." instance=ExtResource( 2 )]
 position = Vector2( 31, 28 )
 direction = "Down"
 

@@ -173,7 +173,7 @@ func check_move(moveDirection):
 		var targetWall = walls[dirs.find(currentDir)]
 		if currentData.grid[currentCell].wallAttr[targetWall].has('onWalkTowards'):
 			for event in currentData.grid[currentCell].wallAttr[targetWall].onWalkTowards:
-				call(event.eventType, event)
+				call(event.eventType, event, null)
 			return
 	# Prepare move
 	var newCell = int(currentCell)
@@ -299,5 +299,5 @@ func open_close_door(cell, frames):
 		cell.walkable = true
 	animatedDoors.remove(animatedDoors.find(cell.index))
 
-func play_animation(event):
+func playAnimation(event, _triggerZone):
 	get_tree().call_group('viewport', 'play_animation', event.animation)

@@ -1,7 +1,8 @@
 {
     "width": 26,
     "height": 26,
-    "start_index": 454,
+    "start_index2": 454,
+    "start_index": 197,
     "layout": "gladstone",
     "spriteSheetFrames": 34,
     "hasCeiling": true,
@@ -1212,10 +1213,25 @@
             },
             "wallRight": {
                 "spriteIndex": 20,
-                "interactionZones": [],
+                "interactionZones": [
+                    {
+                        "attachedWall": "wallLeft",
+                        "triggerPos": [41, 19, 47, 64],
+                        "triggerType": "click",
+                        "effect": "playAnimation",
+                        "animation": "doorThroneroom"
+                    },
+                    {
+                        "attachedWall": "wallLeft",
+                        "triggerPos": [92, 52, 5, 5],
+                        "triggerType": "click",
+                        "effect": "playAnimation",
+                        "animation": "doorThroneroom"
+                    }
+                ],
                 "onWalkTowards": [
                     {
-                        "eventType": "play_animation",
+                        "eventType": "playAnimation",
                         "animation": "doorThroneroom"
                     }
                 ]
@@ -2249,10 +2265,18 @@
             },
             "wallRight": {
                 "spriteIndex": 19,
-                "interactionZones": [],
+                "interactionZones": [
+                    {
+                        "attachedWall": "wallRight",
+                        "triggerPos": [41, 19, 47, 64],
+                        "triggerType": "click",
+                        "effect": "playAnimation",
+                        "animation": "doorVictor"
+                    }
+                ],
                 "onWalkTowards": [
                     {
-                        "eventType": "play_animation",
+                        "eventType": "playAnimation",
                         "animation": "doorVictor"
                     }
                 ]
@@ -2480,10 +2504,18 @@
             },
             "wallLeft": {
                 "spriteIndex": 19,
-                "interactionZones": [],
+                "interactionZones": [
+                    {
+                        "attachedWall": "wallLeft",
+                        "triggerPos": [41, 19, 47, 64],
+                        "triggerType": "click",
+                        "effect": "playAnimation",
+                        "animation": "doorVictor"
+                    }
+                ],
                 "onWalkTowards": [
                     {
-                        "eventType": "play_animation",
+                        "eventType": "playAnimation",
                         "animation": "doorGeron"
                     }
                 ]
@@ -2811,10 +2843,18 @@
             },
             "wallRight": {
                 "spriteIndex": 19,
-                "interactionZones": [],
+                "interactionZones": [
+                    {
+                        "attachedWall": "wallRight",
+                        "triggerPos": [41, 19, 47, 64],
+                        "triggerType": "click",
+                        "effect": "playAnimation",
+                        "animation": "doorNathaniel"
+                    }
+                ],
                 "onWalkTowards": [
                     {
-                        "eventType": "play_animation",
+                        "eventType": "playAnimation",
                         "animation": "doorNathaniel"
                     }
                 ]
@@ -3585,7 +3625,7 @@
                 "interactionZones": [],
                 "onWalkTowards": [
                     {
-                        "eventType": "play_animation",
+                        "eventType": "playAnimation",
                         "animation": "portcullis"
                     }
                 ]
