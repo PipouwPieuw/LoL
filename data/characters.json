@@ -1,0 +1,80 @@
+{
+	"001": {
+		"attributes": {
+			"id": "001",
+			"name": "Michael",
+			"race": "human",
+			"inventoryId": 1
+		},
+		"skills": {			
+			"fighter": 1,
+			"rogue": 1,
+			"mage": 1,
+		},
+		"equipment": {
+			"helm": -1,
+			"necklace": -1,
+			"armor": -1,
+			"bracers": -1,
+			"weapon1": -1,
+			"weapon2": -1,
+			"shield1": -1,
+			"shield2": -1,
+			"ring1": -1,
+			"ring2": -1,
+			"boots": -1
+		}
+	},
+	"002": {
+		"attributes": {
+			"id": "002",
+			"name": "Conrad",
+			"race": "human",
+			"inventoryId": 1
+		},
+		"skills": {			
+			"fighter": 1,
+			"rogue": 1,
+			"mage": 1,
+		},
+		"equipment": {
+			"helm": -1,
+			"necklace": -1,
+			"armor": -1,
+			"bracers": -1,
+			"weapon1": -1,
+			"weapon2": -1,
+			"shield1": -1,
+			"shield2": -1,
+			"ring1": -1,
+			"ring2": -1,
+			"boots": -1
+		}
+	},
+	"003": {
+		"attributes": {
+			"id": "003",
+			"name": "Kieran",
+			"race": "huline",
+			"inventoryId": 1
+		},
+		"skills": {			
+			"fighter": 1,
+			"rogue": 1,
+			"mage": 1,
+		},
+		"equipment": {
+			"helm": -1,
+			"necklace": -1,
+			"armor": -1,
+			"bracers": -1,
+			"weapon1": -1,
+			"weapon2": -1,
+			"shield1": -1,
+			"shield2": -1,
+			"ring1": -1,
+			"ring2": -1,
+			"boots": -1
+		}
+	}
+}

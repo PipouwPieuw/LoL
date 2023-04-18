@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/sprites/hud/hudbg.png" type="Texture" id=1]
 [ext_resource path="res://layout/Viewport.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://party/inventory/Inventory.tscn" type="PackedScene" id=6]
 [ext_resource path="res://hud/cursor/Cursor.tscn" type="PackedScene" id=7]
 [ext_resource path="res://hud/AudioStream.tscn" type="PackedScene" id=8]
+[ext_resource path="res://party/Party.tscn" type="PackedScene" id=9]
 
 [node name="HUD" type="Node2D"]
 script = ExtResource( 5 )
@@ -38,6 +39,9 @@ max_lines_visible = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Party" parent="." instance=ExtResource( 9 )]
+position = Vector2( 83, 143 )
 
 [node name="Inventory" parent="." instance=ExtResource( 6 )]
 position = Vector2( 86, 180 )
