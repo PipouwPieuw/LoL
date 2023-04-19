@@ -37,6 +37,7 @@ margin_bottom = 141.0
 rect_clip_content = true
 custom_fonts/font = ExtResource( 4 )
 custom_constants/line_spacing = 1
+text = "Hello"
 autowrap = true
 clip_text = true
 max_lines_visible = 2
