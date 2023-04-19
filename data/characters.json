@@ -4,7 +4,7 @@
 			"id": "001",
 			"name": "Michael",
 			"race": "human",
-			"inventoryId": 1
+			"inventoryId": "01"
 		},
 		"skills": {			
 			"fighter": 1,
@@ -30,7 +30,7 @@
 			"id": "002",
 			"name": "Conrad",
 			"race": "human",
-			"inventoryId": 1
+			"inventoryId": "01"
 		},
 		"skills": {			
 			"fighter": 1,
@@ -56,7 +56,7 @@
 			"id": "003",
 			"name": "Kieran",
 			"race": "huline",
-			"inventoryId": 1
+			"inventoryId": "05"
 		},
 		"skills": {			
 			"fighter": 1,

@@ -2,7 +2,7 @@ extends Node2D
 
 onready var characterNode = preload("res://party/character/Character.tscn")
 
-var partyMembers = ["001", "002", "003"]
+var partyMembers = ['001', '002', '003']
 var characters
 
 func _ready():
@@ -10,6 +10,7 @@ func _ready():
 	for i in partyMembers.size():
 		var member = partyMembers[i]
 		add_character(member, i)
+		get_tree().call_group('chardetailscontainer', 'add_details', characters[member])
 
 
 func load_characters():
