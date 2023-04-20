@@ -4,18 +4,21 @@ onready var characterNode = preload("res://party/character/Character.tscn")
 
 var partyMembers = ['001', '002', '003']
 var characters
+var races
 
 func _ready():
-	characters = load_characters()
+	characters = load_file('characters')
+	races = load_file('races')
 	for i in partyMembers.size():
 		var member = partyMembers[i]
+		characters[member]['equipment'] = races[characters[member]['attributes']['race']]['equipment']
 		add_character(member, i)
 		get_tree().call_group('chardetailscontainer', 'add_details', characters[member])
 
 
-func load_characters():
+func load_file(name):
 	var file = File.new()
-	file.open('res://data/characters.json', File.READ)
+	file.open('res://data/' + name + '.json', File.READ)
 	var fileContent = parse_json(file.get_as_text())
 	file.close()
 	return fileContent;

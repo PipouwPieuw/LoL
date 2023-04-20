@@ -1,0 +1,53 @@
+{
+	"human": {
+		"equipment": {
+			"helm": -1,
+			"necklace": -1,
+			"armor": -1,
+			"bracers": -1,
+			"weapon1": -1,
+			"shield1": -1,
+			"ring1": -1,
+			"ring2": -1,
+			"boots": -1
+		}
+	},
+	"huline": {
+		"equipment": {
+			"helm": -1,
+			"necklace": -1,
+			"armor": -1,
+			"bracers": -1,
+			"weapon1": -1,
+			"shield1": -1,
+			"ring1": -1,
+			"ring2": -1,
+		}
+	},
+	"dracoid": {
+		"equipment": {
+			"helm": -1,
+			"necklace": -1,
+			"armor": -1,
+			"bracers": -1,
+			"weapon1": -1,
+			"shield1": -1,
+			"ring1": -1,
+			"ring2": -1,
+			"boots": -1
+		}
+	},
+	"thomgog": {
+		"equipment": {
+			"helm": -1,
+			"necklace": -1,
+			"armor": -1,
+			"bracers": -1,
+			"weapon1": -1,
+			"weapon2": -1,
+			"shield1": -1,
+			"shield2": -1,
+			"boots": -1
+		}
+	}
+}
