@@ -2510,7 +2510,7 @@
                         "triggerPos": [41, 19, 47, 64],
                         "triggerType": "click",
                         "effect": "playAnimation",
-                        "animation": "doorVictor"
+                        "animation": "doorGeron"
                     }
                 ],
                 "onWalkTowards": [

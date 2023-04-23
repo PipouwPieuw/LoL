@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/inventory05.PNG-4ba86ad26cb1b5fde543317452da3faa.stex"
+path="res://.import/fontYellowShadowed.png-47ca76d256bd48d490ab72b43d435438.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/hud/inventory05.PNG"
-dest_files=[ "res://.import/inventory05.PNG-4ba86ad26cb1b5fde543317452da3faa.stex" ]
+source_file="res://assets/fonts/fontYellowShadowed.png"
+dest_files=[ "res://.import/fontYellowShadowed.png-47ca76d256bd48d490ab72b43d435438.stex" ]
 
 [params]
 

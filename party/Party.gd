@@ -2,7 +2,7 @@ extends Node2D
 
 onready var characterNode = preload("res://party/character/Character.tscn")
 
-var partyMembers = ['003', '006', '009']
+var partyMembers = ['003', '006', '005']
 var characters
 var races
 

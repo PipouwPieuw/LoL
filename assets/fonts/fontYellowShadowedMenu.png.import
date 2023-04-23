@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/inventory05.PNG-4ba86ad26cb1b5fde543317452da3faa.stex"
+path="res://.import/fontYellowShadowedMenu.png-ea3d6add333f3d4e0ca0096ab5768f84.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/hud/inventory05.PNG"
-dest_files=[ "res://.import/inventory05.PNG-4ba86ad26cb1b5fde543317452da3faa.stex" ]
+source_file="res://assets/fonts/fontYellowShadowedMenu.png"
+dest_files=[ "res://.import/fontYellowShadowedMenu.png-ea3d6add333f3d4e0ca0096ab5768f84.stex" ]
 
 [params]
 
