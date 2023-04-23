@@ -1,6 +1,7 @@
 extends Node2D
 
 onready var background = $Background
+onready var charName = $Name
 onready var close = $Close
 onready var slotsContainer = $SlotsContainer
 
@@ -14,6 +15,7 @@ func _ready():
 	add_to_group('chardetails')
 	visible = false
 	background.texture = load("res://assets/sprites/hud/inventory" + data.attributes.inventoryId + ".png")
+	charName.text = data.attributes.name
 	items = load_items().items
 	add_slots()
 	_err = close.connect("input_event", self, "close_details")

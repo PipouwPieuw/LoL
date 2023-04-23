@@ -42,7 +42,7 @@
 				"item": -1
 			},
 			"shield1": {
-				"id": "shield",
+				"id": "shield1",
 				"type": "shield",
 				"posX": 81,
 				"posY": 52,
@@ -118,7 +118,7 @@
 				"item": -1
 			},
 			"shield1": {
-				"id": "shield",
+				"id": "shield1",
 				"type": "shield",
 				"posX": 81,
 				"posY": 52,
@@ -145,28 +145,154 @@
 	},
 	"dracoid": {
 		"equipment": {
-			"helm": -1,
-			"necklace": -1,
-			"armor": -1,
-			"bracers": -1,
-			"weapon1": -1,
-			"shield1": -1,
-			"ring1": -1,
-			"ring2": -1,
-			"boots": -1
+			"helm": {
+				"id": "helm",
+				"type": "helm",
+				"posX": 6,
+				"posY": 4,
+				"size": 21,
+				"item": -1
+			},
+			"necklace": {
+				"id": "necklace",
+				"type": "necklace",
+				"posX": 81,
+				"posY": 4,
+				"size": 21,
+				"item": -1
+			},
+			"armor": {
+				"id": "armor",
+				"type": "armor",
+				"posX": 6,
+				"posY": 28,
+				"size": 21,
+				"item": -1
+			},
+			"bracers": {
+				"id": "bracers",
+				"type": "bracers",
+				"posX": 81,
+				"posY": 28,
+				"size": 21,
+				"item": -1
+			},
+			"weapon1": {
+				"id": "weapon1",
+				"type": "weapon",
+				"posX": 6,
+				"posY": 52,
+				"size": 21,
+				"item": -1
+			},
+			"shield1": {
+				"id": "shield1",
+				"type": "shield",
+				"posX": 81,
+				"posY": 52,
+				"size": 21,
+				"item": -1
+			},
+			"ring1": {
+				"id": "ring1",
+				"type": "ring",
+				"posX": 16,
+				"posY": 78,
+				"size": 11,
+				"item": -1
+			},
+			"ring2": {
+				"id": "ring2",
+				"type": "ring",
+				"posX": 81,
+				"posY": 78,
+				"size": 11,
+				"item": -1
+			},
+			"boots": {
+				"id": "boots",
+				"type": "boots",
+				"posX": 6,
+				"posY": 93,
+				"size": 21,
+				"item": -1
+			},
 		}
 	},
 	"thomgog": {
 		"equipment": {
-			"helm": -1,
-			"necklace": -1,
-			"armor": -1,
-			"bracers": -1,
-			"weapon1": -1,
-			"weapon2": -1,
-			"shield1": -1,
-			"shield2": -1,
-			"boots": -1
+			"helm": {
+				"id": "helm",
+				"type": "helm",
+				"posX": 6,
+				"posY": 2,
+				"size": 21,
+				"item": -1
+			},
+			"necklace": {
+				"id": "necklace",
+				"type": "necklace",
+				"posX": 81,
+				"posY": 2,
+				"size": 21,
+				"item": -1
+			},
+			"weapon1": {
+				"id": "weapon1",
+				"type": "weapon",
+				"posX": 6,
+				"posY": 26,
+				"size": 21,
+				"item": -1
+			},
+			"shield1": {
+				"id": "shield1",
+				"type": "shield",
+				"posX": 81,
+				"posY": 26,
+				"size": 21,
+				"item": -1
+			},
+			"armor": {
+				"id": "armor",
+				"type": "armor",
+				"posX": 6,
+				"posY": 50,
+				"size": 21,
+				"item": -1
+			},
+			"bracers": {
+				"id": "bracers",
+				"type": "bracers",
+				"posX": 81,
+				"posY": 50,
+				"size": 21,
+				"item": -1
+			},
+			"weapon2": {
+				"id": "weapon2",
+				"type": "weapon",
+				"posX": 6,
+				"posY": 74,
+				"size": 21,
+				"item": -1
+			},
+			"shield2": {
+				"id": "shield2",
+				"type": "shield",
+				"posX": 81,
+				"posY": 74,
+				"size": 21,
+				"item": -1
+			},
+			"boots": {
+				"id": "boots",
+				"type": "boots",
+				"posX": 6,
+				"posY": 97,
+				"size": 21,
+				"item": -1
+			},
 		}
 	}
 }

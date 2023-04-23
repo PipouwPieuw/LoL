@@ -40,5 +40,89 @@
 			"mage": 1,
 		},
 		"equipment": {}
+	},
+	"004": {
+		"attributes": {
+			"id": "004",
+			"name": "Ak'shel",
+			"race": "dracoid",
+			"inventoryId": "04"
+		},
+		"skills": {			
+			"fighter": 1,
+			"rogue": 1,
+			"mage": 1,
+		},
+		"equipment": {}
+	},
+	"005": {
+		"attributes": {
+			"id": "005",
+			"name": "Timothy",
+			"race": "human",
+			"inventoryId": "02"
+		},
+		"skills": {			
+			"fighter": 1,
+			"rogue": 1,
+			"mage": 1,
+		},
+		"equipment": {}
+	},
+	"006": {
+		"attributes": {
+			"id": "006",
+			"name": "Baccata",
+			"race": "thomgog",
+			"inventoryId": "06"
+		},
+		"skills": {			
+			"fighter": 1,
+			"rogue": 1,
+			"mage": 1,
+		},
+		"equipment": {}
+	},
+	"007": {
+		"attributes": {
+			"id": "007",
+			"name": "Lori",
+			"race": "human",
+			"inventoryId": "03"
+		},
+		"skills": {			
+			"fighter": 1,
+			"rogue": 1,
+			"mage": 1,
+		},
+		"equipment": {}
+	},
+	"008": {
+		"attributes": {
+			"id": "008",
+			"name": "Paulson",
+			"race": "human",
+			"inventoryId": "01"
+		},
+		"skills": {			
+			"fighter": 1,
+			"rogue": 1,
+			"mage": 1,
+		},
+		"equipment": {}
+	},
+	"009": {
+		"attributes": {
+			"id": "009",
+			"name": "Dawn",
+			"race": "human",
+			"inventoryId": "03"
+		},
+		"skills": {			
+			"fighter": 1,
+			"rogue": 1,
+			"mage": 1,
+		},
+		"equipment": {}
 	}
 }

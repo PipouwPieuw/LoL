@@ -2,13 +2,15 @@ extends Node2D
 
 onready var characterNode = preload("res://party/character/Character.tscn")
 
-var partyMembers = ['001', '002', '003']
+var partyMembers = ['003', '006', '009']
 var characters
 var races
 
 func _ready():
 	characters = load_file('characters')
-	races = load_file('races')
+	races = load_file('races')	
+	if partyMembers.size() > 3:
+		partyMembers.resize(3)
 	for i in partyMembers.size():
 		var member = partyMembers[i]
 		characters[member]['equipment'] = races[characters[member]['attributes']['race']]['equipment']
