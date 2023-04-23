@@ -1,6 +1,6 @@
 extends Node2D
 
-onready var detailsNode = preload("res://hud/details/CharDetails.tscn")
+onready var detailsNode = preload("res://party/details/CharDetails.tscn")
 
 func _ready():
 	add_to_group('chardetailscontainer')

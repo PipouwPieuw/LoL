@@ -1,0 +1,55 @@
+{
+	"items": [		
+		{
+			"id": 0,
+			"name": "Salve",
+			"type": "medicine",
+			"equipmentText": "You can not equip this item.",
+			"hpHeal": 10,
+			"mpHeal": 0,
+			"poisonHeal": false
+		},
+		{
+			"id": 1,
+			"name": "Aloe",
+			"type": "medicine",
+			"equipmentText": "You can not equip this item.",
+			"hpHeal": 1,
+			"mpHeal": 0,
+			"poisonHeal": false
+		},
+		{
+			"id": 2,
+			"name": "Ginseng",
+			"type": "medicine",
+			"equipmentText": "You can not equip this item.",
+			"hpHeal": 1,
+			"mpHeal": 0,
+			"poisonHeal": true
+		},
+		{
+			"id": 3,
+			"name": "Library key",
+			"type": "key",
+			"equipmentText": "You can not equip this item.",
+		},
+		{
+			"id": 4,
+			"name": "Dagger",
+			"type": "weapon",
+			"equipmentText": "The Dagger can be placed in your weapon hand.",
+		},
+		{
+			"id": 5,
+			"name": "Shirt",
+			"type": "armor",
+			"equipmentText": "The Shirt can be placed on your chest.",
+		},
+		{
+			"id": 6,
+			"name": "Sandals",
+			"type": "boots",
+			"equipmentText": "The Sandals can be placed on your feet.",
+		}
+	]
+}

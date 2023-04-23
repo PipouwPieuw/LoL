@@ -34,6 +34,12 @@ var _err
 func _ready():
 	add_to_group("viewport")
 
+func hide_viewport():
+	visible = false
+
+func show_viewport():
+	visible = true
+
 func _physics_process(_delta):
 	# Move animations
 	if moveDirection != '':
@@ -232,10 +238,7 @@ func update_walls(wallObject, isMain):
 			hasInteractionZones = true
 	
 	# Delete previous interaction zones
-	for zone in zonesContainer.get_children():
-#		yield(get_tree(),"idle_frame")
-		zonesContainer.remove_child(zone)
-		zone.queue_free()
+	clearTriggerZones()
 	# Create new interaction zones
 	if hasInteractionZones:
 		zonesContainer.visible = true
@@ -254,6 +257,12 @@ func update_walls(wallObject, isMain):
 			zonesContainer.add_child(zoneArea)
 	else:
 		zonesContainer.visible = false
+
+func clearTriggerZones():
+	for zone in zonesContainer.get_children():
+#		yield(get_tree(),"idle_frame")
+		zonesContainer.remove_child(zone)
+		zone.queue_free()
 
 func update_ceiling_floor():
 	floorSprite.flip_h   = !floorSprite.flip_h
@@ -300,3 +309,7 @@ func remove_scene():
 	sceneContainer.hide()
 	textures.show()
 	get_tree().call_group('inputs', 'set_move', true)
+
+func _exit_tree():
+	for animation in animations:
+		animations[animation].free()

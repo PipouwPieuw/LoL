@@ -22,14 +22,14 @@ func _ready():
 	
 func load_inventory():
 	var file = File.new()
-	file.open('res://inventory.json', File.READ)
+	file.open('res://data/inventory.json', File.READ)
 	var fileContent = parse_json(file.get_as_text())
 	file.close()
 	return fileContent
 	
 func load_items():
 	var file = File.new()
-	file.open('res://items.json', File.READ)
+	file.open('res://data/items.json', File.READ)
 	var fileContent = parse_json(file.get_as_text())
 	file.close()
 	return fileContent
@@ -39,6 +39,7 @@ func build_inventory():
 		var slotInstance = slotScene.instance()
 		slotInstance.find_node('ItemBg').flip_h = slot % 2 == 0
 		slotInstance.position.x = SLOTS_SIZE * slot + slot + 1
+		slotInstance.find_node('ItemSprite').hframes = items.size()
 		_err = slotInstance.connect("input_event", self, "slot_clicked", [slotInstance, slot])
 		slotsContainer.add_child(slotInstance)
 	activeSlots = slotsContainer.get_children()
@@ -71,15 +72,18 @@ func slot_clicked(_target, event, _shape, slot, index):
 			slot.find_node('ItemSprite').visible = true
 		else:
 			slot.find_node('ItemSprite').visible = false
-		# set cursor sprite visibility
-		if grabbedItem > -1:
-			var text = items[grabbedItem].name + ' taken.'
-			get_tree().call_group('cursor', 'show_sprite', grabbedItem)
-			get_tree().call_group('hud', 'displayText', text)
-			grabItemSound.stop()
-			grabItemSound.play()
-		else:
-			discard_active_item()
+		set_cursor_item();
+
+func set_cursor_item():
+	# set cursor sprite visibility
+	if grabbedItem > -1:
+		var text = items[grabbedItem].name + ' taken.'
+		get_tree().call_group('cursor', 'show_sprite', grabbedItem)
+		get_tree().call_group('hud', 'displayText', text)
+		grabItemSound.stop()
+		grabItemSound.play()
+	else:
+		discard_active_item()
 
 func browse_inventory(direction, mode):
 	var steps = 1 if mode == 'step' else SLOTS_AMOUNT
@@ -101,3 +105,10 @@ func get_active_item():
 		}
 	else:
 		return items[grabbedItem]
+
+func set_grabbed_item(item):
+	grabbedItem = item
+		
+func _exit_tree():
+	for slot in activeSlots:
+		slot.queue_free()

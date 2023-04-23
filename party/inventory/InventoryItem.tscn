@@ -15,7 +15,6 @@ centered = false
 visible = false
 texture = ExtResource( 2 )
 centered = false
-hframes = 4
 
 [node name="ItemShape" type="CollisionShape2D" parent="."]
 position = Vector2( 10, 10 )

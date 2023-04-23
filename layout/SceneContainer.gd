@@ -58,3 +58,6 @@ func exit_scene(_target, event, _shape):
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
 		get_tree().call_group('viewport', 'remove_scene')
 		sceneBox.remove_child(currentSceneInstance)
+		for sprite in currentSceneInstance.get_children():
+			sprite.queue_free()
+		currentSceneInstance.queue_free()
