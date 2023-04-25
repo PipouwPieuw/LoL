@@ -13,7 +13,7 @@ func _ready():
 
 func sendInteraction(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton  and event.button_index == BUTTON_LEFT and event.pressed:
-		var args
+		var args = null
 		if zoneData.effect == 'toggleDoor':
 			args = zoneData.targetCell
 		elif zoneData.effect == 'displayText':
@@ -22,7 +22,10 @@ func sendInteraction(_viewport, event, _shape_idx):
 			args = zoneData
 		elif zoneData.effect == 'playAnimation':
 			args = zoneData
-		get_tree().call_group('controller', zoneData.effect, args, self)
+		if args == null:
+			get_tree().call_group('controller', zoneData.effect, self)
+		else:
+			get_tree().call_group('controller', zoneData.effect, args, self)
 
 func updateText():
 	zoneData.text.push_back(zoneData.text.pop_front())

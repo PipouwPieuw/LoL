@@ -1831,7 +1831,7 @@
                         "triggerPos": [47, 43, 34, 20],
                         "triggerType": "click",
                         "effect": "displayText",
-                        "text": ["Tariq is the boss."]
+                        "text": ["Text from book."]
                     }
                 ]
             }

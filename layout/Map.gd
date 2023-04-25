@@ -3,6 +3,7 @@ extends Node2D
 onready var container = $Container
 onready var player = $Container/Player
 onready var legend = $Legend
+onready var close = $Close
 
 var safeSpace = 3
 var cellSize = 5
@@ -10,11 +11,13 @@ var currentPos = 0
 var mapWidth = 0
 var cells = []
 var legendItemScene = preload("res://layout/LegendItem.tscn")
+var _err
 
 func _ready():
 	add_to_group("map")
 	container.position.x = -safeSpace * cellSize
-	container.position.y = -safeSpace * cellSize
+	container.position.y = -safeSpace * cellSize	
+	_err = close.connect("input_event", self, "close_map")
 
 func draw_map(data):
 	mapWidth = int(data.width)
@@ -65,3 +68,12 @@ func update_direction(direction):
 		player.flip_v = true
 	if direction == 'R' or direction == 'U':
 		player.flip_v = false
+
+func toggle(mode):
+	visible = mode
+
+func close_map(_viewport, event, _shape_idx):
+	if event is InputEventMouseButton  and event.button_index == BUTTON_LEFT and event.pressed:
+		get_tree().call_group('inputs', 'set_move', true)
+		toggle(false)
+		get_tree().call_group('hud', 'toggle', true)

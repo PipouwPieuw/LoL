@@ -301,3 +301,6 @@ func open_close_door(cell, frames):
 
 func playAnimation(event, _triggerZone):
 	get_tree().call_group('viewport', 'play_animation', event.animation)
+
+func toggleAtlas(_triggerZone):
+	get_tree().call_group('atlas', 'display_atlas')

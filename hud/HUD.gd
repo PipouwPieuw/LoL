@@ -21,3 +21,6 @@ func textCoundown():
 		textDuration -= 1
 	dialogBox.text = ''
 	countdown = false
+
+func toggle(mode):
+	visible = mode

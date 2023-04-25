@@ -59,6 +59,7 @@ func close_details(_viewport, event, _shape_idx):
 		get_tree().call_group('viewport', 'show_viewport')
 		visible = false
 		get_tree().call_group('inputs', 'set_move', true)
+		get_tree().call_group('atlas', 'toggle', true)
 
 func slot_clicked(_target, event, _shape, slot, id):
 	if event is InputEventMouseButton  and event.button_index == BUTTON_LEFT and event.pressed:

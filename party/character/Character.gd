@@ -34,6 +34,7 @@ func _physics_process(delta):
 func trigger_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton  and event.button_index == BUTTON_LEFT and event.pressed:
 		set_active_frame()
+		get_tree().call_group('atlas', 'toggle', false)
 		get_tree().call_group('viewport', 'hide_viewport')
 		get_tree().call_group('chardetails', 'display_details', charId)
 
