@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/inventory05.png-355c49de02b858919a0c1fbd4b3d8058.stex"
+path="res://.import/necklacePlaceholder.png-65139e74f5d108309f1ae70f58216603.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/hud/inventory05.png"
-dest_files=[ "res://.import/inventory05.png-355c49de02b858919a0c1fbd4b3d8058.stex" ]
+source_file="res://assets/sprites/hud/necklacePlaceholder.png"
+dest_files=[ "res://.import/necklacePlaceholder.png-65139e74f5d108309f1ae70f58216603.stex" ]
 
 [params]
 

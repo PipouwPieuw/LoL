@@ -9,6 +9,9 @@ onready var activeFrame = $ActiveFrame
 
 var data = {}
 var charId
+var blinkTimer = 0
+var blinkTimerLimit = randi() % 5 + 1
+var blinking = false
 var _err
 
 func _ready():
@@ -20,6 +23,13 @@ func _ready():
 	_err = gauges.connect("input_event", self, "gauges_event")
 	_err = attack.connect("input_event", self, "attack_event")
 	_err = spell.connect("input_event", self, "spell_event")
+
+func _physics_process(delta):
+	blinkTimer += delta
+	if(blinkTimer >= blinkTimerLimit and not blinking):
+		blinking = true
+		blink()
+		
 
 func trigger_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton  and event.button_index == BUTTON_LEFT and event.pressed:
@@ -36,6 +46,7 @@ func attack_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton  and event.button_index == BUTTON_LEFT and event.pressed:
 		set_active_frame()
 		print("ATTACK !")
+		print(data)
 
 func spell_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton  and event.button_index == BUTTON_LEFT and event.pressed:
@@ -49,3 +60,12 @@ func set_active_frame():
 func hide_active_frame(id):
 	if not id == charId or id == 'all':
 		activeFrame.visible = false;
+
+func blink():
+	portrait.frame = 1
+	yield(get_tree().create_timer(0.2), "timeout")
+	portrait.frame = 0
+	blinkTimer = 0
+	randomize()
+	blinkTimerLimit = randi() % 5 + 1
+	blinking = false

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/inventory05.png-355c49de02b858919a0c1fbd4b3d8058.stex"
+path="res://.import/bracersPlaceholder.png-8b749276cee3929a07ece2753ffc08ee.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/hud/inventory05.png"
-dest_files=[ "res://.import/inventory05.png-355c49de02b858919a0c1fbd4b3d8058.stex" ]
+source_file="res://assets/sprites/hud/bracersPlaceholder.png"
+dest_files=[ "res://.import/bracersPlaceholder.png-8b749276cee3929a07ece2753ffc08ee.stex" ]
 
 [params]
 

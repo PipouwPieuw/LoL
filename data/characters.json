@@ -4,7 +4,11 @@
 			"id": "001",
 			"name": "Michael",
 			"race": "human",
-			"inventoryId": "01"
+			"inventoryId": "01",
+			"might": 6,
+			"protection": 2,
+			"health": 20,
+			"magic": 6
 		},
 		"skills": {			
 			"fighter": 1,
@@ -18,7 +22,11 @@
 			"id": "002",
 			"name": "Conrad",
 			"race": "human",
-			"inventoryId": "01"
+			"inventoryId": "01",
+			"might": 5,
+			"protection": 4,
+			"health": 23,
+			"magic": 10
 		},
 		"skills": {			
 			"fighter": 1,
@@ -32,7 +40,11 @@
 			"id": "003",
 			"name": "Kieran",
 			"race": "huline",
-			"inventoryId": "05"
+			"inventoryId": "05",
+			"might": 4,
+			"protection": 1,
+			"health": 23,
+			"magic": 8
 		},
 		"skills": {			
 			"fighter": 1,
@@ -46,7 +58,11 @@
 			"id": "004",
 			"name": "Ak'shel",
 			"race": "dracoid",
-			"inventoryId": "04"
+			"inventoryId": "04",
+			"might": 3,
+			"protection": 1,
+			"health": 28,
+			"magic": 32
 		},
 		"skills": {			
 			"fighter": 1,
@@ -60,7 +76,11 @@
 			"id": "005",
 			"name": "Timothy",
 			"race": "human",
-			"inventoryId": "02"
+			"inventoryId": "02",
+			"might": 4,
+			"protection": 0,
+			"health": 27,
+			"magic": 5
 		},
 		"skills": {			
 			"fighter": 1,
@@ -74,7 +94,11 @@
 			"id": "006",
 			"name": "Baccata",
 			"race": "thomgog",
-			"inventoryId": "06"
+			"inventoryId": "06",
+			"might": 4,
+			"protection": 0,
+			"health": 28,
+			"magic": 32
 		},
 		"skills": {			
 			"fighter": 1,
@@ -86,9 +110,13 @@
 	"007": {
 		"attributes": {
 			"id": "007",
-			"name": "Lori",
+			"name": "Lora",
 			"race": "human",
-			"inventoryId": "03"
+			"inventoryId": "03",
+			"might": 4,
+			"protection": 0,
+			"health": 48,
+			"magic": 5
 		},
 		"skills": {			
 			"fighter": 1,
@@ -102,7 +130,11 @@
 			"id": "008",
 			"name": "Paulson",
 			"race": "human",
-			"inventoryId": "01"
+			"inventoryId": "01",
+			"might": 4,
+			"protection": 0,
+			"health": 105,
+			"magic": 45
 		},
 		"skills": {			
 			"fighter": 1,
@@ -116,7 +148,11 @@
 			"id": "009",
 			"name": "Dawn",
 			"race": "human",
-			"inventoryId": "03"
+			"inventoryId": "03",
+			"might": 4,
+			"protection": 0,
+			"health": 28,
+			"magic": 32
 		},
 		"skills": {			
 			"fighter": 1,

@@ -10,7 +10,7 @@ var inventory = []
 var items = []
 var slotScene = preload("res://party/inventory/InventoryItem.tscn")
 var activeSlots
-var grabbedItem = -1
+var grabbedItem = null
 var _err
 
 func _ready():
@@ -48,7 +48,7 @@ func update_inventory(inverSlots = false):
 	var i = 0
 	for slot in activeSlots:
 		var itemId = inventory[i]
-		if itemId > -1:
+		if itemId != null:
 			slot.find_node('ItemSprite').frame = itemId
 			slot.find_node('ItemSprite').visible = true
 		else:
@@ -67,7 +67,7 @@ func slot_clicked(_target, event, _shape, slot, index):
 		# Set grabbed item
 		grabbedItem = tempSlotItem
 		# Set slot sprite visibility
-		if inventory[index] > -1:
+		if inventory[index] != null:
 			slot.find_node('ItemSprite').frame = tempGrabbedItem
 			slot.find_node('ItemSprite').visible = true
 		else:
@@ -76,7 +76,7 @@ func slot_clicked(_target, event, _shape, slot, index):
 
 func set_cursor_item():
 	# set cursor sprite visibility
-	if grabbedItem > -1:
+	if grabbedItem != null:
 		var text = items[grabbedItem].name + ' taken.'
 		get_tree().call_group('cursor', 'show_sprite', grabbedItem)
 		get_tree().call_group('hud', 'displayText', text)
@@ -95,11 +95,11 @@ func browse_inventory(direction, mode):
 	update_inventory(true)
 
 func discard_active_item():
-	grabbedItem = -1
+	grabbedItem = null
 	get_tree().call_group('cursor', 'hide_sprite')
 
 func get_active_item():
-	if grabbedItem == -1:
+	if grabbedItem == null:
 		return {
 			"id": -1
 		}
@@ -107,8 +107,8 @@ func get_active_item():
 		return items[grabbedItem]
 
 func set_grabbed_item(item):
-	grabbedItem = item
-		
+	grabbedItem = null if item == -1 else item
+
 func _exit_tree():
 	for slot in activeSlots:
 		slot.queue_free()

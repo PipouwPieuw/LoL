@@ -7,7 +7,7 @@
 				"posX": 6,
 				"posY": 4,
 				"size": 21,
-				"item": -1
+				"item": null
 			},
 			"necklace": {
 				"id": "necklace",
@@ -15,7 +15,7 @@
 				"posX": 81,
 				"posY": 4,
 				"size": 21,
-				"item": -1
+				"item": null
 			},
 			"armor": {
 				"id": "armor",
@@ -23,7 +23,7 @@
 				"posX": 6,
 				"posY": 28,
 				"size": 21,
-				"item": -1
+				"item": null
 			},
 			"bracers": {
 				"id": "bracers",
@@ -31,7 +31,7 @@
 				"posX": 81,
 				"posY": 28,
 				"size": 21,
-				"item": -1
+				"item": null
 			},
 			"weapon1": {
 				"id": "weapon1",
@@ -39,7 +39,7 @@
 				"posX": 6,
 				"posY": 52,
 				"size": 21,
-				"item": -1
+				"item": null
 			},
 			"shield1": {
 				"id": "shield1",
@@ -47,7 +47,7 @@
 				"posX": 81,
 				"posY": 52,
 				"size": 21,
-				"item": -1
+				"item": null
 			},
 			"ring1": {
 				"id": "ring1",
@@ -55,7 +55,7 @@
 				"posX": 16,
 				"posY": 78,
 				"size": 11,
-				"item": -1
+				"item": null
 			},
 			"ring2": {
 				"id": "ring2",
@@ -63,7 +63,7 @@
 				"posX": 81,
 				"posY": 78,
 				"size": 11,
-				"item": -1
+				"item": null
 			},
 			"boots": {
 				"id": "boots",
@@ -71,7 +71,7 @@
 				"posX": 6,
 				"posY": 93,
 				"size": 21,
-				"item": -1
+				"item": null
 			},
 		}
 	},
@@ -83,7 +83,7 @@
 				"posX": 6,
 				"posY": 4,
 				"size": 21,
-				"item": -1
+				"item": null
 			},
 			"necklace": {
 				"id": "necklace",
@@ -91,7 +91,7 @@
 				"posX": 81,
 				"posY": 4,
 				"size": 21,
-				"item": -1
+				"item": null
 			},
 			"armor": {
 				"id": "armor",
@@ -99,7 +99,7 @@
 				"posX": 6,
 				"posY": 28,
 				"size": 21,
-				"item": -1
+				"item": null
 			},
 			"bracers": {
 				"id": "bracers",
@@ -107,7 +107,7 @@
 				"posX": 81,
 				"posY": 28,
 				"size": 21,
-				"item": -1
+				"item": null
 			},
 			"weapon1": {
 				"id": "weapon1",
@@ -115,7 +115,7 @@
 				"posX": 6,
 				"posY": 52,
 				"size": 21,
-				"item": -1
+				"item": null
 			},
 			"shield1": {
 				"id": "shield1",
@@ -123,7 +123,7 @@
 				"posX": 81,
 				"posY": 52,
 				"size": 21,
-				"item": -1
+				"item": null
 			},
 			"ring1": {
 				"id": "ring1",
@@ -131,7 +131,7 @@
 				"posX": 16,
 				"posY": 78,
 				"size": 11,
-				"item": -1
+				"item": null
 			},
 			"ring2": {
 				"id": "ring2",
@@ -139,7 +139,7 @@
 				"posX": 81,
 				"posY": 78,
 				"size": 11,
-				"item": -1
+				"item": null
 			}
 		}
 	},
@@ -151,7 +151,7 @@
 				"posX": 6,
 				"posY": 4,
 				"size": 21,
-				"item": -1
+				"item": null
 			},
 			"necklace": {
 				"id": "necklace",
@@ -159,7 +159,7 @@
 				"posX": 81,
 				"posY": 4,
 				"size": 21,
-				"item": -1
+				"item": null
 			},
 			"armor": {
 				"id": "armor",
@@ -167,7 +167,7 @@
 				"posX": 6,
 				"posY": 28,
 				"size": 21,
-				"item": -1
+				"item": null
 			},
 			"bracers": {
 				"id": "bracers",
@@ -175,7 +175,7 @@
 				"posX": 81,
 				"posY": 28,
 				"size": 21,
-				"item": -1
+				"item": null
 			},
 			"weapon1": {
 				"id": "weapon1",
@@ -183,7 +183,7 @@
 				"posX": 6,
 				"posY": 52,
 				"size": 21,
-				"item": -1
+				"item": null
 			},
 			"shield1": {
 				"id": "shield1",
@@ -191,7 +191,7 @@
 				"posX": 81,
 				"posY": 52,
 				"size": 21,
-				"item": -1
+				"item": null
 			},
 			"ring1": {
 				"id": "ring1",
@@ -199,7 +199,7 @@
 				"posX": 16,
 				"posY": 78,
 				"size": 11,
-				"item": -1
+				"item": null
 			},
 			"ring2": {
 				"id": "ring2",
@@ -207,7 +207,7 @@
 				"posX": 81,
 				"posY": 78,
 				"size": 11,
-				"item": -1
+				"item": null
 			},
 			"boots": {
 				"id": "boots",
@@ -215,7 +215,7 @@
 				"posX": 6,
 				"posY": 93,
 				"size": 21,
-				"item": -1
+				"item": null
 			},
 		}
 	},
@@ -225,65 +225,65 @@
 				"id": "helm",
 				"type": "helm",
 				"posX": 6,
-				"posY": 2,
+				"posY": 1,
 				"size": 21,
-				"item": -1
+				"item": null
 			},
 			"necklace": {
 				"id": "necklace",
 				"type": "necklace",
 				"posX": 81,
-				"posY": 2,
+				"posY": 1,
 				"size": 21,
-				"item": -1
+				"item": null
 			},
 			"weapon1": {
 				"id": "weapon1",
 				"type": "weapon",
 				"posX": 6,
-				"posY": 26,
+				"posY": 25,
 				"size": 21,
-				"item": -1
+				"item": null
 			},
 			"shield1": {
 				"id": "shield1",
 				"type": "shield",
 				"posX": 81,
-				"posY": 26,
+				"posY": 25,
 				"size": 21,
-				"item": -1
+				"item": null
 			},
 			"armor": {
 				"id": "armor",
 				"type": "armor",
 				"posX": 6,
-				"posY": 50,
+				"posY": 49,
 				"size": 21,
-				"item": -1
+				"item": null
 			},
 			"bracers": {
 				"id": "bracers",
 				"type": "bracers",
 				"posX": 81,
-				"posY": 50,
+				"posY": 49,
 				"size": 21,
-				"item": -1
+				"item": null
 			},
 			"weapon2": {
 				"id": "weapon2",
 				"type": "weapon",
 				"posX": 6,
-				"posY": 74,
+				"posY": 73,
 				"size": 21,
-				"item": -1
+				"item": null
 			},
 			"shield2": {
 				"id": "shield2",
 				"type": "shield",
 				"posX": 81,
-				"posY": 74,
+				"posY": 73,
 				"size": 21,
-				"item": -1
+				"item": null
 			},
 			"boots": {
 				"id": "boots",
@@ -291,7 +291,7 @@
 				"posX": 6,
 				"posY": 97,
 				"size": 21,
-				"item": -1
+				"item": null
 			},
 		}
 	}

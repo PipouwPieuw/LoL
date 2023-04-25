@@ -30,25 +30,29 @@
 		{
 			"id": 3,
 			"name": "Library key",
-			"type": "key",
+			"type": "weapon",
 			"equipmentText": "You can not equip this item.",
+			"might": 5,
 		},
 		{
 			"id": 4,
 			"name": "Dagger",
 			"type": "weapon",
+			"might": 10,
 			"equipmentText": "The Dagger can be placed in your weapon hand.",
 		},
 		{
 			"id": 5,
 			"name": "Shirt",
 			"type": "armor",
+			"protection": 10,
 			"equipmentText": "The Shirt can be placed on your chest.",
 		},
 		{
 			"id": 6,
 			"name": "Sandals",
 			"type": "boots",
+			"protection": 5,
 			"equipmentText": "The Sandals can be placed on your feet.",
 		}
 	]
