@@ -2,9 +2,9 @@
     "width": 26,
     "height": 26,
     "start_index": 454,
-    "start_index2": 197,
+    "start_index2": 293,
     "layout": "gladstone",
-    "spriteSheetFrames": 34,
+    "spriteSheetFrames": 35,
     "hasCeiling": true,
     "music": "gladstone",
     "grid": [
@@ -2139,7 +2139,10 @@
                         "triggerPos": [47, 43, 34, 20],
                         "triggerType": "click",
                         "effect": "toggleAtlas",
-                        "text": "The magic Atlas..."
+                        "text": "The magic Atlas...",
+                        "replacementWall": 34,
+                        "oneUse": true,
+                        "used": false
                     }
                 ]
             },

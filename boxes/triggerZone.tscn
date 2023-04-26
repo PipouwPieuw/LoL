@@ -22,6 +22,8 @@ func sendInteraction(_viewport, event, _shape_idx):
 			args = zoneData
 		elif zoneData.effect == 'playAnimation':
 			args = zoneData
+		elif zoneData.effect == 'toggleAtlas':
+			args = zoneData
 		if args == null:
 			get_tree().call_group('controller', zoneData.effect, self)
 		else:

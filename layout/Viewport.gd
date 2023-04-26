@@ -243,6 +243,8 @@ func update_walls(wallObject, isMain):
 	if hasInteractionZones:
 		zonesContainer.visible = true
 		for zone in data['currentCell'].InteractionZones:
+			if 'oneUse' in zone and zone.used == true:
+				continue
 			var zoneArea = triggerZone.instance()
 			var zoneShape = zoneArea.find_node('zoneShape')
 			var triggerPos = zone.triggerPos

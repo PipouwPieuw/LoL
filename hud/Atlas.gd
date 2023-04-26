@@ -5,13 +5,16 @@ onready var sprite = $Sprite
 onready var shape = $Shape
 
 var _err
+var zoneData = {}
 
 func _ready():
 	add_to_group('atlas')
 	_err = animation.connect("animation_finished", self, "animation_ended")
 	_err = self.connect("input_event", self, "show_map")
 
-func display_atlas():
+func display_atlas(args):
+	get_tree().call_group('inputs', 'set_move', false)
+	zoneData = args
 	get_tree().call_group('audiostream', 'play_sound', 'hud', 'atlas')
 	animation.play()
 
@@ -19,6 +22,9 @@ func animation_ended():
 	animation.visible = false
 	sprite.visible = true
 	shape.disabled = false
+	get_tree().call_group('hud', 'displayText', zoneData.text)
+	get_tree().call_group('controller', 'replace_wall', zoneData.attachedWall, zoneData.replacementWall)
+	get_tree().call_group('inputs', 'set_move', true)
 
 func toggle(mode):
 	visible = mode

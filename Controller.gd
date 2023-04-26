@@ -226,6 +226,10 @@ func change_direction(direction):
 func update_data(data):
 	currentData = data
 
+func replace_wall(wall, index):
+	currentData.grid[currentCell].wallAttr[wall].spriteIndex = index
+	send_walls_status(directions[0], true)
+
 func toggleDoor(doorIndex, _triggerZone):
 	if animatedDoors.has(doorIndex):
 		return
@@ -243,7 +247,7 @@ func displayText(text, triggerZone):
 func keyhole(args, triggerZone):
 	var activeItem = get_tree().get_nodes_in_group('inventory')[0].get_active_item()
 	# No active item
-	if activeItem.id == -1:
+	if activeItem.id == null:
 		get_tree().call_group('hud', 'displayText', args.text[0])
 		triggerZone.updateText()
 	elif args.unlocked:
@@ -302,5 +306,6 @@ func open_close_door(cell, frames):
 func playAnimation(event, _triggerZone):
 	get_tree().call_group('viewport', 'play_animation', event.animation)
 
-func toggleAtlas(_triggerZone):
-	get_tree().call_group('atlas', 'display_atlas')
+func toggleAtlas(args, triggerZone):
+	get_tree().call_group('atlas', 'display_atlas', args)
+	triggerZone.zoneData.used = true

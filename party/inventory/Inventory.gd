@@ -101,7 +101,7 @@ func discard_active_item():
 func get_active_item():
 	if grabbedItem == null:
 		return {
-			"id": -1
+			"id": null
 		}
 	else:
 		return items[grabbedItem]
