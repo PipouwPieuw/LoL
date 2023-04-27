@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://layout/Map.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/map/arrow.png" type="Texture" id=2]
 [ext_resource path="res://assets/sprites/hud/map.png" type="Texture" id=3]
+[ext_resource path="res://assets/fonts/fontBlack.tres" type="BitmapFont" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 19, 10 )
@@ -21,8 +22,21 @@ z_index = 1
 texture = ExtResource( 2 )
 centered = false
 
+[node name="Location" type="Label" parent="."]
+margin_left = 230.5
+margin_top = 3.0
+margin_right = 317.5
+margin_bottom = 17.0
+custom_fonts/font = ExtResource( 4 )
+text = "Gladstone"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Legend" type="Node2D" parent="."]
-position = Vector2( 80, 0 )
+position = Vector2( 237, 25 )
 
 [node name="Close" type="Area2D" parent="."]
 position = Vector2( 295, 186 )

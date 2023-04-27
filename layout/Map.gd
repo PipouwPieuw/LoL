@@ -5,12 +5,14 @@ onready var player = $Container/Player
 onready var legend = $Legend
 onready var close = $Close
 
+onready var mapCell = preload("res://layout/MapCell.tscn")
+onready var legendItemScene = preload("res://layout/LegendItem.tscn")
+
 var safeSpace = 3
 var cellSize = 5
 var currentPos = 0
 var mapWidth = 0
 var cells = []
-var legendItemScene = preload("res://layout/LegendItem.tscn")
 var _err
 
 func _ready():
@@ -28,9 +30,12 @@ func draw_map(data):
 	for cell in cells:
 		if ['C', 'D', 'S'].find(cell.type) > -1:
 			var cellIndex = int(cell.index)
-			var rect = ColorRect.new()
+			var cellItem = mapCell.instance();
+#			var rect = ColorRect.new()
+			var rect = cellItem.find_node('Bg')
 			rect.rect_size = Vector2(cellSize, cellSize)
-			rect.rect_position = calc_position(cellIndex, mapWidth)
+#			rect.rect_position = calc_position(cellIndex, mapWidth)
+			cellItem.position = calc_position(cellIndex, mapWidth)
 			if cell.type == 'D':
 				rect.color = Color('BEBEBE')
 			elif cell.type == 'S':
@@ -43,7 +48,8 @@ func draw_map(data):
 				specialCells += 1
 			else:
 				rect.color = Color('000000')
-			container.add_child(rect)
+#			container.add_child(rect)
+			container.add_child(cellItem)
 	# Set current pos
 	var start_index = currentPos
 	player.position = calc_position(start_index, mapWidth)
