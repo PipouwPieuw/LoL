@@ -24,6 +24,8 @@ func animation_ended():
 	shape.disabled = false
 	get_tree().call_group('hud', 'displayText', zoneData.text)
 	get_tree().call_group('controller', 'replace_wall', zoneData.attachedWall, zoneData.replacementWall)
+	get_tree().call_group('map', 'toggle_atlas_state', true)
+	get_tree().call_group('map', 'reveal_cells')
 	get_tree().call_group('inputs', 'set_move', true)
 
 func toggle(mode):

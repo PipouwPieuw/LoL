@@ -1,7 +1,8 @@
 {
+    "name": "Gladstone Keep",
     "width": 26,
     "height": 26,
-    "start_index": 293,
+    "start_index": 269,
     "start_index2": 454,
     "layout": "gladstone",
     "spriteSheetFrames": 35,
@@ -1271,6 +1272,7 @@
             },
             "wallBack": {
                 "spriteIndex": 30,
+                "isDoor": true,
                 "interactionZones": [
                     {
                         "attachedWall": "wallBack",
@@ -1411,6 +1413,7 @@
             },
             "wallRight": {
                 "spriteIndex": 20,
+                "isDoor": true,
                 "interactionZones": [
                     {
                         "attachedWall": "wallLeft",
@@ -1446,15 +1449,55 @@
     },
     {
         "index": 198,
-        "type": "E",
+        "type": "D",
         "explored": false,
-        "walkable": false
+        "walkable": false,
+        "wallAttr":
+        {
+            "wallFront": {
+                "spriteIndex": 0,
+                "interactionZones": []
+            },
+            "wallRight": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            },
+            "wallBack": {
+                "spriteIndex": 0,
+                "interactionZones": []
+            },
+            "wallLeft": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 199,
-        "type": "E",
+        "type": "S",
         "explored": false,
-        "walkable": false
+        "walkable": false,
+        "label": "Throne room",
+        "color": "ee2521",
+        "wallAttr":
+        {
+            "wallFront": {
+                "spriteIndex": 0,
+                "interactionZones": []
+            },
+            "wallRight": {
+                "spriteIndex": 0,
+                "interactionZones": []
+            },
+            "wallBack": {
+                "spriteIndex": 0,
+                "interactionZones": []
+            },
+            "wallLeft": {
+                "spriteIndex": -1,
+                "interactionZones": []
+            }
+        }
     },
     {
         "index": 200,
@@ -1791,6 +1834,7 @@
         {
             "wallFront": {
                 "spriteIndex": 30,
+                "isDoor": true,
                 "interactionZones": [
                     {
                         "attachedWall": "wallFront",
@@ -1803,6 +1847,7 @@
             },
             "wallRight": {
                 "spriteIndex": 30,
+                "isDoor": true,
                 "interactionZones": [
                     {
                         "attachedWall": "wallRight",
@@ -1892,6 +1937,7 @@
             },
             "wallBack": {
                 "spriteIndex": 30,
+                "isDoor": true,
                 "interactionZones": [
                     {
                         "attachedWall": "wallBack",
@@ -1904,6 +1950,7 @@
             },
             "wallLeft": {
                 "spriteIndex": 30,
+                "isDoor": true,
                 "interactionZones": [
                     {
                         "attachedWall": "wallLeft",
@@ -2125,6 +2172,7 @@
             },
             "wallRight": {
                 "spriteIndex": 25,
+                "isDoor": true,
                 "interactionZones": []
             },
             "wallBack": {
@@ -2207,6 +2255,7 @@
             },
             "wallLeft": {
                 "spriteIndex": 25,
+                "isDoor": true,
                 "interactionZones": []
             }
         }
@@ -2485,6 +2534,7 @@
         {
             "wallFront": {
                 "spriteIndex": 30,
+                "isDoor": true,
                 "interactionZones": [
                     {
                         "attachedWall": "wallFront",
@@ -2569,6 +2619,7 @@
             },
             "wallRight": {
                 "spriteIndex": 19,
+                "isDoor": true,
                 "interactionZones": [
                     {
                         "attachedWall": "wallRight",
@@ -2603,7 +2654,7 @@
         "wallAttr":
         {
             "wallFront": {
-                "spriteIndex": -1,
+                "spriteIndex": 0,
                 "interactionZones": []
             },
             "wallRight": {
@@ -2611,7 +2662,7 @@
                 "interactionZones": []
             },
             "wallBack": {
-                "spriteIndex": -1,
+                "spriteIndex": 0,
                 "interactionZones": []
             },
             "wallLeft": {
@@ -2630,15 +2681,15 @@
         "wallAttr":
         {
             "wallFront": {
-                "spriteIndex": -1,
+                "spriteIndex": 0,
                 "interactionZones": []
             },
             "wallRight": {
-                "spriteIndex": -1,
+                "spriteIndex": 0,
                 "interactionZones": []
             },
             "wallBack": {
-                "spriteIndex": -1,
+                "spriteIndex": 0,
                 "interactionZones": []
             },
             "wallLeft": {
@@ -2759,7 +2810,7 @@
         "wallAttr":
         {
             "wallFront": {
-                "spriteIndex": -1,
+                "spriteIndex": 0,
                 "interactionZones": []
             },
             "wallRight": {
@@ -2767,11 +2818,11 @@
                 "interactionZones": []
             },
             "wallBack": {
-                "spriteIndex": -1,
+                "spriteIndex": 0,
                 "interactionZones": []
             },
             "wallLeft": {
-                "spriteIndex": -1,
+                "spriteIndex": 0,
                 "interactionZones": []
             }
         }
@@ -2784,7 +2835,7 @@
         "wallAttr":
         {
             "wallFront": {
-                "spriteIndex": -1,
+                "spriteIndex": 0,
                 "interactionZones": []
             },
             "wallRight": {
@@ -2792,7 +2843,7 @@
                 "interactionZones": []
             },
             "wallBack": {
-                "spriteIndex": -1,
+                "spriteIndex": 0,
                 "interactionZones": []
             },
             "wallLeft": {
@@ -2830,6 +2881,7 @@
             },
             "wallLeft": {
                 "spriteIndex": 19,
+                "isDoor": true,
                 "interactionZones": [
                     {
                         "attachedWall": "wallLeft",
@@ -3145,6 +3197,7 @@
             },
             "wallBack": {
                 "spriteIndex": 30,
+                "isDoor": true,
                 "interactionZones": [
                     {
                         "attachedWall": "wallBack",
@@ -3199,6 +3252,7 @@
             },
             "wallRight": {
                 "spriteIndex": 19,
+                "isDoor": true,
                 "interactionZones": [
                     {
                         "attachedWall": "wallRight",
@@ -3241,7 +3295,7 @@
         "wallAttr":
         {
             "wallFront": {
-                "spriteIndex": -1,
+                "spriteIndex": 0,
                 "interactionZones": []
             },
             "wallRight": {
@@ -3249,7 +3303,7 @@
                 "interactionZones": []
             },
             "wallBack": {
-                "spriteIndex": -1,
+                "spriteIndex": 0,
                 "interactionZones": []
             },
             "wallLeft": {
@@ -3268,15 +3322,15 @@
         "wallAttr":
         {
             "wallFront": {
-                "spriteIndex": -1,
+                "spriteIndex": 0,
                 "interactionZones": []
             },
             "wallRight": {
-                "spriteIndex": -1,
+                "spriteIndex": 0,
                 "interactionZones": []
             },
             "wallBack": {
-                "spriteIndex": -1,
+                "spriteIndex": 0,
                 "interactionZones": []
             },
             "wallLeft": {
@@ -3633,6 +3687,7 @@
         {
             "wallFront": {
                 "spriteIndex": 30,
+                "isDoor": true,
                 "interactionZones": [
                     {
                         "attachedWall": "wallFront",
@@ -4080,6 +4135,7 @@
             },
             "wallBack": {
                 "spriteIndex": 18,
+                "isDoor": true,
                 "interactionZones": [],
                 "onWalkTowards": [
                     {
@@ -4256,7 +4312,7 @@
                 "interactionZones": []
             },
             "wallRight": {
-                "spriteIndex": -1,
+                "spriteIndex": 0,
                 "interactionZones": []
             },
             "wallBack": {
@@ -4264,7 +4320,7 @@
                 "interactionZones": []
             },
             "wallLeft": {
-                "spriteIndex": -1,
+                "spriteIndex": 0,
                 "interactionZones": []
             }
         }
@@ -4433,15 +4489,15 @@
                 "interactionZones": []
             },
             "wallRight": {
-                "spriteIndex": -1,
+                "spriteIndex": 0,
                 "interactionZones": []
             },
             "wallBack": {
-                "spriteIndex": -1,
+                "spriteIndex": 0,
                 "interactionZones": []
             },
             "wallLeft": {
-                "spriteIndex": -1,
+                "spriteIndex": 0,
                 "interactionZones": []
             }
         }
