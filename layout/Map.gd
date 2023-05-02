@@ -1,7 +1,7 @@
 extends Node2D
 
-onready var container = $Container
-onready var player = $Container/Player
+onready var minimap = $Container/Minimap
+onready var player = $Container/Minimap/Player
 onready var locationLabel = $Location
 onready var legend = $Legend
 onready var close = $Close
@@ -9,11 +9,14 @@ onready var close = $Close
 onready var mapCell = preload("res://layout/MapCell.tscn")
 onready var legendItemScene = preload("res://layout/LegendItem.tscn")
 
-var safeSpace = 3
+var mapMaxW = 217
+var mapMaxH = 192
 var cellSizeX = 7
 var cellSizeY = 6
+var safeSpace = 3
 var currentPos = 0
 var mapWidth = 0
+var mapHeight = 0
 var cells = []
 var cellNodes = {}
 var gridW = 0
@@ -23,13 +26,22 @@ var _err
 
 func _ready():
 	add_to_group("map")
-	container.position.x = -safeSpace * cellSizeX
-	container.position.y = -safeSpace * cellSizeY
 	_err = close.connect("input_event", self, "close_map")
 
+func set_map_position():
+	var marginX = floor(((mapMaxW / cellSizeX) - (mapWidth - safeSpace)) / 2)
+	var marginY = floor(((mapMaxH / cellSizeY) - (mapHeight - safeSpace)) / 2)
+	var posX = (-safeSpace * cellSizeX) + (marginX * cellSizeX)
+	var posY = (-safeSpace * cellSizeY) + (marginY * cellSizeY)
+	minimap.position.x = posX
+	minimap.position.y = posY
+	
+
 func draw_map(data):
-	locationLabel.text = data.name
 	mapWidth = int(data.width)
+	mapHeight = int(data.height)
+	set_map_position()
+	locationLabel.text = data.name
 	currentPos = int(data.start_index)
 	cells = data.grid
 	gridW = data.width
@@ -43,7 +55,7 @@ func draw_map(data):
 			cellItem.data = cell
 			cellItem.position = calc_position(cellIndex, mapWidth)
 			if cell.type == 'S':
-				var rect = cellItem.find_node('Bg')
+				var rect = cellItem.find_node('SpecialColor')
 				rect.rect_size = Vector2(cellSizeX-2, cellSizeY-2)
 				rect.rect_position.x = 1
 				rect.rect_position.y = 1
@@ -55,7 +67,7 @@ func draw_map(data):
 				legend.add_child(legendItemInstance)
 				specialCells += 1
 				rect.visible = true
-			container.add_child(cellItem)
+			minimap.add_child(cellItem)
 			cellNodes[str(cellIndex)] = cellItem
 	# Set current pos
 	var start_index = currentPos
@@ -68,7 +80,7 @@ func calc_position(index, width, offset = 0):
 
 func update_position(newPos):
 	currentPos = newPos
-	player.position = calc_position(currentPos, mapWidth)
+	player.position = calc_position(currentPos, mapWidth, 1)
 	if atlasActive:
 		reveal_cells()
 
