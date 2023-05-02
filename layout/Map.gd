@@ -47,6 +47,7 @@ func draw_map(data):
 	gridW = data.width
 	gridH = data.height
 	var specialCells = 0
+	var counter = 0
 	# Drawing map
 	for cell in cells:
 		if ['C', 'D', 'S'].find(cell.type) > -1:
@@ -54,6 +55,9 @@ func draw_map(data):
 			var cellItem = mapCell.instance()
 			cellItem.data = cell
 			cellItem.position = calc_position(cellIndex, mapWidth)
+			# Set cell background
+			var cellBg = cellItem.find_node('Background')
+			cellBg.frame = counter
 			if cell.type == 'S':
 				var rect = cellItem.find_node('SpecialColor')
 				rect.rect_size = Vector2(cellSizeX-2, cellSizeY-2)
@@ -68,7 +72,9 @@ func draw_map(data):
 				specialCells += 1
 				rect.visible = true
 			minimap.add_child(cellItem)
-			cellNodes[str(cellIndex)] = cellItem
+			cellNodes[str(cellIndex)] = cellItem		
+		if cell.type != 'X':
+			counter += 1
 	# Set current pos
 	var start_index = currentPos
 	player.position = calc_position(start_index, mapWidth)
