@@ -1479,6 +1479,7 @@
         "walkable": false,
         "label": "Throne room",
         "color": "ee2521",
+        "legendIndex": 1,
         "wallAttr":
         {
             "wallFront": {
@@ -2683,6 +2684,7 @@
         "walkable": false,
         "label": "Victor's arms",
         "color": "9796b3",
+        "legendIndex": 3,
         "wallAttr":
         {
             "wallFront": {
@@ -2812,6 +2814,7 @@
         "walkable": false,
         "label": "Geron's office",
         "color": "fad833",
+        "legendIndex": 2,
         "wallAttr":
         {
             "wallFront": {
@@ -2945,6 +2948,7 @@
         "walkable": false,
         "label": "Fountain",
         "color": "4c4bff",
+        "legendIndex": 0,
         "wallAttr":
         {
             "wallFront": {
@@ -3324,6 +3328,7 @@
         "walkable": false,
         "label": "Nathaniel's herbs",
         "color": "00b000",
+        "legendIndex": 4,
         "wallAttr":
         {
             "wallFront": {
@@ -4487,6 +4492,7 @@
         "walkable": false,
         "label": "Forest",
         "color": "30742a",
+        "legendIndex": 5,
         "wallAttr":
         {
             "wallFront": {

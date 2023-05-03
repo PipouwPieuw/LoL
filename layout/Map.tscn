@@ -129,7 +129,7 @@ position = Vector2( 0, 1 )
 [node name="Player" type="AnimatedSprite" parent="Container/Minimap"]
 z_index = 1
 frames = SubResource( 25 )
-frame = 11
+frame = 21
 speed_scale = 2.2
 playing = true
 centered = false
@@ -145,7 +145,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Legend" type="Node2D" parent="."]
+[node name="LegendSpecial" type="Node2D" parent="."]
+position = Vector2( 235, 22 )
+
+[node name="LegendOthers" type="Node2D" parent="."]
 position = Vector2( 235, 22 )
 
 [node name="Close" type="Area2D" parent="."]

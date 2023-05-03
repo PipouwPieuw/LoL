@@ -1,0 +1,42 @@
+{
+	"niche": {
+		"index": 0,
+		"label": "Niche"
+	},
+	"up":  {
+		"index": 1,
+		"label": "Stairs up"
+	},
+	"down":  {
+		"index": 2,
+		"label": "Stairs down"
+	},
+	"door":  {
+		"index": 3,
+		"label": "Door"
+	},
+	"plate":  {
+		"index": 4,
+		"label": "Plate"
+	},
+	"pit":  {
+		"index": 5,
+		"label": "Pit"
+	},
+	"button":  {
+		"index": 6,
+		"label": "Button/lever"
+	},
+	"secret":  {
+		"index": 7,
+		"label": "Secret wall"
+	},
+	"teleport":  {
+		"index": 8,
+		"label": "Teleport"
+	},
+	"chest":  {
+		"index": 9,
+		"label": "Chest"
+	}
+}

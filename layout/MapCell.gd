@@ -1,15 +1,27 @@
 extends Node2D
 
+onready var cellBg = $Background
 onready var wallsSprite = $WallsSprite
-onready var innerSprite = $innerSprite
+onready var innerSprite = $InnerSprite
+onready var specialColor = $SpecialColor
 
 var data = {}
 var wallsCode = ''
 var explored = false
 var spritesPath = 'res://assets/sprites/map'
+var cellSizeX = 0
+var cellSizeY = 0
+var bgIndex = 0
+var legendTypes = []
 
 func _ready():
+	set_background()
 	set_sprites()
+	if data.type == 'S':
+		set_special()
+
+func set_background():
+	cellBg.frame = bgIndex
 
 func set_sprites():
 	var walls = ['wallLeft', 'wallBack', 'wallRight', 'wallFront']
@@ -32,13 +44,22 @@ func set_sprites():
 	while wallsDir.size() > 0:
 		var currentWall = wallsDir.pop_back()
 		if data.wallAttr[currentWall].has('wallType'):
-			print(wallsCode)
 			add_sprite(data.wallAttr[currentWall].wallType, currentWall)
 
 func set_walls():
 	wallsSprite.texture = load(spritesPath + '/walls' + wallsCode + '.png')
 
+func set_special():
+	specialColor.rect_size = Vector2(cellSizeX-2, cellSizeY-2)
+	specialColor.rect_position.x = 1
+	specialColor.rect_position.y = 1
+	specialColor.color = Color(data.color)
+	specialColor.visible = true
+#	get_tree().call_group('map', 'add_legend', data)
+
 func add_sprite(type, wall):
+	if not legendTypes.has(type):
+		legendTypes.append(type)
 	if  ['up', 'down', 'plate', 'pit', 'secret', 'teleport'].has(type):
 		innerSprite.texture = load(spritesPath + '/' + type + '.png')
 		innerSprite.visible = true

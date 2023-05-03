@@ -24,6 +24,6 @@ __meta__ = {
 [node name="WallsSprite" type="Sprite" parent="."]
 centered = false
 
-[node name="innerSprite" type="Sprite" parent="."]
+[node name="InnerSprite" type="Sprite" parent="."]
 visible = false
 centered = false

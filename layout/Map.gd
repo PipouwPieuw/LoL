@@ -3,7 +3,8 @@ extends Node2D
 onready var minimap = $Container/Minimap
 onready var player = $Container/Minimap/Player
 onready var locationLabel = $Location
-onready var legend = $Legend
+onready var legendSpecial = $LegendSpecial
+onready var legendOthers = $LegendOthers
 onready var close = $Close
 
 onready var mapCell = preload("res://layout/MapCell.tscn")
@@ -22,11 +23,23 @@ var cellNodes = {}
 var gridW = 0
 var gridH = 0
 var atlasActive = false
+var legendOffset = 8
+var legendTypes = {}
+var addedLegends = []
+var spritesPath = 'res://assets/sprites/map'
 var _err
 
 func _ready():
 	add_to_group("map")
 	_err = close.connect("input_event", self, "close_map")
+	legendTypes = load_legend()
+	
+func load_legend():
+	var file = File.new()
+	file.open('res://data/legend.json', File.READ)
+	var fileContent = parse_json(file.get_as_text())
+	file.close()
+	return fileContent
 
 func set_map_position():
 	var marginX = floor(((mapMaxW / cellSizeX) - (mapWidth - safeSpace)) / 2)
@@ -34,8 +47,7 @@ func set_map_position():
 	var posX = (-safeSpace * cellSizeX) + (marginX * cellSizeX)
 	var posY = (-safeSpace * cellSizeY) + (marginY * cellSizeY)
 	minimap.position.x = posX
-	minimap.position.y = posY
-	
+	minimap.position.y = posY	
 
 func draw_map(data):
 	mapWidth = int(data.width)
@@ -46,7 +58,6 @@ func draw_map(data):
 	cells = data.grid
 	gridW = data.width
 	gridH = data.height
-	var specialCells = 0
 	var counter = 0
 	# Drawing map
 	for cell in cells:
@@ -54,25 +65,12 @@ func draw_map(data):
 			var cellIndex = int(cell.index)
 			var cellItem = mapCell.instance()
 			cellItem.data = cell
+			cellItem.cellSizeX = cellSizeX
+			cellItem.cellSizeY = cellSizeY
 			cellItem.position = calc_position(cellIndex, mapWidth)
-			# Set cell background
-			var cellBg = cellItem.find_node('Background')
-			cellBg.frame = counter
-			if cell.type == 'S':
-				var rect = cellItem.find_node('SpecialColor')
-				rect.rect_size = Vector2(cellSizeX-2, cellSizeY-2)
-				rect.rect_position.x = 1
-				rect.rect_position.y = 1
-				rect.color = Color(cell.color)
-				var legendItemInstance = legendItemScene.instance()
-				legendItemInstance.find_node('Color').color = Color(cell.color)
-				legendItemInstance.find_node('Label').text = cell.label
-				legendItemInstance.position.y = specialCells * 8
-				legend.add_child(legendItemInstance)
-				specialCells += 1
-				rect.visible = true
+			cellItem.bgIndex = counter
 			minimap.add_child(cellItem)
-			cellNodes[str(cellIndex)] = cellItem		
+			cellNodes[str(cellIndex)] = cellItem
 		if cell.type != 'X':
 			counter += 1
 	# Set current pos
@@ -120,7 +118,7 @@ func reveal_cells():
 		if check_walkable(currentCellCondition1) and check_walkable(currentCellCondition2) and check_explored(currentCell):
 			set_explored(currentCell)
 		elif (check_walkable(currentCellCondition1) or check_walkable(currentCellCondition2)) and check_special_cell(currentCell):
-			set_explored(currentCell)		
+			set_explored(currentCell)
 	# Top cell +1 ; bottom cell +1 ; left cell +1 ; right cell +1
 	cellsToCheck = [currentPos - gridW * 2, currentPos + gridW * 2, currentPos - 2, currentPos + 2]
 	cellsConditions1 = [currentPos - gridW, currentPos + gridW, currentPos -1, currentPos + 1]
@@ -141,7 +139,56 @@ func check_special_cell(pos):
 
 func set_explored(pos):
 	cells[pos].explored = true
+	if cells[pos].type == 'S' and !cellNodes[str(pos)].explored:
+		add_legend_special(cells[pos])
+	if cellNodes[str(pos)].legendTypes.size() > 0:
+		for type in cellNodes[str(pos)].legendTypes:
+			if !addedLegends.has(type):
+				add_legend_other(type)
+	if cells[pos].type == 'D' and !cellNodes[str(pos)].explored and !addedLegends.has('door'):
+		add_legend_other('door')
 	cellNodes[str(pos)].set_explored()
+
+func add_legend_special(cell):
+	var legendItemInstance = legendItemScene.instance()
+	legendItemInstance.find_node('Color').color = Color(cell.color)
+	legendItemInstance.find_node('Sprite').visible = false
+	legendItemInstance.find_node('Label').text = cell.label
+	legendItemInstance.index = cell.legendIndex
+	legendSpecial.add_child(legendItemInstance)
+	sort_legend()
+
+func add_legend_other(type):
+	var legendItemInstance = legendItemScene.instance()
+	legendItemInstance.find_node('Color').visible = false
+	legendItemInstance.find_node('Sprite').texture = load(spritesPath + '/legend' + type + '.png')
+	legendItemInstance.find_node('Label').text = legendTypes[type].label
+	legendItemInstance.type = type
+	legendItemInstance.index = legendTypes[type].index
+	legendOthers.add_child(legendItemInstance)
+	addedLegends.append(type)
+	sort_legend()
+
+func sort_legend():
+	var counter = 0
+	counter = sort_legend_type(legendSpecial, counter)
+	counter = sort_legend_type(legendOthers, counter)
+
+func sort_legend_type(container, counter):
+	var legendItems = container.get_children()
+	var indexes = []
+	if legendItems.size() > 0:
+		for item in legendItems:
+			indexes.append(int(item.index))
+		var maxIndex = indexes.max()
+		var i = 0
+		while i <= maxIndex:
+			var currentIndex = indexes.find(i)
+			if currentIndex > -1:
+				legendItems[currentIndex].position.y = counter * legendOffset
+				counter += 1
+			i += 1
+	return counter
 
 func toggle_atlas_state(state):
 	atlasActive = state
