@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://hud/Inputs.gd" type="Script" id=1]
 [ext_resource path="res://hud/HUDArrow.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/sprites/hud/disabled.png" type="Texture" id=3]
 
 [node name="Inputs" type="Node2D"]
 script = ExtResource( 1 )
@@ -29,3 +30,11 @@ direction = "Down"
 [node name="Right" parent="." instance=ExtResource( 2 )]
 position = Vector2( 53, 28 )
 direction = "Right"
+
+[node name="DisabledSprite" type="Sprite" parent="."]
+visible = false
+position = Vector2( -1, 1 )
+texture = ExtResource( 3 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 65, 36 )

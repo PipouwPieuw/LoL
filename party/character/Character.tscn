@@ -35,26 +35,26 @@ centered = false
 [node name="Trigger" type="Area2D" parent="."]
 position = Vector2( 16, 17 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger"]
+[node name="ClickZone" type="CollisionShape2D" parent="Trigger"]
 shape = SubResource( 1 )
 
 [node name="Gauges" type="Area2D" parent="."]
 position = Vector2( 39, 17 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gauges"]
+[node name="ClickZone" type="CollisionShape2D" parent="Gauges"]
 position = Vector2( -1, 0 )
 shape = SubResource( 2 )
 
 [node name="Attack" type="Area2D" parent="."]
 position = Vector2( 55.1543, 10.7834 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack"]
+[node name="ClickZone" type="CollisionShape2D" parent="Attack"]
 position = Vector2( -0.154301, -1.7834 )
 shape = SubResource( 3 )
 
 [node name="Spell" type="Area2D" parent="."]
 position = Vector2( 55, 27 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spell"]
+[node name="ClickZone" type="CollisionShape2D" parent="Spell"]
 position = Vector2( 0, -1 )
 shape = SubResource( 4 )

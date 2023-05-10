@@ -241,22 +241,22 @@ func toggleDoor(doorIndex, _triggerZone):
 	open_close_door(doorCell, frames)
 
 func displayText(text, triggerZone):
-	get_tree().call_group('hud', 'displayText', text)
+	get_tree().call_group('dialogbox', 'displayText', text)
 	triggerZone.updateText()
 
 func keyhole(args, triggerZone):
 	var activeItem = get_tree().get_nodes_in_group('inventory')[0].get_active_item()
 	# No active item
 	if activeItem.id == null:
-		get_tree().call_group('hud', 'displayText', args.text[0])
+		get_tree().call_group('dialogbox', 'displayText', args.text[0])
 		triggerZone.updateText()
 	elif args.unlocked:
-		get_tree().call_group('hud', 'displayText', args.unlockedText)
+		get_tree().call_group('dialogbox', 'displayText', args.unlockedText)
 	else:
 		# Incorrect item
 		if args.acceptedItems.find(activeItem.id) == -1:
 			get_tree().call_group('audiostream', 'play_sound', 'layout', 'keylockfail')
-			get_tree().call_group('hud', 'displayText', args.invalidText)
+			get_tree().call_group('dialogbox', 'displayText', args.invalidText)
 		# Correct item
 		else:
 			# Activate trigger

@@ -104,19 +104,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ExitLabel" type="Label" parent="."]
-margin_left = 170.0
-margin_top = 103.0
-margin_right = 210.0
-margin_bottom = 117.0
+[node name="Close" type="Area2D" parent="."]
+position = Vector2( 182.224, 106.894 )
+
+[node name="ExitLabel" type="Label" parent="Close"]
+margin_left = -12.224
+margin_top = -3.894
+margin_right = 27.776
+margin_bottom = 10.106
 custom_fonts/font = ExtResource( 6 )
 text = "EXIT"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Close" type="Area2D" parent="."]
-position = Vector2( 182.224, 106.894 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Close"]
 shape = SubResource( 1 )

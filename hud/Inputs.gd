@@ -6,6 +6,7 @@ onready var arrowTurnRight = $TurnRight
 onready var arrowLeft = $Left
 onready var arrowDown = $Down
 onready var arrowRight = $Right
+onready var disabledSprite = $DisabledSprite
 
 var canMove = true
 
@@ -37,10 +38,13 @@ func _physics_process(_delta):
 
 func set_move(mode):
 	canMove = mode
+	disabledSprite.visible = !mode
+	
 
 # Move function called by move arrows
-func move(direction):
+func move(direction, arrow):
 	if canMove:
+		arrow.darken()
 		if 'turn' in direction:
 			get_tree().call_group('controller', 'change_direction', direction)
 		else:

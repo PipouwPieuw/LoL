@@ -99,7 +99,7 @@ func slot_clicked(_target, event, _shape, slot, id):
 			get_tree().call_group('inventory', 'set_cursor_item')
 		else:
 			var text = items[tempGrabbedItem].equipmentText
-			get_tree().call_group('hud', 'displayText', text)
+			get_tree().call_group('dialogbox', 'displayText', text)
 
 func update_might(value, operator = 1):
 	var baseMight = data.attributes.might

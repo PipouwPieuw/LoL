@@ -70,3 +70,9 @@ func blink():
 	randomize()
 	blinkTimerLimit = randi() % 5 + 1
 	blinking = false
+
+func toggle_triggers(mode):
+	trigger.find_node('ClickZone').disabled = !mode
+	gauges.find_node('ClickZone').disabled = !mode
+	attack.find_node('ClickZone').disabled = !mode
+	spell.find_node('ClickZone').disabled = !mode

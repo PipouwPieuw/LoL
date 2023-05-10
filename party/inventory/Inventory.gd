@@ -79,7 +79,7 @@ func set_cursor_item():
 	if grabbedItem != null:
 		var text = items[grabbedItem].name + ' taken.'
 		get_tree().call_group('cursor', 'show_sprite', grabbedItem)
-		get_tree().call_group('hud', 'displayText', text)
+		get_tree().call_group('dialogbox', 'displayText', text)
 		grabItemSound.stop()
 		grabItemSound.play()
 	else:

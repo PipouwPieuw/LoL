@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://hud/DialogBox.gd" type="Script" id=2]
+[ext_resource path="res://assets/sprites/hud/dialogBoxExpandable.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/hud/dialogBoxBottom.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/hud/dialogBoxMain.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/hud/dialobBoxButton.png" type="Texture" id=6]
+[ext_resource path="res://assets/fonts/fontYellowCap.tres" type="BitmapFont" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 37, 5 )
+
+[node name="DialogBox" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Background" type="Sprite" parent="."]
+texture = ExtResource( 5 )
+centered = false
+
+[node name="Expandable" type="Sprite" parent="."]
+position = Vector2( 0, 18 )
+scale = Vector2( 1, 0.999999 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Bottom" type="Sprite" parent="."]
+position = Vector2( 0, 19 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Textcontainer" type="Node2D" parent="."]
+
+[node name="Close" type="Area2D" parent="."]
+visible = false
+position = Vector2( 195, 49 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Close"]
+texture = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="Close"]
+margin_left = -37.0
+margin_top = -5.0
+margin_right = 37.0
+margin_bottom = 4.0
+custom_fonts/font = ExtResource( 7 )
+text = "Close"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Close"]
+shape = SubResource( 1 )
