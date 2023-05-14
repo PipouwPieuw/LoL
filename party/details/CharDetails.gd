@@ -17,7 +17,7 @@ func _ready():
 	add_to_group('chardetails')
 	initialize()
 	add_slots()
-	_err = close.connect("input_event", self, "close_details")
+	_err = close.connect("input_event", self, "close_action")
 
 func initialize():
 	visible = false
@@ -50,14 +50,23 @@ func add_slots():
 func display_details(id):
 	if id == data.attributes.id:
 		get_tree().call_group('inputs', 'set_move', false)
+		add_to_group('chardetailsactive')
 		visible = true
 	else:
+		if is_in_group('chardetailsactive'):
+			remove_from_group('chardetailsactive')
 		visible = false
 
-func close_details(_viewport, event, _shape_idx):
+func close_action(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton  and event.button_index == BUTTON_LEFT and event.pressed:
+		close_details()
+
+func close_details():
 		get_tree().call_group('viewport', 'show_viewport')
-		visible = false
+		if is_in_group('chardetailsactive'):
+			remove_from_group('chardetailsactive')
+		visible = false		
+		get_tree().call_group('party', 'set_closed')
 		get_tree().call_group('inputs', 'set_move', true)
 		get_tree().call_group('atlas', 'toggle', true)
 

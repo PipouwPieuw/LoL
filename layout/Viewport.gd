@@ -29,6 +29,8 @@ var wallAnimation = false
 var animationBasePath = 'res://assets/sprites/animations'
 var animationPath = ''
 var animations = {}
+var moveSpeedVertical = 8
+var moveSpeedHorizontal = 1200
 var _err
 
 func _ready():
@@ -40,41 +42,47 @@ func hide_viewport():
 func show_viewport():
 	visible = true
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	# Move animations
 	if moveDirection != '':
 		if moveDirection == 'up':
-			textures.rect_scale.x += .1
-			textures.rect_scale.y += .1
+			textures.rect_scale.x = clamp(textures.rect_scale.x + delta * moveSpeedVertical, 1, 1.6)
+			textures.rect_scale.y = clamp(textures.rect_scale.y + delta * moveSpeedVertical, 1, 1.6)
 			if textures.rect_scale.x >= 1.6:
 				end_move_up_down()
+				update_ceiling_floor()
 				update_walls(wallNodes, true)
 		elif moveDirection == 'down':
 			if textures.rect_scale.x == 1:
+				update_ceiling_floor()
 				update_walls(wallNodes, true)
 				textures.rect_scale.x = 1.6
 				textures.rect_scale.y = 1.6
-			textures.rect_scale.x -= .1
-			textures.rect_scale.y -= .1
+			textures.rect_scale.x = clamp(textures.rect_scale.x - delta * moveSpeedVertical, 1, 1.6)
+			textures.rect_scale.y = clamp(textures.rect_scale.y - delta * moveSpeedVertical, 1, 1.6)
 			if textures.rect_scale.x <= 1:
 				end_move_up_down()
 		elif moveDirection == 'right':
 			if viewFront.rect_position.x == 0:
+				update_ceiling_floor('side')
 				update_walls(wallNodesSide, false)
 				viewSide.rect_position.x = 128
-			viewFront.rect_position.x -= 22
-			viewSide.rect_position.x -= 22
+			viewFront.rect_position.x = clamp(viewFront.rect_position.x - delta * moveSpeedHorizontal, -128, 0)
+			viewSide.rect_position.x = clamp(viewSide.rect_position.x - delta * moveSpeedHorizontal, 0, 128)
 			if viewSide.rect_position.x <= 0:
+				update_ceiling_floor('main')
 				update_walls(wallNodes, true)
 				end_move_left_right()
 		elif moveDirection == 'left':
 			if viewFront.rect_position.x == 0:
+				update_ceiling_floor('side')
 				update_walls(wallNodesSide, false)
 				viewSide.rect_position.x = -128
-			viewFront.rect_position.x += 22
-			viewSide.rect_position.x += 22
+			viewFront.rect_position.x = clamp(viewFront.rect_position.x + delta * moveSpeedHorizontal, 0, 128)
+			viewSide.rect_position.x = clamp(viewSide.rect_position.x + delta * moveSpeedHorizontal, -128, 0)
 			if viewSide.rect_position.x >= 0:
 				update_walls(wallNodes, true)
+				update_ceiling_floor('main')
 				end_move_left_right()
 		elif moveDirection == 'turnright':
 			move_animation_turn(-1)
@@ -96,13 +104,14 @@ func end_move_up_down():
 
 func end_move_left_right():
 	moveDirection = ''
-	yield(get_tree(),"idle_frame")
-	yield(get_tree(),"idle_frame")
+#	yield(get_tree(),"idle_frame")
+#	yield(get_tree(),"idle_frame")
 	viewFront.rect_position.x = 0
 	viewSide.rect_position.x = -176
 
 func move_animation_turn(mode):
 	if viewFront.rect_position.x == 0:
+		update_ceiling_floor('side')
 		update_walls(wallNodesSide, false)
 		viewSide.rect_position.x = -176 * mode
 		viewSide.rect_pivot_offset.x = 176 if mode == 1 else 0
@@ -113,6 +122,7 @@ func move_animation_turn(mode):
 	viewSide.rect_position.x += 29 * mode
 	viewFront.rect_scale.x += .15
 	if viewSide.rect_scale.x <= 1:
+		update_ceiling_floor('main')
 		update_walls(wallNodes, true)
 		moveDirection = ''
 		viewFront.rect_scale.x = 1
@@ -165,8 +175,6 @@ func update_layout(newLayout, framesAmount):
 	floorSprite.texture = sprites['Floor']
 	ceilingSpriteSide.texture = sprites['Ceiling']
 	floorSpriteSide.texture = sprites['Floor']
-	ceilingSpriteSide.flip_h = true
-	floorSpriteSide.flip_h = true
 	# Animations
 	animationPath = animationBasePath + '/' + currentLayout + '/'
 	preload_animations()
@@ -235,8 +243,7 @@ func update_walls(wallObject, isMain):
 			wall.sprite.visible = true
 			wall.sprite.frame = spriteIndex
 		if wallName == 'WallFront' and !data['currentCell'].InteractionZones.empty() and isMain:
-			hasInteractionZones = true
-	
+			hasInteractionZones = true	
 	# Delete previous interaction zones
 	clearTriggerZones()
 	# Create new interaction zones
@@ -266,11 +273,13 @@ func clearTriggerZones():
 		zonesContainer.remove_child(zone)
 		zone.queue_free()
 
-func update_ceiling_floor():
-	floorSprite.flip_h   = !floorSprite.flip_h
-	ceilingSprite.flip_h = !ceilingSprite.flip_h
-	floorSpriteSide.flip_h   = !floorSpriteSide.flip_h
-	ceilingSpriteSide.flip_h = !ceilingSpriteSide.flip_h
+func update_ceiling_floor(mode = 'all'):
+	if mode == 'all' or mode == 'main':
+		floorSprite.flip_h   = !floorSprite.flip_h
+		ceilingSprite.flip_h = !ceilingSprite.flip_h
+	if mode == 'all' or mode == 'side':
+		floorSpriteSide.flip_h   = !floorSpriteSide.flip_h
+		ceilingSpriteSide.flip_h = !ceilingSpriteSide.flip_h
 
 func bump_forward():
 	bumpAnimation = true

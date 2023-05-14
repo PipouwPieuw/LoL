@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/bump.wav-84c8af3e3e96546f5b5425a14d3ddffd.sample"
+
+[deps]
+
+source_file="res://assets/sounds/hud/bump.wav"
+dest_files=[ "res://.import/bump.wav-84c8af3e3e96546f5b5425a14d3ddffd.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

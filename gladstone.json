@@ -2147,7 +2147,8 @@
                         "triggerPos": [47, 43, 34, 20],
                         "triggerType": "click",
                         "effect": "displayText",
-                        "text": ["Thus it happened that King Andrew, thirteen heir to the throne of Gladstone, descended into the depths of the Urbish Highlands; and there the Shard of Truth called unto Andrew, and he"]
+                        "expandBox": true,
+                        "text": ["\"For my part, I travel not to go anywhere, but to go. I travel for travel's sake.\""]
                     }
                 ]
             }
@@ -2169,7 +2170,8 @@
                         "triggerPos": [47, 43, 34, 20],
                         "triggerType": "click",
                         "effect": "displayText",
-                        "text": ["Text from book."]
+                        "expandBox": true,
+                        "text": ["And so it came to pass that the ancient people of Gladstone, having discovered a method of controlling the magics, rose unto power amongts the barbarous tribes of the great wasteland.", "Thus it happened that King Andrew, thirteen heir to the throne of Gladstone, descended into the depths of the Urbish Highlands; and there the Shard of Truth called unto Andrew, and he was smitten by its righteousness", "For three times twenty generations the people languished in Darkness until Sir Michel Robard unearthed the Ruby of Truth. Verily it is written that the stone spoke unto Robard, and Robard offered up the Ruby unto The Heir of the throne of Gladstone.", "Only once has the Ruby and the Shard been combined. Truth was unbound and all known forms of deceit were unveiled. And this unveiling wrecked havoc upon the denizens of the nether world. And the nether beasts withdrew from the Lands, and it was good. And a great peace fell upon the Lands and this too was good."]
                     }
                 ]
             },
@@ -2450,6 +2452,7 @@
                         "triggerPos": [47, 43, 34, 20],
                         "triggerType": "click",
                         "effect": "displayText",
+                        "expandBox": true,
                         "text": ["Text from book."]
                     }
                 ]

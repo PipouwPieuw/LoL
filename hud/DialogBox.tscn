@@ -32,7 +32,7 @@ centered = false
 
 [node name="Close" type="Area2D" parent="."]
 visible = false
-position = Vector2( 195, 49 )
+position = Vector2( 196, 50 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -46,7 +46,7 @@ margin_top = -5.0
 margin_right = 37.0
 margin_bottom = 4.0
 custom_fonts/font = ExtResource( 7 )
-text = "Close"
+text = "More"
 align = 1
 valign = 1
 __meta__ = {

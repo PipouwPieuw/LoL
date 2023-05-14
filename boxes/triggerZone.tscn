@@ -17,7 +17,10 @@ func sendInteraction(_viewport, event, _shape_idx):
 		if zoneData.effect == 'toggleDoor':
 			args = zoneData.targetCell
 		elif zoneData.effect == 'displayText':
-			args = zoneData.text[0]
+			var expand = false
+			if zoneData.has('expandBox'):
+				expand = zoneData.expandBox
+			args = [zoneData.text[0], expand]
 		elif zoneData.effect == 'keyhole':
 			args = zoneData
 		elif zoneData.effect == 'playAnimation':

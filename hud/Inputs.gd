@@ -15,7 +15,7 @@ func _ready():
 
 func _physics_process(_delta):
 	if Input.is_action_just_pressed('ui_cancel'):
-		get_tree().quit()
+		get_tree().call_group('controller', 'process_escape_action')
 	if canMove:
 		if Input.is_action_just_pressed('ui_up'):
 			arrowUp.darken()

@@ -8,7 +8,7 @@ var races
 
 func _ready():
 	characters = load_file('characters')
-	races = load_file('races')	
+	races = load_file('races')
 	if partyMembers.size() > 3:
 		partyMembers.resize(3)
 	for i in partyMembers.size():

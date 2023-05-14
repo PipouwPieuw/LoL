@@ -5,7 +5,7 @@ onready var bottom = $Bottom
 onready var textContainer = $Textcontainer
 onready var close = $Close
 
-var boxTextScene = preload("res://hud/BoxText.tscn")
+var boxTextScene = preload('res://hud/messages/BoxText.tscn')
 var textDuration = 0
 var countdown = false
 var expandHeight = 36
@@ -14,17 +14,20 @@ var _err
 
 func _ready():
 	add_to_group('dialogbox')
-	_err = close.connect("input_event", self, "close_box")
+	_err = close.connect("input_event", self, "box_action")
 
-func displayText(text):
-	get_tree().call_group('boxtext', 'queue_free')
+func displayText(text, expand = false, type = 'default'):
+	get_tree().call_group('boxtext', 'set_destroy')
 	var boxTextInstance = boxTextScene.instance()
 	textContainer.add_child(boxTextInstance)
-	boxTextInstance.displayText(text)
+	if type == 'error':
+		 boxTextInstance.set("custom_colors/font_color", Color('#ee2521'))
+	boxTextInstance.displayText(text, expand)
 
 func expand_box():
 	if(!expanded):
 		get_tree().call_group('hud', 'toggle_hud', false)
+		get_tree().call_group('inventory', 'set_active', false)
 		var counter = 0
 		while counter < expandHeight:
 			bottom.position.y += 2
@@ -47,7 +50,12 @@ func unexpand_box():
 			yield(get_tree().create_timer(.02), "timeout")
 		expanded = false
 		get_tree().call_group('hud', 'toggle_hud', true)
+		get_tree().call_group('inventory', 'set_active', true)
+		set_close_label('More')
 
-func close_box(_viewport, event, _shape_idx):
+func set_close_label(newText):
+	close.find_node('Label').text = newText
+
+func box_action(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton  and event.button_index == BUTTON_LEFT and event.pressed:
-		unexpand_box()
+		get_tree().call_group('boxtext', 'display_next_lines')

@@ -36,6 +36,7 @@ func trigger_event(_viewport, event, _shape_idx):
 		set_active_frame()
 		get_tree().call_group('atlas', 'toggle', false)
 		get_tree().call_group('viewport', 'hide_viewport')
+		get_tree().call_group('party', 'set_opened')
 		get_tree().call_group('chardetails', 'display_details', charId)
 
 func gauges_event(_viewport, event, _shape_idx):
@@ -47,7 +48,6 @@ func attack_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton  and event.button_index == BUTTON_LEFT and event.pressed:
 		set_active_frame()
 		print("ATTACK !")
-		print(data)
 
 func spell_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton  and event.button_index == BUTTON_LEFT and event.pressed:
@@ -76,3 +76,17 @@ func toggle_triggers(mode):
 	gauges.find_node('ClickZone').disabled = !mode
 	attack.find_node('ClickZone').disabled = !mode
 	spell.find_node('ClickZone').disabled = !mode
+
+func set_opened():
+	trigger.position.x = 33
+	trigger.find_node('ClickZone').shape.set_extents(Vector2(33, 17))
+	gauges.find_node('ClickZone').disabled = true
+	attack.find_node('ClickZone').disabled = true
+	spell.find_node('ClickZone').disabled = true
+
+func set_closed():
+	trigger.position.x = 16
+	trigger.find_node('ClickZone').shape.set_extents(Vector2(16, 17))
+	gauges.find_node('ClickZone').disabled = false
+	attack.find_node('ClickZone').disabled = false
+	spell.find_node('ClickZone').disabled = false

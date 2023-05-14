@@ -207,9 +207,10 @@ func check_move(moveDirection):
 		set_cells(newCell)
 		get_tree().call_group('map', 'update_position', currentCell)
 		send_walls_status(moveDirection)
-		get_tree().call_group('viewport', 'update_ceiling_floor')
 	else:
-		# Bump animation if moving forward to obstacle
+		# Bump animation if moving forward to obstacle		
+		get_tree().call_group('audiostream', 'play_sound', 'hud', 'bump')
+		get_tree().call_group('dialogbox', 'displayText', 'You can\'t go that way!', false, 'error')
 		if moveDirection == 'up':
 			get_tree().call_group('viewport', 'bump_forward')
 
@@ -221,7 +222,6 @@ func change_direction(direction):
 	set_cells(currentCell)
 	get_tree().call_group('map', 'update_direction', directions[0])
 	send_walls_status(direction)
-	get_tree().call_group('viewport', 'update_ceiling_floor')
 
 func update_data(data):
 	currentData = data
@@ -240,8 +240,10 @@ func toggleDoor(doorIndex, _triggerZone):
 	var frames = doorFramesClose.duplicate(true) if doorCell.doorAttr.isOpened else doorFramesOpen.duplicate(true)
 	open_close_door(doorCell, frames)
 
-func displayText(text, triggerZone):
-	get_tree().call_group('dialogbox', 'displayText', text)
+func displayText(args, triggerZone):
+	var text = args[0]
+	var expand = args[1]
+	get_tree().call_group('dialogbox', 'displayText', text, expand)
 	triggerZone.updateText()
 
 func keyhole(args, triggerZone):
@@ -309,3 +311,9 @@ func playAnimation(event, _triggerZone):
 func toggleAtlas(args, triggerZone):
 	get_tree().call_group('atlas', 'display_atlas', args)
 	triggerZone.zoneData.used = true
+
+func process_escape_action():
+	if get_tree().get_nodes_in_group('chardetailsactive').size() > 0:
+		get_tree().call_group('chardetailsactive', 'close_details')
+	else:
+		get_tree().quit()

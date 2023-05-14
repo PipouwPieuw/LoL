@@ -5,12 +5,14 @@ const SLOTS_SIZE = 20
 
 onready var slotsContainer = $SlotsContainer
 onready var grabItemSound = $GrabItemSound
+onready var disabledSprite = $DisabledSprite
 
 var inventory = []
 var items = []
 var slotScene = preload("res://party/inventory/InventoryItem.tscn")
 var activeSlots
 var grabbedItem = null
+var isActive = true
 var _err
 
 func _ready():
@@ -59,7 +61,7 @@ func update_inventory(inverSlots = false):
 		i += 1
 
 func slot_clicked(_target, event, _shape, slot, index):
-	if event is InputEventMouseButton  and event.button_index == BUTTON_LEFT and event.pressed:
+	if event is InputEventMouseButton  and event.button_index == BUTTON_LEFT and event.pressed and isActive:
 		var tempGrabbedItem = grabbedItem
 		var tempSlotItem = inventory[index]
 		# Set slot item
@@ -112,3 +114,8 @@ func set_grabbed_item(item):
 func _exit_tree():
 	for slot in activeSlots:
 		slot.queue_free()
+
+func set_active(mode):
+	disabledSprite.visible = !mode
+	isActive = mode
+	get_tree().call_group('inventoryarrows', 'set_active', mode)

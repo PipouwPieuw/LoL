@@ -1,19 +1,20 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://assets/fonts/fontWhite.tres" type="BitmapFont" id=1]
-[ext_resource path="res://hud/BoxText.gd" type="Script" id=2]
+[ext_resource path="res://hud/messages/BoxText.gd" type="Script" id=1]
+[ext_resource path="res://assets/fonts/fontWhite.tres" type="BitmapFont" id=2]
 
 [node name="BoxText" type="Label"]
 visible = false
+anchor_bottom = 10.0
 margin_left = 4.0
 margin_top = 1.0
 margin_right = 229.0
-margin_bottom = 18.0
+margin_bottom = -1982.0
 rect_clip_content = true
-custom_fonts/font = ExtResource( 1 )
+custom_fonts/font = ExtResource( 2 )
 custom_constants/line_spacing = 1
 autowrap = true
-script = ExtResource( 2 )
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
