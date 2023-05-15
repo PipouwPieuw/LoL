@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/KEEPXIT2.WAV-845029da4d20d2443f0cde029b06494c.sample"
+path="res://.import/door02.wav-ba1787720e0f005283c8db8faeaa1dbc.sample"
 
 [deps]
 
-source_file="res://assets/sounds/layout/KEEPXIT2.WAV"
-dest_files=[ "res://.import/KEEPXIT2.WAV-845029da4d20d2443f0cde029b06494c.sample" ]
+source_file="res://assets/sounds/layout/door02.wav"
+dest_files=[ "res://.import/door02.wav-ba1787720e0f005283c8db8faeaa1dbc.sample" ]
 
 [params]
 

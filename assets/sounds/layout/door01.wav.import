@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/DOORWDOP.WAV-05c6bd4b2d1522f436f65973f72bed42.sample"
+path="res://.import/door01.wav-9f6139703748530b5388a6e187d8546f.sample"
 
 [deps]
 
-source_file="res://assets/sounds/layout/DOORWDOP.WAV"
-dest_files=[ "res://.import/DOORWDOP.WAV-05c6bd4b2d1522f436f65973f72bed42.sample" ]
+source_file="res://assets/sounds/layout/door01.wav"
+dest_files=[ "res://.import/door01.wav-9f6139703748530b5388a6e187d8546f.sample" ]
 
 [params]
 

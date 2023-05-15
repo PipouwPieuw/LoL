@@ -217,6 +217,8 @@ func preload_animations():
 		animatedSpriteInstance.position = Vector2(animation.x, animation.y)
 		animatedSpriteInstance.centered = false
 		animatedSpriteInstance.playing = true
+		if animation.has('soundType'):
+			_err = animatedSpriteInstance.connect('tree_entered', self, 'playSound', [animation.soundType, animation.soundName])
 		_err = animatedSpriteInstance.connect('animation_finished', self, 'animation_finished', [animatedSpriteInstance, animation.onFinished])
 		animations[animationName] = animatedSpriteInstance
 
@@ -309,6 +311,9 @@ func animation_finished(animation, onFinished):
 	get_tree().call_group('viewport', onFinished.actionType, onFinished.actionId)
 	animation.frame = 0
 	animationsContainer.remove_child(animation)
+
+func playSound(type, name):
+	get_tree().call_group('audiostream', 'play_sound', type, name)
 
 func add_scene(sceneName):
 	get_tree().call_group('inputs', 'set_move', false)

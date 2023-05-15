@@ -8,6 +8,8 @@
 			"height": 66,
 			"speed": 3,
 			"loop": false,
+			"soundType": "layout",
+			"soundName": "portcullis01",
 			"onFinished": {
 				"actionType": "add_scene",
 				"actionId": "victor"
@@ -21,6 +23,8 @@
 			"height": 65,
 			"speed": 2,
 			"loop": false,
+			"soundType": "layout",
+			"soundName": "door01",
 			"onFinished": {
 				"actionType": "add_scene",
 				"actionId": "victor"
@@ -34,6 +38,8 @@
 			"height": 65,
 			"speed": 2,
 			"loop": false,
+			"soundType": "layout",
+			"soundName": "door01",
 			"onFinished": {
 				"actionType": "add_scene",
 				"actionId": "nathaniel"
@@ -47,6 +53,8 @@
 			"height": 65,
 			"speed": 2,
 			"loop": false,
+			"soundType": "layout",
+			"soundName": "door01",
 			"onFinished": {
 				"actionType": "add_scene",
 				"actionId": "geron"
@@ -60,6 +68,8 @@
 			"height": 65,
 			"speed": 2,
 			"loop": false,
+			"soundType": "layout",
+			"soundName": "door02",
 			"onFinished": {
 				"actionType": "add_scene",
 				"actionId": "throneroom"
