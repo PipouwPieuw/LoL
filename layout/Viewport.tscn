@@ -50,6 +50,14 @@ centered = false
 
 [node name="Walls" type="Node2D" parent="Textures/Front"]
 
+[node name="WallRightUUUR" type="Sprite" parent="Textures/Front/Walls"]
+visible = false
+position = Vector2( 152, 46 )
+
+[node name="WallLeftUUUL" type="Sprite" parent="Textures/Front/Walls"]
+visible = false
+position = Vector2( 24, 46 )
+
 [node name="WallLeftUUU" type="Sprite" parent="Textures/Front/Walls"]
 visible = false
 position = Vector2( 64, 28 )
@@ -200,6 +208,14 @@ position = Vector2( 0, 64 )
 centered = false
 
 [node name="Walls" type="Node2D" parent="Textures/Side"]
+
+[node name="WallRightUUUR" type="Sprite" parent="Textures/Side/Walls"]
+visible = false
+position = Vector2( 152, 46 )
+
+[node name="WallLeftUUUL" type="Sprite" parent="Textures/Side/Walls"]
+visible = false
+position = Vector2( 24, 46 )
 
 [node name="WallLeftUUU" type="Sprite" parent="Textures/Side/Walls"]
 visible = false

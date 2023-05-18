@@ -1,22 +1,24 @@
 extends Node2D
 
-var currentData     = {}
-var currentCell     = -1
-var currentCellL    = -1
-var currentCellR    = -1
-var currentCellU    = -1
-var currentCellUL   = -1
-var currentCellUR   = -1
-var currentCellUU   = -1
-var currentCellUUL  = -1
-var currentCellUULL = -1
-var currentCellUUR  = -1
-var currentCellUURR = -1
-var currentCellUUU  = -1
-var mapWidth        = 0
-var directions      = ['U', 'R', 'D', 'L']
+var currentData      = {}
+var currentCell      = -1
+var currentCellL     = -1
+var currentCellR     = -1
+var currentCellU     = -1
+var currentCellUL    = -1
+var currentCellUR    = -1
+var currentCellUU    = -1
+var currentCellUUL   = -1
+var currentCellUULL  = -1
+var currentCellUUR   = -1
+var currentCellUURR  = -1
+var currentCellUUU   = -1
+var currentCellUUUR  = -1
+var currentCellUUUL  = -1
+var mapWidth         = 0
+var directions       = ['U', 'R', 'D', 'L']
 # Doors
-var animatedDoors   = []
+var animatedDoors    = []
 
 func _ready():
 	add_to_group('controller')
@@ -38,56 +40,64 @@ func set_cells(index):
 	currentCell = index
 	# Facing UP
 	if(directions[0] == 'U'):
-		currentCellL    = index - 1
-		currentCellR    = index + 1
-		currentCellU    = index - mapWidth
-		currentCellUL   = index - mapWidth - 1
-		currentCellUR   = index - mapWidth + 1
-		currentCellUU   = index - mapWidth * 2
-		currentCellUUL  = index - mapWidth * 2 - 1
-		currentCellUULL = index - mapWidth * 2 - 2
-		currentCellUUR  = index - mapWidth * 2 + 1
-		currentCellUURR = index - mapWidth * 2 + 2
-		currentCellUUU  = index - mapWidth * 3
+		currentCellL     = index - 1
+		currentCellR     = index + 1
+		currentCellU     = index - mapWidth
+		currentCellUL    = index - mapWidth - 1
+		currentCellUR    = index - mapWidth + 1
+		currentCellUU    = index - mapWidth * 2
+		currentCellUUL   = index - mapWidth * 2 - 1
+		currentCellUULL  = index - mapWidth * 2 - 2
+		currentCellUUR   = index - mapWidth * 2 + 1
+		currentCellUURR  = index - mapWidth * 2 + 2
+		currentCellUUU   = index - mapWidth * 3
+		currentCellUUUR  = index - mapWidth * 3 + 1
+		currentCellUUUL  = index - mapWidth * 3 - 1
 	# Facing RIGHT
 	if(directions[0] == 'R'):
-		currentCellL    = index - mapWidth
-		currentCellR    = index + mapWidth
-		currentCellU    = index + 1
-		currentCellUL   = index - mapWidth + 1
-		currentCellUR   = index + mapWidth + 1
-		currentCellUU   = index + 2
-		currentCellUUL  = index - mapWidth + 2
-		currentCellUULL = index - mapWidth * 2 + 2
-		currentCellUUR  = index + mapWidth + 2
-		currentCellUURR = index + mapWidth * 2 + 2
-		currentCellUUU  = index + 3
+		currentCellL     = index - mapWidth
+		currentCellR     = index + mapWidth
+		currentCellU     = index + 1
+		currentCellUL    = index - mapWidth + 1
+		currentCellUR    = index + mapWidth + 1
+		currentCellUU    = index + 2
+		currentCellUUL   = index - mapWidth + 2
+		currentCellUULL  = index - mapWidth * 2 + 2
+		currentCellUUR   = index + mapWidth + 2
+		currentCellUURR  = index + mapWidth * 2 + 2
+		currentCellUUU   = index + 3
+		currentCellUUUR  = index + mapWidth + 3
+		currentCellUUUL  = index - mapWidth + 3
 	# Facing DOWN
 	if(directions[0] == 'D'):
-		currentCellL    = index + 1
-		currentCellR    = index - 1
-		currentCellU    = index + mapWidth
-		currentCellUL   = index + mapWidth + 1
-		currentCellUR   = index + mapWidth - 1
-		currentCellUU   = index + mapWidth * 2
-		currentCellUUL  = index + mapWidth * 2 + 1
-		currentCellUULL = index + mapWidth * 2 + 2
-		currentCellUUR  = index + mapWidth * 2 - 1
-		currentCellUURR = index + mapWidth * 2 - 2
-		currentCellUUU  = index + mapWidth * 3
+		currentCellL     = index + 1
+		currentCellR     = index - 1
+		currentCellU     = index + mapWidth
+		currentCellUL    = index + mapWidth + 1
+		currentCellUR    = index + mapWidth - 1
+		currentCellUU    = index + mapWidth * 2
+		currentCellUUL   = index + mapWidth * 2 + 1
+		currentCellUULL  = index + mapWidth * 2 + 2
+		currentCellUUR   = index + mapWidth * 2 - 1
+		currentCellUURR  = index + mapWidth * 2 - 2
+		currentCellUUU   = index + mapWidth * 3
+		currentCellUUUR  = index + mapWidth * 3 + 1
+		currentCellUUUL  = index + mapWidth * 3 - 1
 	# Facing LEFT
 	if(directions[0] == 'L'):
-		currentCellL    = index + mapWidth
-		currentCellR    = index - mapWidth
-		currentCellU    = index - 1
-		currentCellUL   = index + mapWidth - 1
-		currentCellUR   = index - mapWidth - 1
-		currentCellUU   = index - 2
-		currentCellUUL  = index + mapWidth - 2
-		currentCellUULL = index + mapWidth * 2 - 2
-		currentCellUUR  = index - mapWidth - 2
-		currentCellUURR = index - mapWidth * 2 - 2
-		currentCellUUU  = index - 3
+		currentCellL     = index + mapWidth
+		currentCellR     = index - mapWidth
+		currentCellU     = index - 1
+		currentCellUL    = index + mapWidth - 1
+		currentCellUR    = index - mapWidth - 1
+		currentCellUU    = index - 2
+		currentCellUUL   = index + mapWidth - 2
+		currentCellUULL  = index + mapWidth * 2 - 2
+		currentCellUUR   = index - mapWidth - 2
+		currentCellUURR  = index - mapWidth * 2 - 2
+		currentCellUUU   = index - 3
+		currentCellUUUR  = index - mapWidth - 3
+		currentCellUUUL  = index + mapWidth - 3
 
 func draw_map():
 	get_tree().call_group('map', 'draw_map', currentData)
@@ -105,7 +115,9 @@ func send_walls_status(moveDirection, staticMode = false):
 		currentCellUULL,
 		currentCellUUR,
 		currentCellUURR,
-		currentCellUUU
+		currentCellUUU,
+		currentCellUUUR,
+		currentCellUUUL
 	]
 	var cellNames = [
 		'currentCell',
@@ -119,7 +131,9 @@ func send_walls_status(moveDirection, staticMode = false):
 		'currentCellUULL',
 		'currentCellUUR',
 		'currentCellUURR',
-		'currentCellUUU'
+		'currentCellUUU',
+		'currentCellUUUR',
+		'currentCellUUUL'
 	]
 	var wallsStatus = {"cellIndex": currentCell}
 	var i = 0

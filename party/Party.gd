@@ -28,6 +28,7 @@ func load_file(name):
 func add_character(id, index):
 	var characterInstance = characterNode.instance()
 	characterInstance.data = characters[id]
+	characterInstance.set_party_size(partyMembers.size())
 	if(partyMembers.size() == 1):
 		characterInstance.position.x = 84
 	elif(partyMembers.size() == 2):

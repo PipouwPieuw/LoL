@@ -12,6 +12,7 @@ var charId
 var blinkTimer = 0
 var blinkTimerLimit = randi() % 5 + 1
 var blinking = false
+var partySize = 0
 var _err
 
 func _ready():
@@ -55,8 +56,9 @@ func spell_event(_viewport, event, _shape_idx):
 		print("CAST SPELL !")
 
 func set_active_frame():
-	get_tree().call_group('party', 'hide_active_frame', charId)
-	activeFrame.visible = true;
+	if partySize > 1:
+		get_tree().call_group('party', 'hide_active_frame', charId)
+		activeFrame.visible = true;
 
 func hide_active_frame(id):
 	if not id == charId or id == 'all':
@@ -90,3 +92,6 @@ func set_closed():
 	gauges.find_node('ClickZone').disabled = false
 	attack.find_node('ClickZone').disabled = false
 	spell.find_node('ClickZone').disabled = false
+
+func set_party_size(amount):
+	partySize = amount
