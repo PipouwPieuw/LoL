@@ -101,13 +101,13 @@ func end_move_up_down():
 	moveDirection = ''
 	textures.rect_scale.x = 1
 	textures.rect_scale.y = 1
+	signal_move_end()
 
 func end_move_left_right():
 	moveDirection = ''
-#	yield(get_tree(),"idle_frame")
-#	yield(get_tree(),"idle_frame")
 	viewFront.rect_position.x = 0
 	viewSide.rect_position.x = -176
+	signal_move_end()
 
 func move_animation_turn(mode):
 	if viewFront.rect_position.x == 0:
@@ -129,6 +129,12 @@ func move_animation_turn(mode):
 		viewSide.rect_scale.x = 1
 		viewFront.rect_position.x = 0
 		viewSide.rect_position.x = -176
+		signal_move_end()
+
+func signal_move_end():
+	yield(get_tree(),"idle_frame")
+	get_tree().call_group('controller', 'move_ended')
+	
 
 func start_move(dir, moveData):
 	data = moveData

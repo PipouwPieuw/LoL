@@ -17,12 +17,23 @@ var currentCellUUUR  = -1
 var currentCellUUUL  = -1
 var mapWidth         = 0
 var directions       = ['U', 'R', 'D', 'L']
-# Doors
 var animatedDoors    = []
+var inputQueue       = []
+var inputProcessing   = false
 
 func _ready():
 	add_to_group('controller')
 	load_level()
+	
+func _physics_process(_delta):
+	if !inputProcessing and inputQueue.size() > 0:
+		inputProcessing = true
+		var processedInput = inputQueue.pop_front()
+		get_tree().call_group('hudarrows', 'darken', processedInput)
+		if 'turn' in processedInput:
+			change_direction(processedInput)
+		else:
+			check_move(processedInput)
 	
 func load_level():
 	var file = File.new()
@@ -178,6 +189,9 @@ func send_walls_status(moveDirection, staticMode = false):
 	else:
 		get_tree().call_group('viewport', 'update_viewport', wallsStatus)
 
+func queue_input(input):
+	inputQueue.append(input)
+
 func check_move(moveDirection):
 	var currentDir = directions[0]
 	# Check if moving to wall with special trigger
@@ -222,11 +236,13 @@ func check_move(moveDirection):
 		get_tree().call_group('map', 'update_position', currentCell)
 		send_walls_status(moveDirection)
 	else:
-		# Bump animation if moving forward to obstacle		
+		# Bump animation if moving forward to obstacle
 		get_tree().call_group('audiostream', 'play_sound', 'hud', 'bump')
 		get_tree().call_group('dialogbox', 'displayText', 'You can\'t go that way!', false, 'error')
 		if moveDirection == 'up':
 			get_tree().call_group('viewport', 'bump_forward')
+		yield(get_tree(),"idle_frame")
+		move_ended()
 
 func change_direction(direction):
 	if direction == 'turnright':
@@ -236,6 +252,13 @@ func change_direction(direction):
 	set_cells(currentCell)
 	get_tree().call_group('map', 'update_direction', directions[0])
 	send_walls_status(direction)
+
+func move_ended():
+	inputProcessing = false
+
+func clear_inputs():
+	inputQueue = []
+	inputProcessing = false
 
 func update_data(data):
 	currentData = data
