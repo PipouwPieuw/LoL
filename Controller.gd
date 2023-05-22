@@ -354,3 +354,7 @@ func process_escape_action():
 		get_tree().call_group('chardetailsactive', 'close_details')
 	else:
 		get_tree().quit()
+
+func process_accept_action():
+	if get_tree().get_nodes_in_group('boxtext').size() > 0:
+		get_tree().call_group('boxtext', 'display_next_lines')

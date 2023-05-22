@@ -16,6 +16,8 @@ func _ready():
 func _physics_process(_delta):
 	if Input.is_action_just_pressed('ui_cancel'):
 		get_tree().call_group('controller', 'process_escape_action')
+	if Input.is_action_just_pressed('ui_accept'):
+		get_tree().call_group('controller', 'process_accept_action')
 	if canMove:
 		if Input.is_action_just_pressed('ui_up'):
 			get_tree().call_group('controller', 'queue_input', 'up')
