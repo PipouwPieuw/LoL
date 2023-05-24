@@ -24,7 +24,6 @@
 							"speed": 2,
 							"loop": false,
 						}
-
 					}
 				}
 			},
@@ -51,7 +50,14 @@
 				}
 			},
 			"triggerZones": {
-
+				"buySalve": {
+					"x": 0,
+					"y": 74,
+					"width": 34,
+					"height": 42,
+					"type": "buyItem",
+					"text": "Yes hello I like to do coin coin like a GROS CANARD"
+				}
 			}			
 		},
 		"geron": {

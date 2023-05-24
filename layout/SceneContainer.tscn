@@ -26,5 +26,4 @@ centered = false
 [node name="Shape" type="CollisionShape2D" parent="Actions/ExitScene"]
 position = Vector2( 17, 4.5 )
 shape = SubResource( 1 )
-
 [connection signal="input_event" from="Actions/ExitScene" to="." method="exit_scene"]
