@@ -4,8 +4,8 @@ onready var expandable = $Expandable
 onready var bottom = $Bottom
 onready var textContainer = $Textcontainer
 onready var close = $Close
+onready var boxTextScene = preload('res://hud/messages/BoxText.tscn')
 
-var boxTextScene = preload('res://hud/messages/BoxText.tscn')
 var textDuration = 0
 var countdown = false
 var expandHeight = 36
@@ -24,10 +24,9 @@ func displayText(text, expand = false, type = 'default'):
 		 boxTextInstance.set("custom_colors/font_color", Color('#ee2521'))
 	boxTextInstance.displayText(text, expand)
 
-func expand_box():
+func expand_box(mode = 'default'):
 	if(!expanded):
 		get_tree().call_group('hud', 'toggle_hud', false)
-		get_tree().call_group('inventory', 'set_active', false)
 		var counter = 0
 		while counter < expandHeight:
 			bottom.position.y += 2
@@ -36,7 +35,9 @@ func expand_box():
 			yield(get_tree().create_timer(.02), "timeout")
 		expanded = true
 		get_tree().call_group('boxtext', 'set_visible', true)
-		close.visible = true
+		if not ['scene'].has(mode):
+			get_tree().call_group('inventory', 'set_active', false)
+			close.visible = true
 
 func unexpand_box():
 	if(expanded):

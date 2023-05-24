@@ -6,6 +6,7 @@ var currentScene = ''
 var currentSceneInstance
 
 onready var scene = preload("res://layout/Scene.tscn")
+onready var triggerZone = preload("res://boxes/triggerZone.tscn")
 onready var sceneBox = $Scene
 
 func _ready():
@@ -24,10 +25,15 @@ func display_scene(sceneName):
 	currentScene = sceneName
 	var sceneInstance = scene.instance()
 	sceneInstance.find_node('Background').texture = load('assets/sprites/scenes/' + currentLayout + '/' +  currentScene + '.png')
+	# Animation sprites
 	for sprite in currentData[currentScene].sprites:
 		sceneInstance.add_child(add_sprite(sprite))
+	# Trigger areas
+	for zone in currentData[currentScene].triggerZones:
+		sceneInstance.add_child(add_zone(currentData[currentScene].triggerZones[zone]))
 	currentSceneInstance = sceneInstance
 	sceneBox.add_child(sceneInstance)
+	get_tree().call_group('dialogbox', 'expand_box', 'scene')
 
 func add_sprite(spriteName):
 	var sprite = currentData[currentScene].sprites[spriteName]
@@ -53,6 +59,20 @@ func add_sprite(spriteName):
 	animatedSpriteInstance.centered = false
 	animatedSpriteInstance.playing = true
 	return animatedSpriteInstance
+
+func add_zone(zone):
+	print(zone)
+	var zoneArea = triggerZone.instance()
+	var zoneShape = zoneArea.find_node('zoneShape')
+	zoneArea.zoneData = zone
+	zoneArea.position.x = zone.x + zone.width / 2
+	zoneArea.position.y = zone.y + zone.height / 2
+	# Build shape
+	var shape = RectangleShape2D.new()
+	shape.set_extents(Vector2(zone.width / 2, zone.height / 2))
+	zoneShape.set_shape(shape)
+	# Return zone
+	return(zoneArea)
 
 func exit_scene(_target, event, _shape):
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
