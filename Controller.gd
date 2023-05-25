@@ -283,9 +283,11 @@ func displayText(args, triggerZone):
 	get_tree().call_group('dialogbox', 'displayText', text, expand)
 	triggerZone.updateText()
 	
-func buyItem(args, triggerZone):
-	var text = args
+func buyItem(args, _triggerZone):
+	var text = args[0]
+	var item = args[1]
 	get_tree().call_group('dialogbox', 'displayText', text)
+	get_tree().call_group('inventory', 'add_item', item)
 
 func keyhole(args, triggerZone):
 	var activeItem = get_tree().get_nodes_in_group('inventory')[0].get_active_item()

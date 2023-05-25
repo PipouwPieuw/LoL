@@ -57,16 +57,8 @@
 					"height": 42,
 					"triggerType": "click",
 					"effect": "buyItem",
+					"itemId": 0,
 					"text": ["Yes hello I like to do coin coin like a GROS CANARD. This is salve by the way."],
-				},
-				"buyGinseng": {
-					"x": 98,
-					"y": 82,
-					"width": 36,
-					"height": 30,
-					"triggerType": "click",
-					"effect": "buyItem",
-					"text": ["Oh so NOW you want some ginseng do you? Well that's just per-fect."],
 				},
 				"buyAloe": {
 					"x": 134,
@@ -75,7 +67,18 @@
 					"height": 32,
 					"triggerType": "click",
 					"effect": "buyItem",
+					"itemId": 1,
 					"text": ["Let's get you some aloe now shall we?"],
+				},
+				"buyGinseng": {
+					"x": 98,
+					"y": 82,
+					"width": 36,
+					"height": 30,
+					"triggerType": "click",
+					"effect": "buyItem",
+					"itemId": 2,
+					"text": ["Oh so NOW you want some ginseng do you? Well that's just per-fect."],
 				}
 			}			
 		},

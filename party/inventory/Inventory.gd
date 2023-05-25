@@ -74,18 +74,26 @@ func slot_clicked(_target, event, _shape, slot, index):
 			slot.find_node('ItemSprite').visible = true
 		else:
 			slot.find_node('ItemSprite').visible = false
-		set_cursor_item();
+		set_cursor_item()
 
-func set_cursor_item():
+func set_cursor_item(showtext = true):
 	# set cursor sprite visibility
 	if grabbedItem != null:
-		var text = items[grabbedItem].name + ' taken.'
+		if showtext:
+			var text = items[grabbedItem].name + ' taken.'
+			get_tree().call_group('dialogbox', 'displayText', text)
 		get_tree().call_group('cursor', 'show_sprite', grabbedItem)
-		get_tree().call_group('dialogbox', 'displayText', text)
 		grabItemSound.stop()
 		grabItemSound.play()
 	else:
 		discard_active_item()
+	
+func add_item(index):
+	if grabbedItem != null and inventory.find(null) > -1:
+		inventory[inventory.find(null)] = grabbedItem
+		update_inventory()
+	grabbedItem = index
+	set_cursor_item(false)
 
 func browse_inventory(direction, mode):
 	var steps = 1 if mode == 'step' else SLOTS_AMOUNT
