@@ -4,13 +4,16 @@ var currentData = {}
 var currentLayout = ''
 var currentScene = ''
 var currentSceneInstance
+var _err
 
 onready var scene = preload("res://layout/Scene.tscn")
 onready var triggerZone = preload("res://boxes/triggerZone.tscn")
 onready var sceneBox = $Scene
+onready var exitScene = $ExitScene
 
 func _ready():
 	add_to_group('scenecontainer')
+	_err = exitScene.connect("input_event", self, "exit_scene")
 
 func load_scenes(layoutName):
 	var file = File.new()
@@ -61,7 +64,6 @@ func add_sprite(spriteName):
 	return animatedSpriteInstance
 
 func add_zone(zone):
-	print(zone)
 	var zoneArea = triggerZone.instance()
 	var zoneShape = zoneArea.find_node('zoneShape')
 	zoneArea.zoneData = zone

@@ -9,14 +9,16 @@ func _ready():
 	max_lines_visible = maxLines
 	add_to_group('boxtext')
 
-func displayText(textToDisplay, expand):
+func displayText(textToDisplay, expand, setCountdown = true):
 	text = textToDisplay
 	if expand or get_line_count() > 2:
 		rect_size.y = expandedHeight
 		check_remaining_lines()
 		get_tree().call_group('dialogbox', 'expand_box')
-	else:
+	elif setCountdown:
 		textCoundown()
+	else:
+		visible = true
 
 func textCoundown():
 	visible = true

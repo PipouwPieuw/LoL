@@ -88,12 +88,12 @@ func set_cursor_item(showtext = true):
 	else:
 		discard_active_item()
 	
-func add_item(index):
+func add_item(index, showText = false):
 	if grabbedItem != null and inventory.find(null) > -1:
 		inventory[inventory.find(null)] = grabbedItem
 		update_inventory()
 	grabbedItem = index
-	set_cursor_item(false)
+	set_cursor_item(showText)
 
 func browse_inventory(direction, mode):
 	var steps = 1 if mode == 'step' else SLOTS_AMOUNT

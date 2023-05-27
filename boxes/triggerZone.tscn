@@ -27,7 +27,7 @@ func sendInteraction(_viewport, event, _shape_idx):
 			args = zoneData
 		elif zoneData.effect == 'toggleAtlas':
 			args = zoneData
-		elif zoneData.effect == 'buyItem':
+		elif zoneData.effect == 'displayShop':
 			args = [zoneData.text[0], zoneData.itemId]
 		if args == null:
 			get_tree().call_group('controller', zoneData.effect, self)

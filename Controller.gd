@@ -19,7 +19,8 @@ var mapWidth         = 0
 var directions       = ['U', 'R', 'D', 'L']
 var animatedDoors    = []
 var inputQueue       = []
-var inputProcessing   = false
+var inputProcessing  = false
+var currentShop      = []
 
 func _ready():
 	add_to_group('controller')
@@ -282,12 +283,19 @@ func displayText(args, triggerZone):
 	var expand = args[1]
 	get_tree().call_group('dialogbox', 'displayText', text, expand)
 	triggerZone.updateText()
-	
-func buyItem(args, _triggerZone):
+
+func displayShop(args, _triggerZone):
 	var text = args[0]
-	var item = args[1]
-	get_tree().call_group('dialogbox', 'displayText', text)
-	get_tree().call_group('inventory', 'add_item', item)
+	currentShop = args[1]
+#	get_tree().call_group('dialogbox', 'displayText', text)
+	get_tree().call_group('dialogbox', 'display_shop', text)
+
+func buy_tem():
+	get_tree().call_group('inventory', 'add_item', currentShop, true)
+	currentShop = []
+
+func discard_shop():
+	currentShop = []
 
 func keyhole(args, triggerZone):
 	var activeItem = get_tree().get_nodes_in_group('inventory')[0].get_active_item()

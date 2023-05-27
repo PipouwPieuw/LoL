@@ -3,6 +3,9 @@ extends Node2D
 onready var expandable = $Expandable
 onready var bottom = $Bottom
 onready var textContainer = $Textcontainer
+onready var shopButtons = $ShopButtons
+onready var shopAccept = $ShopButtons/ShopAccept
+onready var shopRefuse = $ShopButtons/ShopRefuse
 onready var close = $Close
 onready var boxTextScene = preload('res://hud/messages/BoxText.tscn')
 
@@ -14,6 +17,8 @@ var _err
 
 func _ready():
 	add_to_group('dialogbox')
+	_err = shopAccept.connect("input_event", self, "shop_accept")
+	_err = shopRefuse.connect("input_event", self, "shop_refuse")
 	_err = close.connect("input_event", self, "box_action")
 
 func displayText(text, expand = false, type = 'default'):
@@ -22,7 +27,7 @@ func displayText(text, expand = false, type = 'default'):
 	textContainer.add_child(boxTextInstance)
 	if type == 'error':
 		 boxTextInstance.set("custom_colors/font_color", Color('#ee2521'))
-	boxTextInstance.displayText(text, expand)
+	boxTextInstance.displayText(text, expand, !expanded)
 
 func expand_box(mode = 'default'):
 	if(!expanded):
@@ -54,9 +59,24 @@ func unexpand_box():
 		get_tree().call_group('inventory', 'set_active', true)
 		set_close_label('More')
 
+func display_shop(text):
+	displayText(text, false, 'default')
+	shopButtons.visible = true
+
 func set_close_label(newText):
 	close.find_node('Label').text = newText
 
 func box_action(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton  and event.button_index == BUTTON_LEFT and event.pressed:
 		get_tree().call_group('boxtext', 'display_next_lines')
+
+func shop_accept(_viewport, event, _shape_idx):
+	if event is InputEventMouseButton  and event.button_index == BUTTON_LEFT and event.pressed:
+		get_tree().call_group('controller', 'buy_tem')
+		shopButtons.visible = false
+
+func shop_refuse(_viewport, event, _shape_idx):
+	if event is InputEventMouseButton  and event.button_index == BUTTON_LEFT and event.pressed:
+		get_tree().call_group('boxtext', 'set_destroy')
+		get_tree().call_group('controller', 'discard_shop')
+		shopButtons.visible = false

@@ -1,14 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://hud/messages/DialogBox.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/hud/dialogBoxBottom.png" type="Texture" id=2]
 [ext_resource path="res://assets/sprites/hud/dialogBoxExpandable.png" type="Texture" id=3]
 [ext_resource path="res://assets/sprites/hud/dialogBoxMain.png" type="Texture" id=4]
-[ext_resource path="res://assets/sprites/hud/dialobBoxButton.png" type="Texture" id=5]
-[ext_resource path="res://assets/fonts/fontYellowCap.tres" type="BitmapFont" id=6]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 37, 5 )
+[ext_resource path="res://hud/HUDButton.tscn" type="PackedScene" id=5]
 
 [node name="DialogBox" type="Node2D"]
 script = ExtResource( 1 )
@@ -30,28 +26,18 @@ centered = false
 
 [node name="Textcontainer" type="Node2D" parent="."]
 
-[node name="Close" type="Area2D" parent="."]
+[node name="ShopButtons" type="Node2D" parent="."]
 visible = false
-position = Vector2( 196, 50 )
-__meta__ = {
-"_edit_group_": true
-}
+position = Vector2( 0, 50 )
 
-[node name="Sprite" type="Sprite" parent="Close"]
-texture = ExtResource( 5 )
+[node name="ShopAccept" parent="ShopButtons" instance=ExtResource( 5 )]
+position = Vector2( 59, 0 )
+labelText = "Yes"
 
-[node name="Label" type="Label" parent="Close"]
-margin_left = -37.0
-margin_top = -5.0
-margin_right = 37.0
-margin_bottom = 4.0
-custom_fonts/font = ExtResource( 6 )
-text = "More"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="ShopRefuse" parent="ShopButtons" instance=ExtResource( 5 )]
+position = Vector2( 175, 0 )
+labelText = "No"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Close"]
-shape = SubResource( 1 )
+[node name="Close" parent="." instance=ExtResource( 5 )]
+visible = false
+labelText = "Close"
