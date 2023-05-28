@@ -5,6 +5,8 @@ script/source = "extends Area2D
 
 var zoneData = {}
 
+onready var zoneShape = $zoneShape
+
 var _err
 
 func _ready():
@@ -36,6 +38,10 @@ func sendInteraction(_viewport, event, _shape_idx):
 
 func updateText():
 	zoneData.text.push_back(zoneData.text.pop_front())
+
+func set_disabled(mode):
+	print(zoneShape)
+	zoneShape.disabled = mode
 "
 
 [node name="zoneArea" type="Area2D"]

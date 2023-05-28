@@ -36,7 +36,10 @@ func display_scene(sceneName):
 		sceneInstance.add_child(add_zone(currentData[currentScene].triggerZones[zone]))
 	currentSceneInstance = sceneInstance
 	sceneBox.add_child(sceneInstance)
+	disable_inputs(true)
 	get_tree().call_group('dialogbox', 'expand_box', 'scene')
+	yield(get_tree().create_timer(.8), "timeout")
+	disable_inputs(false)
 
 func add_sprite(spriteName):
 	var sprite = currentData[currentScene].sprites[spriteName]
@@ -73,13 +76,21 @@ func add_zone(zone):
 	var shape = RectangleShape2D.new()
 	shape.set_extents(Vector2(zone.width / 2, zone.height / 2))
 	zoneShape.set_shape(shape)
+	zoneArea.add_to_group('scenezones')
 	# Return zone
 	return(zoneArea)
 
 func exit_scene(_target, event, _shape):
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
+		disable_inputs(true)
+		get_tree().call_group('dialogbox', 'unexpand_box')
+		yield(get_tree().create_timer(.8), "timeout")
 		get_tree().call_group('viewport', 'remove_scene')
 		sceneBox.remove_child(currentSceneInstance)
 		for sprite in currentSceneInstance.get_children():
 			sprite.queue_free()
 		currentSceneInstance.queue_free()
+
+func disable_inputs(mode):
+	exitScene.set_disabled(mode)
+	get_tree().call_group('scenezones', 'set_disabled', mode)

@@ -322,7 +322,6 @@ func playSound(type, name):
 	get_tree().call_group('audiostream', 'play_sound', type, name)
 
 func add_scene(sceneName):
-	get_tree().call_group('inputs', 'set_move', false)
 	sceneContainer.show()
 	textures.hide()
 	get_tree().call_group('scenecontainer', 'display_scene', sceneName)
@@ -330,7 +329,6 @@ func add_scene(sceneName):
 func remove_scene():
 	sceneContainer.hide()
 	textures.show()
-	get_tree().call_group('inputs', 'set_move', true)
 
 func _exit_tree():
 	for animation in animations:

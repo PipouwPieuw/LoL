@@ -287,15 +287,17 @@ func displayText(args, triggerZone):
 func displayShop(args, _triggerZone):
 	var text = args[0]
 	currentShop = args[1]
-#	get_tree().call_group('dialogbox', 'displayText', text)
 	get_tree().call_group('dialogbox', 'display_shop', text)
+	get_tree().call_group('scenecontainer', 'disable_inputs', true)
 
 func buy_tem():
 	get_tree().call_group('inventory', 'add_item', currentShop, true)
 	currentShop = []
+	get_tree().call_group('scenecontainer', 'disable_inputs', false)
 
 func discard_shop():
 	currentShop = []
+	get_tree().call_group('scenecontainer', 'disable_inputs', false)
 
 func keyhole(args, triggerZone):
 	var activeItem = get_tree().get_nodes_in_group('inventory')[0].get_active_item()
