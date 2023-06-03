@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/nathaniel.ogg-0067b17d85017cab5d3e01ab9d76772f.oggstr"
+
+[deps]
+
+source_file="res://assets/musics/nathaniel.ogg"
+dest_files=[ "res://.import/nathaniel.ogg-0067b17d85017cab5d3e01ab9d76772f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

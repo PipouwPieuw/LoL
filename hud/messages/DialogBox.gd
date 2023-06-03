@@ -7,6 +7,7 @@ onready var shopButtons = $ShopButtons
 onready var shopAccept = $ShopButtons/ShopAccept
 onready var shopRefuse = $ShopButtons/ShopRefuse
 onready var close = $Close
+onready var sceneButton = $SceneButton
 onready var boxTextScene = preload('res://hud/messages/BoxText.tscn')
 
 var textDuration = 0
@@ -20,18 +21,30 @@ func _ready():
 	_err = shopAccept.connect("input_event", self, "shop_accept")
 	_err = shopRefuse.connect("input_event", self, "shop_refuse")
 	_err = close.connect("input_event", self, "box_action")
+	_err = sceneButton.connect("input_event", self, "scene_action")
 
-func displayText(text, expand = false, type = 'default'):
+func displayText(text, expand = false, type = 'default', sceneArrivalCallback = false):
+	var sceneCallback = 'none'
+	var setCountdown = !expanded
 	get_tree().call_group('boxtext', 'set_destroy')
 	var boxTextInstance = boxTextScene.instance()
 	textContainer.add_child(boxTextInstance)
 	if type == 'error':
 		 boxTextInstance.set("custom_colors/font_color", Color('#ee2521'))
-	boxTextInstance.displayText(text, expand, !expanded)
+	if type == 'scene':
+		toggle_scene_button(true)
+		setCountdown = false
+		sceneCallback = 'stop_speaking'
+	if type == 'choice':
+		sceneCallback = 'stop_speaking'
+	boxTextInstance.displayText(text, expand, setCountdown, sceneCallback, sceneArrivalCallback)
 
 func expand_box(mode = 'default'):
 	if(!expanded):
 		get_tree().call_group('hud', 'toggle_hud', false)
+		get_tree().call_group('triggerzones', 'set_disabled', true)
+		if not ['scene'].has(mode):
+			get_tree().call_group('inventory', 'set_active', false)
 		var counter = 0
 		while counter < expandHeight:
 			bottom.position.y += 2
@@ -41,7 +54,6 @@ func expand_box(mode = 'default'):
 		expanded = true
 		get_tree().call_group('boxtext', 'set_visible', true)
 		if not ['scene'].has(mode):
-			get_tree().call_group('inventory', 'set_active', false)
 			close.visible = true
 
 func unexpand_box():
@@ -56,11 +68,12 @@ func unexpand_box():
 			yield(get_tree().create_timer(.02), "timeout")
 		expanded = false
 		get_tree().call_group('hud', 'toggle_hud', true)
+		get_tree().call_group('triggerzones', 'set_disabled', false)
 		get_tree().call_group('inventory', 'set_active', true)
 		set_close_label('More')
 
 func display_shop(text):
-	displayText(text, false, 'default')
+	displayText(text, false, 'choice')
 	shopButtons.visible = true
 
 func set_close_label(newText):
@@ -69,6 +82,10 @@ func set_close_label(newText):
 func box_action(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton  and event.button_index == BUTTON_LEFT and event.pressed:
 		get_tree().call_group('boxtext', 'display_next_lines')
+		
+func scene_action(_viewport, event, _shape_idx):
+	if event is InputEventMouseButton  and event.button_index == BUTTON_LEFT and event.pressed:
+		get_tree().call_group('boxtext', 'display_next_lines', true)
 
 func shop_accept(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton  and event.button_index == BUTTON_LEFT and event.pressed:
@@ -80,3 +97,6 @@ func shop_refuse(_viewport, event, _shape_idx):
 		get_tree().call_group('boxtext', 'set_destroy')
 		get_tree().call_group('controller', 'discard_shop')
 		shopButtons.visible = false
+
+func toggle_scene_button(mode):
+	sceneButton.visible = mode

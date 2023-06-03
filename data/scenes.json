@@ -1,6 +1,7 @@
 {
 	"gladstone": {
 		"victor": {
+			"music": "victor",
 			"sprites": {
 				"victor": {
 					"frames": 21,
@@ -33,6 +34,7 @@
 			
 		},
 		"nathaniel": {
+			"music": "nathaniel",
 			"sprites": {
 				"nathaniel": {
 					"frames": 25,
@@ -42,8 +44,18 @@
 					"height": 28,
 					"animations": {
 						"default": {
-							"frames": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+							"frames": [1],
 							"speed": 1,
+							"loop": true,
+						},
+						"turnHead": {
+							"frames": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1],
+							"speed": 5.5,
+							"loop": false,
+						},
+						"speak": {
+							"frames": [16, 17, 18, 19, 20, 21, 22, 23, 24],
+							"speed": 5.5,
 							"loop": true,
 						}
 					}
@@ -58,6 +70,7 @@
 					"triggerType": "click",
 					"effect": "displayShop",
 					"itemId": 0,
+					"price": 20,
 					"text": ["Yes hello I like to do coin coin like a GROS CANARD. This is salve by the way."],
 				},
 				"buyAloe": {
@@ -68,6 +81,7 @@
 					"triggerType": "click",
 					"effect": "displayShop",
 					"itemId": 1,
+					"price": 5,
 					"text": ["Let's get you some aloe now shall we?"],
 				},
 				"buyGinseng": {
@@ -78,11 +92,24 @@
 					"triggerType": "click",
 					"effect": "displayShop",
 					"itemId": 2,
+					"price": 10,
 					"text": ["Oh so NOW you want some ginseng do you? Well that's just per-fect."],
 				}
-			}			
+			},
+			"onArrival": [
+				[
+					"playAnimation",
+					"turnHead"
+				],
+				[
+					"displayText",
+					"Shh! Did you hear something? If Scotia does attack, they say we won't hear a thing! Quickly now, point out what you need."
+				]
+			],
+			"exitText": "Farewell then."
 		},
 		"geron": {
+			"music": "geron",
 			"sprites": {
 				"geron": {
 					"frames": 10,

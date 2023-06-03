@@ -21,9 +21,12 @@ var animatedDoors    = []
 var inputQueue       = []
 var inputProcessing  = false
 var currentShop      = []
+var initialCoins = 41
+var coins = 0
 
 func _ready():
 	add_to_group('controller')
+	get_tree().call_group('coins', 'set_amount', initialCoins)
 	load_level()
 	
 func _physics_process(_delta):
@@ -43,10 +46,13 @@ func load_level():
 	file.close()
 	mapWidth = int(currentData.width)
 	get_tree().call_group('viewport', 'update_layout', currentData.layout, currentData.spriteSheetFrames)
-	get_tree().call_group('audiostream', 'play_music', currentData.music)
+	play_level_music()
 	set_cells(int(currentData.start_index))
 	draw_map()
 	send_walls_status('up')
+
+func play_level_music():
+	get_tree().call_group('audiostream', 'play_music', currentData.music)
 
 func set_cells(index):
 	currentCell = index
@@ -286,18 +292,28 @@ func displayText(args, triggerZone):
 
 func displayShop(args, _triggerZone):
 	var text = args[0]
-	currentShop = args[1]
+	currentShop = [args[1], args[2]]
 	get_tree().call_group('dialogbox', 'display_shop', text)
 	get_tree().call_group('scenecontainer', 'disable_inputs', true)
+	get_tree().call_group('scenecontainer', 'play_animation', 'speak')
 
 func buy_tem():
-	get_tree().call_group('inventory', 'add_item', currentShop, true)
+	var item = currentShop[0]
+	var price = currentShop[1]
+	print(coins)
+	if price <= coins:
+		var diff = coins - price
+		get_tree().call_group('inventory', 'add_item', item, true)
+		get_tree().call_group('coins', 'set_amount', diff)
 	currentShop = []
 	get_tree().call_group('scenecontainer', 'disable_inputs', false)
 
 func discard_shop():
 	currentShop = []
 	get_tree().call_group('scenecontainer', 'disable_inputs', false)
+
+func set_coins(val):
+	coins = val
 
 func keyhole(args, triggerZone):
 	var activeItem = get_tree().get_nodes_in_group('inventory')[0].get_active_item()

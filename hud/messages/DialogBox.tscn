@@ -38,6 +38,10 @@ labelText = "Yes"
 position = Vector2( 175, 0 )
 labelText = "No"
 
+[node name="SceneButton" parent="." instance=ExtResource( 5 )]
+visible = false
+labelText = "Proceed"
+
 [node name="Close" parent="." instance=ExtResource( 5 )]
 visible = false
 labelText = "Close"
