@@ -50,7 +50,7 @@
 						},
 						"turnHead": {
 							"frames": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1],
-							"speed": 5.5,
+							"speed": 5.8,
 							"loop": false,
 						},
 						"speak": {
@@ -71,18 +71,7 @@
 					"effect": "displayShop",
 					"itemId": 0,
 					"price": 20,
-					"text": ["Yes hello I like to do coin coin like a GROS CANARD. This is salve by the way."],
-				},
-				"buyAloe": {
-					"x": 134,
-					"y": 74,
-					"width": 40,
-					"height": 32,
-					"triggerType": "click",
-					"effect": "displayShop",
-					"itemId": 1,
-					"price": 5,
-					"text": ["Let's get you some aloe now shall we?"],
+					"text": ["That salve is a secret Gorkha recipe for healing. That is a 20 crown donation."],
 				},
 				"buyGinseng": {
 					"x": 98,
@@ -93,7 +82,18 @@
 					"effect": "displayShop",
 					"itemId": 2,
 					"price": 10,
-					"text": ["Oh so NOW you want some ginseng do you? Well that's just per-fect."],
+					"text": ["I prescribe ginseng to neutralize poisons and soothe injuries. Would you like to buy a root? That is a 10 crown donation."],
+				},
+				"buyAloe": {
+					"x": 134,
+					"y": 74,
+					"width": 40,
+					"height": 32,
+					"triggerType": "click",
+					"effect": "displayShop",
+					"itemId": 1,
+					"price": 5,
+					"text": ["That's Aloe. Rub the leaf on wounds to heal them! Would you like to buy a leaf? 5 crowns."],
 				}
 			},
 			"onArrival": [
@@ -106,7 +106,12 @@
 					"Shh! Did you hear something? If Scotia does attack, they say we won't hear a thing! Quickly now, point out what you need."
 				]
 			],
-			"exitText": "Farewell then."
+			"onExit": [
+				[
+					"displayText",
+					"Farewell then."
+				]
+			]
 		},
 		"geron": {
 			"music": "geron",

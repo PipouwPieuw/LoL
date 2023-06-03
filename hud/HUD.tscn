@@ -11,7 +11,7 @@
 [ext_resource path="res://party/Party.tscn" type="PackedScene" id=9]
 [ext_resource path="res://party/details/CharDetailsContainer.tscn" type="PackedScene" id=10]
 [ext_resource path="res://hud/Atlas.tscn" type="PackedScene" id=11]
-[ext_resource path="res://hud/Coins.tscn" type="PackedScene" id=12]
+[ext_resource path="res://hud/coins/Purse.tscn" type="PackedScene" id=12]
 
 [node name="HUD" type="Node2D"]
 script = ExtResource( 5 )

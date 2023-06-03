@@ -4,7 +4,6 @@ const SLOTS_AMOUNT = 9
 const SLOTS_SIZE = 20
 
 onready var slotsContainer = $SlotsContainer
-onready var grabItemSound = $GrabItemSound
 onready var disabledSprite = $DisabledSprite
 
 var inventory = []
@@ -83,8 +82,7 @@ func set_cursor_item(showtext = true):
 			var text = items[grabbedItem].name + ' taken.'
 			get_tree().call_group('dialogbox', 'displayText', text)
 		get_tree().call_group('cursor', 'show_sprite', grabbedItem)
-		grabItemSound.stop()
-		grabItemSound.play()
+		get_tree().call_group('audiostream', 'play_sound', 'hud', 'grabitem')
 	else:
 		discard_active_item()
 	

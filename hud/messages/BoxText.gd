@@ -52,7 +52,9 @@ func display_next_lines(isScene = false):
 	if get_remaining_lines():
 		if isScene:
 			get_tree().call_group('dialogbox', 'toggle_scene_button', false)
-			get_tree().call_group('scenecontainer', 'stop_speaking')
+#			get_tree().call_group('scenecontainer', 'stop_speaking')
+			set_destroy()
+			yield(get_tree().create_timer(.1), "timeout")
 			queue_free()
 		else:
 			get_tree().call_group('dialogbox', 'unexpand_box')

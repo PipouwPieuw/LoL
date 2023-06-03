@@ -69,6 +69,7 @@ func close_details():
 		get_tree().call_group('party', 'set_closed')
 		get_tree().call_group('inputs', 'set_move', true)
 		get_tree().call_group('atlas', 'toggle', true)
+		get_tree().call_group('purse', 'toggle', true)
 
 func slot_clicked(_target, event, _shape, slot, id):
 	if event is InputEventMouseButton  and event.button_index == BUTTON_LEFT and event.pressed:
@@ -123,7 +124,7 @@ func update_protection(value, operator = 1):
 	animate_number(baseProtection, value, operator, protectionValue)
 
 func animate_number(baseValue, increment, operator, label):
-	var counter = baseValue + operator
+	var counter = baseValue
 	if operator > 0:
 		while(counter < baseValue + increment):
 			counter = clamp(counter + operator, baseValue, baseValue + increment)

@@ -21,12 +21,12 @@ var animatedDoors    = []
 var inputQueue       = []
 var inputProcessing  = false
 var currentShop      = []
-var initialCoins = 41
-var coins = 0
+var initialCoins     = 41
+var coins            = 0
 
 func _ready():
 	add_to_group('controller')
-	get_tree().call_group('coins', 'set_amount', initialCoins)
+	get_tree().call_group('purse', 'set_amount', initialCoins, false)
 	load_level()
 	
 func _physics_process(_delta):
@@ -300,11 +300,10 @@ func displayShop(args, _triggerZone):
 func buy_tem():
 	var item = currentShop[0]
 	var price = currentShop[1]
-	print(coins)
 	if price <= coins:
 		var diff = coins - price
 		get_tree().call_group('inventory', 'add_item', item, true)
-		get_tree().call_group('coins', 'set_amount', diff)
+		get_tree().call_group('purse', 'set_amount', diff)
 	currentShop = []
 	get_tree().call_group('scenecontainer', 'disable_inputs', false)
 
