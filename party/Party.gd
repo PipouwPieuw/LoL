@@ -3,10 +3,12 @@ extends Node2D
 onready var characterNode = preload("res://party/character/Character.tscn")
 
 var partyMembers = ['003', '006', '005']
+var mainMember = ''
 var characters
 var races
 
 func _ready():
+	add_to_group('partymain')
 	characters = load_file('characters')
 	races = load_file('races')
 	if partyMembers.size() > 3:
@@ -16,7 +18,9 @@ func _ready():
 		characters[member]['equipment'] = races[characters[member]['attributes']['race']]['equipment']
 		add_character(member, i)
 		get_tree().call_group('chardetailscontainer', 'add_details', characters[member])
-
+		
+func set_main_member_id(id):
+	mainMember = id
 
 func load_file(name):
 	var file = File.new()

@@ -13,6 +13,7 @@ var blinkTimer = 0
 var blinkTimerLimit = randi() % 5 + 1
 var blinking = false
 var partySize = 0
+var speakingFrames = [7, 8, 9, 10, 11, 12, 13]
 var _err
 
 func _ready():

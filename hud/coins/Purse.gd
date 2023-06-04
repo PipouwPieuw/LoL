@@ -38,7 +38,6 @@ func animate_number(baseValue, targetValue, label):
 			yield(get_tree().create_timer(0.01), "timeout")
 	else:
 		while(counter > baseValue - increment):
-			print(counter)
 			counter = clamp(counter + operator, baseValue - increment, baseValue)
 			label.text = str(counter)
 			if counter >= 0 and counter < 60:

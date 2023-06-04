@@ -26,18 +26,27 @@ func _ready():
 func displayText(text, expand = false, type = 'default', sceneArrivalCallback = false):
 	var sceneCallback = 'none'
 	var setCountdown = !expanded
-	get_tree().call_group('boxtext', 'set_destroy')
-	var boxTextInstance = boxTextScene.instance()
-	textContainer.add_child(boxTextInstance)
+	var boxTextInstance = init_text()
 	if type == 'error':
 		 boxTextInstance.set("custom_colors/font_color", Color('#ee2521'))
-	if type == 'scene':
+	elif type == 'scene':
 		toggle_scene_button(true)
 		setCountdown = false
 		sceneCallback = 'stop_speaking'
-	if type == 'choice':
+	elif type == 'choice':
 		sceneCallback = 'stop_speaking'
 	boxTextInstance.displayText(text, expand, setCountdown, sceneCallback, sceneArrivalCallback)
+
+func displayTextWithPortrait(text, charId, isScene = false):
+	var boxTextInstance = init_text()
+	boxTextInstance.displayTextWithPortrait(text, charId, isScene)
+	toggle_scene_button(true)
+
+func init_text():
+	get_tree().call_group('boxtext', 'set_destroy')
+	var boxTextInstance = boxTextScene.instance()
+	textContainer.add_child(boxTextInstance)
+	return boxTextInstance
 
 func expand_box(mode = 'default'):
 	if(!expanded):

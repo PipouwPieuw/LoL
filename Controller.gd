@@ -23,9 +23,11 @@ var inputProcessing  = false
 var currentShop      = []
 var initialCoins     = 41
 var coins            = 0
+var mainCharId       = '003'
 
 func _ready():
 	add_to_group('controller')
+	get_tree().call_group('partymain', 'set_main_member_id', mainCharId)
 	get_tree().call_group('purse', 'set_amount', initialCoins, false)
 	load_level()
 	
@@ -304,8 +306,11 @@ func buy_tem():
 		var diff = coins - price
 		get_tree().call_group('inventory', 'add_item', item, true)
 		get_tree().call_group('purse', 'set_amount', diff)
+		get_tree().call_group('scenecontainer', 'disable_inputs', false)
+	else:
+		var text = 'Sorry, I don\'t have enough money' 
+		get_tree().call_group('dialogbox', 'displayTextWithPortrait', text, mainCharId, true)
 	currentShop = []
-	get_tree().call_group('scenecontainer', 'disable_inputs', false)
 
 func discard_shop():
 	currentShop = []

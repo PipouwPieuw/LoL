@@ -70,7 +70,7 @@
 					"triggerType": "click",
 					"effect": "displayShop",
 					"itemId": 0,
-					"price": 20,
+					"price": 200,
 					"text": ["That salve is a secret Gorkha recipe for healing. That is a 20 crown donation."],
 				},
 				"buyGinseng": {

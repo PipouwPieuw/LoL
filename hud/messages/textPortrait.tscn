@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://hud/messages/textPortrait.gd" type="Script" id=1]
+
+[node name="TextPortrait" type="Sprite"]
+position = Vector2( 2, 7 )
+centered = false
+hframes = 28
+script = ExtResource( 1 )
