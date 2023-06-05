@@ -36,7 +36,7 @@ func displayTextWithPortrait(textToDisplay, charId, isScene = false):
 	portrait.visible = true
 	portrait.play_animation()
 	textArea.text = textToDisplay
-	visible = true
+	portrait_countdown()
 
 func textCoundown():
 	if textArea.text.length() / 2.0 > textDuration:
@@ -46,6 +46,8 @@ func textCoundown():
 		yield(get_tree().create_timer(.1), "timeout")
 		if destroy:
 			textDuration = 0
+			queue_free()
+			return
 		else:
 			textDuration -= 1
 	queue_free()
@@ -57,9 +59,24 @@ func scene_countdown(sceneCallback):
 		yield(get_tree().create_timer(.1), "timeout")
 		if destroy:
 			textDuration = 0
+			get_tree().call_group('scenecontainer', sceneCallback)
+			return
 		else:
 			textDuration -= 1
 	get_tree().call_group('scenecontainer', sceneCallback)
+
+func portrait_countdown():
+	textDuration = textArea.text.length() / 2.0
+	visible = true
+	while textDuration > 0:
+		yield(get_tree().create_timer(.1), "timeout")
+		if destroy:
+			textDuration = 0
+			portrait.stop_animation()
+			return
+		else:
+			textDuration -= 1
+	portrait.stop_animation()
 
 func display_next_lines(isScene = false):
 	if get_remaining_lines():
@@ -70,7 +87,7 @@ func display_next_lines(isScene = false):
 					portrait.stop_animation()
 				portrait.visible = false
 			set_destroy()
-			yield(get_tree().create_timer(.2), "timeout")
+#			yield(get_tree().create_timer(.2), "timeout")
 			queue_free()
 		else:
 			get_tree().call_group('dialogbox', 'unexpand_box')
