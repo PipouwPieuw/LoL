@@ -4,7 +4,8 @@ var currentData = {}
 var currentLayout = ''
 var currentScene = ''
 var currentSceneInstance
-var arrivalActions = []
+var actionsQueue = []
+var isExiting = false
 var _err
 
 onready var scene = preload('res://layout/Scene.tscn')
@@ -44,9 +45,13 @@ func display_scene(sceneName):
 	get_tree().call_group('boxtext', 'set_destroy')
 	get_tree().call_group('dialogbox', 'expand_box', 'scene')
 	yield(get_tree().create_timer(.8), 'timeout')
-	if currentData[currentScene].has('onArrival'):
-		arrivalActions = currentData[currentScene].onArrival
-		process_arrival_actions()
+	if currentData[currentScene].has('onFirstArrival') and currentData[currentScene].has('isFirstVisit') and currentData[currentScene].isFirstVisit:
+		currentData[currentScene].isFirstVisit = false
+		actionsQueue = currentData[currentScene].onFirstArrival.duplicate(true)
+		process_actions_queue()
+	elif currentData[currentScene].has('onArrival'):
+		actionsQueue = currentData[currentScene].onArrival.duplicate(true)
+		process_actions_queue()
 	else:
 		disable_inputs(false)
 
@@ -87,14 +92,27 @@ func add_zone(zone):
 	shape.set_extents(Vector2(zone.width / 2, zone.height / 2))
 	zoneShape.set_shape(shape)
 	zoneArea.add_to_group('scenezones')
+	zoneArea.parameters = zone
+	# Build sprite
+	if zone.has('sprite'):
+		var spriteInstance = Sprite.new()
+		spriteInstance.texture = load('assets/sprites/scenes/' + currentLayout + '/' +  zone.sprite + '.png')		
+		if zone.has('quantityMax'):
+			spriteInstance.hframes = zone.quantityMax
+			if zone.quantityCurrent == zone.quantityMax:
+				spriteInstance.visible = false
+			else:
+				spriteInstance.frame = zone.quantityCurrent
+			spriteInstance.add_to_group(zone.sprite + 'sprite')
+		zoneArea.add_child(spriteInstance)
 	# Return zone
 	return(zoneArea)
 
-func process_arrival_actions():
-	get_tree().call_group('boxtext', 'queue_free')
+func process_actions_queue():
+	get_tree().call_group('boxtext', 'set_destroy')
 	play_animation('default')
-	if arrivalActions.size() > 0:
-		var currentAction = arrivalActions.pop_front()
+	if actionsQueue.size() > 0:
+		var currentAction = actionsQueue.pop_front()
 		var actionType = currentAction[0]
 		var actionArg = currentAction[1]
 		if actionType == 'displayText':
@@ -102,7 +120,10 @@ func process_arrival_actions():
 		elif actionType == 'playAnimation':
 			play_animation(actionArg, true)
 	else:
-		disable_inputs(false)
+		if isExiting:
+			close_scene()
+		else:
+			disable_inputs(false)
 
 func display_text(text, arrivalCallback = false):
 	get_tree().call_group('dialogbox', 'displayText', text, false, 'scene', arrivalCallback)
@@ -119,7 +140,7 @@ func end_animation(sprite):
 	_err = sprite.disconnect('animation_finished', self, 'end_animation')
 	if sprite.frames.has_animation('default'):
 		sprite.play('default')
-	process_arrival_actions()
+	process_actions_queue()
 
 func stop_speaking():
 	for sprite in get_tree().get_nodes_in_group('sceneSprite'):
@@ -127,18 +148,37 @@ func stop_speaking():
 			sprite.play('default')
 
 func exit_scene(_target, event, _shape):
-	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
+	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:		
 		disable_inputs(true)
-		get_tree().call_group('dialogbox', 'unexpand_box')
-		yield(get_tree().create_timer(.8), "timeout")
-		get_tree().call_group('viewport', 'remove_scene')
-		sceneBox.remove_child(currentSceneInstance)
-		for sprite in currentSceneInstance.get_children():
-			sprite.queue_free()
-		currentSceneInstance.remove_from_group('scene')
-		currentSceneInstance.queue_free()
-		get_tree().call_group('controller', 'play_level_music')
+		if currentData[currentScene].has('onArrival'):
+			actionsQueue = currentData[currentScene].onExit.duplicate(true)
+			isExiting = true
+			process_actions_queue()
+		else:
+			close_scene()
+
+func close_scene():
+	get_tree().call_group('dialogbox', 'unexpand_box')
+	yield(get_tree().create_timer(.8), "timeout")
+	get_tree().call_group('viewport', 'remove_scene')
+	sceneBox.remove_child(currentSceneInstance)
+	for sprite in currentSceneInstance.get_children():
+		sprite.queue_free()
+	currentSceneInstance.remove_from_group('scene')
+	currentSceneInstance.queue_free()
+	get_tree().call_group('controller', 'play_level_music')
+	isExiting = false
 
 func disable_inputs(mode):
 	exitScene.set_disabled(mode)
 	get_tree().call_group('scenezones', 'set_disabled', mode)
+
+func update_sprites():
+	for zone in get_tree().get_nodes_in_group('scenezones'):
+		if zone.parameters.has('quantityCurrent'):
+			var sprite = get_tree().get_nodes_in_group(zone.parameters.sprite + 'sprite')[0]
+			if zone.parameters.quantityCurrent < zone.parameters.quantityMax:
+				sprite.visible = true
+				sprite.frame = zone.parameters.quantityCurrent
+			else:
+				sprite.visible = false

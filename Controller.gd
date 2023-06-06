@@ -20,7 +20,7 @@ var directions       = ['U', 'R', 'D', 'L']
 var animatedDoors    = []
 var inputQueue       = []
 var inputProcessing  = false
-var currentShop      = []
+var currentShop      = {}
 var initialCoins     = 41
 var coins            = 0
 var mainCharId       = '003'
@@ -293,27 +293,34 @@ func displayText(args, triggerZone):
 	triggerZone.updateText()
 
 func displayShop(args, _triggerZone):
-	var text = args[0]
-	currentShop = [args[1], args[2]]
+	if args.quantityCurrent <= 0:
+		if args.has('emptyText'):
+			get_tree().call_group('scenecontainer', 'play_animation', 'speak')
+			get_tree().call_group('dialogbox', 'displayText', args.emptyText, false, 'scene')
+		return
+	var text = args.text
+	currentShop = args
 	get_tree().call_group('dialogbox', 'display_shop', text)
 	get_tree().call_group('scenecontainer', 'disable_inputs', true)
 	get_tree().call_group('scenecontainer', 'play_animation', 'speak')
 
 func buy_tem():
-	var item = currentShop[0]
-	var price = currentShop[1]
+	var item = currentShop.itemId
+	var price = currentShop.price
 	if price <= coins:
 		var diff = coins - price
+		currentShop.quantityCurrent -= 1
 		get_tree().call_group('inventory', 'add_item', item, true)
 		get_tree().call_group('purse', 'set_amount', diff)
+		get_tree().call_group('scenecontainer', 'update_sprites')
 		get_tree().call_group('scenecontainer', 'disable_inputs', false)
 	else:
-		var text = 'Sorry, I don\'t have enough money' 
+		var text = 'Sorry, I don\'t have enough money.' 
 		get_tree().call_group('dialogbox', 'displayTextWithPortrait', text, mainCharId, true)
-	currentShop = []
+	currentShop = {}
 
 func discard_shop():
-	currentShop = []
+	currentShop = {}
 	get_tree().call_group('scenecontainer', 'disable_inputs', false)
 
 func set_coins(val):

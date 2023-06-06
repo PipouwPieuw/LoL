@@ -7,6 +7,7 @@ var textDuration = 30
 var maxLines = 5
 var expandedHeight = 44
 var destroy = false
+var hasSceneCallback = false
 var _err
 
 func _ready():
@@ -15,7 +16,8 @@ func _ready():
 
 func displayText(textToDisplay, expand, setCountdown = true, sceneCallback = 'none', callSceneOnDestroy = false):
 	if callSceneOnDestroy:
-		_err = self.connect("tree_exiting", self, "scene_callback")
+#		_err = self.connect("tree_exiting", self, "scene_callback")
+		hasSceneCallback = true
 	textArea.text = textToDisplay
 	if expand or (textArea.get_line_count() > 2 and get_tree().get_nodes_in_group('scene').size() == 0):
 		textArea.rect_size.y = expandedHeight
@@ -30,7 +32,8 @@ func displayText(textToDisplay, expand, setCountdown = true, sceneCallback = 'no
 
 func displayTextWithPortrait(textToDisplay, charId, isScene = false):
 	if isScene:
-		_err = self.connect("tree_exiting", self, "scene_callback")
+#		_err = self.connect("tree_exiting", self, "scene_callback")
+		hasSceneCallback = true
 	portrait.texture = load('res://assets/sprites/portraits/char' + charId + '.png')
 	textArea.margin_left = 40
 	portrait.visible = true
@@ -46,8 +49,6 @@ func textCoundown():
 		yield(get_tree().create_timer(.1), "timeout")
 		if destroy:
 			textDuration = 0
-			queue_free()
-			return
 		else:
 			textDuration -= 1
 	queue_free()
@@ -59,8 +60,6 @@ func scene_countdown(sceneCallback):
 		yield(get_tree().create_timer(.1), "timeout")
 		if destroy:
 			textDuration = 0
-			get_tree().call_group('scenecontainer', sceneCallback)
-			return
 		else:
 			textDuration -= 1
 	get_tree().call_group('scenecontainer', sceneCallback)
@@ -72,8 +71,6 @@ func portrait_countdown():
 		yield(get_tree().create_timer(.1), "timeout")
 		if destroy:
 			textDuration = 0
-			portrait.stop_animation()
-			return
 		else:
 			textDuration -= 1
 	portrait.stop_animation()
@@ -87,7 +84,9 @@ func display_next_lines(isScene = false):
 					portrait.stop_animation()
 				portrait.visible = false
 			set_destroy()
-#			yield(get_tree().create_timer(.2), "timeout")
+			if hasSceneCallback:
+				scene_callback()
+			yield(get_tree().create_timer(.2), "timeout")
 			queue_free()
 		else:
 			get_tree().call_group('dialogbox', 'unexpand_box')
@@ -107,4 +106,4 @@ func set_destroy():
 	destroy = true
 
 func scene_callback():
-	get_tree().call_group('scenecontainer', 'process_arrival_actions')
+	get_tree().call_group('scenecontainer', 'process_actions_queue')

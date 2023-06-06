@@ -34,6 +34,7 @@
 			
 		},
 		"nathaniel": {
+			"isFirstVisit": true,
 			"music": "nathaniel",
 			"sprites": {
 				"nathaniel": {
@@ -66,37 +67,49 @@
 					"x": 0,
 					"y": 74,
 					"width": 34,
-					"height": 42,
+					"height": 43,
 					"triggerType": "click",
 					"effect": "displayShop",
 					"itemId": 0,
+					"quantityMax": 4,
+					"quantityCurrent": 4,
 					"price": 200,
-					"text": ["That salve is a secret Gorkha recipe for healing. That is a 20 crown donation."],
+					"sprite": "nathanielSalve",
+					"text": "That salve is a secret Gorkha recipe for healing. That is a 20 crown donation.",
+					"emptyText": "I am sorry but I am currently out. Perhaps later, I can get some more.",
 				},
 				"buyGinseng": {
-					"x": 98,
-					"y": 82,
-					"width": 36,
-					"height": 30,
+					"x": 96,
+					"y": 80,
+					"width": 40,
+					"height": 40,
 					"triggerType": "click",
 					"effect": "displayShop",
 					"itemId": 2,
+					"quantityMax": 5,
+					"quantityCurrent": 5,
 					"price": 10,
-					"text": ["I prescribe ginseng to neutralize poisons and soothe injuries. Would you like to buy a root? That is a 10 crown donation."],
+					"sprite": "nathanielGinseng",
+					"text": "I prescribe ginseng to neutralize poisons and soothe injuries. Would you like to buy a root? That is a 10 crown donation.",
+					"emptyText": "I am sorry but I am currently out. Perhaps later, I can get some more.",
 				},
 				"buyAloe": {
-					"x": 134,
-					"y": 74,
+					"x": 136,
+					"y": 72,
 					"width": 40,
 					"height": 32,
 					"triggerType": "click",
 					"effect": "displayShop",
 					"itemId": 1,
+					"quantityMax": 5,
+					"quantityCurrent": 5,
 					"price": 5,
-					"text": ["That's Aloe. Rub the leaf on wounds to heal them! Would you like to buy a leaf? 5 crowns."],
+					"sprite": "nathanielAloe",
+					"text": "That's Aloe. Rub the leaf on wounds to heal them! Would you like to buy a leaf? 5 crowns.",
+					"emptyText": "I am sorry but I am currently out. Perhaps later, I can get some more.",
 				}
 			},
-			"onArrival": [
+			"onFirstArrival": [
 				[
 					"playAnimation",
 					"turnHead"
@@ -104,6 +117,16 @@
 				[
 					"displayText",
 					"Shh! Did you hear something? If Scotia does attack, they say we won't hear a thing! Quickly now, point out what you need."
+				]
+			],
+			"onArrival": [
+				[
+					"playAnimation",
+					"turnHead"
+				],
+				[
+					"displayText",
+					"Did you forget something?"
 				]
 			],
 			"onExit": [

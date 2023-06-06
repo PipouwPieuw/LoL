@@ -67,7 +67,7 @@ func expand_box(mode = 'default'):
 
 func unexpand_box():
 	if(expanded):
-		get_tree().call_group('boxtext', 'queue_free')
+		get_tree().call_group('boxtext', 'set_destroy')
 		close.visible = false
 		var counter = expandHeight
 		while counter > 0:
