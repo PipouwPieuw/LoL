@@ -92,7 +92,6 @@ func add_zone(zone):
 	shape.set_extents(Vector2(zone.width / 2, zone.height / 2))
 	zoneShape.set_shape(shape)
 	zoneArea.add_to_group('scenezones')
-	zoneArea.parameters = zone
 	# Build sprite
 	if zone.has('sprite'):
 		var spriteInstance = Sprite.new()
@@ -175,10 +174,10 @@ func disable_inputs(mode):
 
 func update_sprites():
 	for zone in get_tree().get_nodes_in_group('scenezones'):
-		if zone.parameters.has('quantityCurrent'):
-			var sprite = get_tree().get_nodes_in_group(zone.parameters.sprite + 'sprite')[0]
-			if zone.parameters.quantityCurrent < zone.parameters.quantityMax:
+		if zone.zoneData.has('quantityCurrent'):
+			var sprite = get_tree().get_nodes_in_group(zone.zoneData.sprite + 'sprite')[0]
+			if zone.zoneData.quantityCurrent < zone.zoneData.quantityMax:
 				sprite.visible = true
-				sprite.frame = zone.parameters.quantityCurrent
+				sprite.frame = zone.zoneData.quantityCurrent
 			else:
 				sprite.visible = false

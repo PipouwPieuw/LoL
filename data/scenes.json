@@ -107,6 +107,29 @@
 					"sprite": "nathanielAloe",
 					"text": "That's Aloe. Rub the leaf on wounds to heal them! Would you like to buy a leaf? 5 crowns.",
 					"emptyText": "I am sorry but I am currently out. Perhaps later, I can get some more.",
+				},
+				"giveItem": {
+					"x": 34,
+					"y": 41,
+					"width": 62,
+					"height": 79,
+					"triggerType": "click",
+					"effect": "giveItem",
+					"giveItemActions": {
+						"refuse": {
+							"validItems": [0, 1, 2],
+							"effect": "displayText",
+							"text": "Sorry but no."
+						},
+						"default": {
+							"effect": "displayText",
+							"text": "Why would I want that?"
+						},
+						"noItem": {
+							"effect": "displayText",
+							"text": "That's Aloe. Rub the leaf on wounds to heal them! Would you like to buy a leaf? 5 crowns.",
+						}
+					}
 				}
 			},
 			"onFirstArrival": [

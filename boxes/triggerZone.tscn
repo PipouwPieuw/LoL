@@ -3,12 +3,10 @@
 [sub_resource type="GDScript" id=1]
 script/source = "extends Area2D
 
-var zoneData = {}
-
 onready var zoneShape = $zoneShape
 
+var zoneData = {}
 var _err
-var parameters
 
 func _ready():
 	if zoneData.triggerType == 'click':
