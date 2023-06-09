@@ -216,8 +216,8 @@ func preload_animations():
 			var frame = AtlasTexture.new()
 			frame.atlas = animationSpriteSheet
 			frame.region = Rect2(Vector2(x, 0) * spriteSize, spriteSize)
-			spriteFramesInstance.add_frame("default", frame, x)
-		spriteFramesInstance.set_animation_loop("default", animation.loop)
+			spriteFramesInstance.add_frame('default', frame, x)
+		spriteFramesInstance.set_animation_loop('default', animation.loop)
 		animatedSpriteInstance.frames = spriteFramesInstance
 		animatedSpriteInstance.speed_scale = animation.speed
 		animatedSpriteInstance.position = Vector2(animation.x, animation.y)
@@ -225,7 +225,7 @@ func preload_animations():
 		animatedSpriteInstance.playing = true
 		if animation.has('soundType'):
 			_err = animatedSpriteInstance.connect('tree_entered', self, 'playSound', [animation.soundType, animation.soundName])
-		_err = animatedSpriteInstance.connect('animation_finished', self, 'animation_finished', [animatedSpriteInstance, animation.onFinished])
+		_err = animatedSpriteInstance.connect('animation_finished', self, 'animation_finished', [animatedSpriteInstance, animation])
 		animations[animationName] = animatedSpriteInstance
 
 # Update wall visibility and sprite
@@ -312,20 +312,32 @@ func play_animation(animation):
 	get_tree().call_group('inputs', 'set_move', false)
 	animationsContainer.add_child(animations[animation])
 
-func animation_finished(animation, onFinished):
+func animation_finished(animation, animData):
+	var onFinished = animData.onFinished
+	if animData.has('maintainLastFrame') and animData.maintainLastFrame:
+		var lastFrame = animation.frames.get_frame_count('default') - 1
+		animation.frame = lastFrame
 	yield(get_tree().create_timer(.3), "timeout")
 	get_tree().call_group('viewport', onFinished.actionType, onFinished.actionId)
+	if animData.has('maintainLastFrame') and animData.maintainLastFrame:
+		yield(get_tree().create_timer(.5), "timeout")
 	animation.frame = 0
 	animationsContainer.remove_child(animation)
 
 func playSound(type, name):
 	get_tree().call_group('audiostream', 'play_sound', type, name)
 
+func transition_to_scene(sceneName):
+	get_tree().call_group('screentransition', 'transition', sceneName)
+
 func add_scene(sceneName):
 	sceneContainer.show()
 	textures.hide()
 	get_tree().call_group('scenecontainer', 'display_scene', sceneName)
-	
+
+func transition_to_viewport():
+	get_tree().call_group('screentransition', 'fade_to_black')
+
 func remove_scene():
 	sceneContainer.hide()
 	textures.show()

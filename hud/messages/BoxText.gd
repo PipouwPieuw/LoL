@@ -42,8 +42,8 @@ func displayTextWithPortrait(textToDisplay, charId, isScene = false):
 	portrait_countdown()
 
 func textCoundown():
-	if textArea.text.length() / 2.0 > textDuration:
-		textDuration = textArea.text.length() / 2.0
+	if textArea.text.length() / 1.5 > textDuration:
+		textDuration = textArea.text.length() / 1.5
 	visible = true
 	while textDuration > 0:
 		yield(get_tree().create_timer(.1), "timeout")
@@ -55,7 +55,7 @@ func textCoundown():
 
 func scene_countdown(sceneCallback):
 #	if textArea.text.length() / 2.0 > textDuration:
-	textDuration = textArea.text.length() / 2.0
+	textDuration = textArea.text.length() / 1.5
 	while textDuration > 0:
 		yield(get_tree().create_timer(.1), "timeout")
 		if destroy:
@@ -65,7 +65,7 @@ func scene_countdown(sceneCallback):
 	get_tree().call_group('scenecontainer', sceneCallback)
 
 func portrait_countdown():
-	textDuration = textArea.text.length() / 2.0
+	textDuration = textArea.text.length() / 1.5
 	visible = true
 	while textDuration > 0:
 		yield(get_tree().create_timer(.1), "timeout")

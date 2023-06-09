@@ -326,14 +326,21 @@ func discard_shop():
 
 func giveItem(args, _triggerZone):
 	var inventory = get_tree().get_nodes_in_group('inventory')[0]
+	var effect = ''
 	for action in args.giveItemActions:
+		if args.giveItemActions[action].effect == 'displaySceneText':
+			effect = 'display_text'
+		if effect == '':
+			return
 		if  inventory.grabbedItem != null:
 			if args.giveItemActions[action].has('validItems') and args.giveItemActions[action].validItems.find(inventory.grabbedItem) > -1:
-				get_tree().call_group('scenecontainer', 'display_text', args.giveItemActions[action].arg, false, true)
+				get_tree().call_group('scenecontainer', effect, args.giveItemActions[action].arg, false, true)
+				return
 			elif args.giveItemActions[action].has('excludedItems') and not args.giveItemActions[action].excludedItems.find(inventory.grabbedItem) > -1:
-				get_tree().call_group('scenecontainer', 'display_text', args.giveItemActions[action].arg, false, true)
+				get_tree().call_group('scenecontainer', effect, args.giveItemActions[action].arg, false, true)
+				return
 		elif not args.giveItemActions[action].has('validItems') and not args.giveItemActions[action].has('excludedItems'):
-			get_tree().call_group('scenecontainer', 'display_text', args.giveItemActions[action].arg, false, true)
+			get_tree().call_group('scenecontainer', effect, args.giveItemActions[action].arg, false, true)
 			return
 
 func set_coins(val):
@@ -412,5 +419,6 @@ func process_escape_action():
 		get_tree().quit()
 
 func process_accept_action():
-	if get_tree().get_nodes_in_group('boxtext').size() > 0:
-		get_tree().call_group('boxtext', 'display_next_lines')
+	pass
+#	if get_tree().get_nodes_in_group('boxtext').size() > 0:
+#		get_tree().call_group('boxtext', 'display_next_lines')

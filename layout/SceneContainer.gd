@@ -104,6 +104,7 @@ func add_zone(zone):
 				spriteInstance.frame = zone.quantityCurrent
 			spriteInstance.add_to_group(zone.sprite + 'sprite')
 		zoneArea.add_child(spriteInstance)
+		zoneArea.move_child(spriteInstance, 0)
 	# Return zone
 	return(zoneArea)
 
@@ -114,7 +115,7 @@ func process_actions_queue():
 		var currentAction = actionsQueue.pop_front()
 		var actionType = currentAction[0]
 		var actionArg = currentAction[1]
-		if actionType == 'displayText':
+		if actionType == 'displaySceneText':
 			display_text(actionArg, true)
 		elif actionType == 'playAnimation':
 			play_animation(actionArg, true)
@@ -161,7 +162,8 @@ func exit_scene(_target, event, _shape):
 func close_scene():
 	get_tree().call_group('dialogbox', 'unexpand_box')
 	yield(get_tree().create_timer(.8), "timeout")
-	get_tree().call_group('viewport', 'remove_scene')
+	get_tree().call_group('screentransition', 'transition')
+	yield(get_tree().create_timer(.25), "timeout")
 	sceneBox.remove_child(currentSceneInstance)
 	for sprite in currentSceneInstance.get_children():
 		sprite.queue_free()

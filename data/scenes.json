@@ -118,19 +118,46 @@
 					"giveItemActions": {
 						"refuse": {
 							"validItems": [0, 1, 2],
-							"effect": "displayText",
+							"effect": "displaySceneText",
 							"arg": "Sorry, donations are not refundable.",
 						},
 						"default": {
 							"excludedItems": [0, 1, 2],
-							"effect": "displayText",
+							"effect": "displaySceneText",
 							"arg": "Thank you, but we accept only coins as donations.",
 						},
 						"noItem": {
-							"effect": "displayText",
+							"effect": "displaySceneText",
 							"arg": "They say the Ruby and the Shard are the only means of opposing the Nether Mask!",
 						}
 					}
+				},
+				"shelf1": {
+					"x": 0,
+					"y": 10,
+					"width": 48,
+					"height": 31,
+					"triggerType": "click",
+					"effect": "displaySceneText",
+					"text": ["Those are only experimental ingredients."]
+				},
+				"shelf2": {
+					"x": 0,
+					"y": 41,
+					"width": 33,
+					"height": 33,
+					"triggerType": "click",
+					"effect": "displaySceneText",
+					"text": ["Those are only experimental ingredients."]
+				},
+				"shelf3": {
+					"x": 126,
+					"y": 44,
+					"width": 50,
+					"height": 28,
+					"triggerType": "click",
+					"effect": "displaySceneText",
+					"text": ["Those are only experimental ingredients."]
 				}
 			},
 			"onFirstArrival": [
@@ -139,7 +166,7 @@
 					"turnHead"
 				],
 				[
-					"displayText",
+					"displaySceneText",
 					"Shh! Did you hear something? If Scotia does attack, they say we won't hear a thing! Quickly now, point out what you need."
 				]
 			],
@@ -149,13 +176,13 @@
 					"turnHead"
 				],
 				[
-					"displayText",
+					"displaySceneText",
 					"Did you forget something?"
 				]
 			],
 			"onExit": [
 				[
-					"displayText",
+					"displaySceneText",
 					"Farewell then."
 				]
 			]

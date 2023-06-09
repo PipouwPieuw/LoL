@@ -8,10 +8,11 @@
 			"height": 66,
 			"speed": 3,
 			"loop": false,
+			"maintainLastFrame": true,
 			"soundType": "layout",
 			"soundName": "portcullis01",
 			"onFinished": {
-				"actionType": "add_scene",
+				"actionType": "transition_to_scene",
 				"actionId": "victor"
 			}
 		},
@@ -23,10 +24,11 @@
 			"height": 65,
 			"speed": 2,
 			"loop": false,
+			"maintainLastFrame": true,
 			"soundType": "layout",
 			"soundName": "door01",
 			"onFinished": {
-				"actionType": "add_scene",
+				"actionType": "transition_to_scene",
 				"actionId": "victor"
 			}
 		},
@@ -38,10 +40,11 @@
 			"height": 65,
 			"speed": 2,
 			"loop": false,
+			"maintainLastFrame": true,
 			"soundType": "layout",
 			"soundName": "door01",
 			"onFinished": {
-				"actionType": "add_scene",
+				"actionType": "transition_to_scene",
 				"actionId": "nathaniel"
 			}
 		},
@@ -53,10 +56,11 @@
 			"height": 65,
 			"speed": 2,
 			"loop": false,
+			"maintainLastFrame": true,
 			"soundType": "layout",
 			"soundName": "door01",
 			"onFinished": {
-				"actionType": "add_scene",
+				"actionType": "transition_to_scene",
 				"actionId": "geron"
 			}
 		},
@@ -68,10 +72,11 @@
 			"height": 65,
 			"speed": 2,
 			"loop": false,
+			"maintainLastFrame": true,
 			"soundType": "layout",
 			"soundName": "door02",
 			"onFinished": {
-				"actionType": "add_scene",
+				"actionType": "transition_to_scene",
 				"actionId": "throneroom"
 			}
 		}
