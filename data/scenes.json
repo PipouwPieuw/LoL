@@ -73,7 +73,7 @@
 					"itemId": 0,
 					"quantityMax": 4,
 					"quantityCurrent": 4,
-					"price": 200,
+					"price": 20,
 					"sprite": "nathanielSalve",
 					"text": "That salve is a secret Gorkha recipe for healing. That is a 20 crown donation.",
 					"emptyText": "I am sorry but I am currently out. Perhaps later, I can get some more.",
@@ -119,15 +119,16 @@
 						"refuse": {
 							"validItems": [0, 1, 2],
 							"effect": "displayText",
-							"text": "Sorry but no."
+							"arg": "Sorry, donations are not refundable.",
 						},
 						"default": {
+							"excludedItems": [0, 1, 2],
 							"effect": "displayText",
-							"text": "Why would I want that?"
+							"arg": "Thank you, but we accept only coins as donations.",
 						},
 						"noItem": {
 							"effect": "displayText",
-							"text": "That's Aloe. Rub the leaf on wounds to heal them! Would you like to buy a leaf? 5 crowns.",
+							"arg": "They say the Ruby and the Shard are the only means of opposing the Nether Mask!",
 						}
 					}
 				}

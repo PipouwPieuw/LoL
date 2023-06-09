@@ -124,7 +124,9 @@ func process_actions_queue():
 		else:
 			disable_inputs(false)
 
-func display_text(text, arrivalCallback = false):
+func display_text(text, arrivalCallback = false, disableInputs = false):
+	if disableInputs:
+		disable_inputs(true)
 	get_tree().call_group('dialogbox', 'displayText', text, false, 'scene', arrivalCallback)
 	play_animation('speak', false)
 
@@ -171,6 +173,9 @@ func close_scene():
 func disable_inputs(mode):
 	exitScene.set_disabled(mode)
 	get_tree().call_group('scenezones', 'set_disabled', mode)
+	get_tree().call_group('inventory', 'set_active', !mode)
+	get_tree().call_group('atlas', 'set_active', mode)
+	get_tree().call_group('purse', 'set_active', mode)
 
 func update_sprites():
 	for zone in get_tree().get_nodes_in_group('scenezones'):

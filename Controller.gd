@@ -286,11 +286,12 @@ func toggleDoor(doorIndex, _triggerZone):
 	var frames = doorFramesClose.duplicate(true) if doorCell.doorAttr.isOpened else doorFramesOpen.duplicate(true)
 	open_close_door(doorCell, frames)
 
-func displayText(args, triggerZone):
+func displayText(args, triggerZone = null):
 	var text = args[0]
 	var expand = args[1]
 	get_tree().call_group('dialogbox', 'displayText', text, expand)
-	triggerZone.updateText()
+	if triggerZone != null:
+		triggerZone.updateText()
 
 func displayShop(args, _triggerZone):
 	if args.quantityCurrent <= 0:
@@ -322,6 +323,18 @@ func buy_tem():
 func discard_shop():
 	currentShop = {}
 	get_tree().call_group('scenecontainer', 'disable_inputs', false)
+
+func giveItem(args, _triggerZone):
+	var inventory = get_tree().get_nodes_in_group('inventory')[0]
+	for action in args.giveItemActions:
+		if  inventory.grabbedItem != null:
+			if args.giveItemActions[action].has('validItems') and args.giveItemActions[action].validItems.find(inventory.grabbedItem) > -1:
+				get_tree().call_group('scenecontainer', 'display_text', args.giveItemActions[action].arg, false, true)
+			elif args.giveItemActions[action].has('excludedItems') and not args.giveItemActions[action].excludedItems.find(inventory.grabbedItem) > -1:
+				get_tree().call_group('scenecontainer', 'display_text', args.giveItemActions[action].arg, false, true)
+		elif not args.giveItemActions[action].has('validItems') and not args.giveItemActions[action].has('excludedItems'):
+			get_tree().call_group('scenecontainer', 'display_text', args.giveItemActions[action].arg, false, true)
+			return
 
 func set_coins(val):
 	coins = val

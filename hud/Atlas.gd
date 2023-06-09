@@ -31,6 +31,9 @@ func animation_ended():
 func toggle(mode):
 	visible = mode
 
+func set_active(mode):
+	shape.disabled = mode
+	
 func show_map(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton  and event.button_index == BUTTON_LEFT and event.pressed:
 		get_tree().call_group('inputs', 'set_move', false)

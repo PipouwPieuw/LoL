@@ -54,8 +54,8 @@ func textCoundown():
 	queue_free()
 
 func scene_countdown(sceneCallback):
-	if textArea.text.length() / 2.0 > textDuration:
-		textDuration = textArea.text.length() / 2.0
+#	if textArea.text.length() / 2.0 > textDuration:
+	textDuration = textArea.text.length() / 2.0
 	while textDuration > 0:
 		yield(get_tree().create_timer(.1), "timeout")
 		if destroy:
@@ -86,6 +86,8 @@ func display_next_lines(isScene = false):
 			set_destroy()
 			if hasSceneCallback:
 				scene_callback()
+			else:
+				 get_tree().call_group('scenecontainer', 'disable_inputs', false)
 			yield(get_tree().create_timer(.2), "timeout")
 			queue_free()
 		else:

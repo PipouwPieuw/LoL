@@ -2,6 +2,7 @@ extends Node2D
 
 onready var amount = $Amount
 onready var stacks = $Stacks
+onready var shape = $Shape
 
 var coins = 0
 var coinStacks = []
@@ -61,3 +62,6 @@ func display_amount(_viewport, event, _shape_idx):
 
 func toggle(mode):
 	visible = mode
+
+func set_active(mode):
+	shape.disabled = mode
