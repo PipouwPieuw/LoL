@@ -314,9 +314,6 @@ func play_animation(animation):
 
 func animation_finished(animation, animData):
 	var onFinished = animData.onFinished
-	if animData.has('maintainLastFrame') and animData.maintainLastFrame:
-		var lastFrame = animation.frames.get_frame_count('default') - 1
-		animation.frame = lastFrame
 	yield(get_tree().create_timer(.3), "timeout")
 	get_tree().call_group('viewport', onFinished.actionType, onFinished.actionId)
 	if animData.has('maintainLastFrame') and animData.maintainLastFrame:

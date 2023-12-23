@@ -8,7 +8,8 @@ var actionsQueue = []
 var isExiting = false
 var _err
 
-onready var scene = preload('res://layout/Scene.tscn')
+onready var scene = preload('res://layout/scenes/Scene.tscn')
+onready var sceneSprite = preload('res://layout/scenes/SceneSprite.tscn')
 onready var triggerZone = preload('res://boxes/triggerZone.tscn')
 onready var sceneBox = $Scene
 onready var exitScene = $ExitScene
@@ -42,7 +43,7 @@ func display_scene(sceneName):
 	if currentData[currentScene].has('music'):
 		get_tree().call_group('audiostream', 'play_music', currentData[currentScene].music)
 	disable_inputs(true)
-	get_tree().call_group('boxtext', 'set_destroy')
+	get_tree().call_group('boxtext', 'remove_from_queue')
 	get_tree().call_group('dialogbox', 'expand_box', 'scene')
 	yield(get_tree().create_timer(.8), 'timeout')
 	if currentData[currentScene].has('onFirstArrival') and currentData[currentScene].has('isFirstVisit') and currentData[currentScene].isFirstVisit:
@@ -57,28 +58,8 @@ func display_scene(sceneName):
 
 func add_sprite(spriteName):
 	var sprite = currentData[currentScene].sprites[spriteName]
-	var animatedSpriteInstance = AnimatedSprite.new()
-	var spriteFramesInstance = SpriteFrames.new()
-	var spriteSize = Vector2(sprite.width, sprite.height)
-	var animationSpriteSheet : Texture = load('assets/sprites/animations/' + currentLayout + '/' +  currentScene + '.png')
-	for animationName in sprite.animations:
-		var animation = sprite.animations[animationName]
-		var counter = 0
-		if !spriteFramesInstance.has_animation(animationName):
-			spriteFramesInstance.add_animation(animationName)
-			spriteFramesInstance.set_animation_speed(animationName, animation.speed)
-			for x in animation.frames:
-				var frame = AtlasTexture.new()
-				frame.atlas = animationSpriteSheet
-				frame.region = Rect2(Vector2(x, 0) * spriteSize, spriteSize)
-				spriteFramesInstance.add_frame(animationName, frame, counter)
-				counter += 1
-#		spriteFramesInstance.set_animation_loop("default", true)
-	animatedSpriteInstance.frames = spriteFramesInstance
-	animatedSpriteInstance.position = Vector2(sprite.x, sprite.y)
-	animatedSpriteInstance.centered = false
-	animatedSpriteInstance.playing = true
-	animatedSpriteInstance.add_to_group('sceneSprite')
+	var animatedSpriteInstance = sceneSprite.instance()
+	animatedSpriteInstance.init(sprite, currentLayout, spriteName)
 	return animatedSpriteInstance
 
 func add_zone(zone):
@@ -95,7 +76,7 @@ func add_zone(zone):
 	# Build sprite
 	if zone.has('sprite'):
 		var spriteInstance = Sprite.new()
-		spriteInstance.texture = load('assets/sprites/scenes/' + currentLayout + '/' +  zone.sprite + '.png')		
+		spriteInstance.texture = load('assets/sprites/scenes/' + currentLayout + '/' +  zone.sprite + '.png')
 		if zone.has('quantityMax'):
 			spriteInstance.hframes = zone.quantityMax
 			if zone.quantityCurrent == zone.quantityMax:
@@ -109,8 +90,8 @@ func add_zone(zone):
 	return(zoneArea)
 
 func process_actions_queue():
-	get_tree().call_group('boxtext', 'set_destroy')
-	play_animation('default')
+	get_tree().call_group('boxtext', 'remove_from_queue')
+	play_animation('base')
 	if actionsQueue.size() > 0:
 		var currentAction = actionsQueue.pop_front()
 		var actionType = currentAction[0]
@@ -133,26 +114,29 @@ func display_text(text, arrivalCallback = false, disableInputs = false):
 
 func play_animation(animationName, autoKill = false):
 	for sprite in get_tree().get_nodes_in_group('sceneSprite'):
-		if sprite.frames.has_animation(animationName):
+		if sprite.frames.has_animation(animationName) and sprite.animation != animationName and !sprite.isPlaying:
 			if autoKill:
 				_err = sprite.connect('animation_finished', self, 'end_animation', [sprite])
 			sprite.play(animationName)
 
 func end_animation(sprite):
 	_err = sprite.disconnect('animation_finished', self, 'end_animation')
-	if sprite.frames.has_animation('default'):
-		sprite.play('default')
+	if sprite.frames.has_animation('base'):
+		sprite.play('base')
 	process_actions_queue()
 
 func stop_speaking():
 	for sprite in get_tree().get_nodes_in_group('sceneSprite'):
 		if sprite.animation == 'speak':
-			sprite.play('default')
+			if sprite.frames.has_animation('speakToBase'):
+				sprite.play('speakToBase')
+			else:
+				sprite.play('base')
 
 func exit_scene(_target, event, _shape):
-	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:		
+	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
 		disable_inputs(true)
-		if currentData[currentScene].has('onArrival'):
+		if currentData[currentScene].has('onExit'):
 			actionsQueue = currentData[currentScene].onExit.duplicate(true)
 			isExiting = true
 			process_actions_queue()

@@ -15,7 +15,6 @@ func _ready():
 
 func sendInteraction(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton  and event.button_index == BUTTON_LEFT and event.pressed:
-		print('coucou')
 		var args = null
 		if zoneData.effect == 'toggleDoor':
 			args = zoneData.targetCell

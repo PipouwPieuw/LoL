@@ -30,9 +30,8 @@
 		{
 			"id": 3,
 			"name": "Library key",
-			"type": "weapon",
+			"type": "key",
 			"equipmentText": "You can not equip this item.",
-			"might": 5,
 		},
 		{
 			"id": 4,

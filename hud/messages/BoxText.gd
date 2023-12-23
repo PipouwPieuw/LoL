@@ -4,7 +4,7 @@ onready var textArea = $TextArea
 onready var portrait = $Portrait
 
 var textDuration = 30
-var maxLines = 5
+var maxLines = 2
 var expandedHeight = 44
 var destroy = false
 var hasSceneCallback = false
@@ -19,8 +19,14 @@ func displayText(textToDisplay, expand, setCountdown = true, sceneCallback = 'no
 #		_err = self.connect("tree_exiting", self, "scene_callback")
 		hasSceneCallback = true
 	textArea.text = textToDisplay
-	if expand or (textArea.get_line_count() > 2 and get_tree().get_nodes_in_group('scene').size() == 0):
+	if (textArea.get_line_count() > 2 and get_tree().get_nodes_in_group('scene').size() > 0):
+		maxLines = 5
 		textArea.rect_size.y = expandedHeight
+		textArea.max_lines_visible = maxLines
+	if expand or (textArea.get_line_count() > 2 and get_tree().get_nodes_in_group('scene').size() == 0):
+		maxLines = 5
+		textArea.rect_size.y = expandedHeight
+		textArea.max_lines_visible = maxLines
 		check_remaining_lines()
 		get_tree().call_group('dialogbox', 'expand_box')
 	elif setCountdown:
@@ -88,8 +94,9 @@ func display_next_lines(isScene = false):
 				scene_callback()
 			else:
 				 get_tree().call_group('scenecontainer', 'disable_inputs', false)
-			yield(get_tree().create_timer(.2), "timeout")
-			queue_free()
+#			yield(get_tree().create_timer(.2), "timeout")
+#			queue_free()
+			remove_from_queue()
 		else:
 			get_tree().call_group('dialogbox', 'unexpand_box')
 	else:
@@ -99,6 +106,8 @@ func display_next_lines(isScene = false):
 func check_remaining_lines():
 	if get_remaining_lines():
 		get_tree().call_group('dialogbox', 'set_close_label', 'Close')
+	else:
+		get_tree().call_group('dialogbox', 'set_close_label', 'More')
 
 func get_remaining_lines():
 	return textArea.get_line_count() - textArea.lines_skipped <= maxLines
@@ -106,6 +115,11 @@ func get_remaining_lines():
 func set_destroy():
 	textArea.text = ''
 	destroy = true
+
+func remove_from_queue():
+	set_destroy()
+	yield(get_tree().create_timer(.1), "timeout")
+	queue_free()
 
 func scene_callback():
 	get_tree().call_group('scenecontainer', 'process_actions_queue')

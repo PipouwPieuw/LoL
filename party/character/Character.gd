@@ -31,7 +31,6 @@ func _physics_process(delta):
 	if(blinkTimer >= blinkTimerLimit and not blinking):
 		blinking = true
 		blink()
-		
 
 func trigger_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton  and event.button_index == BUTTON_LEFT and event.pressed:

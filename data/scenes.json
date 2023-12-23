@@ -1,6 +1,7 @@
 {
 	"gladstone": {
 		"victor": {
+			"isFirstVisit": true,
 			"music": "victor",
 			"sprites": {
 				"victor": {
@@ -9,28 +10,82 @@
 					"y": 32,
 					"width": 96,
 					"height": 51,
+					"autoplayDelay": 4,
 					"animations": {
-						"default": {
-							"frames": [4, 5, 6, 7, 8, 9, 8, 7, 6, 5],
+						"base": {
+							"frames": [4],
 							"speed": 1,
 							"loop": true,
 						},
-						"speechToDefault": {
+						"rubSword": {
+							"frames": [4, 5, 6, 7, 8, 9, 8, 7, 6, 5],
+							"speed": 5.8,
+							"loop": false,
+							"autoplay": true,
+						},
+						"speakToBase": {
 							"frames": [0, 1, 2, 3],
-							"speed": 2,
+							"speed": 12,
 							"loop": false,
 						},
-						"defaultToSpeech": {
+						"baseToSpeak": {
 							"frames": [3, 2, 1, 0],
-							"speed": 2,
+							"speed": 12,
 							"loop": false,
+						},
+						"speak": {
+							"frames": [10, 11, 12, 13, 14, 15, 16, 17],
+							"speed": 5.5,
+							"loop": true,
 						}
 					}
 				}
 			},
 			"triggerZones": {
 
-			}
+			},
+			"onFirstArrival": [
+				[
+					"playAnimation",
+					"baseToSpeak"
+				],
+				[
+					"displaySceneText",
+					"Oh, so you come to see Victor! Afraid of Scotia's new toy? Ha ha! Why afraid? Look at Victor. Myself could use a shapechanger! Ha ha ha!"
+				],
+				[
+					"playAnimation",
+					"rubSword"
+				],
+				[
+					"playAnimation",
+					"baseToSpeak"
+				],
+				[
+					"displaySceneText",
+					"You show Victor what you want to buy. Maybe you show Victor what you sell, OK?"
+				]
+			],
+			"onArrival": [
+				[
+					"playAnimation",
+					"baseToSpeak"
+				],
+				[
+					"displaySceneText",
+					"You again come to see Victor?"
+				]
+			],
+			"onExit": [
+				[
+					"playAnimation",
+					"baseToSpeak"
+				],
+				[
+					"displaySceneText",
+					"You again come visite, no?"
+				]
+			]
 			
 		},
 		"nathaniel": {
@@ -44,10 +99,10 @@
 					"width": 40,
 					"height": 28,
 					"animations": {
-						"default": {
+						"base": {
 							"frames": [1],
 							"speed": 1,
-							"loop": true,
+							"loop": false,
 						},
 						"turnHead": {
 							"frames": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1],
@@ -58,6 +113,27 @@
 							"frames": [16, 17, 18, 19, 20, 21, 22, 23, 24],
 							"speed": 5.5,
 							"loop": true,
+						}
+					}
+				},
+				"nathanielHands": {
+					"frames": 4,
+					"x": 32,
+					"y": 68,
+					"width": 64,
+					"height": 25,
+					"autoplayDelay": 10,
+					"animations": {
+						"base": {
+							"frames": [0],
+							"speed": 1,
+							"loop": false,
+						},
+						"rubHands": {
+							"frames": [0, 1, 2, 3],
+							"speed": 5.8,
+							"loop": false,
+							"autoplay": true,
 						}
 					}
 				}
