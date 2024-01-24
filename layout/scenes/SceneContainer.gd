@@ -91,6 +91,7 @@ func add_zone(zone):
 
 func process_actions_queue():
 	get_tree().call_group('boxtext', 'remove_from_queue')
+	get_tree().call_group('sceneSprite', 'set_queueing', true)
 	play_animation('base')
 	if actionsQueue.size() > 0:
 		var currentAction = actionsQueue.pop_front()
@@ -101,6 +102,7 @@ func process_actions_queue():
 		elif actionType == 'playAnimation':
 			play_animation(actionArg, true)
 	else:
+		get_tree().call_group('sceneSprite', 'set_queueing', false)
 		if isExiting:
 			close_scene()
 		else:
@@ -114,10 +116,13 @@ func display_text(text, arrivalCallback = false, disableInputs = false):
 
 func play_animation(animationName, autoKill = false):
 	for sprite in get_tree().get_nodes_in_group('sceneSprite'):
-		if sprite.frames.has_animation(animationName) and sprite.animation != animationName and !sprite.isPlaying:
-			if autoKill:
-				_err = sprite.connect('animation_finished', self, 'end_animation', [sprite])
-			sprite.play(animationName)
+		if sprite.frames.has_animation(animationName) and sprite.animation != animationName:
+			if !sprite.isPlaying:
+				if autoKill:
+					_err = sprite.connect('animation_finished', self, 'end_animation', [sprite])
+				sprite.play(animationName)
+			elif sprite.autoplayAnimations.has(sprite.animation):
+				sprite.play_after_autoplay(animationName)
 
 func end_animation(sprite):
 	_err = sprite.disconnect('animation_finished', self, 'end_animation')

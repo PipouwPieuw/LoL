@@ -1,28 +1,29 @@
 extends AnimatedSprite
 
-var autoplay = false
+var hasAutoplay = false
 var isPlaying = false
+var isQueuing = false
 var autoplayDelay = 0
 var autoplayLimit = 0
 var autoplayTimer = 0
 var autoplayAnimations = []
+var queuedAnimations = []
 var _err
 
 func _ready():
 	add_to_group('sceneSprite')
-	if autoplayDelay != 0:
-		autoplayLimit = randi() % int(autoplayDelay) + 1
 
 func init(sprite, layout, name):
 	var spriteFramesInstance = SpriteFrames.new()
 	var spriteSize = Vector2(sprite.width, sprite.height)
 	var animationSpriteSheet : Texture = load('assets/sprites/animations/' + layout + '/' +  name + '.png')
 	if sprite.has('autoplayDelay'):
-		autoplay = true
+		hasAutoplay = true
 		autoplayDelay = sprite.autoplayDelay
-		_err = self.connect('animation_finished', self, 'end_animation_autoplay')
-	else:
-		_err = self.connect('animation_finished', self, 'end_animation')
+		autoplayLimit = randi() % int(autoplayDelay) + 1
+#		_err = self.connect('animation_finished', self, 'end_animation_autoplay')
+#	else:
+	_err = self.connect('animation_finished', self, 'end_animation')
 	for animationName in sprite.animations:
 		var animation = sprite.animations[animationName]
 		var counter = 0
@@ -43,7 +44,7 @@ func init(sprite, layout, name):
 	play('base')
 
 func _physics_process(delta):
-	if autoplay and not isPlaying and animation == 'base':
+	if hasAutoplay and not isPlaying and animation == 'base':
 		autoplayTimer += delta
 	if(autoplayTimer >= autoplayLimit and not isPlaying and animation == 'base' and autoplayAnimations.size() > 0):
 		isPlaying = true
@@ -51,13 +52,33 @@ func _physics_process(delta):
 		autoplayAnimations.push_back(autoplayAnimations.pop_front())
 
 func end_animation():
-	if animation == 'speakToBase':
+	if queuedAnimations.size() > 0:
+		play(queuedAnimations[0])
+		queuedAnimations.pop_front()
+	elif autoplayAnimations.has(animation):
+		end_animation_autoplay()
+#	elif animation == 'speakToBase' and !isQueuing:
+	elif animation == 'speakToBase':
 		play('base')
 
+func play_after_autoplay(name):
+	if name != 'base':
+		queuedAnimations.append(name)
+
 func end_animation_autoplay():
-	if not animation == 'base':
+	if queuedAnimations.size() > 0:
+		play(queuedAnimations[0])
+		queuedAnimations.pop_front()
+		randomize()
+		autoplayLimit = randi() % int(autoplayDelay) + 1
+		autoplayTimer = 0
+		isPlaying = false
+	elif not animation == 'base':
 		play('base')
 		randomize()
 		autoplayLimit = randi() % int(autoplayDelay) + 1
 		autoplayTimer = 0
 		isPlaying = false
+
+func set_queueing(mode):
+	isQueuing = mode

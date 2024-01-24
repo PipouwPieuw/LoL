@@ -23,6 +23,11 @@
 							"loop": false,
 							"autoplay": true,
 						},
+						"rubSwordOnce": {
+							"frames": [4, 5, 6, 7, 8, 9, 8, 7, 6, 5],
+							"speed": 5.8,
+							"loop": false,
+						},
 						"speakToBase": {
 							"frames": [0, 1, 2, 3],
 							"speed": 12,
@@ -55,7 +60,11 @@
 				],
 				[
 					"playAnimation",
-					"rubSword"
+					"speakToBase"
+				],
+				[
+					"playAnimation",
+					"rubSwordOnce"
 				],
 				[
 					"playAnimation",
