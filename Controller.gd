@@ -29,7 +29,7 @@ func _ready():
 	add_to_group('controller')
 	get_tree().call_group('partymain', 'set_main_member_id', mainCharId)
 	get_tree().call_group('purse', 'set_amount', initialCoins, false)
-	load_level()
+	load_level('gladstone')
 	
 func _physics_process(_delta):
 	if !inputProcessing and inputQueue.size() > 0:
@@ -41,9 +41,9 @@ func _physics_process(_delta):
 		else:
 			check_move(processedInput)
 	
-func load_level():
+func load_level(levelName):
 	var file = File.new()
-	file.open('res://gladstone.json', File.READ)
+	file.open('res://data/levels/' + levelName + '.json', File.READ)
 	currentData = parse_json(file.get_as_text())
 	file.close()
 	mapWidth = int(currentData.width)
@@ -51,7 +51,8 @@ func load_level():
 	play_level_music()
 	set_cells(int(currentData.start_index))
 	draw_map()
-	send_walls_status('up')
+	send_walls_status('up')	
+	get_tree().call_group('inputs', 'set_move', true)
 
 func play_level_music():
 	get_tree().call_group('audiostream', 'play_music', currentData.music)

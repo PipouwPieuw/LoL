@@ -31,6 +31,7 @@ var animationPath = ''
 var animations = {}
 var moveSpeedVertical = 8
 var moveSpeedHorizontal = 1200
+var viewportSizeY = rect_size.y
 var _err
 
 func _ready():
@@ -184,7 +185,33 @@ func update_layout(newLayout, framesAmount):
 	# Animations
 	animationPath = animationBasePath + '/' + currentLayout + '/'
 	preload_animations()
+	set_wall_sprites_position(walls)
+	set_wall_sprites_position(wallsSide)
 	get_tree().call_group('scenecontainer', 'load_scenes', currentLayout)
+
+func set_wall_sprites_position(wallObject):
+	for wall in wallObject.get_children():
+		var spriteOffset = get_wall_sprite_offset(wall.name)
+		wall.position.y = viewportSizeY - spriteOffset - wall.texture.get_height()
+
+func get_wall_sprite_offset(wallName):
+	match wallName:
+		"WallLeftUUU", "WallLeftUUUL", "WallRightUUU", "WallRightUUUR":
+			return 56
+		"WallFrontUU", "WallFrontUUL", "WallFrontUULL", "WallFrontUUR", "WallFrontUURR":
+			return 55
+		"WallLeftUUL", "WallRightUUR":
+			return 52
+		"WallFrontU", "WallFrontUL", "WallFrontUR", "WallLeftUU", "WallRightUU":
+			return 40
+		"WallLeftU", "WallRightU":
+			return 16
+		"WallFront", "WallFrontL", "WallFrontR":
+			return 11
+		"WallLeft", "WallRight": 
+			return 0
+		_:
+			return 0
 
 # Load all sprites from current layout in dictionary for later use
 func preload_sprites():
@@ -326,6 +353,9 @@ func playSound(type, name):
 
 func transition_to_scene(sceneName):
 	get_tree().call_group('screentransition', 'transition', sceneName)
+
+func load_level(levelName):
+	get_tree().call_group('controller', 'load_level', levelName)
 
 func add_scene(sceneName):
 	sceneContainer.show()

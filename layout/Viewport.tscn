@@ -53,33 +53,39 @@ centered = false
 
 [node name="WallRightUUUR" type="Sprite" parent="Textures/Front/Walls"]
 visible = false
-position = Vector2( 152, 46 )
+position = Vector2( 144, 28 )
+centered = false
+hframes = 35
 
 [node name="WallLeftUUUL" type="Sprite" parent="Textures/Front/Walls"]
 visible = false
-position = Vector2( 24, 46 )
+position = Vector2( 16, 28 )
+centered = false
+hframes = 2
 
 [node name="WallLeftUUU" type="Sprite" parent="Textures/Front/Walls"]
 visible = false
 position = Vector2( 64, 28 )
 centered = false
-hframes = 30
+hframes = 2
 
 [node name="WallRightUUU" type="Sprite" parent="Textures/Front/Walls"]
 visible = false
 position = Vector2( 104, 28 )
 centered = false
-hframes = 30
+hframes = 35
 
 [node name="WallFrontUULL" type="Sprite" parent="Textures/Front/Walls"]
 visible = false
-position = Vector2( 8, 46 )
-hframes = 30
+position = Vector2( 0, 26 )
+centered = false
+hframes = 35
 
 [node name="WallLeftUUL" type="Sprite" parent="Textures/Front/Walls"]
 visible = false
-position = Vector2( 8, 47 )
-hframes = 30
+position = Vector2( 0, 27 )
+centered = false
+hframes = 2
 
 [node name="WallFrontUUL" type="Sprite" parent="Textures/Front/Walls"]
 visible = false
@@ -91,41 +97,43 @@ hframes = 30
 visible = false
 position = Vector2( 64, 27 )
 centered = false
-hframes = 30
+hframes = 35
 
 [node name="WallFrontUUR" type="Sprite" parent="Textures/Front/Walls"]
 visible = false
 position = Vector2( 112, 27 )
 centered = false
-hframes = 30
+hframes = 2
 
 [node name="WallRightUUR" type="Sprite" parent="Textures/Front/Walls"]
 visible = false
-position = Vector2( 168, 47 )
-hframes = 30
+position = Vector2( 160, 26 )
+centered = false
+hframes = 35
 
 [node name="WallFrontUURR" type="Sprite" parent="Textures/Front/Walls"]
 visible = false
-position = Vector2( 168, 46 )
-hframes = 30
+position = Vector2( 160, 26 )
+centered = false
+hframes = 35
 
 [node name="WallLeftUU" type="Sprite" parent="Textures/Front/Walls"]
 visible = false
 position = Vector2( 48, 20 )
 centered = false
-hframes = 30
+hframes = 35
 
 [node name="WallRightUU" type="Sprite" parent="Textures/Front/Walls"]
 visible = false
 position = Vector2( 112, 20 )
 centered = false
-hframes = 30
+hframes = 2
 
 [node name="WallFrontU" type="Sprite" parent="Textures/Front/Walls"]
 visible = false
 position = Vector2( 48, 20 )
 centered = false
-hframes = 30
+hframes = 35
 
 [node name="WallFrontUL" type="Sprite" parent="Textures/Front/Walls"]
 visible = false
@@ -143,13 +151,13 @@ hframes = 30
 visible = false
 position = Vector2( 24, 8 )
 centered = false
-hframes = 30
+hframes = 2
 
 [node name="WallRightU" type="Sprite" parent="Textures/Front/Walls"]
 visible = false
 position = Vector2( 128, 8 )
 centered = false
-hframes = 30
+hframes = 35
 
 [node name="WallFrontL" type="Sprite" parent="Textures/Front/Walls"]
 visible = false
@@ -164,9 +172,10 @@ centered = false
 hframes = 30
 
 [node name="WallFront" type="Sprite" parent="Textures/Front/Walls"]
+visible = false
 position = Vector2( 24, 5 )
 centered = false
-hframes = 30
+hframes = 35
 
 [node name="Animations" type="Node2D" parent="Textures/Front/Walls/WallFront"]
 
@@ -181,7 +190,7 @@ hframes = 30
 visible = false
 position = Vector2( 152, 0 )
 centered = false
-hframes = 30
+hframes = 35
 
 [node name="Side" type="Control" parent="Textures"]
 margin_left = -176.0
@@ -212,11 +221,13 @@ centered = false
 
 [node name="WallRightUUUR" type="Sprite" parent="Textures/Side/Walls"]
 visible = false
-position = Vector2( 152, 46 )
+position = Vector2( 144, 28 )
+centered = false
 
 [node name="WallLeftUUUL" type="Sprite" parent="Textures/Side/Walls"]
 visible = false
-position = Vector2( 24, 46 )
+position = Vector2( 16, 28 )
+centered = false
 
 [node name="WallLeftUUU" type="Sprite" parent="Textures/Side/Walls"]
 visible = false
@@ -232,12 +243,14 @@ hframes = 30
 
 [node name="WallFrontUULL" type="Sprite" parent="Textures/Side/Walls"]
 visible = false
-position = Vector2( 8, 46 )
+position = Vector2( 0, 26 )
+centered = false
 hframes = 30
 
 [node name="WallLeftUUL" type="Sprite" parent="Textures/Side/Walls"]
 visible = false
-position = Vector2( 8, 47 )
+position = Vector2( 0, 27 )
+centered = false
 hframes = 30
 
 [node name="WallFrontUUL" type="Sprite" parent="Textures/Side/Walls"]
@@ -260,13 +273,14 @@ hframes = 30
 
 [node name="WallRightUUR" type="Sprite" parent="Textures/Side/Walls"]
 visible = false
-position = Vector2( 168, 47 )
-flip_h = true
+position = Vector2( 160, 26 )
+centered = false
 hframes = 30
 
 [node name="WallFrontUURR" type="Sprite" parent="Textures/Side/Walls"]
 visible = false
-position = Vector2( 168, 46 )
+position = Vector2( 160, 26 )
+centered = false
 hframes = 30
 
 [node name="WallLeftUU" type="Sprite" parent="Textures/Side/Walls"]

@@ -1,0 +1,5148 @@
+{
+    "name": "Northland Forest",
+    "width":26,
+    "height":26,
+    "start_index":480,
+    "layout":"forest1",
+    "spriteSheetFrames": 2,
+    "hasCeiling": true,
+    "music": "forest1",
+    "grid":[
+        {
+            "index":0,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":1,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":2,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":3,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":4,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":5,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":6,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":7,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":8,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":9,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":10,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":11,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":12,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":13,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":14,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":15,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":16,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":17,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":18,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":19,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":20,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":21,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":22,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":23,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":24,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":25,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":26,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":27,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":28,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":29,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":30,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":31,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":32,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":33,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":34,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":35,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":36,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":37,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":38,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":39,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":40,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":41,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":42,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":43,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":44,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":45,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":46,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":47,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":48,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":49,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":50,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":51,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":52,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":53,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":54,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":55,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":56,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":57,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":58,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":59,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":60,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":61,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":62,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":63,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":64,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":65,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":66,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":67,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":68,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":69,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":70,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":71,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":72,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":73,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":74,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":75,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":76,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":77,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":78,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":79,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":80,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":81,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":82,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":83,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":84,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":85,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":86,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":87,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":88,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":89,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":90,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":91,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":92,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":93,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":94,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":95,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":96,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":97,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":98,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":99,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":100,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":101,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":102,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":103,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":104,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":105,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":106,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":107,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":108,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":109,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":110,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":111,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":112,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":113,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":114,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":115,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":116,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":117,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":118,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":119,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":120,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":121,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":122,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":123,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":124,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":125,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":126,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":127,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":128,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":129,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":130,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":131,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":132,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":133,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":134,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":135,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":136,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":137,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":138,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":139,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":140,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":141,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":142,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":143,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":144,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":145,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":146,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":147,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":148,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":149,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":150,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":151,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":152,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":153,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":154,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":155,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":156,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":157,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":158,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":159,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":160,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":161,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":162,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":163,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":164,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":165,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":166,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":167,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":168,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":169,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":170,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":171,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":172,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":173,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":174,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":175,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":176,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":177,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":178,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":179,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":180,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":181,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":182,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":183,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":184,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":185,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":186,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":187,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":188,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":189,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":190,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":191,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":192,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":193,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":194,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":195,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":196,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":197,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":198,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":199,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":200,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":201,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":202,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":203,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":204,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":205,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":206,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":207,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":208,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":209,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":210,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":211,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":212,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":213,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":214,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":215,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":216,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":217,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":218,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":219,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":220,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":221,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":222,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":223,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":224,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":225,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":226,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":227,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":228,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":229,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":230,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":231,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":232,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":233,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":234,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":235,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":236,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":237,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":238,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":239,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":240,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":241,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":242,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":243,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":244,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":245,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":246,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":247,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":248,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":249,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":250,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":251,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":252,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":253,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":254,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":255,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":256,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":257,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":258,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":259,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":260,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":261,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":262,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":263,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":264,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":265,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":266,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":267,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":268,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":269,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":270,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":271,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":272,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":273,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":274,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":275,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":276,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":277,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":278,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":279,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":280,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":281,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":282,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":283,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":284,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":285,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":286,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":287,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":288,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":289,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":290,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":291,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":292,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":293,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":294,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":295,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":296,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":297,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":298,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":299,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":300,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":301,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":302,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":303,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":304,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":305,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":306,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":307,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":308,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":309,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":310,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":311,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":312,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":313,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":314,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":315,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":316,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":317,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":318,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":319,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":320,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":321,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":322,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":323,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":324,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":325,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":326,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":327,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":328,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":329,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":330,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":331,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":332,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":333,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":334,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":335,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":336,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":337,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":338,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":339,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":340,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":341,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":342,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":343,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":344,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":345,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":346,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":347,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":348,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":349,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":350,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":351,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":352,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":353,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":354,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":355,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":356,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":357,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":358,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":359,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":360,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":361,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":362,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":363,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":364,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":365,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":366,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":367,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":368,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":369,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":370,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":371,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":372,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":373,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":374,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":375,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":376,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":377,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":378,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":379,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":380,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":381,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":382,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":383,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":384,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":385,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":386,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":387,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":388,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":389,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":390,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":391,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":392,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":393,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":394,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":395,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":396,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":397,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":398,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":399,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":400,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":401,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":402,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":403,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":404,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":405,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":406,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":407,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":408,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":409,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":410,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":411,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":412,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":413,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":414,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":415,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":416,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":417,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":418,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":419,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":420,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":421,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":422,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":423,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":424,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":425,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":426,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":427,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":428,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":429,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":430,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":431,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":432,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":433,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":434,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":435,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":436,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":437,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":438,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":439,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":440,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":441,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":442,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":443,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":444,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":445,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":446,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":447,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":448,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":449,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":450,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":451,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":452,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":453,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":454,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":455,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":456,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":457,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":458,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":459,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":460,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":461,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":462,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":463,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":464,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":465,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":466,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":467,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":468,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":469,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":470,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":471,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":472,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":473,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":474,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":475,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":476,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":477,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":478,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":479,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":480,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":481,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":482,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":483,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":484,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":485,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":486,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":487,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":488,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":489,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":490,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":491,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":492,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":493,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":494,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":495,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":496,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":497,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":498,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":499,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":500,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":501,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":502,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":503,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":504,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":505,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":506,
+            "type": "C",
+            "explored": false,
+            "walkable": true,
+            "wallAttr":{
+                "wallFront": {
+                    "spriteIndex": -1,
+                    "interactionZones": []
+                },
+                "wallRight": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallBack": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                },
+                "wallLeft": {
+                    "spriteIndex": 0,
+                    "interactionZones": []
+                }
+            }
+        },
+        {
+            "index":507,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":508,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":509,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":510,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":511,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":512,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":513,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":514,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":515,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":516,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":517,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":518,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":519,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":520,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":521,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":522,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":523,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":524,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":525,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":526,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":527,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":528,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":529,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":530,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":531,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":532,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":533,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":534,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":535,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":536,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":537,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":538,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":539,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":540,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":541,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":542,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":543,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":544,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":545,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":546,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":547,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":548,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":549,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":550,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":551,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":552,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":553,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":554,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":555,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":556,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":557,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":558,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":559,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":560,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":561,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":562,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":563,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":564,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":565,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":566,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":567,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":568,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":569,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":570,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":571,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":572,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":573,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":574,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":575,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":576,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":577,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":578,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":579,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":580,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":581,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":582,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":583,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":584,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":585,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":586,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":587,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":588,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":589,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":590,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":591,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":592,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":593,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":594,
+            "type": "E",
+            "explored": false,
+            "walkable": false
+        },
+        {
+            "index":595,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":596,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":597,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":598,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":599,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":600,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":601,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":602,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":603,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":604,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":605,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":606,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":607,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":608,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":609,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":610,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":611,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":612,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":613,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":614,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":615,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":616,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":617,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":618,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":619,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":620,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":621,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":622,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":623,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":624,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":625,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":626,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":627,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":628,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":629,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":630,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":631,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":632,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":633,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":634,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":635,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":636,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":637,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":638,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":639,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":640,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":641,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":642,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":643,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":644,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":645,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":646,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":647,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":648,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":649,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":650,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":651,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":652,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":653,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":654,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":655,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":656,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":657,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":658,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":659,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":660,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":661,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":662,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":663,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":664,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":665,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":666,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":667,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":668,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":669,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":670,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":671,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":672,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":673,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":674,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        },
+        {
+            "index":675,
+            "type": "X",
+        	"explored": false,
+        	"walkable": false
+        }
+    ]
+}
