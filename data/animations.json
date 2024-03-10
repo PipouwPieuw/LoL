@@ -13,7 +13,11 @@
 			"soundName": "portcullis01",
 			"onFinished": {
 				"actionType": "load_level",
-				"actionId": "northland_forest"
+				"actionId": "northland_forest",
+				"actionArgs": {
+					"targetCell": 300,
+					"direction": "U"
+				}
 			}
 		},
 		"doorVictor": {
@@ -82,21 +86,6 @@
 		}
 	},
 	"forest1": {
-		"portcullis": {
-			"frames": 12,
-			"x": 41,
-			"y": 18,
-			"width": 46,
-			"height": 66,
-			"speed": 3,
-			"loop": false,
-			"maintainLastFrame": true,
-			"soundType": "layout",
-			"soundName": "portcullis01",
-			"onFinished": {
-				"actionType": "load_level",
-				"actionId": "northland_forest"
-			}
-		}
+
 	}
 }

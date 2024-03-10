@@ -7,7 +7,7 @@ var transitionTarget = 'viewport'
 func _ready():
 	add_to_group('screentransition')
 
-func transition(target = 'viewport'):
+func transition(target = 'viewport', args = {}):
 	visible = true
 	transitionTarget = target
 	transitionAnimation.play("fade_to_black")

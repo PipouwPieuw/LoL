@@ -41,7 +41,7 @@ func _physics_process(_delta):
 		else:
 			check_move(processedInput)
 	
-func load_level(levelName):
+func load_level(levelName, args = {}):
 	var file = File.new()
 	file.open('res://data/levels/' + levelName + '.json', File.READ)
 	currentData = parse_json(file.get_as_text())
@@ -49,9 +49,15 @@ func load_level(levelName):
 	mapWidth = int(currentData.width)
 	get_tree().call_group('viewport', 'update_layout', currentData.layout, currentData.spriteSheetFrames)
 	play_level_music()
-	set_cells(int(currentData.start_index))
+	var startIndex = currentData.start_index
+	if args.has('targetCell'):
+		startIndex = args.targetCell
+	set_cells(int(startIndex))
+	if args.has('direction'):
+		while(directions[0] != args.direction):
+			change_direction('turnright')
 	draw_map()
-	send_walls_status('up')	
+	send_walls_status('up')
 	get_tree().call_group('inputs', 'set_move', true)
 
 func play_level_music():

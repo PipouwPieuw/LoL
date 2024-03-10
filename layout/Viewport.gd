@@ -342,7 +342,10 @@ func play_animation(animation):
 func animation_finished(animation, animData):
 	var onFinished = animData.onFinished
 	yield(get_tree().create_timer(.3), "timeout")
-	get_tree().call_group('viewport', onFinished.actionType, onFinished.actionId)
+	var actionArgs = {}
+	if onFinished.has("actionArgs"):
+		actionArgs = onFinished.actionArgs
+	get_tree().call_group('viewport', onFinished.actionType, onFinished.actionId, actionArgs)
 	if animData.has('maintainLastFrame') and animData.maintainLastFrame:
 		yield(get_tree().create_timer(.5), "timeout")
 	animation.frame = 0
@@ -351,11 +354,11 @@ func animation_finished(animation, animData):
 func playSound(type, name):
 	get_tree().call_group('audiostream', 'play_sound', type, name)
 
-func transition_to_scene(sceneName):
-	get_tree().call_group('screentransition', 'transition', sceneName)
+func transition_to_scene(sceneName, args):
+	get_tree().call_group('screentransition', 'transition', sceneName, args)
 
-func load_level(levelName):
-	get_tree().call_group('controller', 'load_level', levelName)
+func load_level(levelName, args):
+	get_tree().call_group('controller', 'load_level', levelName, args)
 
 func add_scene(sceneName):
 	sceneContainer.show()
