@@ -278,7 +278,7 @@ func update_walls(wallObject, isMain):
 			wall.sprite.visible = true
 			wall.sprite.frame = spriteIndex
 		if wallName == 'WallFront' and !data['currentCell'].InteractionZones.empty() and isMain:
-			hasInteractionZones = true	
+			hasInteractionZones = true
 	# Delete previous interaction zones
 	clearTriggerZones()
 	# Create new interaction zones

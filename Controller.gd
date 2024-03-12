@@ -270,6 +270,9 @@ func change_direction(direction):
 	send_walls_status(direction)
 
 func move_ended():
+	if currentData.grid[currentCell].has('onWalkOn'):
+		for event in currentData.grid[currentCell].onWalkOn:
+			call(event.eventType, event)
 	inputProcessing = false
 
 func clear_inputs():
@@ -414,6 +417,9 @@ func open_close_door(cell, frames):
 
 func playAnimation(event, _triggerZone):
 	get_tree().call_group('viewport', 'play_animation', event.animation)
+
+func transition_to_scene(args):
+	get_tree().call_group('screentransition', 'transition', args.actionId, {})
 
 func toggleAtlas(args, triggerZone):
 	get_tree().call_group('atlas', 'display_atlas', args)

@@ -1726,9 +1726,12 @@
         },
         {
             "index":274,
-            "type": "C",
+            "type": "S",
             "explored": false,
             "walkable": true,
+	        "label": "Gladstone keep",
+	        "color": "ee2521",
+	        "legendIndex": 1,
             "wallAttr":{
                 "wallFront": {
                     "spriteIndex": 0,
@@ -1746,7 +1749,13 @@
                     "spriteIndex": 0,
                     "interactionZones": []
                 }
-            }
+            },
+            "onWalkOn": [
+                {
+                    "eventType": "transition_to_scene",
+                    "actionId": "keep"
+                }
+            ]
         },
         {
             "index":275,
