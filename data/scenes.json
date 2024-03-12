@@ -316,8 +316,11 @@
 			}			
 		}
 	},
-	"northland_forest": {		
+	"forest1": {		
 		"keep": {
+			"sprites": {
+				
+			},
 			"triggerZones": {
 
 			}			

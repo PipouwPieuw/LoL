@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ keepSmoke.png-8b02fe14fb85f8016a338351e6088545.stex"
+path="res://.import/Floor.png-5ad0f9a2bd32a6eb7ac2e1683573c13a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/scenes/northland_forest/ keepSmoke.png"
-dest_files=[ "res://.import/ keepSmoke.png-8b02fe14fb85f8016a338351e6088545.stex" ]
+source_file="res://layout/scenes/Floor.png"
+dest_files=[ "res://.import/Floor.png-5ad0f9a2bd32a6eb7ac2e1683573c13a.stex" ]
 
 [params]
 

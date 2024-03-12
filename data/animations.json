@@ -16,7 +16,7 @@
 				"actionId": "northland_forest",
 				"actionArgs": {
 					"targetCell": 300,
-					"direction": "U"
+					"direction": "D"
 				}
 			}
 		},

@@ -1,5 +1,7 @@
 extends Node2D
 
+export(String) var initialMap
+
 var currentData      = {}
 var currentCell      = -1
 var currentCellL     = -1
@@ -29,7 +31,10 @@ func _ready():
 	add_to_group('controller')
 	get_tree().call_group('partymain', 'set_main_member_id', mainCharId)
 	get_tree().call_group('purse', 'set_amount', initialCoins, false)
-	load_level('gladstone')
+	var levelToLoad = 'gladstone'
+	if initialMap != '':
+		levelToLoad = initialMap
+	load_level(levelToLoad)
 	
 func _physics_process(_delta):
 	if !inputProcessing and inputQueue.size() > 0:

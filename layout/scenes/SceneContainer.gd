@@ -28,6 +28,7 @@ func load_scenes(layoutName):
 		currentLayout = layoutName
 
 func display_scene(sceneName):
+	print(currentData)
 	currentScene = sceneName
 	var sceneInstance = scene.instance()
 	sceneInstance.find_node('Background').texture = load('assets/sprites/scenes/' + currentLayout + '/' +  currentScene + '.png')

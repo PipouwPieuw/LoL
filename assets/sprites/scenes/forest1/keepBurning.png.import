@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/keepBurning.png-82be88334d16206ab58fa3f514cce35e.stex"
+path="res://.import/keepBurning.png-139dbe8c19c7ae06e249ea654b5a9e22.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/scenes/northland_forest/keepBurning.png"
-dest_files=[ "res://.import/keepBurning.png-82be88334d16206ab58fa3f514cce35e.stex" ]
+source_file="res://assets/sprites/scenes/forest1/keepBurning.png"
+dest_files=[ "res://.import/keepBurning.png-139dbe8c19c7ae06e249ea654b5a9e22.stex" ]
 
 [params]
 

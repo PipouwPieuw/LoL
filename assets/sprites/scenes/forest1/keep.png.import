@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/keep.png-b6056584ffeaa1e9029909f420f1e441.stex"
+path="res://.import/keep.png-f758422fbd254d83b259506859c7780a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/scenes/northland_forest/keep.png"
-dest_files=[ "res://.import/keep.png-b6056584ffeaa1e9029909f420f1e441.stex" ]
+source_file="res://assets/sprites/scenes/forest1/keep.png"
+dest_files=[ "res://.import/keep.png-f758422fbd254d83b259506859c7780a.stex" ]
 
 [params]
 

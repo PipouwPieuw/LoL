@@ -4,3 +4,4 @@
 
 [node name="Controller" type="Node2D"]
 script = ExtResource( 1 )
+initialMap = "northland_forest"
