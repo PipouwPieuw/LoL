@@ -315,5 +315,33 @@
 
 			}			
 		}
+	},
+	"northland_forest": {		
+		"keep": {
+			"triggerZones": {
+
+			}			
+		}	,
+		"keepBurning": {
+			"sprites": {
+				"keepSmoke": {
+					"frames": 8,
+					"x": 63,
+					"y": 0,
+					"width": 177,
+					"height": 122,
+					"animations": {
+						"default": {
+							"frames": [0, 1, 2, 3, 4, 5, 6, 7],
+							"speed": 3,
+							"loop": true,
+						}
+					}
+				}
+			},
+			"triggerZones": {
+
+			}			
+		}
 	}
 }
