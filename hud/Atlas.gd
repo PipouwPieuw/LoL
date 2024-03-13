@@ -5,6 +5,7 @@ onready var sprite = $Sprite
 onready var shape = $Shape
 
 var _err
+var active = false
 var zoneData = {}
 
 func _ready():
@@ -17,6 +18,7 @@ func display_atlas(args):
 	zoneData = args
 	get_tree().call_group('audiostream', 'play_sound', 'hud', 'atlas')
 	animation.play()
+	active = true
 
 func animation_ended():
 	animation.visible = false
@@ -32,7 +34,8 @@ func toggle(mode):
 	visible = mode
 
 func set_active(mode):
-	shape.disabled = mode
+	if active:
+		shape.disabled = mode
 	
 func show_map(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton  and event.button_index == BUTTON_LEFT and event.pressed:

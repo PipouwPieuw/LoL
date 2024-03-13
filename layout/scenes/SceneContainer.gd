@@ -28,7 +28,6 @@ func load_scenes(layoutName):
 		currentLayout = layoutName
 
 func display_scene(sceneName):
-	print(currentData)
 	currentScene = sceneName
 	var sceneInstance = scene.instance()
 	sceneInstance.find_node('Background').texture = load('assets/sprites/scenes/' + currentLayout + '/' +  currentScene + '.png')
@@ -44,9 +43,10 @@ func display_scene(sceneName):
 	if currentData[currentScene].has('music'):
 		get_tree().call_group('audiostream', 'play_music', currentData[currentScene].music)
 	disable_inputs(true)
-	get_tree().call_group('boxtext', 'remove_from_queue')
-	get_tree().call_group('dialogbox', 'expand_box', 'scene')
-	yield(get_tree().create_timer(.8), 'timeout')
+	if currentData[currentScene].has('expandDialogBox') and currentData[currentScene].expandDialogBox:
+		get_tree().call_group('boxtext', 'remove_from_queue')
+		get_tree().call_group('dialogbox', 'expand_box', 'scene')
+		yield(get_tree().create_timer(.8), 'timeout')
 	if currentData[currentScene].has('onFirstArrival') and currentData[currentScene].has('isFirstVisit') and currentData[currentScene].isFirstVisit:
 		currentData[currentScene].isFirstVisit = false
 		actionsQueue = currentData[currentScene].onFirstArrival.duplicate(true)
@@ -54,6 +54,8 @@ func display_scene(sceneName):
 	elif currentData[currentScene].has('onArrival'):
 		actionsQueue = currentData[currentScene].onArrival.duplicate(true)
 		process_actions_queue()
+	elif currentData[currentScene].has('canMove') and currentData[currentScene].canMove:
+		disable_inputs_walkable(false)
 	else:
 		disable_inputs(false)
 
@@ -150,8 +152,9 @@ func exit_scene(_target, event, _shape):
 			close_scene()
 
 func close_scene():
-	get_tree().call_group('dialogbox', 'unexpand_box')
-	yield(get_tree().create_timer(.8), "timeout")
+	if currentData[currentScene].has('expandDialogBox') and currentData[currentScene].expandDialogBox:
+		get_tree().call_group('dialogbox', 'unexpand_box')
+		yield(get_tree().create_timer(.8), "timeout")
 	get_tree().call_group('screentransition', 'transition')
 	yield(get_tree().create_timer(.25), "timeout")
 	sceneBox.remove_child(currentSceneInstance)
@@ -159,15 +162,27 @@ func close_scene():
 		sprite.queue_free()
 	currentSceneInstance.remove_from_group('scene')
 	currentSceneInstance.queue_free()
-	get_tree().call_group('controller', 'play_level_music')
+	if currentData[currentScene].has('canMove') and currentData[currentScene].canMove:
+		disable_inputs_walkable(true)
+	if currentData[currentScene].has('music'):
+		get_tree().call_group('controller', 'play_level_music')
+	get_tree().call_group('purse', 'set_active', false)
+	get_tree().call_group('inventory', 'set_active', true)
 	isExiting = false
 
 func disable_inputs(mode):
 	exitScene.set_disabled(mode)
 	get_tree().call_group('scenezones', 'set_disabled', mode)
 	get_tree().call_group('inventory', 'set_active', !mode)
-	get_tree().call_group('atlas', 'set_active', mode)
+	get_tree().call_group('atlas', 'set_active', !mode)
 	get_tree().call_group('purse', 'set_active', mode)
+
+func disable_inputs_walkable(mode):
+	get_tree().call_group('atlas', 'set_active', !mode)
+	get_tree().call_group('party', 'toggle_triggers', mode)
+	get_tree().call_group('inventory', 'set_active', !mode)
+	get_tree().call_group('purse', 'set_active', mode)
+	exitScene.set_disabled(mode)
 
 func update_sprites():
 	for zone in get_tree().get_nodes_in_group('scenezones'):

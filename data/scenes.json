@@ -3,6 +3,7 @@
 		"victor": {
 			"isFirstVisit": true,
 			"music": "victor",
+			"expandDialogBox": true,
 			"sprites": {
 				"victor": {
 					"frames": 21,
@@ -100,6 +101,7 @@
 		"nathaniel": {
 			"isFirstVisit": true,
 			"music": "nathaniel",
+			"expandDialogBox": true,
 			"sprites": {
 				"nathaniel": {
 					"frames": 25,
@@ -274,6 +276,7 @@
 		},
 		"geron": {
 			"music": "geron",
+			"expandDialogBox": true,
 			"sprites": {
 				"geron": {
 					"frames": 10,
@@ -295,6 +298,7 @@
 			}
 		},
 		"throneroom": {
+			"expandDialogBox": true,
 			"sprites": {
 				"throneroom": {
 					"frames": 51,
@@ -318,6 +322,7 @@
 	},
 	"forest1": {		
 		"keep": {
+			"canMove": true,
 			"sprites": {
 				
 			},

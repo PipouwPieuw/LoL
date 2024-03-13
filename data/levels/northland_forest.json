@@ -2054,7 +2054,8 @@
             "onWalkOn": [
                 {
                     "eventType": "transition_to_scene",
-                    "actionId": "keep"
+                    "actionId": "keep",
+                    "directionTrigger": ["U"]
                 }
             ]
         },

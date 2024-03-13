@@ -277,7 +277,8 @@ func change_direction(direction):
 func move_ended():
 	if currentData.grid[currentCell].has('onWalkOn'):
 		for event in currentData.grid[currentCell].onWalkOn:
-			call(event.eventType, event)
+			if event.has('directionTrigger') and event.directionTrigger.has(directions[0]):
+				call(event.eventType, event)
 	inputProcessing = false
 
 func clear_inputs():

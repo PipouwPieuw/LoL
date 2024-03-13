@@ -12,3 +12,4 @@
 visible = false
 
 [node name="Controller" parent="." instance=ExtResource( 2 )]
+initialMap = "northland_forest"
