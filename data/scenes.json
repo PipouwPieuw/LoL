@@ -323,11 +323,35 @@
 	"forest1": {		
 		"keep": {
 			"canMove": true,
+			"autoDisplay": true,
+			"exitButton": false,
+			"onWalkForward": [
+                {
+                    "actionType": "load_level",
+                    "actionId": "gladstone",
+					"actionArgs": {
+						"targetCell": 454,
+						"direction": "U"
+					}
+				}
+            ],
 			"sprites": {
 				
 			},
 			"triggerZones": {
-
+				"door": {
+					"x": 78,
+					"y": 60,
+					"width": 10,
+					"height": 20,
+					"triggerType": "click",
+					"effect": "load_level",
+                    "actionId": "gladstone",
+					"actionArgs": {
+						"targetCell": 454,
+						"direction": "U"
+					}
+				}
 			}			
 		}	,
 		"keepBurning": {

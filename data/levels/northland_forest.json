@@ -2053,7 +2053,7 @@
             },
             "onWalkOn": [
                 {
-                    "eventType": "transition_to_scene",
+                    "actionType": "transition_to_scene",
                     "actionId": "keep",
                     "directionTrigger": ["U"]
                 }

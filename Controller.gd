@@ -26,6 +26,7 @@ var currentShop      = {}
 var initialCoins     = 41
 var coins            = 0
 var mainCharId       = '003'
+var sceneDisplayed   = false
 
 func _ready():
 	add_to_group('controller')
@@ -41,6 +42,12 @@ func _physics_process(_delta):
 		inputProcessing = true
 		var processedInput = inputQueue.pop_front()
 		get_tree().call_group('hudarrows', 'darken', processedInput)
+		if sceneDisplayed:
+			if processedInput == 'up':
+				get_tree().call_group('scenecontainer', 'move_forward')
+				return
+			else:
+				get_tree().call_group('scenecontainer', 'close_scene')
 		if 'turn' in processedInput:
 			change_direction(processedInput)
 		else:
@@ -66,7 +73,8 @@ func load_level(levelName, args = {}):
 	get_tree().call_group('inputs', 'set_move', true)
 
 func play_level_music():
-	get_tree().call_group('audiostream', 'play_music', currentData.music)
+	if currentData.music != '':
+		get_tree().call_group('audiostream', 'play_music', currentData.music)
 
 func set_cells(index):
 	currentCell = index
@@ -135,6 +143,8 @@ func draw_map():
 	get_tree().call_group('map', 'draw_map', currentData)
 
 func send_walls_status(moveDirection, staticMode = false):
+	if moveDirection == 'default':
+		moveDirection = directions[0]
 	var cells = [
 		currentCell,
 		currentCellL,
@@ -200,11 +210,20 @@ func send_walls_status(moveDirection, staticMode = false):
 	if directions[0] == 'U':
 		wallsStatus['currentCell'].InteractionZones = currentData.grid[currentCell].wallAttr.wallFront.interactionZones
 	elif directions[0] == 'R':
-		wallsStatus['currentCell'].InteractionZones = currentData.grid[currentCell].wallAttr.wallRight.interactionZones				
+		wallsStatus['currentCell'].InteractionZones = currentData.grid[currentCell].wallAttr.wallRight.interactionZones
 	elif directions[0] == 'D':
-		wallsStatus['currentCell'].InteractionZones = currentData.grid[currentCell].wallAttr.wallBack.interactionZones				
+		wallsStatus['currentCell'].InteractionZones = currentData.grid[currentCell].wallAttr.wallBack.interactionZones
 	elif directions[0] == 'L':
 		wallsStatus['currentCell'].InteractionZones = currentData.grid[currentCell].wallAttr.wallLeft.interactionZones
+	# Display scene
+	if !staticMode and currentData.grid[currentCell].has('onWalkOn'):
+		for event in currentData.grid[currentCell].onWalkOn:
+			if event.has('directionTrigger') and event.directionTrigger.has(directions[0]):
+				if moveDirection == 'up':
+					get_tree().call_group('viewport', 'start_move', moveDirection, wallsStatus, false)
+				call(event.actionType, event)
+				return
+	# Else proceed to move
 	if !staticMode:
 		get_tree().call_group('viewport', 'start_move', moveDirection, wallsStatus)
 	else:
@@ -258,12 +277,16 @@ func check_move(moveDirection):
 		send_walls_status(moveDirection)
 	else:
 		# Bump animation if moving forward to obstacle
-		get_tree().call_group('audiostream', 'play_sound', 'hud', 'bump')
-		get_tree().call_group('dialogbox', 'displayText', 'You can\'t go that way!', false, 'error')
-		if moveDirection == 'up':
-			get_tree().call_group('viewport', 'bump_forward')
-		yield(get_tree(),"idle_frame")
-		move_ended()
+		bump_animation(moveDirection)
+		
+
+func bump_animation(dir):
+	get_tree().call_group('audiostream', 'play_sound', 'hud', 'bump')
+	get_tree().call_group('dialogbox', 'displayText', 'You can\'t go that way!', false, 'error')
+	if dir == 'up':
+		get_tree().call_group('viewport', 'bump_forward')
+	yield(get_tree(),"idle_frame")
+	move_ended()
 
 func change_direction(direction):
 	if direction == 'turnright':
@@ -275,10 +298,6 @@ func change_direction(direction):
 	send_walls_status(direction)
 
 func move_ended():
-	if currentData.grid[currentCell].has('onWalkOn'):
-		for event in currentData.grid[currentCell].onWalkOn:
-			if event.has('directionTrigger') and event.directionTrigger.has(directions[0]):
-				call(event.eventType, event)
 	inputProcessing = false
 
 func clear_inputs():
@@ -361,6 +380,9 @@ func giveItem(args, _triggerZone):
 
 func set_coins(val):
 	coins = val
+
+func set_scene_displayed(val):
+	sceneDisplayed = val
 
 func keyhole(args, triggerZone):
 	var activeItem = get_tree().get_nodes_in_group('inventory')[0].get_active_item()

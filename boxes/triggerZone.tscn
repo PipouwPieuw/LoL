@@ -26,6 +26,9 @@ func sendInteraction(_viewport, event, _shape_idx):
 		elif zoneData.effect == 'displaySceneText':
 			get_tree().call_group('scenecontainer', 'display_text', zoneData.text[0], false, true)
 			return
+		elif zoneData.effect == 'load_level':
+			get_tree().call_group('scenecontainer', 'load_level', zoneData.actionId, zoneData.actionArgs)
+			return
 		elif zoneData.effect == 'keyhole':
 			args = zoneData
 		elif zoneData.effect == 'playAnimation':

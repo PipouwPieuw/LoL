@@ -28,7 +28,18 @@ func load_scenes(layoutName):
 		currentLayout = layoutName
 
 func display_scene(sceneName):
+	get_tree().call_group('controller', 'set_scene_displayed', true)
 	currentScene = sceneName
+	# Update viewport on scene autodisplay
+	if currentData[currentScene].has('autoDisplay') and currentData[currentScene].autoDisplay:
+		get_tree().call_group('controller', 'send_walls_status', 'default', true)
+		get_tree().call_group('controller', 'clear_inputs')
+	# Hide exit button 
+	if currentData[currentScene].has('exitButton') and !currentData[currentScene].exitButton:
+		exitScene.visible = false
+	else:
+		exitScene.visible = true
+	# Scene display
 	var sceneInstance = scene.instance()
 	sceneInstance.find_node('Background').texture = load('assets/sprites/scenes/' + currentLayout + '/' +  currentScene + '.png')
 	# Animation sprites
@@ -55,6 +66,7 @@ func display_scene(sceneName):
 		actionsQueue = currentData[currentScene].onArrival.duplicate(true)
 		process_actions_queue()
 	elif currentData[currentScene].has('canMove') and currentData[currentScene].canMove:
+		get_tree().call_group('triggerzones', 'set_disabled', false)
 		disable_inputs_walkable(false)
 	else:
 		disable_inputs(false)
@@ -151,7 +163,7 @@ func exit_scene(_target, event, _shape):
 		else:
 			close_scene()
 
-func close_scene():
+func close_scene(callback = '', callbackArgs = []):
 	if currentData[currentScene].has('expandDialogBox') and currentData[currentScene].expandDialogBox:
 		get_tree().call_group('dialogbox', 'unexpand_box')
 		yield(get_tree().create_timer(.8), "timeout")
@@ -169,6 +181,9 @@ func close_scene():
 	get_tree().call_group('purse', 'set_active', false)
 	get_tree().call_group('inventory', 'set_active', true)
 	isExiting = false
+	get_tree().call_group('controller', 'set_scene_displayed', false)
+	if callback != '':
+		callv(callback, callbackArgs)
 
 func disable_inputs(mode):
 	exitScene.set_disabled(mode)
@@ -193,3 +208,17 @@ func update_sprites():
 				sprite.frame = zone.zoneData.quantityCurrent
 			else:
 				sprite.visible = false
+
+func move_forward():
+	if currentData[currentScene].has('onWalkForward'):
+		for event in currentData[currentScene].onWalkForward:
+			call(event.actionType, event.actionId, event.actionArgs)
+	else:
+		get_tree().call_group('controller', 'bump_animation', 'up')
+
+func load_level(levelName, args, callback = false):
+	print(levelName)
+	if !callback:
+		close_scene('load_level', [levelName, args, true])
+	else:
+		get_tree().call_group('controller', 'load_level', levelName, args)

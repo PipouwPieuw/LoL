@@ -32,6 +32,7 @@ var animations = {}
 var moveSpeedVertical = 8
 var moveSpeedHorizontal = 1200
 var viewportSizeY = rect_size.y
+var updateWallsOnMoveEnd = true
 var _err
 
 func _ready():
@@ -51,8 +52,9 @@ func _physics_process(delta):
 			textures.rect_scale.y = clamp(textures.rect_scale.y + delta * moveSpeedVertical, 1, 1.6)
 			if textures.rect_scale.x >= 1.6:
 				end_move_up_down()
-				update_ceiling_floor()
-				update_walls(wallNodes, true)
+				if updateWallsOnMoveEnd:
+					update_ceiling_floor()
+					update_walls(wallNodes, true)
 		elif moveDirection == 'down':
 			if textures.rect_scale.x == 1:
 				update_ceiling_floor()
@@ -137,8 +139,9 @@ func signal_move_end():
 	get_tree().call_group('controller', 'move_ended')
 	
 
-func start_move(dir, moveData):
+func start_move(dir, moveData, updateWalls = true):
 	data = moveData
+	updateWallsOnMoveEnd = updateWalls
 	moveDirection = dir
 
 func update_viewport(newData):
