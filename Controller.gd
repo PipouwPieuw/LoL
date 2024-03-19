@@ -2,6 +2,7 @@ extends Node2D
 
 export(String) var initialMap
 
+var mainData      = {}
 var currentData      = {}
 var currentCell      = -1
 var currentCellL     = -1
@@ -54,10 +55,17 @@ func _physics_process(_delta):
 			check_move(processedInput)
 	
 func load_level(levelName, args = {}):
-	var file = File.new()
-	file.open('res://data/levels/' + levelName + '.json', File.READ)
-	currentData = parse_json(file.get_as_text())
-	file.close()
+	if !currentData.empty():
+		var levelId = currentData.id
+		mainData[levelId] = currentData
+	if mainData.has(levelName):
+		currentData = mainData[levelName].duplicate(true)
+	else:
+		var file = File.new()
+		file.open('res://data/levels/' + levelName + '.json', File.READ)
+		currentData = parse_json(file.get_as_text())
+		file.close()
+		mainData[levelName] = currentData.duplicate(true)
 	mapWidth = int(currentData.width)
 	get_tree().call_group('viewport', 'update_layout', currentData.layout, currentData.spriteSheetFrames)
 	play_level_music()
