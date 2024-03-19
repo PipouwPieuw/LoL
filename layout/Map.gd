@@ -10,6 +10,7 @@ onready var close = $Close
 onready var mapCell = preload("res://layout/MapCell.tscn")
 onready var legendItemScene = preload("res://layout/LegendItem.tscn")
 
+var mapsData = {}
 var mapMaxW = 217
 var mapMaxH = 192
 var cellSizeX = 7
@@ -30,8 +31,8 @@ var spritesPath = 'res://assets/sprites/map'
 var _err
 
 func _ready():
-	add_to_group("map")
-	_err = close.connect("input_event", self, "close_map")
+	add_to_group('map')
+	_err = close.connect('input_event', self, 'close_map')
 	legendTypes = load_legend()
 	
 func load_legend():
@@ -47,17 +48,19 @@ func set_map_position():
 	var posX = (-safeSpace * cellSizeX) + (marginX * cellSizeX)
 	var posY = (-safeSpace * cellSizeY) + (marginY * cellSizeY)
 	minimap.position.x = posX
-	minimap.position.y = posY	
+	minimap.position.y = posY
 
 func draw_map(data):
+	get_tree().call_group('mapcells', 'queue_free')
+	get_tree().call_group('maplegends', 'queue_free')
 	mapWidth = int(data.width)
 	mapHeight = int(data.height)
 	set_map_position()
 	locationLabel.text = data.name
 	currentPos = int(data.start_index)
-	cells = data.grid
 	gridW = data.width
 	gridH = data.height
+	cells = data.grid
 	var counter = 0
 	# Drawing map
 	for cell in cells:

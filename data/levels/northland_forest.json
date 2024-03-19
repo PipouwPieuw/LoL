@@ -1,4 +1,5 @@
 {
+    "id": "northland_forest",
     "name": "Northland Forest",
     "width": 26,
     "height": 26,
@@ -2036,6 +2037,7 @@
             "wallAttr":{
                 "wallFront": {
                     "spriteIndex": 2,
+                    "showOnMap": false,
                     "interactionZones": []
                 },
                 "wallRight": {

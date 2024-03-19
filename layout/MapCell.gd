@@ -15,6 +15,7 @@ var bgIndex = 0
 var legendTypes = []
 
 func _ready():
+	add_to_group('mapcells')
 	set_background()
 	set_sprites()
 	if data.type == 'S':
@@ -29,7 +30,7 @@ func set_sprites():
 	while walls.size() > 0:
 		var wall = walls.pop_back()
 		# Check if wall has sprite  and sprite is not door
-		if typeof(data.wallAttr[wall].spriteIndex) != TYPE_ARRAY and data.wallAttr[wall].spriteIndex != -1 and !(data.wallAttr[wall].has('isDoor') and data.wallAttr[wall].isDoor):
+		if typeof(data.wallAttr[wall].spriteIndex) != TYPE_ARRAY and data.wallAttr[wall].spriteIndex != -1 and !(data.wallAttr[wall].has('isDoor') and data.wallAttr[wall].isDoor) and !(data.wallAttr[wall].has('showOnMap') and !data.wallAttr[wall].showOnMap):
 			res += '1' 
 		else:
 			res +=  '0'

@@ -4,4 +4,4 @@ var index = 0
 var type = ''
 
 func _ready():
-	pass
+	add_to_group('maplegends')
