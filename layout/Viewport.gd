@@ -191,7 +191,6 @@ func update_layout(newLayout, framesAmount):
 	set_wall_sprites_position(walls)
 	set_wall_sprites_position(wallsSide)
 	floorSprite.position.y = viewportSizeY - floorSprite.texture.get_height()
-	get_tree().call_group('scenecontainer', 'load_scenes', currentLayout)
 
 func set_wall_sprites_position(wallObject):
 	for wall in wallObject.get_children():

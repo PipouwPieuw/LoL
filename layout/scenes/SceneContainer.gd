@@ -26,6 +26,11 @@ func load_scenes(layoutName):
 	if fileContent.has(layoutName):
 		currentData = fileContent[layoutName]
 		currentLayout = layoutName
+	get_tree().call_group('controller', 'save_scene_data', layoutName, currentData)
+		
+func load_scenes_from_data(layoutName, data):
+	currentData = data
+	currentLayout = layoutName
 
 func display_scene(sceneName):
 	get_tree().call_group('controller', 'set_scene_displayed', true)
