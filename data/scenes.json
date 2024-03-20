@@ -320,7 +320,7 @@
 			}			
 		}
 	},
-	"forest1": {		
+	"northland_forest": {		
 		"keep": {
 			"canMove": true,
 			"autoDisplay": true,

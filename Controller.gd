@@ -37,6 +37,8 @@ func _ready():
 	if initialMap != '':
 		levelToLoad = initialMap
 	load_level(levelToLoad)
+	get_tree().call_group('atlas', 'test_atlas')	
+	get_tree().call_group('map', 'toggle_atlas_state', true)
 	
 func _physics_process(_delta):
 	if !inputProcessing and inputQueue.size() > 0:
@@ -89,6 +91,7 @@ func load_level_callback(levelData, args = {}):
 			change_direction('turnright')
 	draw_map()
 	send_walls_status('up')
+	get_tree().call_group('map', 'update_position')
 	get_tree().call_group('inputs', 'set_move', true)
 
 func play_level_music():

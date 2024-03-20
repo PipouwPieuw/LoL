@@ -361,6 +361,8 @@ func transition_to_scene(sceneName, args):
 	get_tree().call_group('screentransition', 'transition', sceneName, args)
 
 func load_level(levelName, args):
+	get_tree().call_group('screentransition', 'transition', 'viewport', {}, .1)
+	yield(get_tree().create_timer(.25), "timeout")
 	get_tree().call_group('controller', 'load_level', levelName, args)
 
 func add_scene(sceneName):

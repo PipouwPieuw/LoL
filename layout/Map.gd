@@ -2,6 +2,7 @@ extends Node2D
 
 onready var minimap = $Container/Minimap
 onready var player = $Container/Minimap/Player
+onready var cellsContainer = $Container/Minimap/CellsContainer
 onready var locationLabel = $Location
 onready var legendSpecial = $LegendSpecial
 onready var legendOthers = $LegendOthers
@@ -51,8 +52,7 @@ func set_map_position():
 	minimap.position.y = posY
 
 func draw_map(data):
-	get_tree().call_group('mapcells', 'queue_free')
-	get_tree().call_group('maplegends', 'queue_free')
+	reset_map()
 	mapWidth = int(data.width)
 	mapHeight = int(data.height)
 	set_map_position()
@@ -72,8 +72,10 @@ func draw_map(data):
 			cellItem.cellSizeY = cellSizeY
 			cellItem.position = calc_position(cellIndex, mapWidth)
 			cellItem.bgIndex = counter
-			minimap.add_child(cellItem)
+			cellsContainer.add_child(cellItem)
 			cellNodes[str(cellIndex)] = cellItem
+			if cell.explored:
+				set_explored(cellIndex)
 		if cell.type != 'X':
 			counter += 1
 	# Set current pos
@@ -85,7 +87,7 @@ func calc_position(index, width, offset = 0):
 	var posY = cellSizeY * int(index / width) + offset
 	return Vector2(posX, posY)
 
-func update_position(newPos):
+func update_position(newPos = currentPos):
 	currentPos = newPos
 	player.position = calc_position(currentPos, mapWidth, 1)
 	if atlasActive:
@@ -204,3 +206,17 @@ func close_map(_viewport, event, _shape_idx):
 		get_tree().call_group('inputs', 'set_move', true)
 		toggle(false)
 		get_tree().call_group('hud', 'toggle', true)
+
+func reset_map():
+	addedLegends = []
+	for cell in cellsContainer.get_children():
+		cellsContainer.remove_child(cell)
+		cell.queue_free()
+	for legend in legendSpecial.get_children():
+		legendSpecial.remove_child(legend)
+		legend.queue_free()
+	for legend in legendOthers.get_children():
+		legendOthers.remove_child(legend)
+		legend.queue_free()
+	get_tree().call_group('mapcells', 'queue_free')
+	get_tree().call_group('maplegends', 'queue_free')

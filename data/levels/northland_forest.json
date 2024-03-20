@@ -1361,9 +1361,12 @@
         },
         {
             "index": 225,
-            "type": "C",
+            "type": "S",
             "explored": false,
-            "walkable": true,
+            "walkable": false,
+            "label": "Draracle's cave",
+            "color": "f82bdc",
+            "legendIndex": 3,
             "wallAttr":{
                 "wallFront": {
                     "spriteIndex": 0,
@@ -1863,9 +1866,12 @@
         },
         {
             "index": 290,
-            "type": "C",
+            "type": "S",
             "explored": false,
-            "walkable": true,
+            "walkable": false,
+            "label": "Thug's cave",
+            "color": "9796b3",
+            "legendIndex": 1,
             "wallAttr":{
                 "wallFront": {
                     "spriteIndex": 0,
@@ -3803,9 +3809,12 @@
         },
         {
             "index": 459,
-            "type": "C",
+            "type": "S",
             "explored": false,
-            "walkable": true,
+            "walkable": false,
+            "label": "Lake Dread",
+            "color": "54ffff",
+            "legendIndex": 4,
             "wallAttr":{
                 "wallFront": {
                     "spriteIndex": 0,
@@ -4121,9 +4130,12 @@
         },
         {
             "index": 506,
-            "type": "C",
+            "type": "S",
             "explored": false,
-            "walkable": true,
+            "walkable": false,
+            "label": "Marina",
+            "color": "4c4bff",
+            "legendIndex": 2,
             "wallAttr":{
                 "wallFront": {
                     "spriteIndex": -1,

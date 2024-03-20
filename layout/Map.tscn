@@ -129,10 +129,12 @@ position = Vector2( 0, 1 )
 [node name="Player" type="AnimatedSprite" parent="Container/Minimap"]
 z_index = 1
 frames = SubResource( 25 )
-frame = 2
+frame = 7
 speed_scale = 2.2
 playing = true
 centered = false
+
+[node name="CellsContainer" type="Node2D" parent="Container/Minimap"]
 
 [node name="Location" type="Label" parent="."]
 margin_left = 236.0

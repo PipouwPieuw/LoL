@@ -18,19 +18,24 @@ func _ready():
 	add_to_group('scenecontainer')
 	_err = exitScene.connect('input_event', self, 'exit_scene')
 
-func load_scenes(layoutName):
-	var file = File.new()
-	file.open('res://data/scenes.json', File.READ)
-	var fileContent = parse_json(file.get_as_text())
-	file.close()
-	if fileContent.has(layoutName):
-		currentData = fileContent[layoutName]
-		currentLayout = layoutName
+func load_scenes(levelName):
+	currentLayout = levelName
+	get_tree().call_group('data', 'get_scene_data', levelName)
+#	var file = File.new()
+#	file.open('res://data/scenes.json', File.READ)
+#	var fileContent = parse_json(file.get_as_text())
+#	file.close()
+#	if fileContent.has(layoutName):
+#		currentData = fileContent[layoutName]
+#		currentLayout = layoutName
 #	get_tree().call_group('controller', 'save_scene_data', layoutName, currentData)
 		
-func load_scenes_from_data(layoutName, data):
-	currentData = data
-	currentLayout = layoutName
+#func load_scenes_from_data(layoutName, data):
+#	currentData = data
+#	currentLayout = layoutName
+
+func load_scenes_callback(sceneData):
+	currentData = sceneData
 
 func display_scene(sceneName):
 	get_tree().call_group('controller', 'set_scene_displayed', true)
@@ -168,12 +173,13 @@ func exit_scene(_target, event, _shape):
 		else:
 			close_scene()
 
-func close_scene(callback = '', callbackArgs = []):
+func close_scene(callback = '', callbackArgs = [], screenTransition = true):
 	if currentData[currentScene].has('expandDialogBox') and currentData[currentScene].expandDialogBox:
 		get_tree().call_group('dialogbox', 'unexpand_box')
 		yield(get_tree().create_timer(.8), "timeout")
-	get_tree().call_group('screentransition', 'transition')
-	yield(get_tree().create_timer(.25), "timeout")
+	if screenTransition:
+		get_tree().call_group('screentransition', 'transition', 'viewport', {})
+		yield(get_tree().create_timer(.25), "timeout")
 	sceneBox.remove_child(currentSceneInstance)
 	for sprite in currentSceneInstance.get_children():
 		sprite.queue_free()
@@ -222,8 +228,9 @@ func move_forward():
 		get_tree().call_group('controller', 'bump_animation', 'up')
 
 func load_level(levelName, args, callback = false):
-	print(levelName)
 	if !callback:
-		close_scene('load_level', [levelName, args, true])
+		get_tree().call_group('screentransition', 'transition', 'viewport', {}, .1)
+		yield(get_tree().create_timer(.25), "timeout")
+		close_scene('load_level', [levelName, args, true], false)
 	else:
 		get_tree().call_group('controller', 'load_level', levelName, args)

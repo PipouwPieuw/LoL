@@ -42,3 +42,8 @@ func show_map(_viewport, event, _shape_idx):
 		get_tree().call_group('inputs', 'set_move', false)
 		get_tree().call_group('hud', 'toggle', false)
 		get_tree().call_group('map', 'toggle', true)
+
+func test_atlas():
+	animation.visible = false
+	sprite.visible = true
+	shape.disabled = false
