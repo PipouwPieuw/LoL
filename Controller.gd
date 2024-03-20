@@ -2,7 +2,7 @@ extends Node2D
 
 export(String) var initialMap
 
-var mainData         = {}
+#var mainData         = {}
 var currentData      = {}
 var currentCell      = -1
 var currentCellL     = -1
@@ -55,22 +55,28 @@ func _physics_process(_delta):
 			check_move(processedInput)
 	
 func load_level(levelName, args = {}):
+	# Load level date
+	get_tree().call_group('data', 'get_level_data', levelName, args)
 	# Save current level data on level change
-	save_data()
+#	save_data()
 	# Load level data or blank level
-	if mainData.has('levels') and mainData['levels'].has(levelName):
-		currentData = mainData['levels'][levelName]
-	else:
-		var file = File.new()
-		file.open('res://data/levels/' + levelName + '.json', File.READ)
-		currentData = parse_json(file.get_as_text())
-		file.close()
-		mainData[levelName] = currentData.duplicate(true)
+#	if mainData.has('levels') and mainData['levels'].has(levelName):
+#		currentData = mainData['levels'][levelName]
+#	else:
+#	var file = File.new()
+#	file.open('res://data/levels/' + levelName + '.json', File.READ)
+#	currentData = parse_json(file.get_as_text())
+#	file.close()
+#	mainData[levelName] = currentData.duplicate(true)
 	# Load scenes data or blank scenes
-	if mainData.has('scenes') and mainData['scenes'].has(levelName):
-		get_tree().call_group('scenecontainer', 'load_scenes_from_data', levelName, mainData['scenes'][levelName])
-	else:
-		get_tree().call_group('scenecontainer', 'load_scenes', levelName)
+#	if mainData.has('scenes') and mainData['scenes'].has(levelName):
+#		get_tree().call_group('scenecontainer', 'load_scenes_from_data', levelName, mainData['scenes'][levelName])
+#	else:
+
+func load_level_callback(levelData, args = {}):
+	currentData = levelData
+	var levelName = currentData.id
+	get_tree().call_group('scenecontainer', 'load_scenes', levelName)
 	mapWidth = int(currentData.width)
 	get_tree().call_group('viewport', 'update_layout', currentData.layout, currentData.spriteSheetFrames)
 	play_level_music()
@@ -477,14 +483,14 @@ func process_accept_action():
 #	if get_tree().get_nodes_in_group('boxtext').size() > 0:
 #		get_tree().call_group('boxtext', 'display_next_lines')
 
-func save_data():
-	if !mainData.has('levels'):
-		mainData['levels'] = {}
-	if !currentData.empty():
-		var levelId = currentData.id
-		mainData['levels'][levelId] = currentData
-
-func save_scene_data(id, data):
-	if !mainData.has('scenes'):
-		mainData['scenes'] = {}
-	mainData['scenes'][id] = data
+#func save_data():
+#	if !mainData.has('levels'):
+#		mainData['levels'] = {}
+#	if !currentData.empty():
+#		var levelId = currentData.id
+#		mainData['levels'][levelId] = currentData
+#
+#func save_scene_data(id, data):
+#	if !mainData.has('scenes'):
+#		mainData['scenes'] = {}
+#	mainData['scenes'][id] = data
