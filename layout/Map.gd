@@ -51,13 +51,16 @@ func set_map_position():
 	minimap.position.x = posX
 	minimap.position.y = posY
 
-func draw_map(data):
+func draw_map(data, args = {}):
 	reset_map()
 	mapWidth = int(data.width)
 	mapHeight = int(data.height)
 	set_map_position()
 	locationLabel.text = data.name
-	currentPos = int(data.start_index)
+	if args.has('targetCell'):
+		currentPos = int(args.targetCell)
+	else:
+		currentPos = int(data.start_index)
 	gridW = data.width
 	gridH = data.height
 	cells = data.grid

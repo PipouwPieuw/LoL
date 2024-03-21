@@ -129,7 +129,7 @@ position = Vector2( 0, 1 )
 [node name="Player" type="AnimatedSprite" parent="Container/Minimap"]
 z_index = 1
 frames = SubResource( 25 )
-frame = 7
+frame = 15
 speed_scale = 2.2
 playing = true
 centered = false

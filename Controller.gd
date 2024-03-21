@@ -89,7 +89,7 @@ func load_level_callback(levelData, args = {}):
 	if args.has('direction'):
 		while(directions[0] != args.direction):
 			change_direction('turnright')
-	draw_map()
+	draw_map(args)
 	send_walls_status('up')
 	get_tree().call_group('map', 'update_position')
 	get_tree().call_group('inputs', 'set_move', true)
@@ -161,8 +161,8 @@ func set_cells(index):
 		currentCellUUUR  = index - mapWidth - 3
 		currentCellUUUL  = index + mapWidth - 3
 
-func draw_map():
-	get_tree().call_group('map', 'draw_map', currentData)
+func draw_map(args = {}):
+	get_tree().call_group('map', 'draw_map', currentData, args)
 
 func send_walls_status(moveDirection, staticMode = false):
 	if moveDirection == 'default':
