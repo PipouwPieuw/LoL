@@ -130,7 +130,6 @@ centered = false
 hframes = 2
 
 [node name="WallFrontU" type="Sprite" parent="Textures/Front/Walls"]
-visible = false
 position = Vector2( 48, 20 )
 centered = false
 hframes = 35
