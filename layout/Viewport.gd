@@ -208,7 +208,7 @@ func get_wall_sprite_offset(wallName):
 		"WallLeftUU", "WallRightUU":
 			return 40
 		"WallLeftU", "WallRightU":
-			return 16
+			return 0
 		"WallFront", "WallFrontL", "WallFrontR":
 			return 0
 		"WallLeft", "WallRight", "WallFrontU", "WallFrontUL", "WallFrontUR": 
