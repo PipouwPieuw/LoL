@@ -194,27 +194,28 @@ func update_layout(newLayout, framesAmount):
 
 func set_wall_sprites_position(wallObject):
 	for wall in wallObject.get_children():
-		var spriteOffset = get_wall_sprite_offset(wall.name)
+#		var spriteOffset = get_wall_sprite_offset(wall.name)
+		var spriteOffset = 0
 		wall.position.y = viewportSizeY - spriteOffset - wall.texture.get_height()
 
-func get_wall_sprite_offset(wallName):
-	match wallName:
-		"WallLeftUUU", "WallLeftUUUL", "WallRightUUU", "WallRightUUUR":
-			return 56
-		"WallFrontUU", "WallFrontUUL", "WallFrontUULL", "WallFrontUUR", "WallFrontUURR":
-			return 55
-		"WallLeftUUL", "WallRightUUR":
-			return 52
-		"WallLeftUU", "WallRightUU":
-			return 40
-		"WallLeftU", "WallRightU":
-			return 0
-		"WallFront", "WallFrontL", "WallFrontR":
-			return 0
-		"WallLeft", "WallRight", "WallFrontU", "WallFrontUL", "WallFrontUR": 
-			return 0
-		_:
-			return 0
+#func get_wall_sprite_offset(wallName):
+#	match wallName:
+#		"WallLeftUUU", "WallLeftUUUL", "WallRightUUU", "WallRightUUUR":
+#			return 0
+#		"WallFrontUU", "WallFrontUUL", "WallFrontUULL", "WallFrontUUR", "WallFrontUURR":
+#			return 0
+#		"WallLeftUUL", "WallRightUUR":
+#			return 0
+#		"WallLeftUU", "WallRightUU":
+#			return 0
+#		"WallLeftU", "WallRightU":
+#			return 0
+#		"WallFront", "WallFrontL", "WallFrontR":
+#			return 0
+#		"WallLeft", "WallRight", "WallFrontU", "WallFrontUL", "WallFrontUR": 
+#			return 0
+#		_:
+#			return 0
 
 # Load all sprites from current layout in dictionary for later use
 func preload_sprites():

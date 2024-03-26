@@ -5,7 +5,7 @@
     "height": 26,
     "start_index": 326,
     "layout": "forest1",
-    "spriteSheetFrames": 3,
+    "spriteSheetFrames": 11,
     "hasCeiling": true,
     "music": "forest1",
     "grid":[
@@ -2042,7 +2042,7 @@
             "walkable": true,
             "wallAttr":{
                 "wallFront": {
-                    "spriteIndex": 2,
+                    "spriteIndex": 9,
                     "showOnMap": false,
                     "interactionZones": []
                 },
