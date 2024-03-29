@@ -319,6 +319,11 @@ func change_direction(direction):
 	get_tree().call_group('map', 'update_direction', directions[0])
 	send_walls_status(direction)
 
+func set_direction(direction):
+	while(directions[0] != direction):
+		change_direction('turnright')
+	
+
 func move_ended():
 	inputProcessing = false
 

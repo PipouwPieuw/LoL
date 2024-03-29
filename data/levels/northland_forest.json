@@ -1961,7 +1961,14 @@
                     "spriteIndex": -1,
                     "interactionZones": []
                 }
-            }
+            },
+            "onWalkOn": [
+                {
+                    "actionType": "transition_to_scene",
+                    "actionId": "thugCamp",
+                    "directionTrigger": ["L"]
+                }
+            ]
         },
         {
             "index": 294,
@@ -3805,7 +3812,14 @@
                     "spriteIndex": 0,
                     "interactionZones": []
                 }
-            }
+            },
+            "onWalkOn": [
+                {
+                    "actionType": "transition_to_scene",
+                    "actionId": "lake1",
+                    "directionTrigger": ["R"]
+                }
+            ]
         },
         {
             "index": 459,
@@ -3976,7 +3990,14 @@
                     "spriteIndex": 0,
                     "interactionZones": []
                 }
-            }
+            },
+            "onWalkOn": [
+                {
+                    "actionType": "transition_to_scene",
+                    "actionId": "marina",
+                    "directionTrigger": ["D"]
+                }
+            ]
         },
         {
             "index": 481,

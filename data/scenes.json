@@ -320,7 +320,7 @@
 			}			
 		}
 	},
-	"northland_forest": {		
+	"northland_forest": {
 		"keep": {
 			"canMove": true,
 			"autoDisplay": true,
@@ -353,8 +353,8 @@
 					}
 				}
 			}			
-		}	,
-		"keepBurning": {
+		},
+		"keepDestroyed": {
 			"sprites": {
 				"keepSmoke": {
 					"frames": 8,
@@ -374,6 +374,61 @@
 			"triggerZones": {
 
 			}			
-		}
+		},
+		"thugCamp": {
+			"autoDisplay": true,
+			"expandDialogBox": true,
+			"exitDirection": "D",
+			"sprites": {
+				
+			},
+			"triggerZones": {
+
+			}			
+		},
+		"marina": {
+			"canMove": true,
+			"autoDisplay": true,
+			"exitButton": false,
+			"sprites": {
+				
+			},
+			"triggerZones": {
+				
+			}			
+		},
+		"marinaDestroyed": {
+			"canMove": true,
+			"autoDisplay": true,
+			"exitButton": false,
+			"sprites": {
+				
+			},
+			"triggerZones": {
+				
+			}			
+		},
+		"lake1": {
+			"canMove": true,
+			"autoDisplay": true,
+			"exitButton": false,
+			"sprites": {
+				
+			},
+			"triggerZones": {
+				
+			}			
+		},
+		"lake2": {
+			"canMove": true,
+			"autoDisplay": true,
+			"exitButton": false,
+			"sprites": {
+				
+			},
+			"triggerZones": {
+				
+			}			
+		},
 	}
 }

@@ -177,6 +177,8 @@ func close_scene(callback = '', callbackArgs = [], screenTransition = true):
 	if currentData[currentScene].has('expandDialogBox') and currentData[currentScene].expandDialogBox:
 		get_tree().call_group('dialogbox', 'unexpand_box')
 		yield(get_tree().create_timer(.8), "timeout")
+	if currentData[currentScene].has('exitDirection'):
+		get_tree().call_group('controller', 'set_direction', currentData[currentScene].exitDirection)
 	if screenTransition:
 		get_tree().call_group('screentransition', 'transition', 'viewport', {})
 		yield(get_tree().create_timer(.25), "timeout")
