@@ -1543,11 +1543,11 @@
             "walkable": true,
             "wallAttr":{
                 "wallFront": {
-                    "spriteIndex": -1,
+                    "spriteIndex": 8,
                     "interactionZones": []
                 },
                 "wallRight": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 1,
                     "interactionZones": []
                 },
                 "wallBack": {
@@ -1677,11 +1677,11 @@
                     "interactionZones": []
                 },
                 "wallBack": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 1,
                     "interactionZones": []
                 },
                 "wallLeft": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 1,
                     "interactionZones": []
                 }
             }
@@ -1693,11 +1693,11 @@
             "walkable": true,
             "wallAttr":{
                 "wallFront": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 1,
                     "interactionZones": []
                 },
                 "wallRight": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 1,
                     "interactionZones": []
                 },
                 "wallBack": {
@@ -1787,7 +1787,7 @@
                     "interactionZones": []
                 },
                 "wallLeft": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 2,
                     "interactionZones": []
                 }
             }
@@ -1946,11 +1946,11 @@
             "walkable": true,
             "wallAttr":{
                 "wallFront": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 1,
                     "interactionZones": []
                 },
                 "wallRight": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 1,
                     "interactionZones": []
                 },
                 "wallBack": {
@@ -2001,7 +2001,7 @@
                     "interactionZones": []
                 },
                 "wallLeft": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 1,
                     "interactionZones": []
                 }
             }
@@ -2013,11 +2013,11 @@
             "walkable": true,
             "wallAttr":{
                 "wallFront": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 7,
                     "interactionZones": []
                 },
                 "wallRight": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 4,
                     "interactionZones": []
                 },
                 "wallBack": {
@@ -2062,7 +2062,7 @@
                     "interactionZones": []
                 },
                 "wallLeft": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 1,
                     "interactionZones": []
                 }
             },
@@ -2097,7 +2097,7 @@
                     "interactionZones": []
                 },
                 "wallRight": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 1,
                     "interactionZones": []
                 },
                 "wallBack": {
@@ -2219,7 +2219,7 @@
                     "interactionZones": []
                 },
                 "wallLeft": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 1,
                     "interactionZones": []
                 }
             }
@@ -2275,7 +2275,7 @@
                     "interactionZones": []
                 },
                 "wallBack": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 1,
                     "interactionZones": []
                 },
                 "wallLeft": {
@@ -2291,11 +2291,11 @@
             "walkable": true,
             "wallAttr":{
                 "wallFront": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 1,
                     "interactionZones": []
                 },
                 "wallRight": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 1,
                     "interactionZones": []
                 },
                 "wallBack": {
@@ -2353,7 +2353,7 @@
                     "interactionZones": []
                 },
                 "wallBack": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 1,
                     "interactionZones": []
                 },
                 "wallLeft": {
@@ -2369,7 +2369,7 @@
             "walkable": true,
             "wallAttr":{
                 "wallFront": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 1,
                     "interactionZones": []
                 },
                 "wallRight": {
@@ -2531,7 +2531,7 @@
             "walkable": true,
             "wallAttr":{
                 "wallFront": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 6,
                     "interactionZones": []
                 },
                 "wallRight": {
@@ -2539,7 +2539,7 @@
                     "interactionZones": []
                 },
                 "wallBack": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 1,
                     "interactionZones": []
                 },
                 "wallLeft": {
@@ -2555,7 +2555,7 @@
             "walkable": true,
             "wallAttr":{
                 "wallFront": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 1,
                     "interactionZones": []
                 },
                 "wallRight": {
@@ -2617,11 +2617,11 @@
                     "interactionZones": []
                 },
                 "wallBack": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 1,
                     "interactionZones": []
                 },
                 "wallLeft": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 1,
                     "interactionZones": []
                 }
             }
@@ -2633,7 +2633,7 @@
             "walkable": true,
             "wallAttr":{
                 "wallFront": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 1,
                     "interactionZones": []
                 },
                 "wallRight": {
@@ -2695,11 +2695,11 @@
                     "interactionZones": []
                 },
                 "wallBack": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 1,
                     "interactionZones": []
                 },
                 "wallLeft": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 1,
                     "interactionZones": []
                 }
             }
@@ -2759,11 +2759,11 @@
             "walkable": true,
             "wallAttr":{
                 "wallFront": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 1,
                     "interactionZones": []
                 },
                 "wallRight": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 2,
                     "interactionZones": []
                 },
                 "wallBack": {
@@ -2855,7 +2855,7 @@
             "walkable": true,
             "wallAttr":{
                 "wallFront": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 1,
                     "interactionZones": []
                 },
                 "wallRight": {
@@ -2867,7 +2867,7 @@
                     "interactionZones": []
                 },
                 "wallLeft": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 5,
                     "interactionZones": []
                 }
             }
@@ -2919,7 +2919,7 @@
                     "interactionZones": []
                 },
                 "wallRight": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 1,
                     "interactionZones": []
                 },
                 "wallBack": {
@@ -2963,7 +2963,7 @@
                     "interactionZones": []
                 },
                 "wallLeft": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 1,
                     "interactionZones": []
                 }
             }
@@ -3039,7 +3039,7 @@
                     "interactionZones": []
                 },
                 "wallRight": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 1,
                     "interactionZones": []
                 },
                 "wallBack": {
@@ -3209,7 +3209,7 @@
                     "interactionZones": []
                 },
                 "wallLeft": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 1,
                     "interactionZones": []
                 }
             }
@@ -3221,7 +3221,7 @@
             "walkable": true,
             "wallAttr":{
                 "wallFront": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 1,
                     "interactionZones": []
                 },
                 "wallRight": {
@@ -3273,7 +3273,7 @@
                     "interactionZones": []
                 },
                 "wallRight": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 1,
                     "interactionZones": []
                 },
                 "wallBack": {
@@ -3347,7 +3347,7 @@
             "walkable": true,
             "wallAttr":{
                 "wallFront": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 1,
                     "interactionZones": []
                 },
                 "wallRight": {
@@ -3375,11 +3375,11 @@
                     "interactionZones": []
                 },
                 "wallRight": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 3,
                     "interactionZones": []
                 },
                 "wallBack": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 4,
                     "interactionZones": []
                 },
                 "wallLeft": {
@@ -3517,7 +3517,7 @@
                     "interactionZones": []
                 },
                 "wallBack": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 1,
                     "interactionZones": []
                 },
                 "wallLeft": {
@@ -3537,7 +3537,7 @@
                     "interactionZones": []
                 },
                 "wallRight": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 1,
                     "interactionZones": []
                 },
                 "wallBack": {
@@ -3567,7 +3567,7 @@
                     "interactionZones": []
                 },
                 "wallRight": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 1,
                     "interactionZones": []
                 },
                 "wallBack": {
@@ -3609,7 +3609,7 @@
                     "interactionZones": []
                 },
                 "wallRight": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 1,
                     "interactionZones": []
                 },
                 "wallBack": {
@@ -3767,7 +3767,7 @@
                     "interactionZones": []
                 },
                 "wallLeft": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 1,
                     "interactionZones": []
                 }
             }
@@ -3805,11 +3805,11 @@
                     "interactionZones": []
                 },
                 "wallBack": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 1,
                     "interactionZones": []
                 },
                 "wallLeft": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 1,
                     "interactionZones": []
                 }
             },
@@ -3835,7 +3835,7 @@
                     "interactionZones": []
                 },
                 "wallRight": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 1,
                     "interactionZones": []
                 },
                 "wallBack": {
@@ -3979,11 +3979,11 @@
                     "interactionZones": []
                 },
                 "wallRight": {
-                    "spriteIndex": 0,
+                    "spriteIndex": 1,
                     "interactionZones": []
                 },
                 "wallBack": {
-                    "spriteIndex": -1,
+                    "spriteIndex": 10,
                     "interactionZones": []
                 },
                 "wallLeft": {

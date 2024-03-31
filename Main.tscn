@@ -15,4 +15,4 @@
 visible = false
 
 [node name="Controller" parent="." instance=ExtResource( 2 )]
-initialMap = "gladstone"
+initialMap = "northland_forest"
