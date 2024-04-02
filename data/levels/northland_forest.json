@@ -1788,7 +1788,21 @@
                 },
                 "wallLeft": {
                     "spriteIndex": 2,
-                    "interactionZones": []
+                    "interactionZones": [
+                        {
+                            "attachedWall": "wallLeft",
+                            "triggerPos": [17, 34, 24, 10],
+                            "triggerType": "click",
+                            "effect": "mayGiveItems",
+                            "percentChance": 25,
+                            "willGive": true,
+                            "content": [
+                                ["money", [2, 7]],
+                            ],
+                            "moneyText": "There are silver crowns in there!",
+                            "emptyText": "The nest is empty."
+                        }
+                    ]
                 }
             }
         },
@@ -2014,11 +2028,32 @@
             "wallAttr":{
                 "wallFront": {
                     "spriteIndex": 7,
-                    "interactionZones": []
+                    "interactionZones": [
+                        {
+                            "attachedWall": "wallFront",
+                            "triggerPos": [41, 61, 14, 13],
+                            "triggerType": "click",
+                            "effect": "mayGiveItems",
+                            "percentChance": 100,
+                            "willGive": true,
+                            "content": [
+                                ["item", 1],
+                            ],
+                            "emptyText": "There is nothing in the hollow."
+                        }
+                    ]
                 },
                 "wallRight": {
                     "spriteIndex": 4,
-                    "interactionZones": []
+                    "interactionZones": [
+                        {
+                            "attachedWall": "wallRight",
+                            "triggerPos": [44, 40,55, 59],
+                            "triggerType": "click",
+                            "effect": "displayText",
+                            "text": ["Is that a Pseudobushia hugiflora?"]
+                        }
+                    ]
                 },
                 "wallBack": {
                     "spriteIndex": -1,
@@ -2532,7 +2567,15 @@
             "wallAttr":{
                 "wallFront": {
                     "spriteIndex": 6,
-                    "interactionZones": []
+                    "interactionZones": [
+                        {
+                            "attachedWall": "wallFront",
+                            "triggerPos": [48, 48,50, 59],
+                            "triggerType": "click",
+                            "effect": "displayText",
+                            "text": ["Umph! Too heavy."]
+                        }
+                    ]
                 },
                 "wallRight": {
                     "spriteIndex": -1,
@@ -2764,7 +2807,21 @@
                 },
                 "wallRight": {
                     "spriteIndex": 2,
-                    "interactionZones": []
+                    "interactionZones": [
+                        {
+                            "attachedWall": "wallRight",
+                            "triggerPos": [17, 34, 24, 10],
+                            "triggerType": "click",
+                            "effect": "mayGiveItems",
+                            "percentChance": 25,
+                            "willGive": true,
+                            "content": [
+                                ["money", [2, 7]],
+                            ],
+                            "moneyText": "There are silver crowns in there!",
+                            "emptyText": "The nest is empty."
+                        }
+                    ]
                 },
                 "wallBack": {
                     "spriteIndex": 0,
@@ -2868,7 +2925,21 @@
                 },
                 "wallLeft": {
                     "spriteIndex": 5,
-                    "interactionZones": []
+                    "interactionZones": [
+                        {
+                            "attachedWall": "wallLeft",
+                            "triggerPos": [94, 35, 25, 10],
+                            "triggerType": "click",
+                            "effect": "mayGiveItems",
+                            "percentChance": 25,
+                            "willGive": true,
+                            "content": [
+                                ["money", [2, 7]],
+                            ],
+                            "moneyText": "There are silver crowns in there!",
+                            "emptyText": "The nest is empty."
+                        }
+                    ]
                 }
             }
         },
@@ -3376,11 +3447,33 @@
                 },
                 "wallRight": {
                     "spriteIndex": 3,
-                    "interactionZones": []
+                    "interactionZones": [
+                        {
+                            "attachedWall": "wallRight",
+                            "triggerPos": [91, 69, 10, 13],
+                            "triggerType": "click",
+                            "effect": "mayGiveItems",
+                            "percentChance": 25,
+                            "willGive": true,
+                            "content": [
+                                ["money", [2, 7]],
+                            ],
+                            "moneyText": "There are silver crowns in there!",
+                            "emptyText": "There is nothing in the hollow."
+                        }
+                    ]
                 },
                 "wallBack": {
                     "spriteIndex": 4,
-                    "interactionZones": []
+                    "interactionZones": [
+                        {
+                            "attachedWall": "wallBack",
+                            "triggerPos": [44, 40,55, 59],
+                            "triggerType": "click",
+                            "effect": "displayText",
+                            "text": ["Is that a Pseudobushia hugiflora?"]
+                        }
+                    ]
                 },
                 "wallLeft": {
                     "spriteIndex": -1,

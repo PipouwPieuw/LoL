@@ -1,8 +1,8 @@
 extends Node2D
 
-export(String) var initialMap
+export(String, 'gladstone', 'northland_forest') var initialMap
+export(String, '001', '002', '003', '004', '005', '006', '007', '008', '009') var mainCharId
 
-#var mainData         = {}
 var currentData      = {}
 var currentCell      = -1
 var currentCellL     = -1
@@ -26,8 +26,8 @@ var inputProcessing  = false
 var currentShop      = {}
 var initialCoins     = 41
 var coins            = 0
-var mainCharId       = '003'
 var sceneDisplayed   = false
+var rng              = RandomNumberGenerator.new()
 
 func _ready():
 	add_to_group('controller')
@@ -37,8 +37,8 @@ func _ready():
 	if initialMap != '':
 		levelToLoad = initialMap
 	load_level(levelToLoad)
-	get_tree().call_group('atlas', 'test_atlas')	
-	get_tree().call_group('map', 'toggle_atlas_state', true)
+#	get_tree().call_group('atlas', 'test_atlas')
+#	get_tree().call_group('map', 'toggle_atlas_state', true)
 	
 func _physics_process(_delta):
 	if !inputProcessing and inputQueue.size() > 0:
@@ -80,6 +80,7 @@ func load_level_callback(levelData, args = {}):
 	var levelName = currentData.id
 	get_tree().call_group('scenecontainer', 'load_scenes', levelName)
 	mapWidth = int(currentData.width)
+	set_random_drops()
 	get_tree().call_group('viewport', 'update_layout', currentData.layout, currentData.spriteSheetFrames)
 	play_level_music()
 	var startIndex = currentData.start_index
@@ -93,6 +94,21 @@ func load_level_callback(levelData, args = {}):
 	send_walls_status('up')
 	get_tree().call_group('map', 'update_position')
 	get_tree().call_group('inputs', 'set_move', true)
+
+func set_random_drops():
+	if !currentData.has('firstLoad') or currentData.firstLoad == true:
+		currentData.firstLoad = false
+		for cell in currentData.grid:
+			if cell.has('wallAttr'):
+				for wall in cell.wallAttr:
+					if !cell.wallAttr[wall].interactionZones.empty():
+						for zone in cell.wallAttr[wall].interactionZones:
+							if zone.has('percentChance'):
+								var chance = zone.percentChance
+								rng.randomize()
+								var chanceResult = rng.randi_range(1, 100)
+								if chanceResult > chance:
+									zone.willGive = false
 
 func play_level_music():
 	if currentData.music != '':
@@ -405,6 +421,25 @@ func giveItem(args, _triggerZone):
 			get_tree().call_group('scenecontainer', effect, args.giveItemActions[action].arg, false, true)
 			return
 
+func mayGiveItems(args, _triggerZone):
+	if not args.willGive or args.content.empty():
+		get_tree().call_group('dialogbox', 'displayText', args.emptyText)
+		return
+	var currentItem = args.content.pop_front()
+	var itemType = currentItem[0]
+	var itemData = currentItem[1]
+	if itemType == 'money':
+		var amount = 0
+		if typeof(itemData) == TYPE_INT:
+			amount = coins + itemData
+		elif typeof(itemData) == TYPE_ARRAY:
+			rng.randomize()
+			amount = coins + rng.randi_range(itemData[0], itemData[1])
+		get_tree().call_group('purse', 'set_amount', amount)
+		get_tree().call_group('dialogbox', 'displayText', args.moneyText)
+	elif itemType == 'item':
+		get_tree().call_group('inventory', 'add_item', itemData, true)
+
 func set_coins(val):
 	coins = val
 
@@ -490,15 +525,3 @@ func process_accept_action():
 	pass
 #	if get_tree().get_nodes_in_group('boxtext').size() > 0:
 #		get_tree().call_group('boxtext', 'display_next_lines')
-
-#func save_data():
-#	if !mainData.has('levels'):
-#		mainData['levels'] = {}
-#	if !currentData.empty():
-#		var levelId = currentData.id
-#		mainData['levels'][levelId] = currentData
-#
-#func save_scene_data(id, data):
-#	if !mainData.has('scenes'):
-#		mainData['scenes'] = {}
-#	mainData['scenes'][id] = data

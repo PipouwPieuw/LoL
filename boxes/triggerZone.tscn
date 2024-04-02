@@ -29,16 +29,18 @@ func sendInteraction(_viewport, event, _shape_idx):
 		elif zoneData.effect == 'load_level':
 			get_tree().call_group('scenecontainer', 'load_level', zoneData.actionId, zoneData.actionArgs)
 			return
-		elif zoneData.effect == 'keyhole':
+		elif ['keyhole', 'playAnimation', 'toggleAtlas', 'displayShop', 'giveItem', 'mayGiveItems'].has(zoneData.effect):
 			args = zoneData
-		elif zoneData.effect == 'playAnimation':
-			args = zoneData
-		elif zoneData.effect == 'toggleAtlas':
-			args = zoneData
-		elif zoneData.effect == 'displayShop':
-			args = zoneData
-		elif zoneData.effect == 'giveItem':
-			args = zoneData
+#		elif zoneData.effect == 'keyhole':
+#			args = zoneData
+#		elif zoneData.effect == 'playAnimation':
+#			args = zoneData
+#		elif zoneData.effect == 'toggleAtlas':
+#			args = zoneData
+#		elif zoneData.effect == 'displayShop':
+#			args = zoneData
+#		elif zoneData.effect == 'giveItem':
+#			args = zoneData
 		if args == null:
 			get_tree().call_group('controller', zoneData.effect, self)
 		else:
